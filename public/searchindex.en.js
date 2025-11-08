@@ -9,11 +9,11 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Intro \u003e Act 1",
-    "content": "",
-    "description": "",
+    "content": "Welcome to the 2025 SANS Holiday Hack Challenge! We’re on a train heading… NOT to the North Pole, but instead to The Neighborhood. Your cybersecurity skills are needed there this year! I’m here to help orient you to this year’s exciting challenge.\nI’m the Chief of Staff at Counter Hack, making sure the right people are doing the right thing at the right place at the right time – Herding cats, in other words.\nI love sports, especially college basketball. My favorite teams are Monmouth University, Louisville, and Syracuse.\nI’m a Queens Girl living my best life at the beautiful Jersey Shore.\nI’m a proud Mom of three and Grandma of one (so far!! 🙏).\nHey, think you can give this terminal a try? Just click on it and follow the instructions.\nGreat work! Please, hop off the train and explore the neighborhood.\nWe’re so glad to have you here!\nOh, one more thing! You can press Q and E to rotate the map around. It gives you a nice semi-3D view of the area - really helps when you need to look around buildings and objects. Pretty neat, right? Give it a spin!\nOn one of my attempt to grab a screenshot, no character showed up:\nTerminal 1",
+    "description": "Welcome to the 2025 SANS Holiday Hack Challenge! We’re on a train heading… NOT to the North Pole, but instead to The Neighborhood. Your cybersecurity skills are needed there this year! I’m here to help orient you to this year’s exciting challenge.\nI’m the Chief of Staff at Counter Hack, making sure the right people are doing the right thing at the right place at the right time – Herding cats, in other words.",
     "tags": [],
-    "title": "Its All About Defang",
-    "uri": "/act1/its-all-about-defang/index.html"
+    "title": "Holiday Hack Orientation",
+    "uri": "/act1/holiday-hack-orientation/index.html"
   },
   {
     "breadcrumb": "Intro",
@@ -28,8 +28,8 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
-    "title": "Neighborhood Watch Bypass",
-    "uri": "/act1/neighborhood-watch-bypass/index.html"
+    "title": "Its All About Defang",
+    "uri": "/act1/its-all-about-defang/index.html"
   },
   {
     "breadcrumb": "Intro",
@@ -41,10 +41,18 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Intro \u003e Act 1",
-    "content": "test",
-    "description": "test",
+    "content": "",
+    "description": "",
     "tags": [],
-    "title": "Santas Gift Tracking Service Port Mystery",
+    "title": "Neighborhood Watch Bypass",
+    "uri": "/act1/neighborhood-watch-bypass/index.html"
+  },
+  {
+    "breadcrumb": "Intro \u003e Act 1",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Santa's Gift Tracking Service Port Mystery",
     "uri": "/act1/santas-gift-tracking-service-port-mystery/index.html"
   },
   {
@@ -76,7 +84,7 @@ var relearn_searchindex = [
     "content": "",
     "description": "",
     "tags": [],
-    "title": "Blobl Storage Challenge in the Neighborhood",
+    "title": "Blob Storage Challenge in the Neighborhood",
     "uri": "/act1/blob-storage-challenge-in-the-neighborhood/index.html"
   },
   {
@@ -102,14 +110,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Owner",
     "uri": "/act1/owner/index.html"
-  },
-  {
-    "breadcrumb": "Intro \u003e Act 1",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Holiday Hack Orientation",
-    "uri": "/act1/holiday-hack-orientation/index.html"
   },
   {
     "breadcrumb": "",
