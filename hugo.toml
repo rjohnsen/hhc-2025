@@ -1,8 +1,11 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'SANS Holiday Hack Challenge 2025'
-theme = 'loficode'
+theme = 'hugo-theme-relearn'
 
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[params]
+  themeVariant = 'zen-dark'

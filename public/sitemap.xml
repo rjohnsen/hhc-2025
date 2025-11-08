@@ -1,11 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/act1/index.html</loc>
+    <lastmod>2025-11-08T15:30:27+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/its-all-about-defang/index.html</loc>
+    <lastmod>2025-11-08T16:28:46+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act2/index.html</loc>
+    <lastmod>2025-11-08T15:30:30+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/neighborhood-watch-bypass/index.html</loc>
+    <lastmod>2025-11-08T16:29:03+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act3/index.html</loc>
+    <lastmod>2025-11-08T15:30:34+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/santas-gift-tracking-service-port-mystery/index.html</loc>
+    <lastmod>2025-11-08T16:29:23+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/visual-network-thinger/index.html</loc>
+    <lastmod>2025-11-08T16:29:35+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/visual-firewall-thinger/index.html</loc>
+    <lastmod>2025-11-08T16:29:40+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/intro-to-nmap/index.html</loc>
+    <lastmod>2025-11-08T16:29:50+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/blob-storage-challenge-in-the-neighborhood/index.html</loc>
+    <lastmod>2025-11-08T16:30:06+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/spare-key/index.html</loc>
+    <lastmod>2025-11-08T16:30:16+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/the-open-door/index.html</loc>
+    <lastmod>2025-11-08T16:30:23+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/owner/index.html</loc>
+    <lastmod>2025-11-08T16:30:33+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act1/holiday-hack-orientation/index.html</loc>
+    <lastmod>2025-11-08T16:28:16+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/index.html</loc>
+    <lastmod>2025-11-08T15:30:27+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/index.html</loc>
   </url>
 </urlset>

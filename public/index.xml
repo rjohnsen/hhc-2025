@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Intro :: SANS Holiday Hack Challenge 2025</title>
+    <link>http://localhost:1313/index.html</link>
+    <description>Way back in 2015, the mysterious Atnas Corporation almost ruined the entire holiday season through their nefarious Gnome In Your Home plot. Their villainy centered upon convincing parents to purchase little Gnome dolls that played joyful holiday songs to their children. With Gnome sales topping two million units, a blitz of Atnas Corp advertisements encouraged parents to move their Gnomes around the house daily so that their children could hunt for them in a fun little game. Little did parents know that these Gnomes were snooping IoT devices with a camera and wireless internet access, furtively sending photos to burglars who would rob their houses of their treasures en masse on Christmas Eve, 2015. The incredible efforts of SANS Holiday Hack investigators around the world foiled the foul plot, exposing the criminal mastermind behind Atlas Corp: Cindy Lou Who, age 62.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 08 Nov 2025 15:30:34 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Act 1</title>
+      <link>http://localhost:1313/act1/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 15:30:27 +0100</pubDate>
+      <guid>http://localhost:1313/act1/index.html</guid>
+      <description>The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.</description>
+    </item>
+    <item>
+      <title>Act 2</title>
+      <link>http://localhost:1313/act2/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 15:30:30 +0100</pubDate>
+      <guid>http://localhost:1313/act2/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Act 3</title>
+      <link>http://localhost:1313/act3/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 15:30:34 +0100</pubDate>
+      <guid>http://localhost:1313/act3/index.html</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

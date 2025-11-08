@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Act 1 :: SANS Holiday Hack Challenge 2025</title>
+    <link>http://localhost:1313/act1/index.html</link>
+    <description>The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Nov 2025 16:30:33 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/act1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Holiday Hack Orientation</title>
+      <link>http://localhost:1313/act1/holiday-hack-orientation/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:28:16 +0100</pubDate>
+      <guid>http://localhost:1313/act1/holiday-hack-orientation/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Its All About Defang</title>
+      <link>http://localhost:1313/act1/its-all-about-defang/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:28:46 +0100</pubDate>
+      <guid>http://localhost:1313/act1/its-all-about-defang/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Neighborhood Watch Bypass</title>
+      <link>http://localhost:1313/act1/neighborhood-watch-bypass/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:29:03 +0100</pubDate>
+      <guid>http://localhost:1313/act1/neighborhood-watch-bypass/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Santa&#39;s Gift Tracking Service Port Mystery</title>
+      <link>http://localhost:1313/act1/santas-gift-tracking-service-port-mystery/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:29:23 +0100</pubDate>
+      <guid>http://localhost:1313/act1/santas-gift-tracking-service-port-mystery/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Visual Network Thinger</title>
+      <link>http://localhost:1313/act1/visual-network-thinger/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:29:35 +0100</pubDate>
+      <guid>http://localhost:1313/act1/visual-network-thinger/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Visual Firewall Thinger</title>
+      <link>http://localhost:1313/act1/visual-firewall-thinger/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:29:40 +0100</pubDate>
+      <guid>http://localhost:1313/act1/visual-firewall-thinger/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Intro to Nmap</title>
+      <link>http://localhost:1313/act1/intro-to-nmap/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:29:50 +0100</pubDate>
+      <guid>http://localhost:1313/act1/intro-to-nmap/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blob Storage Challenge in the Neighborhood</title>
+      <link>http://localhost:1313/act1/blob-storage-challenge-in-the-neighborhood/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:30:06 +0100</pubDate>
+      <guid>http://localhost:1313/act1/blob-storage-challenge-in-the-neighborhood/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spare Key</title>
+      <link>http://localhost:1313/act1/spare-key/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:30:16 +0100</pubDate>
+      <guid>http://localhost:1313/act1/spare-key/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>The Open Door</title>
+      <link>http://localhost:1313/act1/the-open-door/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:30:23 +0100</pubDate>
+      <guid>http://localhost:1313/act1/the-open-door/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Owner</title>
+      <link>http://localhost:1313/act1/owner/index.html</link>
+      <pubDate>Sat, 08 Nov 2025 16:30:33 +0100</pubDate>
+      <guid>http://localhost:1313/act1/owner/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
