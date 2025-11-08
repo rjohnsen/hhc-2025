@@ -1,3 +1,5 @@
 [submodule "themes/loficode"]
 	path = themes/loficode
 	url = https://github.com/raisingpixels/loficode-hugo-theme.git
+[submodule "themes/hugo-theme-relearn"]
+	url = https://github.com/McShelby/hugo-theme-relearn.git
