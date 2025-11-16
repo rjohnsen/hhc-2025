@@ -5,40 +5,60 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.152.2">
     <meta name="generator" content="Relearn 8.2.0+926ba4d1230e27319cf62da0633eb3420e6af1bf">
-    <meta name="description" content="">
+    <meta name="description" content="Objective Difficulty: 1/5
+Help the Goose Grace near the pond find which Azure Storage account has been misconfigured to allow public blob access by analyzing the export file.
+Goose Grace mission statement HONK!!! HONK!!!!
+The Neighborhood HOA uses Azure storage accounts for various IT operations.
+You’ve been asked to audit their storage security configuration to ensure no sensitive data is publicly accessible.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Blob Storage Challenge in the Neighborhood :: SANS Holiday Hack Challenge 2025">
+    <meta name="twitter:description" content="Objective Difficulty: 1/5
+Help the Goose Grace near the pond find which Azure Storage account has been misconfigured to allow public blob access by analyzing the export file.
+Goose Grace mission statement HONK!!! HONK!!!!
+The Neighborhood HOA uses Azure storage accounts for various IT operations.
+You’ve been asked to audit their storage security configuration to ensure no sensitive data is publicly accessible.">
     <meta property="og:url" content="http://localhost:1313/act1/blob-storage-challenge-in-the-neighborhood/index.html">
     <meta property="og:site_name" content="SANS Holiday Hack Challenge 2025">
     <meta property="og:title" content="Blob Storage Challenge in the Neighborhood :: SANS Holiday Hack Challenge 2025">
+    <meta property="og:description" content="Objective Difficulty: 1/5
+Help the Goose Grace near the pond find which Azure Storage account has been misconfigured to allow public blob access by analyzing the export file.
+Goose Grace mission statement HONK!!! HONK!!!!
+The Neighborhood HOA uses Azure storage accounts for various IT operations.
+You’ve been asked to audit their storage security configuration to ensure no sensitive data is publicly accessible.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Blob Storage Challenge in the Neighborhood :: SANS Holiday Hack Challenge 2025">
+    <meta itemprop="description" content="Objective Difficulty: 1/5
+Help the Goose Grace near the pond find which Azure Storage account has been misconfigured to allow public blob access by analyzing the export file.
+Goose Grace mission statement HONK!!! HONK!!!!
+The Neighborhood HOA uses Azure storage accounts for various IT operations.
+You’ve been asked to audit their storage security configuration to ensure no sensitive data is publicly accessible.">
     <meta itemprop="datePublished" content="2025-11-08T16:30:06+01:00">
     <meta itemprop="dateModified" content="2025-11-08T16:30:06+01:00">
+    <meta itemprop="wordCount" content="889">
     <title>Blob Storage Challenge in the Neighborhood :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act1/blob-storage-challenge-in-the-neighborhood/index.xml" rel="alternate" type="application/rss+xml" title="Blob Storage Challenge in the Neighborhood :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1762621236" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1762621236" defer></script>
-    <script src="/js/search-lunr.js?1762621236" defer></script>
-    <script src="/js/search.js?1762621236" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1763286175" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1763286175" defer></script>
+    <script src="/js/search-lunr.js?1763286175" defer></script>
+    <script src="/js/search.js?1763286175" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1762621236";
+      window.relearn.index_js_url="/searchindex.en.js?1763286175";
     </script>
-    <script src="/js/lunr/lunr.min.js?1762621236" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1762621236" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1762621236" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1762621236" defer></script>
+    <script src="/js/lunr/lunr.min.js?1763286175" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1763286175" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1763286175" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1763286175" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762621236" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1762621236" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1762621236" rel="stylesheet">
-    <link href="/css/theme.css?1762621236" rel="stylesheet">
-    <link href="/css/format-html.css?1762621236" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763286175" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1763286175" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1763286175" rel="stylesheet">
+    <link href="/css/theme.css?1763286175" rel="stylesheet">
+    <link href="/css/format-html.css?1763286175" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -106,7 +126,25 @@
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#objective">Objective</a></li>
+    <li><a href="#goose-grace-mission-statement">Goose Grace mission statement</a></li>
+    <li><a href="#blob-challenge-terminal">Blob Challenge Terminal</a>
+      <ul>
+        <li><a href="#getting-help">Getting help</a></li>
+        <li><a href="#listing-accounts">Listing accounts</a></li>
+        <li><a href="#listing-azure-storage-accounts">Listing Azure storage accounts</a></li>
+        <li><a href="#showing-accounts-with-a-common-misconfiguration">Showing accounts with a common misconfiguration</a></li>
+        <li><a href="#listing-containers">Listing containers</a></li>
+        <li><a href="#listing-blobs">Listing blobs</a></li>
+        <li><a href="#downloading-admin_credentialstxt">Downloading admin_credentials.txt</a></li>
+      </ul>
+    </li>
+    <li><a href="#goose-grace-mission-debrief">Goose Grace mission debrief</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -115,10 +153,10 @@
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/act1/index.html" title="Act 1 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle link noborder notitle interactive"><a href="/act1/visual-network-thinger/index.html" title="Visual Network Thinger (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle link noborder notitle interactive"><a href="/act2/index.html" title="Act 2 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle link noborder notitle interactive"><a href="/act1/spare-key/index.html" title="Spare Key (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -141,6 +179,288 @@
 
 <h1 id="blob-storage-challenge-in-the-neighborhood">Blob Storage Challenge in the Neighborhood</h1>
 
+<p><a href="#R-image-6c96db3c96428b097770372c511c2f0b" class="lightbox-link"><img alt="Grace Goose" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/goose-misfit.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6c96db3c96428b097770372c511c2f0b"><img alt="Grace Goose" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/goose-misfit.png"></a></p>
+<h2 id="objective">Objective</h2>
+<p>Difficulty: 1/5</p>
+<p>Help the Goose Grace near the pond find which Azure Storage account has been misconfigured to allow public blob access by analyzing the export file.</p>
+<h2 id="goose-grace-mission-statement">Goose Grace mission statement</h2>
+<blockquote>
+<p>HONK!!! HONK!!!!</p>
+<hr>
+<p>The Neighborhood HOA uses Azure storage accounts for various IT operations.</p>
+<p>You&rsquo;ve been asked to audit their storage security configuration to ensure no sensitive data is publicly accessible.</p>
+<p>Recent security reports suggest some storage accounts might have public blob access enabled, creating potential data exposure risks.</p>
+</blockquote>
+<h2 id="blob-challenge-terminal">Blob Challenge Terminal</h2>
+<p><a href="#R-image-58ea71e4580c129fcdc7eff44833f84f" class="lightbox-link"><img alt="Starting the terminal" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-58ea71e4580c129fcdc7eff44833f84f"><img alt="Starting the terminal" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-1.png"></a></p>
+<h3 id="getting-help">Getting help</h3>
+<p>Prototype command:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az help | less</span></span></code></pre></div>
+<p><a href="#R-image-25c13c109631b68f4010517defe912f8" class="lightbox-link"><img alt="Getting help" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-25c13c109631b68f4010517defe912f8"><img alt="Getting help" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-2.png"></a></p>
+<p>And we got help:</p>
+<p><a href="#R-image-612b53595b4d097cb3dabcb89ef73457" class="lightbox-link"><img alt="Got help" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-612b53595b4d097cb3dabcb89ef73457"><img alt="Got help" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-3.png"></a></p>
+<h3 id="listing-accounts">Listing accounts</h3>
+<p>Prototype command:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az account show | less</span></span></code></pre></div>
+<p><a href="#R-image-7e9f897ef555d1037600546c4a33580f" class="lightbox-link"><img alt="Listing accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7e9f897ef555d1037600546c4a33580f"><img alt="Listing accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-4.png"></a></p>
+<h3 id="listing-azure-storage-accounts">Listing Azure storage accounts</h3>
+<p>Prototype command:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage account list | less</span></span></code></pre></div>
+<p><a href="#R-image-eff7a419a37d966b41c7cfc9098911ff" class="lightbox-link"><img alt="Listing Azure storage accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-eff7a419a37d966b41c7cfc9098911ff"><img alt="Listing Azure storage accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-5.png"></a></p>
+<p>The output is shown here in is full glory:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/theneighborhood-rg1/providers/Microsoft.Storage/storageAccounts/neighborhood1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;StorageV2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;location&#34;</span>: <span style="color:#e6db74">&#34;eastus&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;neighborhood1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;properties&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;accessTier&#34;</span>: <span style="color:#e6db74">&#34;Hot&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;allowBlobPublicAccess&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;encryption&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;keySource&#34;</span>: <span style="color:#e6db74">&#34;Microsoft.Storage&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;services&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;blob&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;minimumTlsVersion&#34;</span>: <span style="color:#e6db74">&#34;TLS1_2&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;resourceGroup&#34;</span>: <span style="color:#e6db74">&#34;theneighborhood-rg1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sku&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Standard_LRS&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tags&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;env&#34;</span>: <span style="color:#e6db74">&#34;dev&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/theneighborhood-rg1/providers/Microsoft.Storage/storageAccounts/neighborhood2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;StorageV2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;location&#34;</span>: <span style="color:#e6db74">&#34;eastus2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;neighborhood2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;properties&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;accessTier&#34;</span>: <span style="color:#e6db74">&#34;Cool&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;allowBlobPublicAccess&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;encryption&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;keySource&#34;</span>: <span style="color:#e6db74">&#34;Microsoft.Storage&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;services&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;blob&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;minimumTlsVersion&#34;</span>: <span style="color:#e6db74">&#34;TLS1_0&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;resourceGroup&#34;</span>: <span style="color:#e6db74">&#34;theneighborhood-rg1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sku&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Standard_GRS&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;tags&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;owner&#34;</span>: <span style="color:#e6db74">&#34;Admin&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/theneighborhood-rg2/providers/Microsoft.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Storage/storageAccounts/neighborhood3&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;BlobStorage&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;location&#34;</span>: <span style="color:#e6db74">&#34;westus&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;neighborhood3&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;properties&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;accessTier&#34;</span>: <span style="color:#e6db74">&#34;Hot&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;allowBlobPublicAccess&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;encryption&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;keySource&#34;</span>: <span style="color:#e6db74">&#34;Microsoft.Keyvault&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;services&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;blob&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;minimumTlsVersion&#34;</span>: <span style="color:#e6db74">&#34;TLS1_2&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;resourceGroup&#34;</span>: <span style="color:#e6db74">&#34;theneighborhood-rg2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sku&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Standard_RAGRS&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tags&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;department&#34;</span>: <span style="color:#e6db74">&#34;NeighborhoodWatch&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/theneighborhood-rg2/providers/Microsoft.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Storage/storageAccounts/neighborhood4&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;StorageV2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;location&#34;</span>: <span style="color:#e6db74">&#34;westus2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;neighborhood4&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;properties&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;accessTier&#34;</span>: <span style="color:#e6db74">&#34;Hot&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;allowBlobPublicAccess&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;minimumTlsVersion&#34;</span>: <span style="color:#e6db74">&#34;TLS1_2&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;networkAcls&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;bypass&#34;</span>: <span style="color:#e6db74">&#34;AzureServices&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;virtualNetworkRules&#34;</span>: []
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;resourceGroup&#34;</span>: <span style="color:#e6db74">&#34;theneighborhood-rg2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sku&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Premium_LRS&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tags&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;critical&#34;</span>: <span style="color:#e6db74">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/theneighborhood-rg1/providers/Microsoft.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Storage/storageAccounts/neighborhood5&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;StorageV2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;location&#34;</span>: <span style="color:#e6db74">&#34;eastus&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;neighborhood5&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;properties&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;accessTier&#34;</span>: <span style="color:#e6db74">&#34;Cool&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;allowBlobPublicAccess&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;isHnsEnabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;minimumTlsVersion&#34;</span>: <span style="color:#e6db74">&#34;TLS1_2&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;resourceGroup&#34;</span>: <span style="color:#e6db74">&#34;theneighborhood-rg1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sku&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Standard_LRS&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tags&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;project&#34;</span>: <span style="color:#e6db74">&#34;Homes&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/theneighborhood-rg2/providers/Microsoft.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Storage/storageAccounts/neighborhood6&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;kind&#34;</span>: <span style="color:#e6db74">&#34;StorageV2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;location&#34;</span>: <span style="color:#e6db74">&#34;centralus&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;neighborhood6&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;properties&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;accessTier&#34;</span>: <span style="color:#e6db74">&#34;Hot&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;allowBlobPublicAccess&#34;</span>: <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;minimumTlsVersion&#34;</span>: <span style="color:#e6db74">&#34;TLS1_2&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;tags&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;replicate&#34;</span>: <span style="color:#e6db74">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;resourceGroup&#34;</span>: <span style="color:#e6db74">&#34;theneighborhood-rg2&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;sku&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Standard_ZRS&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;tags&#34;</span>: {}
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>]</span></span></code></pre></div>
+<h3 id="showing-accounts-with-a-common-misconfiguration">Showing accounts with a common misconfiguration</h3>
+<p>At the very start we are given a hint that one of the accounts looks suspicious. We also get a prototype command:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage account show --name xxxxxxxxxx | less</span></span></code></pre></div>
+<p>From the JSON configuration (posted above), we see accounts named <code>neighboorhood1</code> through <code>neighborhood6</code>. By looking at the configuration we see that account <code>neighboorhood2</code> appears to be much suspicious based on these findings:</p>
+<p><strong>Finding A. Public blob access enabled</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;allowBlobPublicAccess&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span></span></span></code></pre></div>
+<p>This means that anyone on the internet may access blob data if the container is configured as public. Attackers routinely scan Azure blobs for exposed data (exactly like S3 bucket scanning).</p>
+<p><strong>Finding B. At-rest encryption disabled</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;blob&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> { <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">false</span> }</span></span></code></pre></div>
+<p>Azure nowadays forces encryption regardless, but this config still signals mismanagement.
+In older accounts or older tooling, this could mean plaintext at rest.</p>
+<p><strong>Finding C. TLS 1.0</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;minimumTlsVersion&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;TLS1_0&#34;</span></span></span></code></pre></div>
+<p>TLS1.0 is deprecated and vulnerable to known protocol-level weaknesses.</p>
+<p><strong>Finding D. Combined impact</strong></p>
+<p>If any container inside this account is set to public, attackers can enumerate and download everything silently:</p>
+<ul>
+<li>Public website files</li>
+<li>Uploaded backups</li>
+<li>Customer data</li>
+<li>Credentials accidentally uploaded</li>
+<li>Logs containing secrets</li>
+</ul>
+<p>Public misconfigured blob containers are one of the top Azure data leak causes.</p>
+<p>We can thus use this command directly to view more information about <code>neighborhood2</code> account:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage account show --name neighborhood2 | less</span></span></code></pre></div>
+<p><a href="#R-image-29ed497d48fc32bfc8a6bb618951d8b2" class="lightbox-link"><img alt="Listing storage accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-29ed497d48fc32bfc8a6bb618951d8b2"><img alt="Listing storage accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-6.png"></a></p>
+<h3 id="listing-containers">Listing containers</h3>
+<p>Other than stating we need to list containers in <code>neighboorhood2</code>, and a resource URL, no other hints or prototype commands are given. However, I have already solved the &ldquo;Spare Key&rdquo; objective - I&rsquo;ll just reuse the concept from that objective here:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage container list --account-name neighborhood2</span></span></code></pre></div>
+<p><a href="#R-image-0d8f8f157cb185ff0783affd3fb6db48" class="lightbox-link"><img alt="Listing containers" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-7.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0d8f8f157cb185ff0783affd3fb6db48"><img alt="Listing containers" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-7.png"></a></p>
+<h3 id="listing-blobs">Listing blobs</h3>
+<p>Same procedure as for listing the containers, reuse the concept in &ldquo;Spare Key&rdquo;:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage blob list --container-name <span style="color:#e6db74">&#39;private&#39;</span> --account-name neighborhood2 --auth-mode login
+</span></span><span style="display:flex;"><span>az storage blob list --container-name <span style="color:#e6db74">&#39;public&#39;</span> --account-name neighborhood2 --auth-mode login</span></span></code></pre></div>
+<p><a href="#R-image-5a5835f9ee0d819a9d812129447bc502" class="lightbox-link"><img alt="Listing storage blobs" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-8.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5a5835f9ee0d819a9d812129447bc502"><img alt="Listing storage blobs" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-8.png"></a></p>
+<h3 id="downloading-admin_credentialstxt">Downloading admin_credentials.txt</h3>
+<p>We are now to try downloading and viewing the blob file named admin_credentials.txt from the public container. Still, reusing the concept from &ldquo;Spare Key&rdquo;:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage blob download --container-name <span style="color:#e6db74">&#39;public&#39;</span> --account-name neighborhood2 --auth-mode login --name <span style="color:#e6db74">&#39;admin_credentials.txt&#39;</span> --file /dev/stdout | less</span></span></code></pre></div>
+<p><a href="#R-image-fcadf900acfdda9d4f105b4c1997310d" class="lightbox-link"><img alt="Viewing sensitive credentials" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-9.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fcadf900acfdda9d4f105b4c1997310d"><img alt="Viewing sensitive credentials" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-9.png"></a></p>
+<p>The entire <code>admin_credentials.txt</code> file is listed below:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># You have discovered an Azure Storage account with &#34;allowBlobPublicAccess&#34;: true.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This misconfiguration allows ANYONE on the internet to view and download files</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># from the blob container without authentication.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Public blob access is highly insecure when sensitive data (like admin credentials)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># is stored in these containers. Always disable public access unless absolutely required.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Azure</span> <span style="color:#a6e22e">Portal</span> <span style="color:#a6e22e">Credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">azureadmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">AzUR3</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">P</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">ssw0rd</span><span style="color:#75715e">#2025</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Windows</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">Credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">administrator</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">W1nD0ws</span><span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">Srv</span><span style="color:#960050;background-color:#1e0010">!@</span><span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">SQL</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">Credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">sa</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">SqL</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">P</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#ae81ff">55</span><span style="color:#75715e">#2025$</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Active</span> <span style="color:#a6e22e">Directory</span> <span style="color:#a6e22e">Domain</span> <span style="color:#a6e22e">Admin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">corp</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">administrator</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">D0m</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">in</span><span style="color:#75715e">#Adm!n$765</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Exchange</span> <span style="color:#a6e22e">Admin</span> <span style="color:#a6e22e">Credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">exchangeadmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">Exch</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">ng3</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">M</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">il</span><span style="color:#75715e">#432</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">VMware</span> <span style="color:#a6e22e">vSphere</span> <span style="color:#a6e22e">Credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">vsphereadmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">VMW</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">r3</span><span style="color:#75715e">#Clu$ter!99</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Network</span> <span style="color:#a6e22e">Switch</span> <span style="color:#a6e22e">Credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">netadmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">N3t</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">Sw</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">tch</span><span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">C0nfig</span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Firewall</span> <span style="color:#a6e22e">Admin</span> <span style="color:#a6e22e">Credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">fwadmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">F1r3W</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">ll</span><span style="color:#75715e">#S3cur3!77</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Backup</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">Credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">backupadmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">B</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">ckUp</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">Srv</span><span style="color:#75715e">#2025$</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Monitoring</span> <span style="color:#a6e22e">System</span> <span style="color:#a6e22e">Admin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">monitoradmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">M0n</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">t0r</span><span style="color:#75715e">#Sys$P@ss!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">SharePoint</span> <span style="color:#a6e22e">Admin</span> <span style="color:#a6e22e">Credentials</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">spadmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">Sh</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">r3P0</span><span style="color:#960050;background-color:#1e0010">!</span><span style="color:#a6e22e">nt</span><span style="color:#75715e">#Adm!n2025</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Git</span> <span style="color:#a6e22e">Server</span> <span style="color:#a6e22e">Admin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">User</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">gitadmin</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Pass</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#a6e22e">G1t</span><span style="color:#75715e">#Srv!Rep0$C0de</span></span></span></code></pre></div>
+<h2 id="goose-grace-mission-debrief">Goose Grace mission debrief</h2>
+<blockquote>
+<p>HONK HONK HONK! &lsquo;No sensitive data publicly accessible&rsquo; they claimed. Meanwhile, literally everything was public! Good save, security expert!</p>
+</blockquote>
 
   <footer class="footline">
               <i class='fa-fw fas fa-calendar'></i> Nov 8, 2025
@@ -190,7 +510,12 @@
         <div class="R-sidebarmenu R-shortcutmenu-main">
           <ul class="enlarge morespace collapsible-menu">
             <li class="parent " data-nav-url="/act1/index.html"><a class="padding" href="/act1/index.html">Act 1</a><ul id="R-subsections-8dc0c36ceefa45529ff4cf1f9bdc1f66" class="collapsible-menu">
-            <li class="active hidden " data-nav-url="/act1/blob-storage-challenge-in-the-neighborhood/index.html"><a class="padding" href="/act1/blob-storage-challenge-in-the-neighborhood/index.html">Blob Storage Challenge in the Neighborhood</a></li></ul></li>
+            <li class="" data-nav-url="/act1/holiday-hack-orientation/index.html"><a class="padding" href="/act1/holiday-hack-orientation/index.html">Holiday Hack Orientation</a></li>
+            <li class="" data-nav-url="/act1/santas-gift-tracking-service-port-mystery/index.html"><a class="padding" href="/act1/santas-gift-tracking-service-port-mystery/index.html">Santa&#39;s Gift Tracking Service Port Mystery</a></li>
+            <li class="" data-nav-url="/act1/visual-network-thinger/index.html"><a class="padding" href="/act1/visual-network-thinger/index.html">Visual Network Thinger</a></li>
+            <li class="active " data-nav-url="/act1/blob-storage-challenge-in-the-neighborhood/index.html"><a class="padding" href="/act1/blob-storage-challenge-in-the-neighborhood/index.html">Blob Storage Challenge in the Neighborhood</a></li>
+            <li class="" data-nav-url="/act1/spare-key/index.html"><a class="padding" href="/act1/spare-key/index.html">Spare Key</a></li>
+            <li class="" data-nav-url="/act1/owner/index.html"><a class="padding" href="/act1/owner/index.html">Owner</a></li></ul></li>
             <li class="" data-nav-url="/act2/index.html"><a class="padding" href="/act2/index.html">Act 2</a></li>
             <li class="" data-nav-url="/act3/index.html"><a class="padding" href="/act3/index.html">Act 3</a></li>
           </ul>
@@ -210,8 +535,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1762621236" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1762621236" defer></script>
-    <script src="/js/theme.js?1762621236" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1763286175" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1763286175" defer></script>
+    <script src="/js/theme.js?1763286175" defer></script>
   </body>
 </html>

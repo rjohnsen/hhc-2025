@@ -1,14 +1,20 @@
 +++
 date = '2025-11-08T16:28:16+01:00'
-draft = true
-hidden = true
+draft = false
+hidden = false
 title = 'Holiday Hack Orientation'
 weight = 2
 +++
 
-## Lynn Schifano mission statement
-
 ![Lynn Schifano](/images/act1/lynnschifano-portrait.png)
+
+## Objective
+
+Difficulty: 1/5
+
+Meet Lynn Schifano on the train for a warm welcome and get ready for your journey around the Dosis Neighborhood.
+
+## Lynn Schifano mission statement
 
 > Welcome to the 2025 SANS Holiday Hack Challenge! We’re on a train heading… NOT to the North Pole, but instead to The Neighborhood. Your cybersecurity skills are needed there this year! I’m here to help orient you to this year’s exciting challenge.
 > 

@@ -1,14 +1,20 @@
 +++
 date = '2025-11-08T16:29:35+01:00'
-draft = true
-hidden = true
+draft = false
+hidden = false
 title = 'Visual Network Thinger'
 weight = 6
 +++
 
-## Jared Folkins mission statement
-
 ![Jared Folkins](/images/act1/jaredfolkins-portrait.png)
+
+## Objective
+
+Difficulty: 1/5
+
+Skate over to Jared at the frozen pond for some network magic and learn the ropes by the hockey rink.
+
+## Jared Folkins mission statement
 
 > Jared Folkins here! My favorite Christmas movie is White Christmas. You should find me on the socials and tell me what yours is.
 > 

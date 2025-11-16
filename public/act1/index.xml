@@ -34,7 +34,7 @@
       <link>http://localhost:1313/act1/santas-gift-tracking-service-port-mystery/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:29:23 +0100</pubDate>
       <guid>http://localhost:1313/act1/santas-gift-tracking-service-port-mystery/index.html</guid>
-      <description></description>
+      <description>Yori Kvitchko mission statement Hi! I’m Yori.&#xA;I was Ed’s lost intern back in 2015, but I was found!&#xA;Think you can check out this terminal for me? I need to use cURL to access the gift tracker system, but it has me stumped.&#xA;Please see what you can do!&#xA;Terminal By listing the home directory we find a README.txt file:</description>
     </item>
     <item>
       <title>Visual Network Thinger</title>
@@ -62,14 +62,14 @@
       <link>http://localhost:1313/act1/blob-storage-challenge-in-the-neighborhood/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:30:06 +0100</pubDate>
       <guid>http://localhost:1313/act1/blob-storage-challenge-in-the-neighborhood/index.html</guid>
-      <description></description>
+      <description>Grace Goose mission statement HONK!!! HONK!!!!&#xA;The Neighborhood HOA uses Azure storage accounts for various IT operations.&#xA;You’ve been asked to audit their storage security configuration to ensure no sensitive data is publicly accessible.&#xA;Recent security reports suggest some storage accounts might have public blob access enabled, creating potential data exposure risks.&#xA;Blob Challenge Terminal</description>
     </item>
     <item>
       <title>Spare Key</title>
       <link>http://localhost:1313/act1/spare-key/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:30:16 +0100</pubDate>
       <guid>http://localhost:1313/act1/spare-key/index.html</guid>
-      <description></description>
+      <description>Barry Goose mission statement You want me to say what exactly? Do I really look like someone who says MOOO?&#xA;The Neighborhood HOA hosts a static website on Azure Storage.&#xA;An admin accidentally uploaded an infrastructure config file that contains a long-lived SAS token.&#xA;Use Azure CLI to find the leak and report exactly where it lives.&#xA;Spare Key Terminal</description>
     </item>
     <item>
       <title>The Open Door</title>
@@ -83,7 +83,7 @@
       <link>http://localhost:1313/act1/owner/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:30:33 +0100</pubDate>
       <guid>http://localhost:1313/act1/owner/index.html</guid>
-      <description></description>
+      <description>Yori Kvitchko mission statement Terminal James Goose mission debrief</description>
     </item>
   </channel>
 </rss>
