@@ -13,7 +13,7 @@
       <link>http://localhost:1313/act1/holiday-hack-orientation/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:28:16 +0100</pubDate>
       <guid>http://localhost:1313/act1/holiday-hack-orientation/index.html</guid>
-      <description>Lynn Schifano mission statement Welcome to the 2025 SANS Holiday Hack Challenge! We’re on a train heading… NOT to the North Pole, but instead to The Neighborhood. Your cybersecurity skills are needed there this year! I’m here to help orient you to this year’s exciting challenge.&#xA;I’m the Chief of Staff at Counter Hack, making sure the right people are doing the right thing at the right place at the right time – Herding cats, in other words.</description>
+      <description>Objective Difficulty: 1/5&#xA;Meet Lynn Schifano on the train for a warm welcome and get ready for your journey around the Dosis Neighborhood.&#xA;Lynn Schifano mission statement Welcome to the 2025 SANS Holiday Hack Challenge! We’re on a train heading… NOT to the North Pole, but instead to The Neighborhood. Your cybersecurity skills are needed there this year! I’m here to help orient you to this year’s exciting challenge.</description>
     </item>
     <item>
       <title>Its All About Defang</title>
@@ -34,14 +34,14 @@
       <link>http://localhost:1313/act1/santas-gift-tracking-service-port-mystery/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:29:23 +0100</pubDate>
       <guid>http://localhost:1313/act1/santas-gift-tracking-service-port-mystery/index.html</guid>
-      <description>Yori Kvitchko mission statement Hi! I’m Yori.&#xA;I was Ed’s lost intern back in 2015, but I was found!&#xA;Think you can check out this terminal for me? I need to use cURL to access the gift tracker system, but it has me stumped.&#xA;Please see what you can do!&#xA;Terminal By listing the home directory we find a README.txt file:</description>
+      <description>Objective Difficulty: 1/5&#xA;Chat with Yori near the apartment building about Santa’s mysterious gift tracker and unravel the holiday mystery.&#xA;Yori Kvitchko mission statement Hi! I’m Yori.&#xA;I was Ed’s lost intern back in 2015, but I was found!&#xA;Think you can check out this terminal for me? I need to use cURL to access the gift tracker system, but it has me stumped.</description>
     </item>
     <item>
       <title>Visual Network Thinger</title>
       <link>http://localhost:1313/act1/visual-network-thinger/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:29:35 +0100</pubDate>
       <guid>http://localhost:1313/act1/visual-network-thinger/index.html</guid>
-      <description>Jared Folkins mission statement Jared Folkins here! My favorite Christmas movie is White Christmas. You should find me on the socials and tell me what yours is.&#xA;You know, I think Santa is right! It truly is better to give than to receive.&#xA;I love singing Carols with my family! 🎵O holy night, the stars are brightly shining…🎵&#xA;Santa’s got the right idea about giving, and I’m excited to give you a fantastic way to learn networking fundamentals!</description>
+      <description>Objective Difficulty: 1/5&#xA;Skate over to Jared at the frozen pond for some network magic and learn the ropes by the hockey rink.&#xA;Jared Folkins mission statement Jared Folkins here! My favorite Christmas movie is White Christmas. You should find me on the socials and tell me what yours is.&#xA;You know, I think Santa is right! It truly is better to give than to receive.</description>
     </item>
     <item>
       <title>Visual Firewall Thinger</title>
@@ -62,14 +62,14 @@
       <link>http://localhost:1313/act1/blob-storage-challenge-in-the-neighborhood/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:30:06 +0100</pubDate>
       <guid>http://localhost:1313/act1/blob-storage-challenge-in-the-neighborhood/index.html</guid>
-      <description>Grace Goose mission statement HONK!!! HONK!!!!&#xA;The Neighborhood HOA uses Azure storage accounts for various IT operations.&#xA;You’ve been asked to audit their storage security configuration to ensure no sensitive data is publicly accessible.&#xA;Recent security reports suggest some storage accounts might have public blob access enabled, creating potential data exposure risks.&#xA;Blob Challenge Terminal</description>
+      <description>Objective Difficulty: 1/5&#xA;Help the Goose Grace near the pond find which Azure Storage account has been misconfigured to allow public blob access by analyzing the export file.&#xA;Goose Grace mission statement HONK!!! HONK!!!!&#xA;The Neighborhood HOA uses Azure storage accounts for various IT operations.&#xA;You’ve been asked to audit their storage security configuration to ensure no sensitive data is publicly accessible.</description>
     </item>
     <item>
       <title>Spare Key</title>
       <link>http://localhost:1313/act1/spare-key/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:30:16 +0100</pubDate>
       <guid>http://localhost:1313/act1/spare-key/index.html</guid>
-      <description>Barry Goose mission statement You want me to say what exactly? Do I really look like someone who says MOOO?&#xA;The Neighborhood HOA hosts a static website on Azure Storage.&#xA;An admin accidentally uploaded an infrastructure config file that contains a long-lived SAS token.&#xA;Use Azure CLI to find the leak and report exactly where it lives.&#xA;Spare Key Terminal</description>
+      <description>Objective Difficulty: 1/5&#xA;Help Goose Barry near the pond identify which identity has been granted excessive Owner permissions at the subscription level, violating the principle of least privilege.&#xA;Goose Barry mission statement You want me to say what exactly? Do I really look like someone who says MOOO?&#xA;The Neighborhood HOA hosts a static website on Azure Storage.&#xA;An admin accidentally uploaded an infrastructure config file that contains a long-lived SAS token.</description>
     </item>
     <item>
       <title>The Open Door</title>
@@ -83,7 +83,7 @@
       <link>http://localhost:1313/act1/owner/index.html</link>
       <pubDate>Sat, 08 Nov 2025 16:30:33 +0100</pubDate>
       <guid>http://localhost:1313/act1/owner/index.html</guid>
-      <description>Yori Kvitchko mission statement Terminal James Goose mission debrief</description>
+      <description>Objective Difficulty: 1/5&#xA;Help Goose James near the park discover the accidentally leaked SAS token in a public JavaScript file and determine what Azure Storage resource it exposes and what permissions it grants.&#xA;Goose James mission statement CLUCK CLU… I think I might be losing my mind. All the elves are gone and I’m still hearing voices.&#xA;The Neighborhood HOA uses Azure for their IT infrastructure.</description>
     </item>
   </channel>
 </rss>
