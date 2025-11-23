@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/act2/retro-recovery/index.html</loc>
+    <lastmod>2025-11-23T13:42:25+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/act1/index.html</loc>
     <lastmod>2025-11-08T15:30:27+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act2/mail-detective/index.html</loc>
+    <lastmod>2025-11-23T13:42:34+01:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/act1/holiday-hack-orientation/index.html</loc>
@@ -13,6 +21,10 @@
     <lastmod>2025-11-08T15:30:30+01:00</lastmod>
   </url>
   <url>
+    <loc>http://localhost:1313/act2/idorable-bistro/index.html</loc>
+    <lastmod>2025-11-23T13:42:45+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/act1/its-all-about-defang/index.html</loc>
     <lastmod>2025-11-08T16:28:46+01:00</lastmod>
   </url>
@@ -21,16 +33,32 @@
     <lastmod>2025-11-08T15:30:34+01:00</lastmod>
   </url>
   <url>
+    <loc>http://localhost:1313/act2/dosis-network-down/index.html</loc>
+    <lastmod>2025-11-23T13:42:52+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/act1/neighborhood-watch-bypass/index.html</loc>
     <lastmod>2025-11-08T16:29:03+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act2/rogue-gnome-identity-provider/index.html</loc>
+    <lastmod>2025-11-23T13:43:05+01:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/act1/santas-gift-tracking-service-port-mystery/index.html</loc>
     <lastmod>2025-11-08T16:29:23+01:00</lastmod>
   </url>
   <url>
+    <loc>http://localhost:1313/act2/quantognome-leap/index.html</loc>
+    <lastmod>2025-11-23T13:43:19+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/act1/visual-network-thinger/index.html</loc>
     <lastmod>2025-11-08T16:29:35+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/act2/going-in-reverse/index.html</loc>
+    <lastmod>2025-11-23T13:43:29+01:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/act1/visual-firewall-thinger/index.html</loc>
@@ -55,34 +83,6 @@
   <url>
     <loc>http://localhost:1313/act1/owner/index.html</loc>
     <lastmod>2025-11-08T16:30:33+01:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/act2/going-in-reverse/index.html</loc>
-    <lastmod>2025-11-23T13:43:29+01:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/act2/quantognome-leap/index.html</loc>
-    <lastmod>2025-11-23T13:43:19+01:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/act2/rogue-gnome-identity-provider/index.html</loc>
-    <lastmod>2025-11-23T13:43:05+01:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/act2/dosis-network-down/index.html</loc>
-    <lastmod>2025-11-23T13:42:52+01:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/act2/idorable-bistro/index.html</loc>
-    <lastmod>2025-11-23T13:42:45+01:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/act2/mail-detective/index.html</loc>
-    <lastmod>2025-11-23T13:42:34+01:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/act2/retro-recovery/index.html</loc>
-    <lastmod>2025-11-23T13:42:25+01:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/index.html</loc>

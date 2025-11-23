@@ -1,0 +1,69 @@
+:root {
+  /* Dosis Neighborhood — daylight snow theme */
+  --PRIMARY-color: rgba(42, 115, 198, 1);          /* cold winter blue */
+  --PRIMARY-HOVER-color: rgba(95, 162, 226, 1);    /* bright icy hover */
+  --SECONDARY-color: rgba(255, 156, 74, 1);        /* warm highlight (hotel windows, lamps) */
+  --SECONDARY-HOVER-color: rgba(255, 185, 124, 1);
+
+  /* main background resembles snow with subtle blue cast */
+  --MAIN-BG-color: rgba(238, 243, 248, 1);         /* light snow */
+  --MAIN-TOPBAR-BORDER-color: rgba(158, 170, 187, 1);
+
+  --MAIN-TEXT-color: rgba(36, 45, 58, 1);          /* dark slate text */
+  --MAIN-TITLES-TEXT-color: rgba(20, 28, 42, 1);
+
+  --CODE-theme: relearn-light;
+  --CODE-BLOCK-color: rgba(36, 45, 58, 1);
+  --CODE-BLOCK-BG-color: rgba(224, 232, 240, 1);
+  --CODE-BLOCK-BORDER-color: rgba(158, 170, 187, 1);
+
+  --CODE-INLINE-color: rgba(185, 92, 22, 1);
+  --CODE-INLINE-BG-color: rgba(246, 238, 228, 1);
+  --CODE-INLINE-BORDER-color: rgba(214, 174, 130, 1);
+
+  --BROWSER-theme: light;
+  --MERMAID-theme: neutral;
+  --OPENAPI-theme: light;
+  --OPENAPI-CODE-theme: github;
+
+  --MENU-BORDER-color: rgba(158, 170, 187, 1);
+  --MENU-TOPBAR-BORDER-color: rgba(200, 210, 225, 1);
+  --MENU-TOPBAR-SEPARATOR-color: rgba(158, 170, 187, 1);
+
+  --MENU-HEADER-BG-color: rgba(230, 240, 250, 1); /* snow sidewalk */
+  --MENU-HEADER-BORDER-color: rgba(158, 170, 187, 1);
+
+  --MENU-SEARCH-color: rgba(42, 115, 198, 1);
+  --MENU-SEARCH-BG-color: rgba(245, 249, 252, 1);
+  --MENU-SEARCH-BORDER-color: rgba(158, 170, 187, 0.7);
+
+  --MENU-HOME-LINK-color: rgba(20, 28, 42, 1);
+  --MENU-HOME-LINK-HOVER-color: rgba(42, 115, 198, 1);
+  --MENU-HOME-TOP-SEPARATOR-color: rgba(158, 170, 187, 0.7);
+  --MENU-HOME-SEPARATOR-color: rgba(158, 170, 187, 0.7);
+  --MENU-HOME-BOTTOM-SEPARATOR-color: rgba(158, 170, 187, 0.7);
+
+  /* sidebar: light → darker blue gradient */
+  --MENU-SECTIONS-BG-color:
+    linear-gradient(
+      180deg,
+      rgba(238, 243, 248, 1) 0%,
+      rgba(230, 238, 245, 1) 40%,
+      rgba(210, 222, 236, 1) 70%,
+      rgba(185, 200, 220, 1) 100%
+    );
+  --MENU-SECTIONS-ACTIVE-BG-color: rgba(215, 226, 238, 1);
+  --MENU-SECTIONS-LINK-color: rgba(36, 45, 58, 0.8);
+  --MENU-SECTIONS-LINK-HOVER-color: rgba(42, 115, 198, 1);
+  --MENU-SECTION-ACTIVE-CATEGORY-color: rgba(42, 115, 198, 1);
+  --MENU-SECTION-ACTIVE-CATEGORY-BG-color: rgba(225, 235, 245, 1);
+
+  --MENU-SECTION-SEPARATOR-color: rgba(158, 170, 187, 0.7);
+
+  /* content boxes */
+  --BOX-CAPTION-color: rgba(20, 28, 42, 1);
+  --BOX-BG-color: rgba(245, 248, 252, 1);
+  --BOX-TEXT-color: rgba(36, 45, 58, 1);
+
+  --BOX-GREY-color: rgba(205, 214, 225, 1);
+}

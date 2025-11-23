@@ -1,11 +1,27 @@
 var relearn_searchindex = [
   {
+    "breadcrumb": "Intro \u003e Act 2",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Retro Recovery",
+    "uri": "/act2/retro-recovery/index.html"
+  },
+  {
     "breadcrumb": "Intro",
     "content": "The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.",
     "description": "The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.",
     "tags": [],
     "title": "Act 1",
     "uri": "/act1/index.html"
+  },
+  {
+    "breadcrumb": "Intro \u003e Act 2",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Mail Detective",
+    "uri": "/act2/mail-detective/index.html"
   },
   {
     "breadcrumb": "Intro \u003e Act 1",
@@ -17,11 +33,19 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Intro",
-    "content": "",
-    "description": "",
+    "content": "The Gnomes’ nefarious plot seems to involve stealing refrigerator parts. But why?",
+    "description": "The Gnomes’ nefarious plot seems to involve stealing refrigerator parts. But why?",
     "tags": [],
     "title": "Act 2",
     "uri": "/act2/index.html"
+  },
+  {
+    "breadcrumb": "Intro \u003e Act 2",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Idorable Bistro",
+    "uri": "/act2/idorable-bistro/index.html"
   },
   {
     "breadcrumb": "Intro \u003e Act 1",
@@ -40,12 +64,28 @@ var relearn_searchindex = [
     "uri": "/act3/index.html"
   },
   {
+    "breadcrumb": "Intro \u003e Act 2",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Dosis Network Down",
+    "uri": "/act2/dosis-network-down/index.html"
+  },
+  {
     "breadcrumb": "Intro \u003e Act 1",
     "content": "Objective Difficulty: 1/5\nAssist Kyle at the old data center with a fire alarm that just won’t chill.\nKyle Parrish mission statement If you spot a fire, let me know! I’m Kyle, and I’ve been around the Holiday Hack Challenge scene for years as arnydo - picked up multiple Super Honorable Mentions along the way.\nWhen I’m not fighting fires or hunting vulnerabilities, you’ll find me on a unicycle or juggling - I once showed up a professional clown with his own clubs!\nMy family and I love exploring those East Tennessee mountains, and honestly, geocaching teaches you a lot about finding hidden things - useful in both firefighting and hacking.\nAnyway, I could use some help here. This fire alarm keeps going nuts but there’s no fire. I checked.\nI think someone has locked us out of the system. Can you see if you can get back in?\nNeigboorhood Fire Alarm System 🚨 EMERGENCY ALERT: Fire alarm system admin access has been compromised! 🚨 The fire safety systems are experiencing interference and admin privileges have been mysteriously revoked. The neighborhood’s fire protection infrastructure is at risk!\n⚠️ CURRENT STATUS: Limited to standard user access only 🔒 FIRE SAFETY SYSTEMS: Partially operational but restricted 🎯 MISSION CRITICAL: Restore full fire alarm system control\nYour mission: Find a way to bypass the current restrictions and elevate to fire safety admin privileges. Once you regain full access, run the special command /etc/firealarm/restore_fire_alarm to restore complete fire alarm system control and protect the Dosis neighborhood from potential emergencies.\nThe above text is copied from the welcome screen for this terminal (below). As we can see for this terminal there aren’t that many tips or hints available. So I instantly begun think we’re in a classical situation where we have to look deeper into the terminal to find out more.\nSince we have no information, and in such games like this, I usually list out the contents right there at the entrypoint, using command ls -la:\nNot much in this folder except a bin folder, which tells me that users command most like are meant to run from this. What better to do than to list its contents and try to uncover what lives in this folder?\nSo, I am not allowed to run that runtoanswer binary? So - yes, that would be my goal here. To find a way to execute it. Tradiotionally on other CTF platform like TryHackMe and Hack The Box we usually list out what sudo permissions this user has (sudo -l to rescue):\nOkay, this user has the rights to execute a shell script using sudo. Finding out what this shell scripts does:\nHow cute. It’s a sugary wrapper around some system utilities to list out usage metrics. From the script I see it uses echo, df, free, ps, grep, and head - all without using full paths! This means I can create my own version of one of them to spawn a Bash shell and gain access as root (toot toot)! I suppose this is why that lonely bin folder even exist (for me to put my copy of a said utility in and execute).\nSo my plan is to create my own version of df in the local bin folder, then add a call to Bash into it, assign SUID and Executable flag to it. Then run that SUDO command and hope for the best:\nExuting my malicious df script and hoping for the best! And would you look at that, I got ROOT and can run that runtoanswer binary! Yay!\nKyle Parrish mission debrief Wow! Thank you so much! I didn’t realize sudo was so powerful. Especially when misconfigured. Who knew a simple privilege escalation could unlock the whole fire safety system?\nNow… will you sudo make me a sandwich?",
     "description": "Objective Difficulty: 1/5\nAssist Kyle at the old data center with a fire alarm that just won’t chill.\nKyle Parrish mission statement If you spot a fire, let me know! I’m Kyle, and I’ve been around the Holiday Hack Challenge scene for years as arnydo - picked up multiple Super Honorable Mentions along the way.\nWhen I’m not fighting fires or hunting vulnerabilities, you’ll find me on a unicycle or juggling - I once showed up a professional clown with his own clubs!",
     "tags": [],
     "title": "Neighborhood Watch Bypass",
     "uri": "/act1/neighborhood-watch-bypass/index.html"
+  },
+  {
+    "breadcrumb": "Intro \u003e Act 2",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Rogue Gnome Identity Provider",
+    "uri": "/act2/rogue-gnome-identity-provider/index.html"
   },
   {
     "breadcrumb": "Intro \u003e Act 1",
@@ -56,12 +96,28 @@ var relearn_searchindex = [
     "uri": "/act1/santas-gift-tracking-service-port-mystery/index.html"
   },
   {
+    "breadcrumb": "Intro \u003e Act 2",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Quantognome Leap",
+    "uri": "/act2/quantognome-leap/index.html"
+  },
+  {
     "breadcrumb": "Intro \u003e Act 1",
     "content": "Objective Difficulty: 1/5\nSkate over to Jared at the frozen pond for some network magic and learn the ropes by the hockey rink.\nJared Folkins mission statement Jared Folkins here! My favorite Christmas movie is White Christmas. You should find me on the socials and tell me what yours is.\nYou know, I think Santa is right! It truly is better to give than to receive.\nI love singing Carols with my family! 🎵O holy night, the stars are brightly shining…🎵\nSanta’s got the right idea about giving, and I’m excited to give you a fantastic way to learn networking fundamentals!\nThis interactive visualization I’ve created shows you exactly how packets travel, how protocols work, and why networks behave the way they do.\nIt’s way better than staring at boring textbooks - you can actually see what’s happening!\nWant to dive into some hands-on network exploration?\nSolution Jared Folkins mission debrief Wonderful! You’ve mastered those networking basics beautifully.\nNow you can see how all the pieces of the network puzzle fit together - it’s truly better to give knowledge than to keep it to yourself!",
     "description": "Objective Difficulty: 1/5\nSkate over to Jared at the frozen pond for some network magic and learn the ropes by the hockey rink.\nJared Folkins mission statement Jared Folkins here! My favorite Christmas movie is White Christmas. You should find me on the socials and tell me what yours is.\nYou know, I think Santa is right! It truly is better to give than to receive.",
     "tags": [],
     "title": "Visual Network Thinger",
     "uri": "/act1/visual-network-thinger/index.html"
+  },
+  {
+    "breadcrumb": "Intro \u003e Act 2",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Going in Reverse",
+    "uri": "/act2/going-in-reverse/index.html"
   },
   {
     "breadcrumb": "Intro \u003e Act 1",
@@ -110,62 +166,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Owner",
     "uri": "/act1/owner/index.html"
-  },
-  {
-    "breadcrumb": "Intro \u003e Act 2",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Going in Reverse",
-    "uri": "/act2/going-in-reverse/index.html"
-  },
-  {
-    "breadcrumb": "Intro \u003e Act 2",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Quantognome Leap",
-    "uri": "/act2/quantognome-leap/index.html"
-  },
-  {
-    "breadcrumb": "Intro \u003e Act 2",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Rogue Gnome Identity Provider",
-    "uri": "/act2/rogue-gnome-identity-provider/index.html"
-  },
-  {
-    "breadcrumb": "Intro \u003e Act 2",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Dosis Network Down",
-    "uri": "/act2/dosis-network-down/index.html"
-  },
-  {
-    "breadcrumb": "Intro \u003e Act 2",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Idorable Bistro",
-    "uri": "/act2/idorable-bistro/index.html"
-  },
-  {
-    "breadcrumb": "Intro \u003e Act 2",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Mail Detective",
-    "uri": "/act2/mail-detective/index.html"
-  },
-  {
-    "breadcrumb": "Intro \u003e Act 2",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Retro Recovery",
-    "uri": "/act2/retro-recovery/index.html"
   },
   {
     "breadcrumb": "",
