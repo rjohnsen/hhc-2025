@@ -6,7 +6,7 @@ title = 'Visual Network Thinger'
 weight = 6
 +++
 
-![Jared Folkins](/images/act1/jaredfolkins-portrait.png)
+![Jared Folkins](/images/act1/jaredfolkins-avatar.gif)
 
 ## Objective
 

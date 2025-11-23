@@ -104,7 +104,7 @@ nmap -p 8080 -sV 127.0.12.25
 Ncat is a common tool we often use in pentests and threat hunting. Its standard use follows this format `nc <ip> <port>`, it defaults to use `TCP`. We use the following command:
 
 ```bash
-nc 127.0.12.25 24601
+nc 127.0.12.25 24601hug
 ```
 
 ![Interacting with a port](/images/act1/act1-intro-to-nmap-7.png)

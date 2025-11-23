@@ -6,7 +6,7 @@ title = 'Holiday Hack Orientation'
 weight = 2
 +++
 
-![Lynn Schifano](/images/act1/lynnschifano-portrait.png)
+![Lynn Schifano](/images/act1/lynnschifano-avatar.gif)
 
 ## Objective
 

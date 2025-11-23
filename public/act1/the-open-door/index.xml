@@ -3,7 +3,7 @@
   <channel>
     <title>The Open Door :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act1/the-open-door/index.html</link>
-    <description></description>
+    <description>Objective Difficulty: 1/5&#xA;Help Goose Lucas in the hotel parking lot find the dangerously misconfigured Network Security Group rule that’s allowing unrestricted internet access to sensitive ports like RDP or SSH.&#xA;Goose Lucas mission statement The Open Door Terminal az group list az group list -o table</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
