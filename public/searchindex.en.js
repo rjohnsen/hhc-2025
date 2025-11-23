@@ -65,8 +65,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "Intro \u003e Act 1",
-    "content": "",
-    "description": "",
+    "content": "Objective Difficulty: 1/5\nFind Elgee in the big hotel for a firewall frolic and some techy fun.\nChris Elgee mission statement Oh hi! Am I on the road again? I should buy souvenirs for the family.\nLoud shirts? Love them. Because - hey, if you aren’t having fun, what are you even doing??\nAnd yes, finger guns are 100% appropriate for military portraits.\n… We should get dessert soon!\nWelcome to my little corner of network security! finger guns\nI’ve whipped up something sweeter than my favorite whoopie pie - an interactive firewall simulator that’ll teach you more in ten minutes than most textbooks do in ten chapters.\nDon’t worry about breaking anything; that’s half the fun of learning!\nReady to dig in?\nHoliday Firewall Simulator Chris Elgee mission debrief",
+    "description": "Objective Difficulty: 1/5\nFind Elgee in the big hotel for a firewall frolic and some techy fun.\nChris Elgee mission statement Oh hi! Am I on the road again? I should buy souvenirs for the family.\nLoud shirts? Love them. Because - hey, if you aren’t having fun, what are you even doing??\nAnd yes, finger guns are 100% appropriate for military portraits.",
     "tags": [],
     "title": "Visual Firewall Thinger",
     "uri": "/act1/visual-firewall-thinger/index.html"
