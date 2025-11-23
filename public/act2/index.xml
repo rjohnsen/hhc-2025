@@ -3,10 +3,59 @@
   <channel>
     <title>Act 2 :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act2/index.html</link>
-    <description></description>
+    <description>The Gnomes’ nefarious plot seems to involve stealing refrigerator parts. But why?</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sun, 23 Nov 2025 13:43:29 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/act2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Retro Recovery</title>
+      <link>http://localhost:1313/act2/retro-recovery/index.html</link>
+      <pubDate>Sun, 23 Nov 2025 13:42:25 +0100</pubDate>
+      <guid>http://localhost:1313/act2/retro-recovery/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mail Detective</title>
+      <link>http://localhost:1313/act2/mail-detective/index.html</link>
+      <pubDate>Sun, 23 Nov 2025 13:42:34 +0100</pubDate>
+      <guid>http://localhost:1313/act2/mail-detective/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Idorable Bistro</title>
+      <link>http://localhost:1313/act2/idorable-bistro/index.html</link>
+      <pubDate>Sun, 23 Nov 2025 13:42:45 +0100</pubDate>
+      <guid>http://localhost:1313/act2/idorable-bistro/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dosis Network Down</title>
+      <link>http://localhost:1313/act2/dosis-network-down/index.html</link>
+      <pubDate>Sun, 23 Nov 2025 13:42:52 +0100</pubDate>
+      <guid>http://localhost:1313/act2/dosis-network-down/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rogue Gnome Identity Provider</title>
+      <link>http://localhost:1313/act2/rogue-gnome-identity-provider/index.html</link>
+      <pubDate>Sun, 23 Nov 2025 13:43:05 +0100</pubDate>
+      <guid>http://localhost:1313/act2/rogue-gnome-identity-provider/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Quantognome Leap</title>
+      <link>http://localhost:1313/act2/quantognome-leap/index.html</link>
+      <pubDate>Sun, 23 Nov 2025 13:43:19 +0100</pubDate>
+      <guid>http://localhost:1313/act2/quantognome-leap/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Going in Reverse</title>
+      <link>http://localhost:1313/act2/going-in-reverse/index.html</link>
+      <pubDate>Sun, 23 Nov 2025 13:43:29 +0100</pubDate>
+      <guid>http://localhost:1313/act2/going-in-reverse/index.html</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -4,3 +4,5 @@ draft = true
 title = 'Act 2'
 weight = 2
 +++
+
+> The Gnomes’ nefarious plot seems to involve stealing refrigerator parts. But why?
