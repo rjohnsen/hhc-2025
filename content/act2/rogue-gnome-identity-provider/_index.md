@@ -92,9 +92,9 @@ jwt_tool.py <insert-JWT>
 ```
 
 
-## Validating the authentication flow
+### Validating the authentication flow
 
-### Request the IDP login page
+#### Request the IDP login page
 
 Making sure we can reach the ODP login page:
 
@@ -102,7 +102,7 @@ Making sure we can reach the ODP login page:
 curl http://idp.atnascorp/?return_uri=http%3A%2F%2Fgnome-48371.atnascorp%2Fauth
 ```
 
-### Obtaining token
+#### Obtaining token
 
 Logging in using the credentials provided to retrieve JWT token:
 
@@ -120,7 +120,7 @@ Sure, it works. We got a JWT token:
 <p>You should be redirected automatically to the target URL: <a href="http://gnome-48371.atnascorp/auth?token=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQwNTYwMSwiZXhwIjoxNzY0NDEyODAxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.jL0eAsQOkMuLYAKPRzLK_Y50EY2JdtOYjgwQlJrTtLgJDQhHyZ9U5ReYrYgL4uzO0SeAVV7t_at3tS9y282uwaZ1OuPXGc_SzG2WTh-15TFnG-yJ-bjTUaNayHlyYRSHn1S18taA9kV12Gc9pBnBZJmxDEB1hhfXa6EibHavmVs5FU0uJK2p4h7GEP3tqqJ315tWmyf2ZQJnp-IAHHOp1aoSSL4TlWnVtoUqWtmZxeDegdlXPTaAbhu4xW7j0iHkJt1RRw3JeegpmyS2i4FyDdApL8Run3Po_HDkcuYOcquX_3GyTi_FdGaJezxj3s8QGaZySszOt8juUfcOptx40w">http://gnome-48371.atnascorp/auth?token=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQwNTYwMSwiZXhwIjoxNzY0NDEyODAxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.jL0eAsQOkMuLYAKPRzLK_Y50EY2JdtOYjgwQlJrTtLgJDQhHyZ9U5ReYrYgL4uzO0SeAVV7t_at3tS9y282uwaZ1OuPXGc_SzG2WTh-15TFnG-yJ-bjTUaNayHlyYRSHn1S18taA9kV12Gc9pBnBZJmxDEB1hhfXa6EibHavmVs5FU0uJK2p4h7GEP3tqqJ315tWmyf2ZQJnp-IAHHOp1aoSSL4TlWnVtoUqWtmZxeDegdlXPTaAbhu4xW7j0iHkJt1RRw3JeegpmyS2i4FyDdApL8Run3Po_HDkcuYOcquX_3GyTi_FdGaJezxj3s8QGaZySszOt8juUfcOptx40w</a>. If not, click the link.
 ```
 
-### Authenticating to gnome-48371.atnascorp
+#### Authenticating to gnome-48371.atnascorp
 
 With token we just obtained, we can now go ahead and authentice to `gnome-48371.atnascorp``:
 
@@ -182,7 +182,7 @@ However, it states that access is for admins only:
 
 By this we I have now validated that the command line sequence indeed works and leads to successful authentication. However, the welcome screen states that 'Diagnostic access' is only availabel to admins. Since we are dealing with JWT here, it is time to dissect it to see if we can utilize it to get admin access.
 
-### Inspecting JWT
+#### Inspecting JWT
 
 I am fully aware that ´notes´ file hinted at using the `jwt_tool` - but for inspecting JWT's I defaulted to using my goto tool [JWT.io](https://www.jwt.io):
 
@@ -190,11 +190,11 @@ I am fully aware that ´notes´ file hinted at using the `jwt_tool` - but for in
 
 Most likely we can just change `admin` key to `true` and hope for the best! However - things are seldom so easy - as we will se in the next section.
 
-## Solution
+### Solution
 
 For solving this terminal I decided to start from scratch, thus terminating and starting a new terminal. 
 
-### Obtain JWT Token
+#### Obtain JWT Token
 
 Just like earlier, I started getting a JWT Token:
 
@@ -212,7 +212,7 @@ The token:
 <p>You should be redirected automatically to the target URL: <a href="http://gnome-48371.atnascorp/auth?token=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQxMTM4MSwiZXhwIjoxNzY0NDE4NTgxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.PZ7wPV0dM4W35hakhc2elX6NaSXKCRflU0C4vWwOd1p9qaynIafm-AP4zteoIOciXB82aFPmbNYolG6Od13y4nn9NT-nypRtj2NjFsMf53OFcGRd_MjK5rFhtClDRHk0mtTrPNhsdAdJnv2IXj-g6KkVrEmU8A1qRPvrHNqabzRP6gfuqz__hWv71CKHnI1IzOJ6RNJnzRNirir2xVsUqXSKPw4T1K3vmvsVUBM3o1EZjZm2OTIh3wb7t1XFVkg62O3BBEoypIyziE9-hZeHqO9YgYfjtrB-o2qNGSk64tBJwxWCEySoT9FjvFasoUKIGneVP6pkHSkhMFKCvaxXyQ">http://gnome-48371.atnascorp/auth?token=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQxMTM4MSwiZXhwIjoxNzY0NDE4NTgxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.PZ7wPV0dM4W35hakhc2elX6NaSXKCRflU0C4vWwOd1p9qaynIafm-AP4zteoIOciXB82aFPmbNYolG6Od13y4nn9NT-nypRtj2NjFsMf53OFcGRd_MjK5rFhtClDRHk0mtTrPNhsdAdJnv2IXj-g6KkVrEmU8A1qRPvrHNqabzRP6gfuqz__hWv71CKHnI1IzOJ6RNJnzRNirir2xVsUqXSKPw4T1K3vmvsVUBM3o1EZjZm2OTIh3wb7t1XFVkg62O3BBEoypIyziE9-hZeHqO9YgYfjtrB-o2qNGSk64tBJwxWCEySoT9FjvFasoUKIGneVP6pkHSkhMFKCvaxXyQ</a>. If not, click the link
 ```
 
-### Decoding token
+#### Decoding token
 
 This time around decoding the token, I used the `jwt_tool` utility. This mostly for getting the hang of this tool: 
 
@@ -239,7 +239,7 @@ Roughly the abbreviations here translates into:
 | **kid**      | Key ID - identifies which key inside the JWKS was used to sign the token.                    |
 | **typ**      | Type - indicates the token type (usually "JWT").                                             |
 
-### Inspecting jwks.json
+#### Inspecting jwks.json
 
 Obtaining the `jwks.json` file referenced in the JSON Web Key URL (jku) part:
 
@@ -274,7 +274,7 @@ The various keys in the JSON translates to:
 | **use**              | Intended key usage. `"sig"` means this key is to be used for **digital signature verification**.                  |
 
 
-### Attacking JWT
+#### Attacking JWT
 
 From looking at the `http://idp.atnascorp/.well-known/jwks.json` file I see that the server is using this to validate the tokens. My plan is to fool the server to reach out to my variant, and see if I can fool my way in! 
 

