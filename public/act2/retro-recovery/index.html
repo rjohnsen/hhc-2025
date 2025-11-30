@@ -28,29 +28,29 @@ Join Mark in the retro shop. Analyze his disk image for a blast from the retro p
 Mark DeVito mission statement I am an avid collector of things of the past. I love old technology. I love how it connects us to the past. Some remind me of my dad, who was an engineer on the Apollo 11 mission and helped develop the rendezvous and altimeter radar on the space craft.">
     <meta itemprop="datePublished" content="2025-11-23T13:42:25+01:00">
     <meta itemprop="dateModified" content="2025-11-23T13:42:25+01:00">
-    <meta itemprop="wordCount" content="790">
+    <meta itemprop="wordCount" content="1292">
     <title>Retro Recovery :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act2/retro-recovery/index.xml" rel="alternate" type="application/rss+xml" title="Retro Recovery :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1764492683" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1764492683" defer></script>
-    <script src="/js/search-lunr.js?1764492683" defer></script>
-    <script src="/js/search.js?1764492683" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1764493938" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1764493938" defer></script>
+    <script src="/js/search-lunr.js?1764493938" defer></script>
+    <script src="/js/search.js?1764493938" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1764492683";
+      window.relearn.index_js_url="/searchindex.en.js?1764493938";
     </script>
-    <script src="/js/lunr/lunr.min.js?1764492683" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1764492683" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1764492683" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1764492683" defer></script>
+    <script src="/js/lunr/lunr.min.js?1764493938" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1764493938" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1764493938" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1764493938" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1764492683" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1764492683" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1764492683" rel="stylesheet">
-    <link href="/css/theme.css?1764492683" rel="stylesheet">
-    <link href="/css/format-html.css?1764492683" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1764493938" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1764493938" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1764493938" rel="stylesheet">
+    <link href="/css/theme.css?1764493938" rel="stylesheet">
+    <link href="/css/format-html.css?1764493938" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -125,13 +125,16 @@ Mark DeVito mission statement I am an avid collector of things of the past. I lo
     <li><a href="#mark-devito-mission-statement">Mark DeVito mission statement</a></li>
     <li><a href="#solution">Solution</a>
       <ul>
-        <li><a href="#running-file-utility">Running file utility</a></li>
-        <li><a href="#running-binwalk">Running binwalk</a></li>
-        <li><a href="#running-fstat">Running fstat</a></li>
-        <li><a href="#listing-normal-files">Listing normal files</a></li>
-        <li><a href="#listing-deleted-files">Listing deleted files</a></li>
-        <li><a href="#extracting-files">Extracting files</a></li>
-        <li><a href="#inspecting-file">Inspecting file</a></li>
+        <li><a href="#identify-the-filesystem-format">Identify the Filesystem Format</a></li>
+        <li><a href="#scan-for-embedded-data-or-hidden-binaries">Scan for Embedded Data or Hidden Binaries</a></li>
+        <li><a href="#examine-the-fat12-filesystem-structure">Examine the FAT12 Filesystem Structure</a></li>
+        <li><a href="#list-everything-in-the-filesystem-including-deleted-markers">List Everything in the Filesystem (Including Deleted Markers)</a></li>
+        <li><a href="#list-only-deleted-files">List Only Deleted Files</a></li>
+        <li><a href="#recover-the-deleted-files">Recover the Deleted Files</a></li>
+        <li><a href="#inspect-the-small-deleted-file">Inspect the Small Deleted File</a></li>
+        <li><a href="#inspect-the-large-basic-program">Inspect the Large BASIC Program</a></li>
+        <li><a href="#decode-the-hidden-base64-payload">Decode the Hidden Base64 Payload</a></li>
+        <li><a href="#final-flag">Final Flag</a></li>
       </ul>
     </li>
     <li><a href="#mark-devito-mission-debrief">Mark DeVito mission debrief</a></li>
@@ -171,8 +174,8 @@ Mark DeVito mission statement I am an avid collector of things of the past. I lo
 
 <h1 id="retro-recovery">Retro Recovery</h1>
 
-<p><a href="#R-image-da2f95aab135432c8c5e18815cdc4bdc" class="lightbox-link"><img alt="XXX" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/markdevito-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-da2f95aab135432c8c5e18815cdc4bdc"><img alt="XXX" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/markdevito-avatar.gif"></a></p>
+<p><a href="#R-image-2b54f9c67d6a2a35bf5bc6d14178de9a" class="lightbox-link"><img alt="XXX" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/markdevito-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2b54f9c67d6a2a35bf5bc6d14178de9a"><img alt="XXX" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/markdevito-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <p>Difficulty: 2/5</p>
 <p>Join Mark in the retro shop. Analyze his disk image for a blast from the retro past and recover some classic treasures.</p>
@@ -194,74 +197,102 @@ Mark DeVito mission statement I am an avid collector of things of the past. I lo
 <p>Go to Items in your badge, download the floppy disk image, and see what you can find!</p>
 </blockquote>
 <h2 id="solution">Solution</h2>
-<h3 id="running-file-utility">Running file utility</h3>
+<h3 id="identify-the-filesystem-format">Identify the Filesystem Format</h3>
+<h4 id="command">Command</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file floppy.img</span></span></code></pre></div>
-<p>Output</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>floppy.img: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID <span style="color:#e6db74">&#34;mkfs.fat&#34;</span>, root entries 224, sectors <span style="color:#ae81ff">2880</span> <span style="color:#f92672">(</span>volumes &lt;<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span> MB<span style="color:#f92672">)</span>, sectors/FAT 9, sectors/track 18, reserved 0x1, serial number 0x9c01e8ae, unlabeled, FAT <span style="color:#f92672">(</span><span style="color:#ae81ff">12</span> bit<span style="color:#f92672">)</span>, followed by FAT</span></span></code></pre></div>
-<h3 id="running-binwalk">Running binwalk</h3>
+<h4 id="what-the-command-does">What the command does</h4>
+<p><code>file</code> inspects the binary header of a file and determines its type based on internal signatures. For disk images, this reveals the boot sector format, the filesystem, and other metadata. This is the quickest way to understand what you’re working with before attempting any forensic recovery.</p>
+<h4 id="output">Output</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>floppy.img: DOS/MBR boot sector, code offset 0x3c+2, OEM-ID &#34;mkfs.fat&#34;, root entries 224, sectors 2880 (volumes &lt;=32 MB), sectors/FAT 9, sectors/track 18, reserved 0x1, serial number 0x9c01e8ae, unlabeled, FAT (12 bit), followed by FAT</span></span></code></pre></div>
+<h4 id="why-this-output-matters">Why this output matters</h4>
+<p>This confirms the disk is a <strong>1.44MB FAT12 floppy image</strong>, which aligns perfectly with the retro-computing context. FAT12 is simple, and deleted file recovery works reliably—exactly what the challenge hints suggested.</p>
+<hr>
+<h3 id="scan-for-embedded-data-or-hidden-binaries">Scan for Embedded Data or Hidden Binaries</h3>
+<h4 id="command-1">Command</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>binwalk floppy.img</span></span></code></pre></div>
-<p>Output</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>DECIMAL       HEXADECIMAL     DESCRIPTION
+<h4 id="what-the-command-does-1">What the command does</h4>
+<p><code>binwalk</code> scans a binary file for recognizable signatures (compressed files, strings, executables, archives, etc.). This helps determine whether the hidden content is embedded somewhere outside the filesystem.</p>
+<h4 id="output-1">Output</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>DECIMAL       HEXADECIMAL     DESCRIPTION
 </span></span><span style="display:flex;"><span>--------------------------------------------------------------------------------
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">133776</span>        0x20A90         Copyright string: <span style="color:#e6db74">&#34;Copyright Microsoft Corporation 1982-1988.&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">143535</span>        0x230AF         Copyright string: <span style="color:#e6db74">&#34;Copyright (C) Microsoft Corp 1982-1987. All rights reserved.&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">222225</span>        0x36411         Copyright string: <span style="color:#e6db74">&#34;Copyright Microsoft Corporation, 1982-1988.&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">258196</span>        0x3F094         Copyright string: <span style="color:#e6db74">&#34;Copyright (C) Microsoft Corp 1983-1988.  %s.&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">327297</span>        0x4FE81         Copyright string: <span style="color:#e6db74">&#34;Copyright (C) Microsoft Corp 1983-1988.  %s.&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">343826</span>        0x53F12         Copyright string: <span style="color:#e6db74">&#34;Copyright (C) Microsoft Corp 1983-1988.  All rights reserved.&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">614815</span>        0x9619F         Copyright string: <span style="color:#e6db74">&#34;Copyright Microsoft Corporation, 1985-1988.&#34;</span></span></span></code></pre></div>
-<h3 id="running-fstat">Running fstat</h3>
+</span></span><span style="display:flex;"><span>133776        0x20A90         Copyright string: &#34;Copyright Microsoft Corporation 1982-1988.&#34;
+</span></span><span style="display:flex;"><span>143535        0x230AF         Copyright string: &#34;Copyright (C) Microsoft Corp 1982-1987. All rights reserved.&#34;
+</span></span><span style="display:flex;"><span>222225        0x36411         Copyright string: &#34;Copyright Microsoft Corporation, 1982-1988.&#34;
+</span></span><span style="display:flex;"><span>258196        0x3F094         Copyright string: &#34;Copyright (C) Microsoft Corp 1983-1988.  %s.&#34;
+</span></span><span style="display:flex;"><span>327297        0x4FE81         Copyright string: &#34;Copyright (C) Microsoft Corp 1983-1988.  %s.&#34;
+</span></span><span style="display:flex;"><span>343826        0x53F12         Copyright string: &#34;Copyright (C) Microsoft Corp 1983-1988.  All rights reserved.&#34;
+</span></span><span style="display:flex;"><span>614815        0x9619F         Copyright string: &#34;Copyright Microsoft Corporation, 1985-1988.&#34;</span></span></code></pre></div>
+<h4 id="why-this-output-matters-1">Why this output matters</h4>
+<p>The scan shows only DOS copyright strings.
+<strong>No hidden archives or payloads</strong> exist in raw sectors.
+This strongly suggests the hidden clue is inside the filesystem, not outside it.</p>
+<hr>
+<h3 id="examine-the-fat12-filesystem-structure">Examine the FAT12 Filesystem Structure</h3>
+<h4 id="command-2">Command</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fsstat floppy.img</span></span></code></pre></div>
-<p>Output:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>FILE SYSTEM INFORMATION
+<h4 id="what-the-command-does-2">What the command does</h4>
+<p><code>fsstat</code> (Sleuth Kit) prints a complete map of the filesystem: FAT offsets, root directory location, cluster sizes, and layout. This is vital for knowing where deleted files live and how to extract them.</p>
+<h4 id="output-2">Output</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>FILE SYSTEM INFORMATION
 </span></span><span style="display:flex;"><span>--------------------------------------------
 </span></span><span style="display:flex;"><span>File System Type: FAT12
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>OEM Name: mkfs.fat
 </span></span><span style="display:flex;"><span>Volume ID: 0x9c01e8ae
-</span></span><span style="display:flex;"><span>Volume Label <span style="color:#f92672">(</span>Boot Sector<span style="color:#f92672">)</span>: NO NAME
-</span></span><span style="display:flex;"><span>Volume Label <span style="color:#f92672">(</span>Root Directory<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>Volume Label (Boot Sector): NO NAME
+</span></span><span style="display:flex;"><span>Volume Label (Root Directory):
 </span></span><span style="display:flex;"><span>File System Type Label: FAT12
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Sectors before file system: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Sectors before file system: 0
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>File System Layout <span style="color:#f92672">(</span>in sectors<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>Total Range: <span style="color:#ae81ff">0</span> - <span style="color:#ae81ff">2879</span>
-</span></span><span style="display:flex;"><span>* Reserved: <span style="color:#ae81ff">0</span> - <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>** Boot Sector: <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>* FAT 0: <span style="color:#ae81ff">1</span> - <span style="color:#ae81ff">9</span>
-</span></span><span style="display:flex;"><span>* FAT 1: <span style="color:#ae81ff">10</span> - <span style="color:#ae81ff">18</span>
-</span></span><span style="display:flex;"><span>* Data Area: <span style="color:#ae81ff">19</span> - <span style="color:#ae81ff">2879</span>
-</span></span><span style="display:flex;"><span>** Root Directory: <span style="color:#ae81ff">19</span> - <span style="color:#ae81ff">32</span>
-</span></span><span style="display:flex;"><span>** Cluster Area: <span style="color:#ae81ff">33</span> - <span style="color:#ae81ff">2879</span>
+</span></span><span style="display:flex;"><span>File System Layout (in sectors)
+</span></span><span style="display:flex;"><span>Total Range: 0 - 2879
+</span></span><span style="display:flex;"><span>* Reserved: 0 - 0
+</span></span><span style="display:flex;"><span>** Boot Sector: 0
+</span></span><span style="display:flex;"><span>* FAT 0: 1 - 9
+</span></span><span style="display:flex;"><span>* FAT 1: 10 - 18
+</span></span><span style="display:flex;"><span>* Data Area: 19 - 2879
+</span></span><span style="display:flex;"><span>** Root Directory: 19 - 32
+</span></span><span style="display:flex;"><span>** Cluster Area: 33 - 2879
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>METADATA INFORMATION
 </span></span><span style="display:flex;"><span>--------------------------------------------
-</span></span><span style="display:flex;"><span>Range: <span style="color:#ae81ff">2</span> - <span style="color:#ae81ff">45782</span>
-</span></span><span style="display:flex;"><span>Root Directory: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>Range: 2 - 45782
+</span></span><span style="display:flex;"><span>Root Directory: 2
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>CONTENT INFORMATION
 </span></span><span style="display:flex;"><span>--------------------------------------------
-</span></span><span style="display:flex;"><span>Sector Size: <span style="color:#ae81ff">512</span>
-</span></span><span style="display:flex;"><span>Cluster Size: <span style="color:#ae81ff">512</span>
-</span></span><span style="display:flex;"><span>Total Cluster Range: <span style="color:#ae81ff">2</span> - <span style="color:#ae81ff">2848</span>
+</span></span><span style="display:flex;"><span>Sector Size: 512
+</span></span><span style="display:flex;"><span>Cluster Size: 512
+</span></span><span style="display:flex;"><span>Total Cluster Range: 2 - 2848
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>FAT CONTENTS <span style="color:#f92672">(</span>in sectors<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>FAT CONTENTS (in sectors)
 </span></span><span style="display:flex;"><span>--------------------------------------------
-</span></span><span style="display:flex;"><span>93-93 <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> -&gt; EOF
-</span></span><span style="display:flex;"><span>94-284 <span style="color:#f92672">(</span>191<span style="color:#f92672">)</span> -&gt; EOF
-</span></span><span style="display:flex;"><span>285-436 <span style="color:#f92672">(</span>152<span style="color:#f92672">)</span> -&gt; EOF
-</span></span><span style="display:flex;"><span>437-506 <span style="color:#f92672">(</span>70<span style="color:#f92672">)</span> -&gt; EOF
-</span></span><span style="display:flex;"><span>507-642 <span style="color:#f92672">(</span>136<span style="color:#f92672">)</span> -&gt; EOF
-</span></span><span style="display:flex;"><span>643-671 <span style="color:#f92672">(</span>29<span style="color:#f92672">)</span> -&gt; EOF
-</span></span><span style="display:flex;"><span>672-690 <span style="color:#f92672">(</span>19<span style="color:#f92672">)</span> -&gt; EOF
-</span></span><span style="display:flex;"><span>691-1235 <span style="color:#f92672">(</span>545<span style="color:#f92672">)</span> -&gt; EOF
-</span></span><span style="display:flex;"><span>1236-1236 <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> -&gt; EOF</span></span></code></pre></div>
-<h3 id="listing-normal-files">Listing normal files</h3>
+</span></span><span style="display:flex;"><span>93-93 (1) -&gt; EOF
+</span></span><span style="display:flex;"><span>94-284 (191) -&gt; EOF
+</span></span><span style="display:flex;"><span>285-436 (152) -&gt; EOF
+</span></span><span style="display:flex;"><span>437-506 (70) -&gt; EOF
+</span></span><span style="display:flex;"><span>507-642 (136) -&gt; EOF
+</span></span><span style="display:flex;"><span>643-671 (29) -&gt; EOF
+</span></span><span style="display:flex;"><span>672-690 (19) -&gt; EOF
+</span></span><span style="display:flex;"><span>691-1235 (545) -&gt; EOF
+</span></span><span style="display:flex;"><span>1236-1236 (1) -&gt; EOF</span></span></code></pre></div>
+<h4 id="why-this-output-matters-2">Why this output matters</h4>
+<p>The root directory only covers sectors <strong>19–32</strong>, so deleted file entries will be easy to enumerate.
+Cluster size is 512 bytes, making carving straightforward.</p>
+<hr>
+<h3 id="list-everything-in-the-filesystem-including-deleted-markers">List Everything in the Filesystem (Including Deleted Markers)</h3>
+<h4 id="command-3">Command</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fls -r floppy.img</span></span></code></pre></div>
-<p>Output:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>r/r * 6:        all_i-want_for_christmas.bas
-</span></span><span style="display:flex;"><span>d/d 8:  qb45
+<h4 id="what-the-command-does-3">What the command does</h4>
+<p><code>fls</code> lists files inside the filesystem.</p>
+<ul>
+<li>The <code>-r</code> flag prints them recursively.</li>
+<li>Deleted entries appear with an asterisk <code>*</code>.</li>
+</ul>
+<h4 id="output-3">Output</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>r/r * 6:        all_i-want_for_christmas.bas
+</span></span><span style="display:flex;"><span>d/d 8:          qb45
 </span></span><span style="display:flex;"><span>+ r/r 1189:     BC.EXE
 </span></span><span style="display:flex;"><span>+ r/r 1190:     BRUN45.EXE
 </span></span><span style="display:flex;"><span>+ r/r 1191:     LIB.EXE
@@ -275,28 +306,77 @@ Mark DeVito mission statement I am an avid collector of things of the past. I lo
 </span></span><span style="display:flex;"><span>v/v 45780:      $FAT1
 </span></span><span style="display:flex;"><span>v/v 45781:      $FAT2
 </span></span><span style="display:flex;"><span>V/V 45782:      $OrphanFiles</span></span></code></pre></div>
-<h3 id="listing-deleted-files">Listing deleted files</h3>
+<h4 id="why-this-output-matters-3">Why this output matters</h4>
+<p>Two deleted files jump out:</p>
+<ul>
+<li><code>all_i-want_for_christmas.bas</code></li>
+<li><code>.all_i-want_f</code></li>
+</ul>
+<p>Both are likely hiding the challenge solution.</p>
+<hr>
+<h3 id="list-only-deleted-files">List Only Deleted Files</h3>
+<h4 id="command-4">Command</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fls -rd floppy.img</span></span></code></pre></div>
-<p>Output</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>r/r * 6:        all_i-want_for_christmas.bas
+<h4 id="what-the-command-does-4">What the command does</h4>
+<p>Adds <code>-d</code>, which filters to show <strong>deleted entries only</strong>.
+This clarifies which files require recovery.</p>
+<h4 id="output-4">Output</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>r/r * 6:        all_i-want_for_christmas.bas
 </span></span><span style="display:flex;"><span>r/r * 10:       .all_i-want_f</span></span></code></pre></div>
-<h3 id="extracting-files">Extracting files</h3>
+<h4 id="why-this-output-matters-4">Why this output matters</h4>
+<p>These are the only two deleted files.
+This matches the retro computing hint about &ldquo;hiding things as deleted files&rdquo;.</p>
+<hr>
+<h3 id="recover-the-deleted-files">Recover the Deleted Files</h3>
+<h4 id="commands">Commands</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>icat floppy.img <span style="color:#ae81ff">6</span> &gt; all_i-want_for_christmas.bas
 </span></span><span style="display:flex;"><span>icat floppy.img <span style="color:#ae81ff">10</span> &gt; all_i-want_f</span></span></code></pre></div>
-<h3 id="inspecting-file">Inspecting file</h3>
+<h4 id="what-the-commands-do">What the commands do</h4>
+<p><code>icat</code> extracts file content directly from its inode/record number, independent of whether it is deleted.
+This avoids relying on the operating system and ensures a clean carve from disk clusters.</p>
+<h4 id="why-this-matters">Why this matters</h4>
+<p>Now we can analyze the contents of the hidden files.</p>
+<hr>
+<h3 id="inspect-the-small-deleted-file">Inspect the Small Deleted File</h3>
+<h4 id="command-5">Command</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>strings all_i-want_f</span></span></code></pre></div>
-<p>This file only contained this, which wasnt much interesting:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>b0nano 7.2
+<h4 id="what-the-command-does-5">What the command does</h4>
+<p><code>strings</code> prints printable ASCII sequences.
+Useful for scanning binary or partially overwritten files for readable content.</p>
+<h4 id="output-5">Output</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>b0nano 7.2
 </span></span><span style="display:flex;"><span>mark
 </span></span><span style="display:flex;"><span>arcade
 </span></span><span style="display:flex;"><span>all_i-want_for_christmas.bas</span></span></code></pre></div>
-<p>However this revealed something interesting:</p>
+<h4 id="why-this-output-matters-5">Why this output matters</h4>
+<p>The content is minimal, but it directly references the BASIC program.
+This hints that the real clue is inside <code>all_i-want_for_christmas.bas</code>.</p>
+<hr>
+<h3 id="inspect-the-large-basic-program">Inspect the Large BASIC Program</h3>
+<h4 id="command-6">Command</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>strings all_i-want_for_christmas.bas</span></span></code></pre></div>
-<p>Output:</p>
-<p><a href="#R-image-fe21d1401ada205f4019e11501a80e39" class="lightbox-link"><img alt="Solution" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-retro-recovery-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fe21d1401ada205f4019e11501a80e39"><img alt="Solution" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-retro-recovery-1.png"></a></p>
-<p>It apperas that this file is actually a Star Trek game. On line <code>211</code> we find a Base64 encoded string: <code>bWVycnkgY2hyaXN0bWFzIHRvIGFsbCBhbmQgdG8gYWxsIGEgZ29vZCBuaWdodAo=</code></p>
-<p>This string decodes to (the solution) <code>merry christmas to all and to all a good night</code></p>
+<h4 id="what-the-command-does-6">What the command does</h4>
+<p>Shows all readable strings in the recovered BASIC file, which appears to be a Star Trek-style text game.</p>
+<h4 id="relevant-output">Relevant Output</h4>
+<p><a href="#R-image-d41f43393fde849d18f8a0a2454e180b" class="lightbox-link"><img alt="Solution" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-retro-recovery-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d41f43393fde849d18f8a0a2454e180b"><img alt="Solution" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-retro-recovery-1.png"></a></p>
+<p>A full Star Trek BASIC program appears, and inside it is a Base64-encoded line (line 211).</p>
+<h4 id="why-this-output-matters-6">Why this output matters</h4>
+<p>The encoded string is clearly placed as a hidden message embedded in the program.
+This is the actual target of the challenge.</p>
+<hr>
+<h3 id="decode-the-hidden-base64-payload">Decode the Hidden Base64 Payload</h3>
+<h4 id="command-7">Command</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;bWVycnkgY2hyaXN0bWFzIHRvIGFsbCBhbmQgdG8gYWxsIGEgZ29vZCBuaWdodAo=&#34;</span> | base64 -d</span></span></code></pre></div>
+<h4 id="what-the-command-does-7">What the command does</h4>
+<p>Decodes Base64 into plain text.</p>
+<h4 id="output-6">Output</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>merry christmas to all and to all a good night</span></span></code></pre></div>
+<h4 id="why-this-output-matters-7">Why this output matters</h4>
+<p>This is the exact hidden message embedded in the recovered program.
+It serves as the challenge solution / flag.</p>
+<h3 id="final-flag">Final Flag</h3>
+<p><code>merry christmas to all and to all a good night</code></p>
 <h2 id="mark-devito-mission-debrief">Mark DeVito mission debrief</h2>
 <blockquote>
 <p>Excellent work! You&rsquo;ve successfully recovered that deleted file and decoded the hidden message.</p>
@@ -377,8 +457,8 @@ Mark DeVito mission statement I am an avid collector of things of the past. I lo
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1764492683" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1764492683" defer></script>
-    <script src="/js/theme.js?1764492683" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1764493938" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1764493938" defer></script>
+    <script src="/js/theme.js?1764493938" defer></script>
   </body>
 </html>
