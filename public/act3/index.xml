@@ -3,10 +3,59 @@
   <channel>
     <title>Act 3 :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act3/index.html</link>
-    <description></description>
+    <description>The Gnomes want to transform the neighborhood so that it’s frozen solid year-round, an environmental disaster. But who is the mastermind behind the Gnomes’ wickedness?</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Sun, 30 Nov 2025 11:48:54 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/act3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gnome Tea</title>
+      <link>http://localhost:1313/act3/gnome-tea/index.html</link>
+      <pubDate>Sun, 30 Nov 2025 11:47:28 +0100</pubDate>
+      <guid>http://localhost:1313/act3/gnome-tea/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hack-a-Gnome</title>
+      <link>http://localhost:1313/act3/hack-a-gnome/index.html</link>
+      <pubDate>Sun, 30 Nov 2025 11:47:39 +0100</pubDate>
+      <guid>http://localhost:1313/act3/hack-a-gnome/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Snowcat RCE &amp; Priv Esc</title>
+      <link>http://localhost:1313/act3/snowcat-rce-and-priv-esc/index.html</link>
+      <pubDate>Sun, 30 Nov 2025 11:48:06 +0100</pubDate>
+      <guid>http://localhost:1313/act3/snowcat-rce-and-priv-esc/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Schrödingers Scope</title>
+      <link>http://localhost:1313/act3/schrodingers-scope/index.html</link>
+      <pubDate>Sun, 30 Nov 2025 11:48:19 +0100</pubDate>
+      <guid>http://localhost:1313/act3/schrodingers-scope/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Find and Shutdown Frostys Snowglobe Machine</title>
+      <link>http://localhost:1313/act3/find-and-shutdown-frostys-snowglobe-machine/index.html</link>
+      <pubDate>Sun, 30 Nov 2025 11:48:34 +0100</pubDate>
+      <guid>http://localhost:1313/act3/find-and-shutdown-frostys-snowglobe-machine/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>On the Wire</title>
+      <link>http://localhost:1313/act3/on-the-wire/index.html</link>
+      <pubDate>Sun, 30 Nov 2025 11:48:44 +0100</pubDate>
+      <guid>http://localhost:1313/act3/on-the-wire/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Free Ski</title>
+      <link>http://localhost:1313/act3/free-ski/index.html</link>
+      <pubDate>Sun, 30 Nov 2025 11:48:54 +0100</pubDate>
+      <guid>http://localhost:1313/act3/free-ski/index.html</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
