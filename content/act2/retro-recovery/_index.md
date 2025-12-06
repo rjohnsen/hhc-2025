@@ -5,7 +5,7 @@ title = 'Retro Recovery'
 weight = 1
 +++
 
-![XXX](/images/act2/markdevito-avatar.gif)
+![Mark DeVito](/images/act2/markdevito-avatar.gif)
 
 ## Objective
 

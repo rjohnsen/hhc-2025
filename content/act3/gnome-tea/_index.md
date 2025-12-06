@@ -5,22 +5,223 @@ title = 'Gnome Tea'
 weight = 1
 +++
 
-![XXX](/images/act1/xxx-avatar.gif)
+![Thomas Bouve](/images/act3/thomasbouve-avatar.gif)
 
 ## Objective
 
-Difficulty: 1/5
+Difficulty: 3/5
 
-Skate over to Jared at the frozen pond for some network magic and learn the ropes by the hockey rink.
+Enter the apartment building near 24-7 and help Thomas infiltrate the GnomeTea social network and discover the secret agent passphrase.
 
-## XXX mission statement
+## Thomas Bouve mission statement
 
+> Hi there, I'm Thomas, but you can call me CraHan if you like.
+>
+> What do you mean 'weird accent'? I have no idea why people keep telling me that, but it sounds fine in my head, to be honest.
 > 
+> Anyway, way back before I joined Counter Hack, I was an avid HHC player just like you! Some of [my write-ups](https://n00.be/) even resulted in a couple of wins throughout the years. Definitely check them out if you're looking for some inspiration.
+> 
+> If you decide to submit your own report, my [Holiday Hack Challenge report template](https://github.com/crahan/HolidayHackChallengeTemplate) might help you save some time as well.
+> 
+> My t-shirt? You like it? Well, Synthwave, cyberpunk, and even cassette futurism are definitely my kinda jam!
+> 
+> I also love to tinker, but for some weird reason my drawer of unfinished hacking projects just keeps overflowing. 24 hours in a day simply isn't enough time, I guess.
+> 
+> Oh... and no matter what Mark or Kevin try to tell you, the Amiga is the absolute best retro computing platform ever made!
+> 
+> ----
+>
+> Hi again. Say, you wouldn't happen to have time to help me out with something?
+> 
+> The gnomes have been oddly suspicious and whispering to each other. In fact, I could've sworn I heard them use some sort of secret phrase. When I laughed right next to one, it said "passphrase denied". I asked what that was all about but it just giggled and ran away.
+> 
+> I know they've been using GnomeTea to "spill the tea" on one another, but I can't sign up 'cause I'm obviously not a gnome. I could sure use your expertise to infiltrate this app and figure out what their secret passphrase is.
+> 
+> I've tried a few things already, but as usual the whole... Uh, what's the word I'm looking for here? Oh right, "endeavor", ended up with the rest of my unfinished projects.
 
 ## Solution
 
-![Solution](/images/act1/visual-network-thinger-1.png)
+Upon entering this mission we are presented with a [website](https://gnometea.web.app/login):
 
-## XXX mission debrief
+![Site landing page](/images/act3/act3-gnometea-1.png)
+
+We have got a login form - usually in CTF's these sometime reveal relevant error messages. Let's see if we can provoke one by simply logging in with some random value: 
+
+![Firebase error message](/images/act3/act3-gnometea-2.png)
+
+Sure it does, of course it does. Somehow there is an `Firebase` data base lurking in the backend. Since Firebase is more than often coupled with Javascript, we look for some hints in the HTML source for some references. By inspecting the HTML source I see one interesting Javascript called `https://gnometea.web.app/assets/index-BVLyJWJ_.js`, and it does contain references to `Firebase`:
+
+![Firebase references in Javascript](/images/act3/act3-gnometea-3.png)
+
+### Investigation using Chat GPT
+
+The Javascript is heavily minified and difficult to read. Since we live in the AI era, I uploaded the Javascript to ChatGPT and issued the following prompt: 
+
+![ChatGPT to the rescue](/images/act3/act3-gnometea-4.png)
+
+And bingo! We have extracted gold!
+
+#### ChatGPT output
+
+The file contains references to multiple Firestore collections and a Firebase Storage bucket. These were extracted from calls such as:
+
+* `hs(er, "collectionName")`
+* `Ro(hs(er, "collectionName"))`
+* `Yf(er, "collectionName", ...)`
+
+---
+
+##### 1. Firestore Collections (Name + Description)
+
+| Collection        | Description                                                                                                                                                      |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **gnomes**        | Used in the app to store metadata about gnome entities, likely linked to profile avatars or characters. Extracted from repeated references to `hs(er,"gnomes")`. |
+| **tea**           | Appears to store "tea posts" or messages shown in the “tea feed”. Used in UI rendering.                                                                          |
+| **dms**           | Direct messages between users. Extracted from `hs(er,"dms")` being passed into message components.                                                               |
+| **admins**        | Holds admin user records or permissions. Access checks reference this collection.                                                                                |
+| **users**         | Primary user profiles (names, avatars, IDs, roles). Extensively referenced throughout the code.                                                                  |
+| **notifications** | Stores notification events for users. Seen in UI for listing alerts.                                                                                             |
+
+These six collections are the only ones referenced in the JS bundle.
+
+---
+
+##### 2. Endpoints to View Each Collection
+
+Using your Firebase project ID discovered (`holidayhack2025`), the Firestore REST API allows direct unauthenticated GET requests if the database rules are permissive.
+
+Template:
+
+```
+https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/<collection>
+```
+
+Here are all collections with ready-to-use URLs:
+
+| Collection    | URL                                                                                                        |
+| ------------- | ---------------------------------------------------------------------------------------------------------- |
+| gnomes        | `https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/gnomes`        |
+| tea           | `https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/tea`           |
+| dms           | `https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/dms`           |
+| admins        | `https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/admins`        |
+| users         | `https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/users`         |
+| notifications | `https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/notifications` |
+
+To list *all root-level collections*:
+
+```
+https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents
+```
+
+---
+
+##### 3. Endpoints to View Firebase Storage Bucket Contents
+
+The JS file shows the bucket:
+
+```
+holidayhack2025.firebasestorage.app
+```
+
+Firebase Storage REST API uses the following format:
+
+#### List all items in bucket
+
+```
+https://firebasestorage.googleapis.com/v0/b/holidayhack2025.firebasestorage.app/o
+```
+
+#### List items under a specific folder
+
+```
+https://firebasestorage.googleapis.com/v0/b/holidayhack2025.firebasestorage.app/o?prefix=<folder>/
+```
+
+#### Download a file (if public)
+
+```
+https://firebasestorage.googleapis.com/v0/b/holidayhack2025.firebasestorage.app/o/<path>?alt=media
+```
+
+#### Get metadata for a file
+
+```
+https://firebasestorage.googleapis.com/v0/b/holidayhack2025.firebasestorage.app/o/<path>
+```
+
+### Back to manual investigation
+
+### Manual inspection
+
+As we can see from the previous section, ChatGPT is quite capable of extracting interesting information from obfuscated information. However, as a side note, the HTML code of the landingpage also gives away hints on collection:
+
+```html
+<!-- TODO: lock down dms, tea, gnomes collections -->
+```
+
+There are many interesting collections to look at it turns out. However, `dms` caught my interest the most. 
+
+```
+https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/dms
+```
+
+By reading through the various messages passing back and forth I found out that a gnome named `Barnaby Briefcase` has forgotten his password. He reached out to `Glitch Mitnick` to reset it. Barnaby is reluctant to give out his password, but he gives out a hint: 
+
+> Sorry, I can't give you my password but I can give you a hint. My password is actually the name of my hometown that I grew up in. I actually just visited there back when I signed up with my id to GnomeTea (I took my picture of my id there)."
+
+The full conversation: 
+
+![Password conversation](/images/act3/act3-gnometea-6.png)
+
+That hint sounds interesting. From the looks of it, his ID is a file somewhere. Most likely somewhere in this bucket (which I found as mentioned above using ChatGPT):
+
+```
+https://firebasestorage.googleapis.com/v0/b/holidayhack2025.firebasestorage.app/o
+```
+
+A simple look into it reveals a lot of files and they are organized in a non easy searchable way. Luckily we have found an endpoint that list out every gnome in much simpler way: 
+
+```
+https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/gnomes
+```
+
+We search for `Barnaby` and finds his record:
+
+![Barnabys record](/images/act3/act3-gnometea-7.png)
+
+From the screenshot above we se an URL for the drivers license. However, that link doesn't work. We have to rewrite it slighty to: 
+
+```
+https://firebasestorage.googleapis.com/v0/b/holidayhack2025.firebasestorage.app/o/gnome-documents%2Fl7VS01K9GKV5ir5S8suDcwOFEpp2_drivers_license.jpeg?alt=media
+```
+
+Then we get the drivers license: 
+
+![Barnabys driver license](/images/act3/l7VS01K9GKV5ir5S8suDcwOFEpp2_drivers_license.jpeg)
+
+By looking at the meta data of the drivers license, we get a GPS coordinate. Here I have used [Pic2Map](https://www.pic2map.com):
+
+![GPS cordinates from drivers licence](/images/act3/act3-gnometea-8.png)
+
+
+
+
+From https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/gnomes, we can find Barnabys email:
+
+```
+barnabybriefcase@gnomemail.dosis
+```
+
+And from https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/tea, we can find Barnabys old password: 
+
+```
+MakeRColdOutside123!
+```
+
+Gnomesville
+
+Wellington Mill
+
+## Thomas Bouve mission debrief
 
 > 
