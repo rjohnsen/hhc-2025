@@ -203,25 +203,32 @@ By looking at the meta data of the drivers license, we get a GPS coordinate. Her
 
 ![GPS cordinates from drivers licence](/images/act3/act3-gnometea-8.png)
 
-
-
-
-From https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/gnomes, we can find Barnabys email:
+By the looks of it Barnabys hometown is `Gnomesville`. That is supposedly the password we're looking for. In order to find Barnabys email we need to look it up in `https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/gnomes`:
 
 ```
 barnabybriefcase@gnomemail.dosis
 ```
 
-And from https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/tea, we can find Barnabys old password: 
+Using that email and that password (in lowercase) we were able to log in:
 
-```
-MakeRColdOutside123!
-```
+![Logging into GnomeTea](/images/act3/act3-gnometea-9.png)
 
-Gnomesville
+ChatGPT mentioned something about an "admins" collection. If this exists, then surely there must be an `/admin` section to this site. Visting `https://gnometea.web.app/admin`, we see the following error: 
 
-Wellington Mill
+It complains that `window.ADMIN_UID: not set` is not set, so we set it and see what happens:
+
+![Becoming admin](/images/act3/act3-gnometea-11.png)
+
+And boom! We're admin:
+
+![We are admin](/images/act3/act3-gnometea-12.png)
+
+By scrolling down we find the secret pass phrase: `GigGigglesGiggler`
 
 ## Thomas Bouve mission debrief
 
+> Excellent! Now we can communicate with the gnomes. When I tried to talk to one just now it said "passphrase accepted".
 > 
+> I asked what they were up to and it said something about going to the old warehouse/data center at the appointed time for the next meeting. No clue what that means though.
+> 
+> Anyhoo, that's a pretty big item you helped remove from my pile of unfinished hacking projects. I really appreciate the assist!
