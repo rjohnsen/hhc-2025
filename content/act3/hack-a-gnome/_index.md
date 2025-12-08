@@ -214,6 +214,22 @@ The digest (passwords) are stored as MD5 - by simply visiting [Crackstation](htt
 
 ### Logging in
 
+For this section we retrieved the following hint: 
+
+> Oh no, it sounds like the CAN bus controls are not sending the correct signals! If only there was a way to hack into your gnome's control stats/signal container to get command-line access to the smart-gnome. This would allow you to fix the signals and control the bot to shut down the factory. During my development of the robotic prototype, we found the factory's pollution to be undesirable, which is why we shut it down. If not updated since then, the gnome might be running on old and outdated packages.
+
+Upon logging we are presented with this landingpage:
+
+![Landing page](/images/act3/act3-hackagnome-1.png)
+
+| Button | Canbus command id |
+| ------ | ----------------- |
+| w | 0x656 |
+| a | 0x658 |
+| s | 0x657 |
+| d | 0x659 |
+ 
+
 ## Chris Davis mission debrief
 
 > 

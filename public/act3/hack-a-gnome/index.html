@@ -48,29 +48,29 @@ I love single player video games with great stoylines.
 Hey, I could really use another set of eyes on this gnome takeover situation.">
     <meta itemprop="datePublished" content="2025-11-30T11:47:39+01:00">
     <meta itemprop="dateModified" content="2025-11-30T11:47:39+01:00">
-    <meta itemprop="wordCount" content="745">
+    <meta itemprop="wordCount" content="863">
     <title>Hack-a-Gnome :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/hack-a-gnome/index.xml" rel="alternate" type="application/rss+xml" title="Hack-a-Gnome :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1765213734" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1765213734" defer></script>
-    <script src="/js/search-lunr.js?1765213734" defer></script>
-    <script src="/js/search.js?1765213734" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1765214641" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1765214641" defer></script>
+    <script src="/js/search-lunr.js?1765214641" defer></script>
+    <script src="/js/search.js?1765214641" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1765213734";
+      window.relearn.index_js_url="/searchindex.en.js?1765214641";
     </script>
-    <script src="/js/lunr/lunr.min.js?1765213734" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1765213734" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1765213734" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1765213734" defer></script>
+    <script src="/js/lunr/lunr.min.js?1765214641" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1765214641" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1765214641" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1765214641" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765213734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765213734" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765213734" rel="stylesheet">
-    <link href="/css/theme.css?1765213734" rel="stylesheet">
-    <link href="/css/format-html.css?1765213734" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765214641" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765214641" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765214641" rel="stylesheet">
+    <link href="/css/theme.css?1765214641" rel="stylesheet">
+    <link href="/css/format-html.css?1765214641" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -189,8 +189,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 
 <h1 id="hack-a-gnome">Hack-a-Gnome</h1>
 
-<p><a href="#R-image-9e288aa0129ecf7519dac2dd277f7adc" class="lightbox-link"><img alt="Chris Daves" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9e288aa0129ecf7519dac2dd277f7adc"><img alt="Chris Daves" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif"></a></p>
+<p><a href="#R-image-a146212749536f636176e6df25892140" class="lightbox-link"><img alt="Chris Daves" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a146212749536f636176e6df25892140"><img alt="Chris Daves" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <p>Difficulty: 3/5</p>
 <p>Davis in the Data Center is fighting a gnome army—join the hack-a-gnome fun.</p>
@@ -378,6 +378,39 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 </table>
 <p>The digest (passwords) are stored as MD5 - by simply visiting <a href="https://crackstation.net" rel="external">Crackstation</a> we easily decode them</p>
 <h3 id="logging-in">Logging in</h3>
+<p>For this section we retrieved the following hint:</p>
+<blockquote>
+<p>Oh no, it sounds like the CAN bus controls are not sending the correct signals! If only there was a way to hack into your gnome&rsquo;s control stats/signal container to get command-line access to the smart-gnome. This would allow you to fix the signals and control the bot to shut down the factory. During my development of the robotic prototype, we found the factory&rsquo;s pollution to be undesirable, which is why we shut it down. If not updated since then, the gnome might be running on old and outdated packages.</p>
+</blockquote>
+<p>Upon logging we are presented with this landingpage:</p>
+<p><a href="#R-image-88f64d832cea20861c7f76fb21deb518" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-88f64d832cea20861c7f76fb21deb518"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png"></a></p>
+<table>
+  <thead>
+      <tr>
+          <th>Button</th>
+          <th>Canbus command id</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>w</td>
+          <td>0x656</td>
+      </tr>
+      <tr>
+          <td>a</td>
+          <td>0x658</td>
+      </tr>
+      <tr>
+          <td>s</td>
+          <td>0x657</td>
+      </tr>
+      <tr>
+          <td>d</td>
+          <td>0x659</td>
+      </tr>
+  </tbody>
+</table>
 <h2 id="chris-davis-mission-debrief">Chris Davis mission debrief</h2>
 <blockquote>
 </blockquote>
@@ -456,8 +489,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1765213734" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765213734" defer></script>
-    <script src="/js/theme.js?1765213734" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1765214641" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765214641" defer></script>
+    <script src="/js/theme.js?1765214641" defer></script>
   </body>
 </html>
