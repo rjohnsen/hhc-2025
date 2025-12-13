@@ -1,48 +1,48 @@
 +++
-date = '2025-11-30T11:48:06+01:00'
+date = '2025-12-12T11:48:06+01:00'
 draft = true
 title = 'Snowcat RCE & Priv Esc'
 weight = 3
 +++
 
-![XXX](/images/act1/xxx-avatar.gif)
+![Tom Hessman](/images/act3/tomhessman-avatar.gif)
 
 ## Objective
 
 Difficulty: 3/5
 
-Enter the apartment building near 24-7 and help Thomas infiltrate the GnomeTea social network and discover the secret agent passphrase.
+Tom, in the hotel, found a wild Snowcat bug. Help him chase down the RCE! Recover and submit the API key not being used by snowcat.
 
-## XXX mission statement
+## Tom Hessman mission statement
 
-> Hi there, I'm Thomas, but you can call me CraHan if you like.
+> Hi, I'm Tom! I've worked for Counter Hack since its founding in 2010.
 > 
-> What do you mean 'weird accent'? I have no idea why people keep telling me that, but it sounds fine in my head, to be honest.
+> I love all things testing and QA, maintaining systems, logistics, and helping our customers have the best possible experience.
 > 
-> Anyway, way back before I joined Counter Hack, I was an avid HHC player just like you! Some of [my write-ups](https://n00.be/) even resulted in a couple of wins throughout the years. Definitely check them out if you're looking for some inspiration.
->
-> If you decide to submit your own report, my [Holiday Hack Challenge report template](https://github.com/crahan/HolidayHackChallengeTemplate) might help you save some time as well.
+> Outside of work, you'll find me at my local community theater producing shows, helping with sound or video, or just hanging around.
 > 
-> My t-shirt? You like it? Well, Synthwave, cyberpunk, and even cassette futurism are definitely my kinda jam!
->
-> I also love to tinker, but for some weird reason my drawer of unfinished hacking projects just keeps overflowing. 24 hours in a day simply isn't enough time, I guess.
-> 
-> Oh... and no matter what Mark or Kevin try to tell you, the Amiga is the absolute best retro computing platform ever made!
+> Learn more about my background at TomHessman.com!
 > 
 > ----
->
-> Hi again. Say, you wouldn't happen to have time to help me out with something?
->
-> The gnomes have been oddly suspicious and whispering to each other. In fact, I could've sworn I heard them use some sort of secret phrase. When I laughed right next to one, it said "passphrase denied". I asked what that was all about but it just giggled and ran away.
 > 
-> I know they've been using [GnomeTea](https://gnometea.web.app/login) to "spill the tea" on one another, but I can't sign up 'cause I'm obviously not a gnome. I could sure use your expertise to infiltrate this app and figure out what their secret passphrase is.
+> Well, I might have something developing. Come see me again soon, we'll see.
 > 
-> I've tried a few things already, but as usual the whole... Uh, what's the word I'm looking for here? Oh right, "endeavor", ended up with the rest of my unfinished projects.
+> ----
+> 
+> We've lost access to the neighborhood weather monitoring station.
+> 
+> There are a couple of vulnerabilities in the snowcat and weather monitoring services that we haven't gotten around to fixing.
+> 
+> Can you help me exploit the vulnerabilities and retrieve the other application's authorization key?
+> 
+> Enter the other application's authorization key into the badge.
+> 
+> If Frosty's plan works and everything freezes over, our customers won't be having the best possible experience—they'll be having the coldest possible experience! We need to stop this before the whole neighborhood becomes one giant freezer.
 
 ## Solution
 
 ![Solution](/images/act1/visual-network-thinger-1.png)
 
-## XXX mission debrief
+## Tom Hessman mission debrief
 
 > 

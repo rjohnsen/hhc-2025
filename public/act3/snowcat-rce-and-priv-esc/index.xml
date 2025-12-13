@@ -3,7 +3,7 @@
   <channel>
     <title>Snowcat RCE &amp; Priv Esc :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act3/snowcat-rce-and-priv-esc/index.html</link>
-    <description>Objective Difficulty: 3/5&#xA;Enter the apartment building near 24-7 and help Thomas infiltrate the GnomeTea social network and discover the secret agent passphrase.&#xA;XXX mission statement Hi there, I’m Thomas, but you can call me CraHan if you like.&#xA;What do you mean ‘weird accent’? I have no idea why people keep telling me that, but it sounds fine in my head, to be honest.</description>
+    <description>Objective Difficulty: 3/5&#xA;Tom, in the hotel, found a wild Snowcat bug. Help him chase down the RCE! Recover and submit the API key not being used by snowcat.&#xA;Tom Hessman mission statement Hi, I’m Tom! I’ve worked for Counter Hack since its founding in 2010.&#xA;I love all things testing and QA, maintaining systems, logistics, and helping our customers have the best possible experience.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
