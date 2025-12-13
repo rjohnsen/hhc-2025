@@ -1080,6 +1080,119 @@ blockquote em {
   border-bottom: 1px solid rgba(65, 95, 135, 0.8);
   padding-bottom: 0.4rem;
 }
+
+/* ============================================================
+   Article Readability Patch – neutral gray reading surface
+   Applies ONLY to article content (not side/top menus)
+   ============================================================ */
+
+/* 1) Main article background: neutral dark gray instead of blue */
+.main__content,
+#body-inner {
+  background: linear-gradient(
+    180deg,
+    rgba(26, 28, 32, 0.98),
+    rgba(22, 24, 28, 0.98)
+  );
+
+  color: rgba(232, 235, 240, 1);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(90, 96, 110, 0.45);
+}
+
+/* 2) Paragraph text: slightly warmer gray (less blue fatigue) */
+.main__content p,
+#body-inner p,
+.main__content li,
+#body-inner li {
+  color: rgba(230, 232, 236, 0.95);
+}
+
+/* 3) Headings: crisp near-white, no glow */
+.main__content h1,
+.main__content h2,
+.main__content h3,
+.main__content h4,
+#body-inner h1,
+#body-inner h2,
+#body-inner h3,
+#body-inner h4 {
+  color: rgba(248, 249, 252, 1);
+  text-shadow: none;
+}
+
+/* Optional: simplify the underline accent further */
+h2::after,
+.h2::after,
+h3::after,
+.h3::after {
+  background: linear-gradient(
+    90deg,
+    rgba(180, 185, 195, 0.7),
+    rgba(180, 185, 195, 0.0)
+  );
+}
+
+/* 4) Code blocks: slightly lighter gray to separate from text */
+pre.chroma,
+.highlight > pre,
+pre {
+  background: linear-gradient(
+    180deg,
+    rgba(32, 34, 38, 1),
+    rgba(28, 30, 34, 1)
+  );
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(110, 116, 130, 0.55);
+}
+
+/* Inline code: neutral gray, not brown/gold */
+code {
+  background-color: rgba(42, 44, 48, 1);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(110, 116, 130, 0.6);
+}
+
+/* 5) Tables: classic documentation look */
+.main__content table th,
+#body-inner table th {
+  background: rgba(40, 42, 46, 1);
+  color: rgba(248, 249, 252, 1);
+}
+
+.main__content table tr:nth-child(even) td,
+#body-inner table tr:nth-child(even) td {
+  background-color: rgba(30, 32, 36, 1);
+}
+.main__content table tr:nth-child(odd) td,
+#body-inner table tr:nth-child(odd) td {
+  background-color: rgba(26, 28, 32, 1);
+}
+
+/* 6) Admonitions/boxes: quiet gray panels */
+.box,
+.admonition {
+  background: rgba(30, 32, 36, 0.98);
+  border: 1px solid rgba(110, 116, 130, 0.6);
+  box-shadow: none;
+}
+
+/* Keep left color bar as the only accent */
+.admonition.note,
+.admonition.info {
+  border-left-color: rgba(135, 170, 210, 1);
+}
+.admonition.warning {
+  border-left-color: rgba(255, 190, 120, 1);
+}
+.admonition.danger,
+.admonition.error {
+  border-left-color: rgba(190, 70, 80, 1);
+}
+
 /* Generated using: hugo gen chromastyles chroma-relearn-dark --style monokai --highlightStyle bg:#404042 */
 
 /* Background */ .bg { color:#f8f8f2;background-color:#2b2b2b; }
