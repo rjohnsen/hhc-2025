@@ -271,6 +271,26 @@ Unleashing my payload and finding keys:
 
 The API key I needed was _8ade723d-9968-45c9-9c33-7606c49c2201_
 
+### Getting ROOT 
+
+Getting root on this box is trivial. While being the user "weather" I have control over the content in the _/usr/local/weather_ folder. In this folder there's a _config_ file containing: 
+
+```bash
+username=value
+groupname=value
+```
+
+With this user I had write permissions over the config file that is used to determine the setuid and setgid in the _humidity_, _temperature_ and _pressure_ binaries. By changing the values to _root_ and running `/usr/local/weather/humidity "4b2f3c2d-1f88-4a09-8bd4-d3e5e52e19a6'; sh; #"` I got root: 
+
+![Getting ROOT](/images/act3/act3-snowcat-12.png)
+
+Apparently, the goal mentioned is:
+
+```text
+Lower average winter temperature to -15.4 C
+Lower average summer temperature to -3.7 C
+```
+
 ## Tom Hessman mission debrief
 
 > Fantastic work! You've successfully exploited those vulnerabilities and retrieved the authorization key from the weather monitoring system.
