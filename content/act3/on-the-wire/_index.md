@@ -39,7 +39,329 @@ Help Evan next to city hall hack this gnome and retrieve the temperature value r
 
 ## Solution
 
-![Solution](/images/act1/visual-network-thinger-1.png)
+The endpoints where extracted by viesing for _WS_ in Network tab:
+
+| Protocol | Endpoint name | Endpoint URL |
+| -------- | ------------- | ------------ |
+| 1-Wire   | dq            | wss://signals.holidayhackchallenge.com/wire/dq   |
+| SPI      | mosi          | wss://signals.holidayhackchallenge.com/wire/mosi |
+| SPI      | sck           | wss://signals.holidayhackchallenge.com/wire/sck  |
+| I2C      | sda           | wss://signals.holidayhackchallenge.com/wire/sda  |
+| I2C      | scl           | wss://signals.holidayhackchallenge.com/wire/scl  |
+
+#### 1-Wire
+
+```python
+#!/usr/bin/env python3
+"""
+SANS Holiday Hack Challenge 2025 – "On the Wire" (1-Wire / dq)
+
+What this script does
+---------------------
+1) Connects to the dq WebSocket endpoint.
+2) Records one complete transmission (from marker "reset" to marker "stop").
+3) Saves the raw capture to dq_capture.json for reproducibility in a write-up.
+4) Decodes 1-Wire data by measuring LOW pulse widths (timing-based decoding).
+5) Prints decoded bytes as HEX + ASCII and extracts the XOR key if present.
+
+Why timing matters
+------------------
+1-Wire does NOT send bits as a simple sequence of 0/1 voltage levels.
+Instead, each bit is encoded by how long the line stays LOW during a time slot.
+
+Important implementation detail for this challenge feed:
+- The 'presence' marker is on the FALLING edge of the presence pulse (v=0).
+  If you start decoding immediately at that record, you will accidentally treat
+  the presence pulse as a data bit and the entire decode will be shifted.
+  Therefore, we start decoding AFTER the presence pulse ends (next v==1).
+
+Expected outcome
+----------------
+The decoded ASCII should include an instruction ending with:
+"... XOR key: icy"
+"""
+
+import json
+import websocket
+from collections import Counter
+
+# -----------------------------
+# Capture control
+# -----------------------------
+
+START_MARKER = "reset"
+STOP_MARKER = "stop"
+
+recording = False
+recording_done = False
+recorded = []  # list of dict frames
+
+
+def on_message(ws, message: str):
+    """Capture frames between START_MARKER and STOP_MARKER."""
+    global recording, recording_done, recorded
+
+    if recording_done:
+        return
+
+    msg = json.loads(message)
+    marker = msg.get("marker")
+
+    # Start recording at reset
+    if not recording and marker == START_MARKER:
+        recording = True
+        recorded = [msg]  # include reset frame
+        print("START recording (reset)")
+        return
+
+    # Ignore everything until we see the start marker
+    if not recording:
+        return
+
+    # Recording phase
+    recorded.append(msg)
+
+    # Stop recording at stop marker
+    if marker == STOP_MARKER:
+        print(f"STOP recording (stop). Events captured: {len(recorded)}")
+        recording = False
+        recording_done = True
+        ws.keep_running = False
+        ws.close()
+
+
+def on_error(ws, error):
+    print("WebSocket error:", error)
+
+
+def on_close(ws, close_status_code, close_msg):
+    print("Connection Closed", close_status_code, close_msg)
+
+
+# -----------------------------
+# 1-Wire decoding helpers
+# -----------------------------
+
+def collapse_levels(frames):
+    """
+    Collapse consecutive identical levels to obtain a transition list.
+
+    Input : list of frames dicts with keys t, v
+    Output: list of (t, v) tuples where v flips each entry
+    """
+    frames = sorted(frames, key=lambda x: x["t"])
+    out = []
+    last_v = None
+    for f in frames:
+        t = f["t"]
+        v = int(f["v"])
+        if last_v is None or v != last_v:
+            out.append((t, v))
+            last_v = v
+    return out
+
+
+def extract_low_pulse_widths(transitions):
+    """
+    Extract LOW pulse widths.
+
+    A LOW pulse is a segment where v==0 followed by v==1.
+    Width = t_rise - t_fall
+    """
+    widths = []
+    for i in range(len(transitions) - 1):
+        t0, v0 = transitions[i]
+        t1, v1 = transitions[i + 1]
+        if v0 == 0 and v1 == 1:
+            widths.append(t1 - t0)
+    return widths
+
+
+def infer_threshold(widths):
+    """
+    Infer a threshold separating short and long LOW pulses.
+
+    This challenge feed typically has two dominant widths (e.g. 6 and 60).
+    We take the two most common widths and set the threshold midway.
+    """
+    counts = Counter(widths)
+    common = [w for (w, _n) in counts.most_common(5)]
+    if len(common) < 2:
+        raise ValueError("Not enough distinct pulse widths to infer threshold.")
+    w_short = min(common[0], common[1])
+    w_long = max(common[0], common[1])
+    threshold = (w_short + w_long) / 2.0
+    return threshold, w_short, w_long, counts
+
+
+def bits_to_bytes_lsb(bits):
+    """
+    1-Wire transmits bits LSB-first within each byte.
+
+    bit0 is sent first, then bit1, ..., bit7.
+    """
+    out = []
+    cur = 0
+    pos = 0
+    for b in bits:
+        cur |= (b & 1) << pos
+        pos += 1
+        if pos == 8:
+            out.append(cur)
+            cur = 0
+            pos = 0
+    return bytes(out)
+
+
+def hexdump_and_ascii(data: bytes):
+    """Return a (hex_string, ascii_string) pair."""
+    hx = " ".join(f"{b:02x}" for b in data)
+    asc = "".join(chr(b) if 0x20 <= b <= 0x7E else "." for b in data)
+    return hx, asc
+
+
+def find_decode_start_index(frames):
+    """
+    Start decoding AFTER the presence pulse ends.
+
+    The feed marks:
+      presence marker at the FALLING edge (v=0)
+    So we must move to the next frame where v==1 after that timestamp,
+    otherwise the presence pulse width (e.g. 150) will be misread as a data bit.
+
+    If no presence marker exists, fall back to "reset" and start after it returns high.
+    """
+    frames = sorted(frames, key=lambda x: x["t"])
+
+    def start_after_marker(marker_name: str):
+        for i, f in enumerate(frames):
+            if f.get("marker") == marker_name:
+                t_mark = f["t"]
+                # Find next rising level (v==1) AFTER this marker timestamp
+                for j in range(i + 1, len(frames)):
+                    if frames[j]["t"] > t_mark and int(frames[j]["v"]) == 1:
+                        return j
+                return i
+        return None
+
+    idx = start_after_marker("presence")
+    if idx is not None:
+        return idx
+
+    idx = start_after_marker("reset")
+    if idx is not None:
+        return idx
+
+    return 0
+
+
+def decode_1wire(frames):
+    """
+    Full pipeline:
+    - Determine correct start index (after presence pulse ends)
+    - Collapse levels to transitions
+    - Extract LOW widths
+    - Infer threshold separating short vs long widths
+    - Map short->1, long->0 (standard 1-wire convention)
+    - Pack bits LSB-first into bytes
+    """
+    start_idx = find_decode_start_index(frames)
+    subset = frames[start_idx:]
+
+    transitions = collapse_levels(subset)
+    widths = extract_low_pulse_widths(transitions)
+
+    threshold, w_short, w_long, counts = infer_threshold(widths)
+
+    # Standard mapping for this challenge stream:
+    #   short low pulse => bit 1
+    #   long  low pulse => bit 0
+    bits = [1 if w < threshold else 0 for w in widths]
+
+    decoded = bits_to_bytes_lsb(bits)
+
+    return decoded, {
+        "start_idx": start_idx,
+        "counts": counts,
+        "threshold": threshold,
+        "w_short": w_short,
+        "w_long": w_long,
+        "num_widths": len(widths),
+        "num_bits": len(bits),
+        "num_bytes": len(decoded),
+    }
+
+
+def extract_printable(data: bytes) -> str:
+    """Extract printable ASCII characters for quick human inspection."""
+    return "".join(chr(b) for b in data if 0x20 <= b <= 0x7E)
+
+
+# -----------------------------
+# Main
+# -----------------------------
+
+def main():
+    endpoint = "wss://signals.holidayhackchallenge.com/wire/dq"
+    ws = websocket.WebSocketApp(
+        endpoint,
+        on_message=on_message,
+        on_error=on_error,
+        on_close=on_close,
+    )
+
+    ws.run_forever()
+
+    # Save raw capture for your write-up
+    with open("dq_capture.json", "w", encoding="utf-8") as out:
+        json.dump(recorded, out, indent=2)
+
+    decoded, meta = decode_1wire(recorded)
+
+    print("\n--- LOW pulse width histogram (top 10) ---")
+    for w, n in meta["counts"].most_common(10):
+        print(f"width={w:>6}  count={n}")
+
+    print("\n--- Decode parameters ---")
+    print(f"decode start index: {meta['start_idx']}")
+    print(f"short width: {meta['w_short']}")
+    print(f"long  width: {meta['w_long']}")
+    print(f"threshold : {meta['threshold']:.2f} (short<thr => bit=1)")
+    print(f"bits      : {meta['num_bits']}")
+    print(f"bytes     : {meta['num_bytes']}")
+
+    hx, asc = hexdump_and_ascii(decoded)
+    print("\n--- Decoded payload ---")
+    print("HEX  :", hx)
+    print("ASCII:", asc)
+
+    printable = extract_printable(decoded)
+    print("\n--- Printable only ---")
+    print(printable)
+
+    # Optional: try to pull a key after "key:"
+    if "key:" in printable.lower():
+        # Split on last occurrence of ':' to be tolerant of other colons earlier
+        candidate = printable.split(":")[-1].strip()
+        print("\n--- Candidate XOR key ---")
+        print(candidate)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+This script outputted: 
+
+![1-Wire XOR](/images/act3/act3-onthewire-1.png)
+
+The XOR key is:
+
+```text
+icy
+```
+
+### 
 
 ## Evan Booth mission debrief
 
