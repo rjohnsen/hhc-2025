@@ -28,29 +28,29 @@ Help Evan next to city hall hack this gnome and retrieve the temperature value r
 Evan Booth mission statement Hey, I’m Evan!">
     <meta itemprop="datePublished" content="2025-11-30T11:48:44+01:00">
     <meta itemprop="dateModified" content="2025-11-30T11:48:44+01:00">
-    <meta itemprop="wordCount" content="2189">
+    <meta itemprop="wordCount" content="4515">
     <title>On the Wire :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/on-the-wire/index.xml" rel="alternate" type="application/rss+xml" title="On the Wire :: SANS Holiday Hack Challenge 2025">
-    <link href="/css/auto-complete/auto-complete.min.css?1766167462" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1766167462" defer></script>
-    <script src="/js/search-lunr.js?1766167462" defer></script>
-    <script src="/js/search.js?1766167462" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1766214646" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1766214646" defer></script>
+    <script src="/js/search-lunr.js?1766214646" defer></script>
+    <script src="/js/search.js?1766214646" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1766167462";
+      window.relearn.index_js_url="/searchindex.en.js?1766214646";
     </script>
-    <script src="/js/lunr/lunr.min.js?1766167462" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1766167462" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1766167462" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1766167462" defer></script>
+    <script src="/js/lunr/lunr.min.js?1766214646" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1766214646" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1766214646" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1766214646" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766167462" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766167462" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766167462" rel="stylesheet">
-    <link href="/css/theme.css?1766167462" rel="stylesheet">
-    <link href="/css/format-html.css?1766167462" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766214646" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766214646" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766214646" rel="stylesheet">
+    <link href="/css/theme.css?1766214646" rel="stylesheet">
+    <link href="/css/format-html.css?1766214646" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -125,8 +125,9 @@ Evan Booth mission statement Hey, I’m Evan!">
     <li><a href="#evan-booth-mission-statement">Evan Booth mission statement</a></li>
     <li><a href="#solution">Solution</a>
       <ul>
-        <li></li>
-        <li></li>
+        <li><a href="#1-wire">1-Wire</a></li>
+        <li><a href="#spi">SPI</a></li>
+        <li><a href="#i2c">I2C</a></li>
       </ul>
     </li>
     <li><a href="#evan-booth-mission-debrief">Evan Booth mission debrief</a></li>
@@ -175,8 +176,8 @@ Evan Booth mission statement Hey, I’m Evan!">
 
 <h1 id="on-the-wire">On the Wire</h1>
 
-<p><a href="#R-image-df459ef4adacb1bad0254d0042e02e44" class="lightbox-link"><img alt="Evan Booth" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/evanbooth-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-df459ef4adacb1bad0254d0042e02e44"><img alt="Evan Booth" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/evanbooth-avatar.gif"></a></p>
+<p><a href="#R-image-6fed2da89ec002e4bbba61e2fa803960" class="lightbox-link"><img alt="Evan Booth" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/evanbooth-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6fed2da89ec002e4bbba61e2fa803960"><img alt="Evan Booth" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/evanbooth-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <p>Difficulty: 4/5</p>
 <p>Help Evan next to city hall hack this gnome and retrieve the temperature value reported by the I²C device at address 0x3C. The temperature data is XOR-encrypted, so you’ll need to work through each communication stage to uncover the necessary keys. Start with the unencrypted data being transmitted over the 1-wire protocol.</p>
@@ -232,7 +233,7 @@ Evan Booth mission statement Hey, I’m Evan!">
       </tr>
   </tbody>
 </table>
-<h4 id="1-wire">1-Wire</h4>
+<h3 id="1-wire">1-Wire</h3>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SANS Holiday Hack Challenge 2025 – &#34;On the Wire&#34; (1-Wire / dq)
@@ -531,13 +532,714 @@ Evan Booth mission statement Hey, I’m Evan!">
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    main()</span></span></code></pre></div>
 <p>This script outputted:</p>
-<p><a href="#R-image-bf4f3b77708892768ad10975b19ba2fd" class="lightbox-link"><img alt="1-Wire XOR" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bf4f3b77708892768ad10975b19ba2fd"><img alt="1-Wire XOR" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-1.png"></a></p>
+<p><a href="#R-image-4b05349809ffca36c98f46ddb876209c" class="lightbox-link"><img alt="1-Wire XOR" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4b05349809ffca36c98f46ddb876209c"><img alt="1-Wire XOR" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-1.png"></a></p>
 <p>The XOR key is:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>icy</span></span></code></pre></div>
-<h3></h3>
+<h3 id="spi">SPI</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SANS Holiday Hack Challenge 2025 – &#34;On the Wire&#34; (SPI stage, LIVE)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">==================================================================
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Goal
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">----
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Capture the LIVE SPI signals from the WebSocket &#34;wires&#34; and decode the byte stream.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Then XOR-decrypt it using the key recovered from the 1-Wire stage (key: &#34;icy&#34;).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Why brute force is necessary here
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">---------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SPI decoding depends on:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - Which clock edge you sample on (rising vs falling) -&gt; CPHA/Mode issues
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - Bit order within each byte (MSB-first vs LSB-first)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - Byte alignment (you might start sampling 1–7 bits too early/late)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">If any of these are wrong, XOR output may look like printable garbage
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">(&#34;text-like&#34;, but no real words). The fastest way to recover is to brute force:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - edge ∈ {rising, falling}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - bit_order ∈ {msb, lsb}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  - bit_shift ∈ {0..7}  (re-align byte boundaries)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">This script:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  1) Connects to /wire/sck and /wire/mosi
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  2) Captures one broadcast loop (detected by MOSI timestamp wrap-around t dropping)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  3) Decodes using the brute-force matrix above
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  4) Ranks candidates by a simple plaintext-likeness score
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  5) Prints top candidates and full hexdump for the best candidate
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Reproducibility
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">---------------
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- The script saves the raw samples to spi_sck_live.json and spi_mosi_live.json.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> __future__ <span style="color:#f92672">import</span> annotations
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> threading
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List, Optional, Tuple
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> websocket
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Endpoints</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span>SCK_ENDPOINT  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;wss://signals.holidayhackchallenge.com/wire/sck&#34;</span>
+</span></span><span style="display:flex;"><span>MOSI_ENDPOINT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;wss://signals.holidayhackchallenge.com/wire/mosi&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># XOR key from 1-Wire stage</span>
+</span></span><span style="display:flex;"><span>XOR_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;icy&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Capture stop conditions</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span>MAX_CAPTURE_SECONDS <span style="color:#f92672">=</span> <span style="color:#ae81ff">20.0</span>   <span style="color:#75715e"># safety cap</span>
+</span></span><span style="display:flex;"><span>POST_WRAP_GRACE_MS <span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span>     <span style="color:#75715e"># let a little extra data arrive after wrap detected</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Data structures</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span>(frozen<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Event</span>:
+</span></span><span style="display:flex;"><span>    t: int
+</span></span><span style="display:flex;"><span>    v: int
+</span></span><span style="display:flex;"><span>    marker: Optional[str] <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lock <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Lock()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wire_frames <span style="color:#f92672">=</span> defaultdict(list)  <span style="color:#75715e"># wire_frames[&#34;sck&#34;] = [Event...], [&#34;mosi&#34;] = [Event...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>done <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>wrap_detected <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>wrap_wallclock_time: Optional[float] <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mosi_last_t: Optional[int] <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>mosi_saw_advance <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>last_any_message_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Waveform helpers</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">collapse_levels</span>(events: List[Event]) <span style="color:#f92672">-&gt;</span> List[Tuple[int, int]]:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Collapse consecutive identical v values to obtain transitions (t, v).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    events <span style="color:#f92672">=</span> sorted(events, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> e: e<span style="color:#f92672">.</span>t)
+</span></span><span style="display:flex;"><span>    out: List[Tuple[int, int]] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    last_v: Optional[int] <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> events:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> last_v <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">or</span> e<span style="color:#f92672">.</span>v <span style="color:#f92672">!=</span> last_v:
+</span></span><span style="display:flex;"><span>            out<span style="color:#f92672">.</span>append((e<span style="color:#f92672">.</span>t, e<span style="color:#f92672">.</span>v))
+</span></span><span style="display:flex;"><span>            last_v <span style="color:#f92672">=</span> e<span style="color:#f92672">.</span>v
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> out
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_edges</span>(clock_transitions: List[Tuple[int, int]], edge: str) <span style="color:#f92672">-&gt;</span> List[int]:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Extract timestamps of clock edges (rising or falling) from collapsed transitions.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    times: List[int] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, len(clock_transitions)):
+</span></span><span style="display:flex;"><span>        t_prev, v_prev <span style="color:#f92672">=</span> clock_transitions[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        t_now, v_now   <span style="color:#f92672">=</span> clock_transitions[i]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> edge <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;rising&#34;</span> <span style="color:#f92672">and</span> v_prev <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> v_now <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            times<span style="color:#f92672">.</span>append(t_now)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> edge <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;falling&#34;</span> <span style="color:#f92672">and</span> v_prev <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> v_now <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            times<span style="color:#f92672">.</span>append(t_now)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> times
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sample_level_at</span>(transitions: List[Tuple[int, int]], t_edge: int) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Return the line level at time t_edge given transitions [(t, v), ...].
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Linear scan is fine for the challenge capture sizes.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> transitions:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    cur <span style="color:#f92672">=</span> transitions[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> t, v <span style="color:#f92672">in</span> transitions:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> t <span style="color:#f92672">&gt;</span> t_edge:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        cur <span style="color:#f92672">=</span> v
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> cur
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bits_to_bytes</span>(bits: List[int], bit_order: str) <span style="color:#f92672">-&gt;</span> bytes:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Pack bits into bytes.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - msb: b = (b&lt;&lt;1) | bit
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - lsb: b |= bit &lt;&lt; position
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    out <span style="color:#f92672">=</span> bytearray()
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(bits) <span style="color:#f92672">-</span> (len(bits) <span style="color:#f92672">%</span> <span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> bit_order <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;msb&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, n, <span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>            b <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> bit <span style="color:#f92672">in</span> bits[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>]:
+</span></span><span style="display:flex;"><span>                b <span style="color:#f92672">=</span> (b <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">|</span> (bit <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>            out<span style="color:#f92672">.</span>append(b)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> bit_order <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;lsb&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, n, <span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>            b <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> pos, bit <span style="color:#f92672">in</span> enumerate(bits[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>]):
+</span></span><span style="display:flex;"><span>                b <span style="color:#f92672">|=</span> (bit <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&lt;&lt;</span> pos
+</span></span><span style="display:flex;"><span>            out<span style="color:#f92672">.</span>append(b)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;bit_order must be &#39;msb&#39; or &#39;lsb&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bytes(out)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xor_repeat</span>(data: bytes, key: bytes) <span style="color:#f92672">-&gt;</span> bytes:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    XOR with a repeating key (same operation for encrypt/decrypt).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bytes(b <span style="color:#f92672">^</span> key[i <span style="color:#f92672">%</span> len(key)] <span style="color:#66d9ef">for</span> i, b <span style="color:#f92672">in</span> enumerate(data))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hexdump_ascii</span>(data: bytes, width: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Hex + ASCII dump for write-ups.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">p</span>(x: int) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> chr(x) <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">0x20</span> <span style="color:#f92672">&lt;=</span> x <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0x7E</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;.&#34;</span>
+</span></span><span style="display:flex;"><span>    lines <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(data), width):
+</span></span><span style="display:flex;"><span>        chunk <span style="color:#f92672">=</span> data[i:i<span style="color:#f92672">+</span>width]
+</span></span><span style="display:flex;"><span>        hexpart <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">.</span>join(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>b<span style="color:#e6db74">:</span><span style="color:#e6db74">02x</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> chunk)
+</span></span><span style="display:flex;"><span>        asciipart <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(p(b) <span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> chunk)
+</span></span><span style="display:flex;"><span>        lines<span style="color:#f92672">.</span>append(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">:</span><span style="color:#e6db74">04x</span><span style="color:#e6db74">}</span><span style="color:#e6db74">  </span><span style="color:#e6db74">{</span>hexpart<span style="color:#e6db74">:</span><span style="color:#e6db74">&lt;</span><span style="color:#e6db74">{</span>width<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#e6db74">}}</span><span style="color:#e6db74">  </span><span style="color:#e6db74">{</span>asciipart<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(lines)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Brute-force SPI decode scoring</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">shift_bits</span>(bits: List[int], shift: int) <span style="color:#f92672">-&gt;</span> List[int]:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Drop the first &#39;shift&#39; bits to realign byte boundaries.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    shift is 0..7.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> shift <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> bits
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> shift <span style="color:#f92672">&gt;=</span> len(bits):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bits[shift:]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">score_plaintext</span>(data: bytes) <span style="color:#f92672">-&gt;</span> float:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Heuristic scoring:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - printable ratio
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - presence of common tokens that appear in HHC hint payloads
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> data:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printable <span style="color:#f92672">=</span> sum(
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> data
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">0x20</span> <span style="color:#f92672">&lt;=</span> x <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0x7E</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">in</span> (<span style="color:#ae81ff">0x0A</span>, <span style="color:#ae81ff">0x0D</span>, <span style="color:#ae81ff">0x09</span>)
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    ratio <span style="color:#f92672">=</span> printable <span style="color:#f92672">/</span> len(data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(chr(x) <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">0x20</span> <span style="color:#f92672">&lt;=</span> x <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0x7E</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> data)<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    tokens <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;key&#34;</span>, <span style="color:#e6db74">&#34;xor&#34;</span>, <span style="color:#e6db74">&#34;addr&#34;</span>, <span style="color:#e6db74">&#34;address&#34;</span>, <span style="color:#e6db74">&#34;i2c&#34;</span>, <span style="color:#e6db74">&#34;target&#34;</span>, <span style="color:#e6db74">&#34;device&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;use&#34;</span>, <span style="color:#e6db74">&#34;decrypt&#34;</span>, <span style="color:#e6db74">&#34;payload&#34;</span>, <span style="color:#e6db74">&#34;{&#34;</span>, <span style="color:#e6db74">&#34;}&#34;</span>, <span style="color:#e6db74">&#34;:&#34;</span>, <span style="color:#e6db74">&#34;=&#34;</span>, <span style="color:#e6db74">&#34;[&#34;</span>, <span style="color:#e6db74">&#34;]&#34;</span>
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>    hits <span style="color:#f92672">=</span> sum(<span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> tokens <span style="color:#66d9ef">if</span> t <span style="color:#f92672">in</span> s)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># printable ratio dominates; token hits add small bonus</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> ratio <span style="color:#f92672">+</span> (<span style="color:#ae81ff">0.15</span> <span style="color:#f92672">*</span> hits)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">try_all_spi_decodes</span>(sck_events: List[Event], mosi_events: List[Event], xor_key: bytes):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Try combinations:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - edge: rising/falling
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - bit_order: msb/lsb
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      - bit_shift: 0..7
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Returns list of tuples:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      (score, edge, bit_order, shift, raw_bytes, decrypted_bytes)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    sorted by descending score.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    sck_trans <span style="color:#f92672">=</span> collapse_levels(sck_events)
+</span></span><span style="display:flex;"><span>    mosi_trans <span style="color:#f92672">=</span> collapse_levels(mosi_events)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    candidates <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> edge <span style="color:#f92672">in</span> (<span style="color:#e6db74">&#34;rising&#34;</span>, <span style="color:#e6db74">&#34;falling&#34;</span>):
+</span></span><span style="display:flex;"><span>        edge_times <span style="color:#f92672">=</span> extract_edges(sck_trans, edge)
+</span></span><span style="display:flex;"><span>        bits <span style="color:#f92672">=</span> [sample_level_at(mosi_trans, t) <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> edge_times]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> bit_order <span style="color:#f92672">in</span> (<span style="color:#e6db74">&#34;msb&#34;</span>, <span style="color:#e6db74">&#34;lsb&#34;</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> shift <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>                bits2 <span style="color:#f92672">=</span> shift_bits(bits, shift)
+</span></span><span style="display:flex;"><span>                raw <span style="color:#f92672">=</span> bits_to_bytes(bits2, bit_order)
+</span></span><span style="display:flex;"><span>                dec <span style="color:#f92672">=</span> xor_repeat(raw, xor_key)
+</span></span><span style="display:flex;"><span>                sc <span style="color:#f92672">=</span> score_plaintext(dec)
+</span></span><span style="display:flex;"><span>                candidates<span style="color:#f92672">.</span>append((sc, edge, bit_order, shift, raw, dec))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    candidates<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x[<span style="color:#ae81ff">0</span>], reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> candidates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># WebSocket callbacks</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_message_sck</span>(ws, message: str):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> last_any_message_time
+</span></span><span style="display:flex;"><span>    obj <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(message)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isinstance(obj, dict):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> obj<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;line&#34;</span>) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;sck&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;t&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> obj <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;v&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> obj:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    e <span style="color:#f92672">=</span> Event(t<span style="color:#f92672">=</span>int(obj[<span style="color:#e6db74">&#34;t&#34;</span>]), v<span style="color:#f92672">=</span>int(obj[<span style="color:#e6db74">&#34;v&#34;</span>]), marker<span style="color:#f92672">=</span>obj<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;marker&#34;</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> lock:
+</span></span><span style="display:flex;"><span>        last_any_message_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>        wire_frames[<span style="color:#e6db74">&#34;sck&#34;</span>]<span style="color:#f92672">.</span>append(e)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_message_mosi</span>(ws, message: str):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> done, wrap_detected, wrap_wallclock_time
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> mosi_last_t, mosi_saw_advance, last_any_message_time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    obj <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(message)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isinstance(obj, dict):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> obj<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;line&#34;</span>) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;mosi&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;t&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> obj <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;v&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> obj:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> int(obj[<span style="color:#e6db74">&#34;t&#34;</span>])
+</span></span><span style="display:flex;"><span>    v <span style="color:#f92672">=</span> int(obj[<span style="color:#e6db74">&#34;v&#34;</span>])
+</span></span><span style="display:flex;"><span>    e <span style="color:#f92672">=</span> Event(t<span style="color:#f92672">=</span>t, v<span style="color:#f92672">=</span>v, marker<span style="color:#f92672">=</span>obj<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;marker&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> lock:
+</span></span><span style="display:flex;"><span>        last_any_message_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>        wire_frames[<span style="color:#e6db74">&#34;mosi&#34;</span>]<span style="color:#f92672">.</span>append(e)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> mosi_last_t <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            mosi_last_t <span style="color:#f92672">=</span> t
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> t <span style="color:#f92672">&gt;</span> mosi_last_t:
+</span></span><span style="display:flex;"><span>            mosi_saw_advance <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># loop boundary: time drops after we have seen time advance</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> mosi_saw_advance <span style="color:#f92672">and</span> t <span style="color:#f92672">&lt;</span> mosi_last_t <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> wrap_detected:
+</span></span><span style="display:flex;"><span>            wrap_detected <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            wrap_wallclock_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        mosi_last_t <span style="color:#f92672">=</span> t
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_error</span>(ws, error):
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;WebSocket error:&#34;</span>, error)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_close</span>(ws, close_status_code, close_msg):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Normal when we stop capture</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Supervisor</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">supervisor</span>(ws_sck: websocket<span style="color:#f92672">.</span>WebSocketApp, ws_mosi: websocket<span style="color:#f92672">.</span>WebSocketApp):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> done
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    started <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.05</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> lock:
+</span></span><span style="display:flex;"><span>            now <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># hard cap</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> now <span style="color:#f92672">-</span> started <span style="color:#f92672">&gt;</span> MAX_CAPTURE_SECONDS:
+</span></span><span style="display:flex;"><span>                done <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># if loop wrap detected, wait a brief grace window then stop</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> wrap_detected <span style="color:#f92672">and</span> wrap_wallclock_time <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (now <span style="color:#f92672">-</span> wrap_wallclock_time) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000.0</span> <span style="color:#f92672">&gt;=</span> POST_WRAP_GRACE_MS:
+</span></span><span style="display:flex;"><span>                    done <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> done:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        ws_sck<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        ws_mosi<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">slice_one_loop_by_t_reset</span>(events: List[Event]) <span style="color:#f92672">-&gt;</span> List[Event]:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Slice exactly one loop based on the first detected wrap (t decreases).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Uses the event ordering by t. Works well for the HHC looped streams.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> events:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> events
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ev <span style="color:#f92672">=</span> sorted(events, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> e: e<span style="color:#f92672">.</span>t)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># find first t==0 (common) or a wrap point; prefer t==0 if present</span>
+</span></span><span style="display:flex;"><span>    first0 <span style="color:#f92672">=</span> next((i <span style="color:#66d9ef">for</span> i, e <span style="color:#f92672">in</span> enumerate(ev) <span style="color:#66d9ef">if</span> e<span style="color:#f92672">.</span>t <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>), <span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> first0 <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># fallback: find first drop</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, len(ev)):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ev[i]<span style="color:#f92672">.</span>t <span style="color:#f92672">&lt;</span> ev[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>t:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> ev[:i]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ev
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># find next t==0 after time advanced</span>
+</span></span><span style="display:flex;"><span>    advanced <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(first0 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, len(ev)):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> ev[j]<span style="color:#f92672">.</span>t <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            advanced <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> advanced <span style="color:#f92672">and</span> ev[j]<span style="color:#f92672">.</span>t <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> ev[first0:j]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> ev[first0:]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Main</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> done
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ws_sck <span style="color:#f92672">=</span> websocket<span style="color:#f92672">.</span>WebSocketApp(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;wss://signals.holidayhackchallenge.com/wire/sck&#34;</span>,
+</span></span><span style="display:flex;"><span>        on_message<span style="color:#f92672">=</span>on_message_sck,
+</span></span><span style="display:flex;"><span>        on_error<span style="color:#f92672">=</span>on_error,
+</span></span><span style="display:flex;"><span>        on_close<span style="color:#f92672">=</span>on_close,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    ws_mosi <span style="color:#f92672">=</span> websocket<span style="color:#f92672">.</span>WebSocketApp(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;wss://signals.holidayhackchallenge.com/wire/mosi&#34;</span>,
+</span></span><span style="display:flex;"><span>        on_message<span style="color:#f92672">=</span>on_message_mosi,
+</span></span><span style="display:flex;"><span>        on_error<span style="color:#f92672">=</span>on_error,
+</span></span><span style="display:flex;"><span>        on_close<span style="color:#f92672">=</span>on_close,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    t_sck <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>ws_sck<span style="color:#f92672">.</span>run_forever, daemon<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    t_mosi <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>ws_mosi<span style="color:#f92672">.</span>run_forever, daemon<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    t_sck<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>    t_mosi<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sup <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>supervisor, args<span style="color:#f92672">=</span>(ws_sck, ws_mosi), daemon<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    sup<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>    sup<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> lock:
+</span></span><span style="display:flex;"><span>        sck_all <span style="color:#f92672">=</span> list(wire_frames[<span style="color:#e6db74">&#34;sck&#34;</span>])
+</span></span><span style="display:flex;"><span>        mosi_all <span style="color:#f92672">=</span> list(wire_frames[<span style="color:#e6db74">&#34;mosi&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Save raw capture for write-up reproducibility</span>
+</span></span><span style="display:flex;"><span>    Path(<span style="color:#e6db74">&#34;spi_sck_live.json&#34;</span>)<span style="color:#f92672">.</span>write_text(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(json<span style="color:#f92672">.</span>dumps({<span style="color:#e6db74">&#34;t&#34;</span>: e<span style="color:#f92672">.</span>t, <span style="color:#e6db74">&#34;v&#34;</span>: e<span style="color:#f92672">.</span>v, <span style="color:#e6db74">&#34;marker&#34;</span>: e<span style="color:#f92672">.</span>marker}) <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> sck_all),
+</span></span><span style="display:flex;"><span>        encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    Path(<span style="color:#e6db74">&#34;spi_mosi_live.json&#34;</span>)<span style="color:#f92672">.</span>write_text(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(json<span style="color:#f92672">.</span>dumps({<span style="color:#e6db74">&#34;t&#34;</span>: e<span style="color:#f92672">.</span>t, <span style="color:#e6db74">&#34;v&#34;</span>: e<span style="color:#f92672">.</span>v, <span style="color:#e6db74">&#34;marker&#34;</span>: e<span style="color:#f92672">.</span>marker}) <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> mosi_all),
+</span></span><span style="display:flex;"><span>        encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>,
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sck_all <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> mosi_all:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">SystemExit</span>(<span style="color:#e6db74">&#34;Capture failed: missing SCK or MOSI data.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Slice to one loop using MOSI&#39;s t-reset behavior</span>
+</span></span><span style="display:flex;"><span>    mosi_loop <span style="color:#f92672">=</span> slice_one_loop_by_t_reset(mosi_all)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Align SCK window roughly to MOSI loop time range</span>
+</span></span><span style="display:flex;"><span>    t_min <span style="color:#f92672">=</span> min(e<span style="color:#f92672">.</span>t <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> mosi_loop)
+</span></span><span style="display:flex;"><span>    t_max <span style="color:#f92672">=</span> max(e<span style="color:#f92672">.</span>t <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> mosi_loop)
+</span></span><span style="display:flex;"><span>    sck_loop <span style="color:#f92672">=</span> [e <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> sck_all <span style="color:#66d9ef">if</span> t_min <span style="color:#f92672">&lt;=</span> e<span style="color:#f92672">.</span>t <span style="color:#f92672">&lt;=</span> t_max]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">--- Capture summary ---&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;MOSI events (all) : </span><span style="color:#e6db74">{</span>len(mosi_all)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;SCK  events (all) : </span><span style="color:#e6db74">{</span>len(sck_all)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;MOSI events (loop): </span><span style="color:#e6db74">{</span>len(mosi_loop)<span style="color:#e6db74">}</span><span style="color:#e6db74">  t=[</span><span style="color:#e6db74">{</span>t_min<span style="color:#e6db74">}</span><span style="color:#e6db74">..</span><span style="color:#e6db74">{</span>t_max<span style="color:#e6db74">}</span><span style="color:#e6db74">]&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;SCK  events (win) : </span><span style="color:#e6db74">{</span>len(sck_loop)<span style="color:#e6db74">}</span><span style="color:#e6db74">  t=[</span><span style="color:#e6db74">{</span>t_min<span style="color:#e6db74">}</span><span style="color:#e6db74">..</span><span style="color:#e6db74">{</span>t_max<span style="color:#e6db74">}</span><span style="color:#e6db74">]&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Brute-force decode matrix</span>
+</span></span><span style="display:flex;"><span>    cands <span style="color:#f92672">=</span> try_all_spi_decodes(sck_loop, mosi_loop, xor_key<span style="color:#f92672">=</span>XOR_KEY)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">--- Top SPI decode candidates ---&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> sc, edge, order, shift, _raw, dec <span style="color:#f92672">in</span> cands[:<span style="color:#ae81ff">8</span>]:
+</span></span><span style="display:flex;"><span>        printable <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(chr(b) <span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> dec <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">0x20</span> <span style="color:#f92672">&lt;=</span> b <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0x7E</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">score=</span><span style="color:#e6db74">{</span>sc<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> edge=</span><span style="color:#e6db74">{</span>edge<span style="color:#e6db74">:</span><span style="color:#e6db74">7</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> order=</span><span style="color:#e6db74">{</span>order<span style="color:#e6db74">:</span><span style="color:#e6db74">3</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> shift=</span><span style="color:#e6db74">{</span>shift<span style="color:#e6db74">}</span><span style="color:#e6db74">  bytes=</span><span style="color:#e6db74">{</span>len(dec)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(printable[:<span style="color:#ae81ff">240</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Print full dump for the best candidate</span>
+</span></span><span style="display:flex;"><span>    best <span style="color:#f92672">=</span> cands[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    sc, edge, order, shift, raw, dec <span style="color:#f92672">=</span> best
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">=== BEST CANDIDATE (full dump) ===&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;score=</span><span style="color:#e6db74">{</span>sc<span style="color:#e6db74">:</span><span style="color:#e6db74">.3f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> edge=</span><span style="color:#e6db74">{</span>edge<span style="color:#e6db74">}</span><span style="color:#e6db74"> bit_order=</span><span style="color:#e6db74">{</span>order<span style="color:#e6db74">}</span><span style="color:#e6db74"> bit_shift=</span><span style="color:#e6db74">{</span>shift<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">--- RAW ---&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(hexdump_ascii(raw))
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">--- DECRYPTED (XOR key=&#39;icy&#39;) ---&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(hexdump_ascii(dec))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    printable_full <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(chr(b) <span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> dec <span style="color:#66d9ef">if</span> <span style="color:#ae81ff">0x20</span> <span style="color:#f92672">&lt;=</span> b <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0x7E</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">--- Decrypted printable-only (full) ---&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(printable_full)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()</span></span></code></pre></div>
+<p>This script outputted:</p>
+<p><a href="#R-image-10f729a81c274d26d14ed86c9cfdbe0f" class="lightbox-link"><img alt="SPI output" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-10f729a81c274d26d14ed86c9cfdbe0f"><img alt="SPI output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-2.png"></a></p>
+<p>Decryptred text is:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>read and decrypt the I2C bus data using the XOR key: bananza. the temperature sensor address is 0x3</span></span></code></pre></div>
+<h3 id="i2c">I2C</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">SANS HHC 2025 – On the Wire – I2C (LIVE, final)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Known facts:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Target I²C device (7-bit) = 0x3C
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- XOR key = &#34;bananza&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Expected answer format = xx.xx
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Observed bus behavior in your run:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- No READ transactions in this segment (R=0, W=2), so decode WRITE payloads.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Correct framing is &#34;Mode A&#34; (no ACK bits present in collected address-bit/data-bit stream).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">- Decrypted payload for 0x3C contains ASCII temperature (e.g., &#34;32.84&#34;).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">What this script does:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">1) Capture one broadcast loop (timestamp wrap) from SDA/SCL
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">2) Parse I²C transactions using start/stop markers
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">3) For last transaction to 0x3C:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   - Convert bits-&gt;bytes using Mode A (pack every 8 bits)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   - XOR-decrypt with &#34;bananza&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   - If decrypted text matches r&#34;^</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d</span><span style="color:#e6db74">{2}</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">.</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">$&#34;, print SUBMIT: xx.xx
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   - Otherwise print diagnostics and (optional) fallback interpretations
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> threading
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List, Optional
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> websocket
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SDA_ENDPOINT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;wss://signals.holidayhackchallenge.com/wire/sda&#34;</span>
+</span></span><span style="display:flex;"><span>SCL_ENDPOINT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;wss://signals.holidayhackchallenge.com/wire/scl&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>TARGET_ADDRESS <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x3C</span>
+</span></span><span style="display:flex;"><span>XOR_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;bananza&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MAX_CAPTURE_SECONDS <span style="color:#f92672">=</span> <span style="color:#ae81ff">25.0</span>
+</span></span><span style="display:flex;"><span>POST_WRAP_GRACE_MS <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RE_ANSWER <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;^\d</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">\.\d</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">$&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BitEvent</span>:
+</span></span><span style="display:flex;"><span>    t: int
+</span></span><span style="display:flex;"><span>    v: int
+</span></span><span style="display:flex;"><span>    marker: Optional[str]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TxBits</span>:
+</span></span><span style="display:flex;"><span>    address: int
+</span></span><span style="display:flex;"><span>    rw: int
+</span></span><span style="display:flex;"><span>    bits_after_addr: List[int]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lock <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Lock()
+</span></span><span style="display:flex;"><span>events: List[BitEvent] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wrap_detected <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>wrap_wallclock_time: Optional[float] <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>last_t: Optional[int] <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>saw_advance <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xor_decrypt</span>(data: bytes, key: bytes) <span style="color:#f92672">-&gt;</span> bytes:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bytes(b <span style="color:#f92672">^</span> key[i <span style="color:#f92672">%</span> len(key)] <span style="color:#66d9ef">for</span> i, b <span style="color:#f92672">in</span> enumerate(data))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">assemble_byte_msb</span>(bits8: List[int]) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>    b <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> bit <span style="color:#f92672">in</span> bits8:
+</span></span><span style="display:flex;"><span>        b <span style="color:#f92672">=</span> (b <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">|</span> (bit <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bits_to_bytes_mode_a</span>(bits: List[int]) <span style="color:#f92672">-&gt;</span> bytes:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Mode A: ACK bits are NOT present in the collected bitstream.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Pack sequential 8-bit groups.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    out <span style="color:#f92672">=</span> bytearray()
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(bits) <span style="color:#f92672">-</span> (len(bits) <span style="color:#f92672">%</span> <span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, n, <span style="color:#ae81ff">8</span>):
+</span></span><span style="display:flex;"><span>        out<span style="color:#f92672">.</span>append(assemble_byte_msb(bits[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">8</span>]))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> bytes(out)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse_i2c_transactions</span>(events_in: List[BitEvent]) <span style="color:#f92672">-&gt;</span> List[TxBits]:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    START ... STOP framing.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Collect only address-bit and data-bit values (0/1).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    The first 8 bits after START are the address byte (MSB-first).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    txs: List[TxBits] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    in_tx <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>    bits: List[int] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> events_in:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> e<span style="color:#f92672">.</span>marker <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;start&#34;</span>:
+</span></span><span style="display:flex;"><span>            in_tx <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            bits <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> e<span style="color:#f92672">.</span>marker <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;stop&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> in_tx <span style="color:#f92672">and</span> len(bits) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">8</span>:
+</span></span><span style="display:flex;"><span>                addr_byte <span style="color:#f92672">=</span> assemble_byte_msb(bits[:<span style="color:#ae81ff">8</span>])
+</span></span><span style="display:flex;"><span>                address <span style="color:#f92672">=</span> addr_byte <span style="color:#f92672">&gt;&gt;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                rw <span style="color:#f92672">=</span> addr_byte <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                txs<span style="color:#f92672">.</span>append(TxBits(address<span style="color:#f92672">=</span>address, rw<span style="color:#f92672">=</span>rw, bits_after_addr<span style="color:#f92672">=</span>bits[<span style="color:#ae81ff">8</span>:]))
+</span></span><span style="display:flex;"><span>            in_tx <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>            bits <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> in_tx <span style="color:#f92672">and</span> e<span style="color:#f92672">.</span>marker <span style="color:#f92672">in</span> (<span style="color:#e6db74">&#34;address-bit&#34;</span>, <span style="color:#e6db74">&#34;data-bit&#34;</span>):
+</span></span><span style="display:flex;"><span>            bits<span style="color:#f92672">.</span>append(e<span style="color:#f92672">.</span>v)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> txs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_message_sda</span>(ws, message: str):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> wrap_detected, wrap_wallclock_time, last_t, saw_advance
+</span></span><span style="display:flex;"><span>    obj <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(message)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> isinstance(obj, dict) <span style="color:#f92672">or</span> obj<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;line&#34;</span>) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;sda&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> int(obj<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;t&#34;</span>, <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>    v <span style="color:#f92672">=</span> int(obj<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;v&#34;</span>, <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>    marker <span style="color:#f92672">=</span> obj<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;marker&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> lock:
+</span></span><span style="display:flex;"><span>        events<span style="color:#f92672">.</span>append(BitEvent(t<span style="color:#f92672">=</span>t, v<span style="color:#f92672">=</span>v, marker<span style="color:#f92672">=</span>marker))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> last_t <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> t <span style="color:#f92672">&gt;</span> last_t:
+</span></span><span style="display:flex;"><span>                saw_advance <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> saw_advance <span style="color:#f92672">and</span> t <span style="color:#f92672">&lt;</span> last_t <span style="color:#f92672">and</span> <span style="color:#f92672">not</span> wrap_detected:
+</span></span><span style="display:flex;"><span>                wrap_detected <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>                wrap_wallclock_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>        last_t <span style="color:#f92672">=</span> t
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">on_message_scl</span>(ws, message: str):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Not used; kept to mirror physical bus capture.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">supervisor</span>(ws_sda, ws_scl):
+</span></span><span style="display:flex;"><span>    start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">0.05</span>)
+</span></span><span style="display:flex;"><span>        now <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> now <span style="color:#f92672">-</span> start <span style="color:#f92672">&gt;</span> MAX_CAPTURE_SECONDS:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> wrap_detected <span style="color:#f92672">and</span> wrap_wallclock_time <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (now <span style="color:#f92672">-</span> wrap_wallclock_time) <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">&gt;=</span> POST_WRAP_GRACE_MS:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ws_sda<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>    ws_scl<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    ws_sda <span style="color:#f92672">=</span> websocket<span style="color:#f92672">.</span>WebSocketApp(SDA_ENDPOINT, on_message<span style="color:#f92672">=</span>on_message_sda)
+</span></span><span style="display:flex;"><span>    ws_scl <span style="color:#f92672">=</span> websocket<span style="color:#f92672">.</span>WebSocketApp(SCL_ENDPOINT, on_message<span style="color:#f92672">=</span>on_message_scl)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    t1 <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>ws_sda<span style="color:#f92672">.</span>run_forever, daemon<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    t2 <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>ws_scl<span style="color:#f92672">.</span>run_forever, daemon<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    t1<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>    t2<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    supervisor(ws_sda, ws_scl)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> lock:
+</span></span><span style="display:flex;"><span>        captured <span style="color:#f92672">=</span> list(events)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    txs <span style="color:#f92672">=</span> parse_i2c_transactions(captured)
+</span></span><span style="display:flex;"><span>    target <span style="color:#f92672">=</span> [tx <span style="color:#66d9ef">for</span> tx <span style="color:#f92672">in</span> txs <span style="color:#66d9ef">if</span> tx<span style="color:#f92672">.</span>address <span style="color:#f92672">==</span> TARGET_ADDRESS]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> target:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;No transactions seen for 0x</span><span style="color:#e6db74">{</span>TARGET_ADDRESS<span style="color:#e6db74">:</span><span style="color:#e6db74">02x</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    chosen <span style="color:#f92672">=</span> target[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]  <span style="color:#75715e"># value write is typically last</span>
+</span></span><span style="display:flex;"><span>    enc <span style="color:#f92672">=</span> bits_to_bytes_mode_a(chosen<span style="color:#f92672">.</span>bits_after_addr)
+</span></span><span style="display:flex;"><span>    dec <span style="color:#f92672">=</span> xor_decrypt(enc, XOR_KEY)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Try ASCII first (this challenge returns ASCII temperature)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        text <span style="color:#f92672">=</span> dec<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#34;ascii&#34;</span>, errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;strict&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">UnicodeDecodeError</span>:
+</span></span><span style="display:flex;"><span>        text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    text <span style="color:#f92672">=</span> text<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Target 0x</span><span style="color:#e6db74">{</span>TARGET_ADDRESS<span style="color:#e6db74">:</span><span style="color:#e6db74">02x</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> transactions: </span><span style="color:#e6db74">{</span>len(target)<span style="color:#e6db74">}</span><span style="color:#e6db74"> (using last)&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Chosen TX rw=</span><span style="color:#e6db74">{</span>chosen<span style="color:#f92672">.</span>rw<span style="color:#e6db74">}</span><span style="color:#e6db74"> bits_after_addr=</span><span style="color:#e6db74">{</span>len(chosen<span style="color:#f92672">.</span>bits_after_addr)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Decrypted ASCII: </span><span style="color:#e6db74">{</span>repr(text)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Decrypted HEX  : </span><span style="color:#e6db74">{</span>dec<span style="color:#f92672">.</span>hex()<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> RE_ANSWER<span style="color:#f92672">.</span>fullmatch(text):
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">SUBMIT: </span><span style="color:#e6db74">{</span>text<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># If not a direct xx.xx string, provide guidance for manual inspection.</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Decrypted output did not match xx.xx. Inspect the ASCII/HEX above.&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;If the value is embedded, search the ASCII for a pattern like </span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">.</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()</span></span></code></pre></div>
+<p>This script outputted:</p>
+<p><a href="#R-image-35461e69f7fd1e0ee7123673e532f155" class="lightbox-link"><img alt="I2C output" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-35461e69f7fd1e0ee7123673e532f155"><img alt="I2C output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-3.png"></a></p>
+<p>The value I was looking for is:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>32.84</span></span></code></pre></div>
 <h2 id="evan-booth-mission-debrief">Evan Booth mission debrief</h2>
 <blockquote>
+<p>Nice work! You cracked that signal encoding like a pro.</p>
+<p>Turns out the weirdness had a method to it after all - just like most of my builds!</p>
 </blockquote>
 <h2 id="hints">Hints</h2>
 <h3 id="on-rails">On Rails</h3>
@@ -752,8 +1454,8 @@ Evan Booth mission statement Hey, I’m Evan!">
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766167462" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766167462" defer></script>
-    <script src="/js/theme.js?1766167462" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766214646" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766214646" defer></script>
+    <script src="/js/theme.js?1766214646" defer></script>
   </body>
 </html>
