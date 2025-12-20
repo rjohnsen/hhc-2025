@@ -6,7 +6,7 @@
     <description>The Gnomes want to transform the neighborhood so that it’s frozen solid year-round, an environmental disaster. But who is the mastermind behind the Gnomes’ wickedness?</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Dec 2025 11:48:06 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 20 Dec 2025 14:29:07 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/act3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gnome Tea</title>
@@ -56,6 +56,13 @@
       <pubDate>Sun, 30 Nov 2025 11:48:54 +0100</pubDate>
       <guid>http://localhost:1313/act3/free-ski/index.html</guid>
       <description>Objective Difficulty: 5/5&#xA;Go to the retro store and help Goose Olivia ski down the mountain and collect all five treasure chests to reveal the hidden flag in this classic SkiFree-inspired challenge.&#xA;Goose Olivia mission statement “HONK! Well hello there! Fancy meeting you here in the Dosis Neighborhood.&#xA;You know, it’s the strangest thing… I used to just waddle around the Geese Islands going ‘BONK’ all day long. Random noises, no thoughts, just vibes. But then something changed, and now here I am—speaking, thinking, wondering how I even got here!</description>
+    </item>
+    <item>
+      <title>Snowblind Ambush</title>
+      <link>http://localhost:1313/act3/snowblind-ambush/index.html</link>
+      <pubDate>Sat, 20 Dec 2025 14:29:07 +0100</pubDate>
+      <guid>http://localhost:1313/act3/snowblind-ambush/index.html</guid>
+      <description>Objective Difficulty: 5/5&#xA;Head to the Hotel to stop Frosty’s plan. Torkel is waiting at the Grand Web Terminal.&#xA;Torkel Opsahl mission statement God dag! My name is Torkel! That literally translates to Thor’s Warrior in old Norse.&#xA;If I’m not climbing, snowboarding, or hacking, I’m probably preparing for my next adventure. Did you know all of that is available in Lofoten?</description>
     </item>
   </channel>
 </rss>
