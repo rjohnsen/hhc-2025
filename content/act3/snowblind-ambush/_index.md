@@ -1,5 +1,5 @@
 +++
-date = '2025-12-20T14:29:07+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 weight = 8
 title = 'Snowblind Ambush'
@@ -9,9 +9,9 @@ title = 'Snowblind Ambush'
 
 ## Objective
 
-Difficulty: 5/5
-
-Head to the Hotel to stop Frosty's plan. Torkel is waiting at the Grand Web Terminal.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 5/5 | Head to the Hotel to stop Frosty's plan. Torkel is waiting at the Grand Web Terminal. |
 
 ## Torkel Opsahl mission statement
 

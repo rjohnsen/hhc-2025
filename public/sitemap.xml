@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/act1/index.html</loc>
+    <lastmod>2025-12-23T15:59:59+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/act3/gnome-tea/index.html</loc>
     <lastmod>2025-11-30T11:47:28+01:00</lastmod>
   </url>
@@ -9,8 +13,8 @@
     <lastmod>2025-11-23T13:42:25+01:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/act1/index.html</loc>
-    <lastmod>2025-11-08T15:30:27+01:00</lastmod>
+    <loc>http://localhost:1313/act2/index.html</loc>
+    <lastmod>2025-12-23T15:59:59+01:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/act3/hack-a-gnome/index.html</loc>
@@ -25,8 +29,8 @@
     <lastmod>2025-11-08T16:28:16+01:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/act2/index.html</loc>
-    <lastmod>2025-11-08T15:30:30+01:00</lastmod>
+    <loc>http://localhost:1313/act3/index.html</loc>
+    <lastmod>2025-12-23T12:59:59+01:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/act3/snowcat-rce-and-priv-esc/index.html</loc>
@@ -41,12 +45,8 @@
     <lastmod>2025-11-08T16:28:46+01:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/act3/index.html</loc>
-    <lastmod>2025-11-08T15:30:34+01:00</lastmod>
-  </url>
-  <url>
     <loc>http://localhost:1313/endgame/index.html</loc>
-    <lastmod>2025-12-23T13:14:03+01:00</lastmod>
+    <lastmod>2025-12-23T12:59:59+01:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/act3/schrodingers-scope/index.html</loc>
@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>http://localhost:1313/index.html</loc>
-    <lastmod>2025-11-08T15:30:27+01:00</lastmod>
+    <lastmod>2025-12-23T15:59:59+01:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>

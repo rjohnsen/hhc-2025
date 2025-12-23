@@ -3,7 +3,7 @@
   <channel>
     <title>Schrödingers Scope :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act3/schrodingers-scope/index.html</link>
-    <description>Objective Difficulty: 3/5&#xA;Kevin in the Retro Store ponders pentest paradoxes—can you solve Schrödinger’s Scope?&#xA;Kevin McFarland mission statement The Neighborhood College Course Registration System has been getting some updates lately and I’m wondering if you might help me improve its security by performing a small web application penetration test of the site.&#xA;For any web application test, one of the most important things for the test is the ‘scope’, that is, what one is permitted to test and what one should not. While hacking is fun and cool, professional integrity means respecting scope boundaries, especially when there are tempting targets outside our permitted scope.</description>
+    <description>Objective Difficulty Description 3/5 Kevin in the Retro Store ponders pentest paradoxes—can you solve Schrödinger’s Scope? Kevin McFarland mission statement The Neighborhood College Course Registration System has been getting some updates lately and I’m wondering if you might help me improve its security by performing a small web application penetration test of the site.&#xA;For any web application test, one of the most important things for the test is the ‘scope’, that is, what one is permitted to test and what one should not. While hacking is fun and cool, professional integrity means respecting scope boundaries, especially when there are tempting targets outside our permitted scope.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

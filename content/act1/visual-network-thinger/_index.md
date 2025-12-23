@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:29:35+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = 'Visual Network Thinger'
@@ -10,9 +10,9 @@ weight = 6
 
 ## Objective
 
-Difficulty: 1/5
-
-Skate over to Jared at the frozen pond for some network magic and learn the ropes by the hockey rink.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Skate over to Jared at the frozen pond for some network magic and learn the ropes by the hockey rink. |
 
 ## Jared Folkins mission statement
 

@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:29:23+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = "Santa's Gift Tracking Service Port Mystery"
@@ -10,9 +10,9 @@ weight = 5
 
 ## Objective
 
-Difficulty: 1/5
-
-Chat with Yori near the apartment building about Santa's mysterious gift tracker and unravel the holiday mystery.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Chat with Yori near the apartment building about Santa's mysterious gift tracker and unravel the holiday mystery. |
 
 ## Yori Kvitchko mission statement
 

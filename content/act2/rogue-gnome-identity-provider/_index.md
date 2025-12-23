@@ -1,5 +1,5 @@
 +++
-date = '2025-11-23T13:43:05+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 title = 'Rogue Gnome Identity Provider'
 weight = 5
@@ -9,9 +9,9 @@ weight = 5
 
 ## Objective
 
-Difficulty: 2/5
-
-Hike over to Paul in the park for a gnomey authentication puzzle adventure. What malicious firmware image are the gnomes downloading?
+| Difficulty | Description |
+| ---------- | ----------- |
+| 2/5 | Hike over to Paul in the park for a gnomey authentication puzzle adventure. What malicious firmware image are the gnomes downloading? |
 
 ## Paul Beckett mission statement
 

@@ -1,5 +1,5 @@
 +++
-date = '2025-12-12T11:48:06+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = true
 title = 'Snowcat RCE & Priv Esc'
 weight = 3
@@ -9,9 +9,9 @@ weight = 3
 
 ## Objective
 
-Difficulty: 3/5
-
-Tom, in the hotel, found a wild Snowcat bug. Help him chase down the RCE! Recover and submit the API key not being used by snowcat.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 3/5 | Tom, in the hotel, found a wild Snowcat bug. Help him chase down the RCE! Recover and submit the API key not being used by snowcat. |
 
 ## Tom Hessman mission statement
 

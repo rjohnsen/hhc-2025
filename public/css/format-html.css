@@ -1,13 +1,19 @@
 @media screen {
 :root:not([data-r-output-format='print']):not([data-r-theme-variant='my-custom-variant']):not([data-r-theme-variant='hhc-2025']),
 :root:not([data-r-output-format='print'])[data-r-theme-variant='hhc-2025'] {
-/* Holiday Hack 2025 – Poinsettia & Frost Theme */
+/* ============================================================
+   SANS Holiday Hack 2025 – Evergreen Teal (Relearn)
+   DROP-IN theme.css (consolidated)
+   Goals:
+   - modern / premium / readable
+   - subtle fun (micro-motion + signature h2 divider)
+   - square code + square blockquotes
+   - sidebar: flat, legible, no rounded borders
+   ============================================================ */
 
 /* --------------------------------------------- */
-/*  Webfonts                                     */
+/* Fonts                                          */
 /* --------------------------------------------- */
-
-/* Load Inter (UI/body), JetBrains Mono (code), Playfair Display (optional decorative) */
 &:root {
   /* relearn-dark */
   --PRIMARY-color: rgba(125, 201, 3, 1); /* brand primary color */
@@ -59,1138 +65,668 @@
 
 
 /* --------------------------------------------- */
-/*  Color system – poinsettia & frost            */
+/* Design tokens                                  */
 /* --------------------------------------------- */
-
 &:root {
-  /* Primary = poinsettia red, secondary = frosty silver-blue */
-  --PRIMARY-color: rgba(190, 70, 80, 1);
-  --PRIMARY-HOVER-color: rgba(227, 112, 120, 1);
-  --SECONDARY-color: rgba(135, 170, 210, 1);
-  --SECONDARY-HOVER-color: rgba(186, 210, 236, 1);
+  /* Base surfaces */
+  --bg-0: #07141a; /* page */
+  --bg-1: #0b1b22; /* sidebar */
+  --bg-2: #0e2029; /* content surface */
+  --bg-3: #0b171d; /* code surface */
 
-  /* Main background – deep navy */
-  --MAIN-BG-color: rgba(11, 31, 56, 1);
-  --MAIN-TOPBAR-BORDER-color: rgba(35, 63, 101, 1);
+  /* Text */
+  --ink-0: rgba(245, 252, 255, 1);
+  --ink-1: rgba(225, 236, 241, 0.90);
+  --ink-2: rgba(225, 236, 241, 0.72);
 
-  --MAIN-TEXT-color: rgba(233, 237, 243, 1);
-  --MAIN-TITLES-TEXT-color: rgba(255, 255, 255, 1);
+  /* Accents */
+  --evergreen: rgba(56, 201, 113, 1);
+  --evergreen-h: rgba(120, 232, 165, 1);
+  --teal: rgba(45, 166, 164, 1);
+  --teal-h: rgba(110, 214, 212, 1);
 
-  /* Code blocks */
+  /* Hairlines */
+  --line-0: rgba(255, 255, 255, 0.08);
+  --line-1: rgba(255, 255, 255, 0.12);
+
+  /* Relearn variable mapping */
+  --PRIMARY-color: var(--evergreen);
+  --PRIMARY-HOVER-color: var(--evergreen-h);
+  --SECONDARY-color: var(--teal);
+  --SECONDARY-HOVER-color: var(--teal-h);
+
+  --MAIN-BG-color: var(--bg-0);
+  --MAIN-TOPBAR-BORDER-color: var(--line-0);
+
+  --MAIN-TEXT-color: var(--ink-1);
+  --MAIN-TITLES-TEXT-color: var(--ink-0);
+
   --CODE-theme: relearn-dark;
-  --CODE-BLOCK-color: rgba(236, 241, 247, 1);
-  --CODE-BLOCK-BG-color: rgba(9, 24, 46, 1);
-  --CODE-BLOCK-BORDER-color: rgba(65, 95, 135, 1);
+  --CODE-BLOCK-color: rgba(236, 244, 248, 1);
+  --CODE-BLOCK-BG-color: var(--bg-3);
+  --CODE-BLOCK-BORDER-color: var(--line-0);
 
-  /* Inline code */
-  --CODE-INLINE-color: rgba(255, 220, 164, 1);
-  --CODE-INLINE-BG-color: rgba(55, 42, 26, 1);
-  --CODE-INLINE-BORDER-color: rgba(138, 110, 68, 1);
+  --CODE-INLINE-color: rgba(190, 247, 214, 1);
+  --CODE-INLINE-BG-color: rgba(255, 255, 255, 0.06);
+  --CODE-INLINE-BORDER-color: rgba(255, 255, 255, 0.10);
 
-  /* External widgets */
   --BROWSER-theme: dark;
   --MERMAID-theme: dark;
   --OPENAPI-theme: dark;
   --OPENAPI-CODE-theme: obsidian;
 
-  /* Sidebar / topbar */
-  --MENU-BORDER-color: rgba(35, 63, 101, 1);
-  --MENU-TOPBAR-BORDER-color: rgba(8, 21, 40, 1);
-  --MENU-TOPBAR-SEPARATOR-color: rgba(65, 95, 135, 1);
+  --MENU-BORDER-color: var(--line-0);
+  --MENU-TOPBAR-BORDER-color: var(--line-0);
+  --MENU-TOPBAR-SEPARATOR-color: var(--line-0);
 
-  /* Menu header */
-  --MENU-HEADER-BG-color: rgba(15, 36, 64, 1);
-  --MENU-HEADER-BORDER-color: rgba(65, 95, 135, 1);
+  --MENU-HEADER-BG-color: transparent;
+  --MENU-HEADER-BORDER-color: transparent;
 
-  /* Search field */
-  --MENU-SEARCH-color: rgba(186, 210, 236, 1);
-  --MENU-SEARCH-BG-color: rgba(7, 19, 36, 1);
-  --MENU-SEARCH-BORDER-color: rgba(86, 116, 156, 0.9);
+  --MENU-HOME-LINK-color: rgba(235, 245, 249, 0.92);
+  --MENU-HOME-LINK-HOVER-color: var(--evergreen);
 
-  /* Home link */
-  --MENU-HOME-LINK-color: rgba(233, 237, 243, 1);
-  --MENU-HOME-LINK-HOVER-color: rgba(190, 70, 80, 1);
-  --MENU-HOME-TOP-SEPARATOR-color: rgba(65, 95, 135, 0.85);
-  --MENU-HOME-SEPARATOR-color: rgba(65, 95, 135, 0.85);
-  --MENU-HOME-BOTTOM-SEPARATOR-color: rgba(65, 95, 135, 0.85);
+  --MENU-SECTIONS-BG-color: linear-gradient(180deg, #061216 0%, #0b1b22 100%);
+  --MENU-SECTIONS-ACTIVE-BG-color: rgba(255, 255, 255, 0.03);
 
-  /* Sidebar sections – navy gradient */
-  --MENU-SECTIONS-BG-color:
-    linear-gradient(
-      180deg,
-      rgba(11, 31, 56, 1) 0%,
-      rgba(12, 35, 62, 1) 35%,
-      rgba(16, 43, 76, 1) 70%,
-      rgba(22, 55, 92, 1) 100%
-    );
-  --MENU-SECTIONS-ACTIVE-BG-color: rgba(16, 40, 70, 1);
+  --MENU-SECTIONS-LINK-color: rgba(225, 236, 241, 0.78);
+  --MENU-SECTIONS-LINK-HOVER-color: rgba(245, 252, 255, 1);
 
-  --MENU-SECTIONS-LINK-color: rgba(220, 229, 240, 0.9);
-  --MENU-SECTIONS-LINK-HOVER-color: rgba(190, 70, 80, 1);
+  --MENU-SECTION-ACTIVE-CATEGORY-color: rgba(245, 252, 255, 1);
+  --MENU-SECTION-ACTIVE-CATEGORY-BG-color: rgba(255, 255, 255, 0.04);
 
-  /* Active category */
-  --MENU-SECTION-ACTIVE-CATEGORY-color: rgba(227, 112, 120, 1);
-  --MENU-SECTION-ACTIVE-CATEGORY-BG-color: rgba(30, 46, 74, 1);
-
-  --MENU-SECTION-SEPARATOR-color: rgba(65, 95, 135, 0.85);
-
-  /* Content boxes */
-  --BOX-CAPTION-color: rgba(252, 240, 220, 1);
-  --BOX-BG-color: rgba(14, 36, 66, 1);
-  --BOX-TEXT-color: rgba(233, 237, 243, 1);
-
-  /* Grey boxes */
-  --BOX-GREY-color: rgba(60, 86, 118, 1);
+  --BOX-CAPTION-color: rgba(245, 252, 255, 1);
+  --BOX-BG-color: rgba(255, 255, 255, 0.03);
+  --BOX-TEXT-color: rgba(225, 236, 241, 0.92);
+  --BOX-GREY-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Ensure Relearn dark mode uses theme */
 &:root[color-theme="dark"] {
-  --MAIN-BG-color: rgba(11, 31, 56, 1);
+  --MAIN-BG-color: var(--bg-0);
   --BROWSER-theme: dark;
 }
 
 /* --------------------------------------------- */
-/*  Typography                                   */
+/* Global base                                    */
 /* --------------------------------------------- */
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont,
-               "Segoe UI", "Roboto", "Ubuntu", "Cantarell",
-               "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Ubuntu", "Cantarell", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.68;
+  color: var(--ink-1);
+  background:
+    radial-gradient(1200px 700px at 18% 12%, rgba(45,166,164,0.11), transparent 60%),
+    radial-gradient(1000px 800px at 82% 84%, rgba(56,201,113,0.09), transparent 55%),
+    linear-gradient(180deg, #051014 0%, #07141a 55%, #061216 100%);
 }
 
-/* Headings – frosted hierarchy */
-h1, .h1 {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  margin-top: 1.8rem;
-  margin-bottom: 0.9rem;
-}
-h2, .h2 {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  margin-top: 1.6rem;
-  margin-bottom: 0.75rem;
-}
-h3, .h3 {
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  margin-top: 1.4rem;
-  margin-bottom: 0.6rem;
-}
-h4, .h4 {
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  margin-top: 1.2rem;
-  margin-bottom: 0.45rem;
-}
-
-/* Subtle frosted underline for H2+H3 */
-h2::after,
-.h2::after,
-h3::after,
-.h3::after {
-  content: "";
-  display: block;
-  margin-top: 0.3rem;
-  width: 72px;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    rgba(186, 210, 236, 0.7),
-    rgba(227, 112, 120, 0.8)
-  );
-}
-
-p, li {
-  font-size: 0.96rem;
-}
-
-/* Code / terminal */
-code, pre, kbd, samp {
-  font-family: "JetBrains Mono", Menlo, Monaco, Consolas,
-               "Liberation Mono", monospace;
-  font-size: 0.88rem;
-}
+body::before, body::after { content: none !important; display: none !important; }
 
 /* Links */
 a {
-  text-decoration: none;
+  color: rgba(190, 210, 236, 0.95);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color 120ms ease;
 }
-a:hover,
-a:focus {
-  text-decoration: underline;
+a:hover, a:focus { color: var(--evergreen-h); }
+
+/* Subtle emphasis (reward) */
+strong {
+  color: rgba(190, 247, 214, 1);
+  font-weight: 650;
 }
 
-/* --------------------------------------------- */
-/*  Components                                   */
-/* --------------------------------------------- */
-
-/* Callout / box titles */
-.admonition-title,
-.box .box-title {
-  text-transform: none;
-  border-bottom: 1px solid rgba(252, 240, 220, 0.25);
-  padding-bottom: 0.35rem;
-  margin-bottom: 0.45rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  font-size: 0.8rem;
-}
-
-/* Admonition / boxes – frosted panels */
-.box,
-.admonition {
-  border-radius: 14px;
-  box-shadow:
-    0 14px 32px rgba(3, 7, 18, 0.65),
-    0 0 0 1px rgba(252, 240, 220, 0.18);
-  background: radial-gradient(circle at 0% 0%,
-                rgba(252, 240, 220, 0.05),
-                transparent 55%),
-              linear-gradient(135deg,
-                rgba(14, 36, 66, 0.96),
-                rgba(18, 44, 80, 0.96));
-}
-
-/* Admonition variants – “Santa Ops Units” tone */
-.admonition.note,
-.admonition.info {
-  border-left: 4px solid rgba(135, 170, 210, 1);
-}
-.admonition.tip,
-.admonition.success {
-  border-left: 4px solid rgba(64, 190, 160, 1);
-}
-.admonition.warning {
-  border-left: 4px solid rgba(255, 190, 120, 1);
-}
-.admonition.danger,
-.admonition.error {
-  border-left: 4px solid rgba(190, 70, 80, 1);
-}
-
-.admonition.note .admonition-title::before,
-.admonition.info .admonition-title::before {
-  content: "INFO // ";
-}
-.admonition.tip .admonition-title::before,
-.admonition.success .admonition-title::before {
-  content: "SANTA OPS // TIP ";
-}
-.admonition.warning .admonition-title::before {
-  content: "WARNING // ";
-}
-.admonition.danger .admonition-title::before,
-.admonition.error .admonition-title::before {
-  content: "ALERT // ";
-}
-
-/* Tables – frosted grid */
-.main__content table,
-#body-inner table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 1.25rem 0;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow:
-    0 14px 32px rgba(3, 7, 18, 0.6),
-    0 0 0 1px rgba(65, 95, 135, 0.8);
-}
-
-.main__content table th,
-.main__content table td,
-#body-inner table th,
-#body-inner table td {
-  padding: 0.5rem 0.75rem;
-}
-
-.main__content table th,
-#body-inner table th {
-  background: linear-gradient(
-    135deg,
-    rgba(22, 55, 92, 1),
-    rgba(35, 76, 120, 1)
-  );
-  color: rgba(244, 248, 252, 1);
-  text-align: left;
-  font-weight: 600;
-}
-
-.main__content table tr:nth-child(even) td,
-#body-inner table tr:nth-child(even) td {
-  background-color: rgba(13, 32, 58, 1);
-}
-.main__content table tr:nth-child(odd) td,
-#body-inner table tr:nth-child(odd) td {
-  background-color: rgba(9, 25, 48, 1);
-}
-
-/* Narrower text column for long writeups */
-.main__content {
-  max-width: 860px;
-}
-
-/* --------------------------------------------- */
-/*  Layout canvas – background & decorations     */
-/* --------------------------------------------- */
-
-/* Global background: deep navy with soft light spots */
-body {
-  background:
-    radial-gradient(circle at 0% 0%,
-        rgba(255, 255, 255, 0.06), transparent 55%),
-    radial-gradient(circle at 100% 100%,
-        rgba(255, 255, 255, 0.04), transparent 55%),
-    linear-gradient(135deg,
-        #0b1f38 0%,
-        #0b1f38 40%,
-        #102a4b 100%);
-}
-
-/* Let the main panel float on top of the canvas */
-.main,
-#body-inner {
-  background: transparent;
-}
-
-/* Main content card */
-.main__content,
-#body-inner {
-  background: rgba(14, 36, 66, 0.97);
-  border-radius: 18px;
-  box-shadow:
-    0 24px 60px rgba(3, 7, 18, 0.85),
-    0 0 0 1px rgba(186, 210, 236, 0.12);
-  padding: 2.5rem 2.75rem;
-  margin: 2.5rem auto;
-  position: relative;
-}
-
-/* Slight frosted edge at top and bottom of content card */
-.main__content::before,
-.main__content::after,
-#body-inner::before,
-#body-inner::after {
-  content: "";
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  height: 24px;
-  border-radius: 999px;
-  background: radial-gradient(circle,
-      rgba(252, 240, 220, 0.15),
-      transparent 65%);
-  pointer-events: none;
-}
-.main__content::before,
-#body-inner::before {
-  top: -12px;
-}
-.main__content::after,
-#body-inner::after {
-  bottom: -12px;
-}
-
-/* Sidebar, topbar – glassy look */
-.topbar {
-  background: linear-gradient(
-      90deg,
-      rgba(11, 31, 56, 0.9),
-      rgba(11, 31, 56, 0.85)
-    );
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(65, 95, 135, 0.8);
-}
-
-.sidebar,
-.sidebar .padding {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(11, 31, 56, 0.98) 0%,
-      rgba(16, 43, 76, 0.98) 45%,
-      rgba(22, 55, 92, 0.98) 100%
-    );
-}
-
-/* Menu entries: pill-like hover highlight */
-#sidebar ul li a {
-  border-radius: 999px;
-  padding-inline: 0.7rem;
-}
-#sidebar ul li a:hover {
-  background-color: rgba(190, 70, 80, 0.16);
-}
-
-/* Active page marker – small poinsettia dot */
-#sidebar ul li.active > a::before {
-  content: "";
-  display: inline-block;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 999px;
-  margin-right: 0.35rem;
-  background: radial-gradient(circle,
-      rgba(227, 112, 120, 1),
-      rgba(190, 70, 80, 1));
-}
-
-/* Code panels */
-pre.chroma,
-.highlight > pre,
-pre {
-  border-radius: 14px;
-  box-shadow:
-    0 16px 40px rgba(3, 7, 18, 0.7),
-    0 0 0 1px rgba(65, 95, 135, 0.7);
-  background: linear-gradient(
-      135deg,
-      rgba(9, 24, 46, 1) 0%,
-      rgba(12, 32, 60, 1) 100%
-    );
-  position: relative;
-  padding-top: 2rem; /* for label bar */
-}
-
-/* Code header bar */
-pre.chroma::before,
-.highlight > pre::before,
-pre::before {
-  content: "AGENT CONSOLE";
-  position: absolute;
-  top: 0.4rem;
-  left: 1.1rem;
-  font-size: 0.70rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(186, 210, 236, 0.85);
-}
-
-/* Small status “LEDs” */
-pre.chroma::after,
-.highlight > pre::after,
-pre::after {
-  content: "";
-  position: absolute;
-  top: 0.75rem;
-  right: 1.1rem;
-  width: 32px;
-  height: 6px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    rgba(64, 190, 160, 0.9),
-    rgba(255, 190, 120, 0.9),
-    rgba(190, 70, 80, 0.9)
-  );
-}
-
-/* --------------------------------------------- */
-/*  Images – frosted frames                      */
-/* --------------------------------------------- */
-
+/* Micro-motion (intent-only) */
+#R-sidebar a.padding,
 .main__content img,
 #body-inner img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 16px;
-  display: block;
-  margin: 1.5rem auto;
-
-  background-color: rgba(7, 19, 36, 1);
-  box-shadow:
-    0 18px 40px rgba(3, 7, 18, 0.75),
-    0 0 0 1px rgba(186, 210, 236, 0.35);
+  transition: transform 120ms ease, opacity 120ms ease, background-color 120ms ease;
 }
-
-/* --------------------------------------------- */
-/*  Lists – custom poinsettia bullets            */
-/* --------------------------------------------- */
-
-.main__content ul,
-#body-inner ul {
-  list-style: none;
-  padding-left: 1.2rem;
-}
-
-.main__content ul li,
-#body-inner ul li {
-  position: relative;
-  padding-left: 0.4rem;
-  margin-bottom: 0.25rem;
-}
-
-.main__content ul li::before,
-#body-inner ul li::before {
-  content: "";
-  position: absolute;
-  left: -1.0rem;
-  top: 0.55em;
-  width: 0.32rem;
-  height: 0.32rem;
-  border-radius: 999px;
-  background: radial-gradient(circle,
-      rgba(227, 112, 120, 1),
-      rgba(190, 70, 80, 1));
-  box-shadow: 0 0 6px rgba(227, 112, 120, 0.6);
-}
-
-/* --------------------------------------------- */
-/*  Horizontal rules – frosted separators        */
-/* --------------------------------------------- */
-
-.main__content hr,
-#body-inner hr {
-  border: 0;
-  height: 1px;
-  margin: 2rem 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(186, 210, 236, 0.7),
-    transparent
-  );
-  box-shadow: 0 0 12px rgba(186, 210, 236, 0.5);
-}
-
-/* --------------------------------------------- */
-/*  Mermaid diagrams – frosted panels            */
-/* --------------------------------------------- */
-
-.main__content .mermaid,
-#body-inner .mermaid {
-  background: radial-gradient(circle at 0% 0%,
-                rgba(252, 240, 220, 0.08),
-                transparent 55%),
-              linear-gradient(135deg,
-                rgba(14, 36, 66, 0.98),
-                rgba(18, 44, 80, 0.98));
-  border-radius: 16px;
-  padding: 1.25rem;
-  box-shadow:
-    0 18px 45px rgba(3, 7, 18, 0.8),
-    0 0 0 1px rgba(186, 210, 236, 0.35);
-  overflow: hidden;
-}
-
-/* --------------------------------------------- */
-/*  Snow sparkle overlay                         */
-/* --------------------------------------------- */
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.10) 0.5px, transparent 0.5px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.06) 0.5px, transparent 0.5px);
-  background-size: 140px 140px, 220px 220px;
-  background-position: 0 0, 60px 40px;
-  opacity: 0.35;
-  z-index: 0;
-}
-
-/* Make sure main layout stays above sparkle */
-.main,
-.sidebar,
-.topbar {
-  position: relative;
-  z-index: 1;
-}
-
-/* --------------------------------------------- */
-/*  Blockquotes – Elegant Cyberpunk "Ops Brief" */
-/* --------------------------------------------- */
-
-blockquote {
-  position: relative;
-  margin: 2.25rem auto;
-  padding: 1.6rem 2rem 1.7rem 2rem;
-
-  background: radial-gradient(circle at 0% 0%,
-               rgba(252, 240, 220, 0.10),
-               transparent 55%),
-              linear-gradient(135deg,
-               rgba(14, 36, 66, 0.97),
-               rgba(18, 44, 80, 0.97));
-  color: rgba(233, 237, 243, 1);
-
-  border-radius: 14px;
-  border: 1px solid rgba(186, 210, 236, 0.28);
-
-  box-shadow:
-    0 18px 48px rgba(3, 7, 18, 0.65),
-    0 0 0 1px rgba(35, 63, 101, 0.65);
-
-  font-size: 1.0rem;
-  line-height: 1.7;
-  max-width: 820px;
-}
-
-/* Left neon accent bar */
-blockquote::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 18px;
-  bottom: 18px;
-  width: 4px;
-  border-radius: 999px;
-
-  background: linear-gradient(
-    180deg,
-    rgba(227, 112, 120, 1),
-    rgba(135, 170, 210, 1)
-  );
-  box-shadow:
-    0 0 14px rgba(227, 112, 120, 0.45),
-    0 0 14px rgba(135, 170, 210, 0.45);
-}
-
-/* Small cyberpunk label tag in the top-right corner */
-blockquote::after {
-  content: "NP-OPS // BRIEFING";
-  position: absolute;
-  top: -0.9rem;
-  right: 1.8rem;
-
-  padding: 0.15rem 0.7rem;
-  border-radius: 999px;
-
-  background: radial-gradient(circle at 0% 0%,
-                rgba(252, 240, 220, 0.35),
-                rgba(35, 63, 101, 0.95));
-  color: rgba(233, 237, 243, 0.88);
-
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", sans-serif;
-  font-size: 0.70rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(186, 210, 236, 0.5);
-}
-
-/* Paragraph spacing inside */
-blockquote > p:first-child {
-  margin-top: 0.1rem;
-}
-blockquote > p:last-child {
-  margin-bottom: 0;
-}
-
-/* Links inside blockquote */
-blockquote a {
-  color: rgba(186, 210, 236, 1);
-  text-decoration: underline;
-}
-blockquote a:hover,
-blockquote a:focus {
-  color: rgba(227, 112, 120, 1);
-}
-
-/* Softer italics */
-blockquote em {
-  font-style: italic;
-  color: rgba(245, 244, 250, 0.95);
-}
-
-/* --------------------------------------------- */
-/*  Right-hand TOC – Frosted Ops Nav             */
-/* --------------------------------------------- */
-
-/* Wrapper for on-page TOC (Relearn bruker <nav id="TableOfContents"> på høyre side) */
-#TableOfContents {
-  position: sticky;
-  top: 5.5rem;
-  max-height: calc(100vh - 6.5rem);
-  overflow: auto;
-
-  margin: 2.0rem 0 2.5rem 1.5rem;
-  padding: 1.1rem 1.2rem 1.2rem 1.2rem;
-
-  background: radial-gradient(circle at 0% 0%,
-                rgba(252, 240, 220, 0.08),
-                transparent 55%),
-              linear-gradient(145deg,
-                rgba(14, 36, 66, 0.96),
-                rgba(18, 44, 80, 0.98));
-  border-radius: 14px;
-
-  border: 1px solid rgba(186, 210, 236, 0.28);
-  box-shadow:
-    0 18px 40px rgba(3, 7, 18, 0.75),
-    0 0 0 1px rgba(35, 63, 101, 0.65);
-
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: rgba(220, 229, 240, 0.95);
-}
-
-/* «Header» i TOC – cyberjul-label */
-#TableOfContents::before {
-  content: "ON-PAGE // NAVIGATION";
-  display: block;
-  margin-bottom: 0.65rem;
-
-  font-size: 0.70rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(186, 210, 236, 0.9);
-
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid rgba(186, 210, 236, 0.35);
-}
-
-/* Listestruktur – fjern standard bullets, lag egen «spine» */
-#TableOfContents ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-#TableOfContents ul ul {
-  margin-top: 0.25rem;
-  margin-left: 0.8rem;
-  padding-left: 0.4rem;
-  border-left: 1px dashed rgba(135, 170, 210, 0.5); /* vertikal spine for undernivå */
-}
-
-/* Items */
-#TableOfContents li {
-  position: relative;
-  margin: 0.15rem 0;
-  padding-left: 0.65rem;
-}
-
-/* Poinsettia/frost bullet */
-#TableOfContents li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.72em;
-  width: 0.28rem;
-  height: 0.28rem;
-  border-radius: 999px;
-  background: radial-gradient(circle,
-      rgba(227, 112, 120, 1),
-      rgba(190, 70, 80, 1));
-  box-shadow: 0 0 6px rgba(227, 112, 120, 0.6);
-}
-
-/* Lenker i TOC – dashing, men lesbare */
-#TableOfContents a {
-  display: inline-block;
-  max-width: 100%;
-  color: rgba(220, 229, 240, 0.9);
-  text-decoration: none;
-  line-height: 1.4;
-
-  border-radius: 999px;
-  padding: 0.1rem 0.25rem;
-  transition: background-color 120ms ease-out, color 120ms ease-out, transform 80ms ease-out;
-}
-
-#TableOfContents a:hover,
-#TableOfContents a:focus {
-  background-color: rgba(190, 70, 80, 0.18);
-  color: rgba(255, 255, 255, 1);
-  transform: translateX(1px);
-}
-
-/* Forsøk å fange «aktivt» anker (avhenger av hvordan temaet markerer det) */
-#TableOfContents a[aria-current="true"],
-#TableOfContents li.active > a {
-  background-color: rgba(190, 70, 80, 0.25);
-  color: rgba(255, 255, 255, 1);
-  font-weight: 600;
-}
-
-/* Litt tettere spacing for nested nivåer */
-#TableOfContents ul ul li {
-  margin: 0.05rem 0;
-}
-
-/* På smale skjermer: ton ned høyre-menyens visuelle tyngde */
-@media (max-width: 960px) {
-  #TableOfContents {
-    position: static;
-    max-height: none;
-    margin: 1.5rem 0 1.5rem 0;
-    box-shadow:
-      0 12px 30px rgba(3, 7, 18, 0.5),
-      0 0 0 1px rgba(35, 63, 101, 0.5);
-  }
-}
-
-
-/* --------------------------------------------- */
-/*  Print                                         */
-/* --------------------------------------------- */
-
-@media print {
-  body {
-    background: #ffffff !important;
-  }
-  body::before {
-    display: none;
-  }
-  .main__content,
-  #body-inner {
-    margin: 0;
-    box-shadow: none;
-    border-radius: 0;
-    background: #ffffff !important;
-  }
-}
-
-/* --------------------------------------------- */
-/*  Left sidebar – Frosted Mission Navigator     */
-/* --------------------------------------------- */
-
-/* Selve panelet */
-#R-sidebar {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(11, 31, 56, 0.98) 0%,
-      rgba(16, 43, 76, 0.98) 45%,
-      rgba(22, 55, 92, 0.98) 100%
-    );
-  box-shadow:
-    8px 0 25px rgba(0, 0, 0, 0.55),
-    1px 0 0 rgba(35, 63, 101, 0.85);
-}
-
-/* Homelinks / divider-linjer */
-#R-sidebar .R-menu-divider hr.padding {
-  border: 0;
-  height: 1px;
-  margin: 0.6rem 0;
-  background: linear-gradient(
-    90deg,
-    rgba(11, 31, 56, 0),
-    rgba(186, 210, 236, 0.5),
-    rgba(11, 31, 56, 0)
-  );
-}
-
-/* "Home" øverst */
-#R-sidebar .R-shortcutmenu-homelinks ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-#R-sidebar .R-shortcutmenu-homelinks li a.padding {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-
-  padding: 0.4rem 0.8rem;
-  margin: 0.1rem 0.15rem 0.4rem 0.15rem;
-
-  border-radius: 999px;
-  border: 1px solid rgba(65, 95, 135, 0.75);
-
-  background: radial-gradient(circle at 0% 0%,
-                rgba(252, 240, 220, 0.12),
-                transparent 55%),
-              linear-gradient(135deg,
-                rgba(14, 36, 66, 0.95),
-                rgba(18, 44, 80, 0.97));
-
-  color: rgba(233, 237, 243, 0.95);
-  font-size: 0.9rem;
-
-  text-decoration: none;
-  box-shadow:
-    0 10px 24px rgba(3, 7, 18, 0.7);
-
-  transition:
-    background-color 120ms ease-out,
-    border-color 120ms ease-out,
-    color 120ms ease-out,
-    transform 80ms ease-out;
-}
-
-#R-sidebar .R-shortcutmenu-homelinks li a.padding:hover {
-  border-color: rgba(252, 240, 220, 0.7);
-  color: #ffffff;
-  transform: translateX(1px);
-}
-
-/* ACT-seksjoner (Act 1 / Act 2 / Act 3) */
-#R-sidebar .R-shortcutmenu-main > ul.enlarge {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-#R-sidebar .R-shortcutmenu-main > ul.enlarge > li > a.padding {
-  display: block;
-  margin: 0.9rem 0.25rem 0.25rem 0.25rem;
-  padding: 0.15rem 0.3rem;
-
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.19em;
-  text-transform: uppercase;
-
-  color: rgba(186, 210, 236, 0.78);
-  text-decoration: none;
-
-  border-bottom: 1px solid rgba(65, 95, 135, 0.75);
-  border-radius: 0;
-  background: transparent;
-}
-
-/* Liste over oppgaver under en ACT */
-#R-sidebar .R-shortcutmenu-main ul.enlarge li ul.collapsible-menu {
-  list-style: none;
-  margin: 0.25rem 0 0.5rem 0;
-  padding-left: 0;
-}
-
-/* Vanlige oppgave-lenker */
-#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li > a.padding {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-
-  padding: 0.32rem 0.8rem;
-  margin: 0.02rem 0.15rem;
-
-  border-radius: 999px;
-  border: 1px solid transparent;
-
-  color: rgba(220, 229, 240, 0.86);
-  font-size: 0.9rem;
-
-  text-decoration: none;
-  background-color: transparent;
-
-  transition:
-    background-color 120ms ease-out,
-    border-color 120ms ease-out,
-    color 120ms ease-out,
-    transform 80ms ease-out;
-}
-
-/* Poinsettia-dot ved oppgaver */
-#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li > a.padding::before {
-  content: "";
-  width: 0.26rem;
-  height: 0.26rem;
-  border-radius: 999px;
-  background: radial-gradient(circle,
-      rgba(227, 112, 120, 1),
-      rgba(190, 70, 80, 1));
-  opacity: 0;
-  box-shadow: 0 0 0 rgba(227, 112, 120, 0);
-  transition: opacity 120ms ease-out, box-shadow 120ms ease-out;
-}
-
-/* Hover – frostet tab med glow */
-#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li > a.padding:hover {
-  background-color: rgba(190, 70, 80, 0.16);
-  border-color: rgba(186, 210, 236, 0.45);
-  color: rgba(244, 248, 252, 1);
-  transform: translateX(1px);
-}
-
-#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li > a.padding:hover::before {
-  opacity: 1;
-  box-shadow: 0 0 6px rgba(227, 112, 120, 0.8);
-}
-
-/* Aktiv oppgave – «mission selected» */
-#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li.active > a.padding,
-#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li.visited.active > a.padding {
-  background: linear-gradient(
-    135deg,
-    rgba(190, 70, 80, 0.9),
-    rgba(135, 170, 210, 0.9)
-  );
-  border-color: rgba(252, 240, 220, 0.6);
-  color: #ffffff;
-  font-weight: 600;
-  box-shadow:
-    0 0 0 1px rgba(252, 240, 220, 0.55),
-    0 10px 25px rgba(3, 7, 18, 0.75);
-  transform: translateX(1px);
-}
-
-#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li.active > a.padding::before,
-#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li.visited.active > a.padding::before {
-  opacity: 1;
-  box-shadow: 0 0 7px rgba(252, 240, 220, 0.9);
-}
-
-/* Nested nivåer (om du får flere undernivåer senere) */
-#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu ul li > a.padding {
-  font-size: 0.86rem;
-  padding-left: 1.4rem;
-  opacity: 0.92;
-}
-
-/* Smalere skjermer: litt mindre dramatikk */
-@media (max-width: 960px) {
-  #R-sidebar .R-shortcutmenu-main > ul.enlarge > li > a.padding {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  #R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li > a.padding {
-    border-radius: 10px;
+#R-sidebar a.padding:hover { transform: translateX(2px); }
+.main__content img:hover,
+#body-inner img:hover { transform: scale(1.01); }
+
+@media (prefers-reduced-motion: reduce) {
+  #R-sidebar a.padding,
+  .main__content img,
+  #body-inner img,
+  a,
+  h2::after, .h2::after {
+    transition: none !important;
+    animation: none !important;
     transform: none !important;
   }
 }
 
 /* --------------------------------------------- */
-/*  Sidebar logo / title                         */
+/* Content surface                                */
 /* --------------------------------------------- */
+.main, #body-inner { background: transparent; }
 
-#R-logo {
-  display: block;
-  padding: 0.8rem 0.9rem 0.5rem 0.9rem;
-  text-decoration: none;
+.main__content,
+#body-inner {
+  max-width: 940px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.018));
+  border: 1px solid var(--line-0);
+  border-radius: 12px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.38);
+  padding: 2.35rem 2.65rem;
+  margin: 2.2rem auto;
 }
 
-#R-logo .logo-title {
-  color: rgba(233, 237, 243, 0.98);      /* synlig på mørk bakgrunn */
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.92rem;
+.main__content::before,
+.main__content::after,
+#body-inner::before,
+#body-inner::after { content: none !important; display: none !important; }
+
+.main__content p,
+#body-inner p { margin: 0.95rem 0; }
+
+/* --------------------------------------------- */
+/* Headings                                       */
+/* --------------------------------------------- */
+h1, .h1 {
+  color: var(--ink-0);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.16;
+  margin: 0.25rem 0 1.15rem;
+}
+h2, .h2 {
+  color: var(--ink-0);
   font-weight: 650;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0.006em;
+  line-height: 1.25;
+  margin: 2.1rem 0 0.9rem;
+}
+h2::after, .h2::after {
+  content: "";
+  display: block;
+  margin-top: 0.55rem;
+  width: 96px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(56,201,113,0.85), rgba(45,166,164,0.55), transparent);
+  background-size: 200% 100%;
+  animation: headerSweep 6s ease-in-out infinite;
+}
+@keyframes headerSweep {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+h3, .h3 { color: rgba(245,252,255,0.94); font-weight: 600; margin: 1.45rem 0 0.65rem; }
+h4, .h4 { color: rgba(245,252,255,0.92); font-weight: 600; margin: 1.15rem 0 0.55rem; }
 
-  white-space: normal;
-  line-height: 1.3;
+/* --------------------------------------------- */
+/* Topbar                                         */
+/* --------------------------------------------- */
+.topbar {
+  background: rgba(6, 15, 19, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line-0);
+}
 
-  border-bottom: 1px solid rgba(65, 95, 135, 0.8);
-  padding-bottom: 0.4rem;
+/* --------------------------------------------- */
+/* Sidebar (flat, legible, no rounded borders)    */
+/* --------------------------------------------- */
+#R-sidebar {
+  background: var(--MENU-SECTIONS-BG-color) !important;
+  border-right: 1px solid var(--line-0) !important;
+  box-shadow: 6px 0 18px rgba(0,0,0,0.32);
+}
+
+/* no rounding in sidebar */
+#R-sidebar,
+#R-sidebar * {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* title area */
+#R-logo {
+  display: block !important;
+  padding: 1.0rem 0.9rem 0.55rem 0.9rem !important;
+  text-decoration: none !important;
+}
+#R-logo .logo-title {
+  color: rgba(245,252,255,0.95) !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.02em !important;
+  font-size: 1.15rem !important;
+  line-height: 1.2 !important;
+  opacity: 1 !important;
+}
+
+/* remove the annoying separators */
+#R-header { border-bottom: 0 !important; margin-bottom: 0.65rem !important; }
+#R-sidebar .R-menu-divider,
+#R-sidebar .R-menu-divider hr,
+#R-sidebar hr.padding { display: none !important; height: 0 !important; border: 0 !important; }
+
+/* remove list noise */
+#R-sidebar ul, #R-sidebar li { list-style: none !important; }
+
+/* main menu container */
+#R-sidebar .R-shortcutmenu-main > ul.enlarge {
+  padding: 0.2rem 0 0.8rem 0 !important;
+  margin: 0 !important;
+}
+
+/* parent sections (ACT 1/2/3 etc.) */
+#R-sidebar .R-shortcutmenu-main > ul.enlarge > li.parent > a.padding,
+#R-sidebar .R-shortcutmenu-main > ul.enlarge > li > a.padding {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  padding: 0.55rem 0.9rem !important;
+  margin: 0.35rem 0 !important;
+
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.10em !important;
+  text-transform: uppercase !important;
+
+  color: rgba(225,236,241,0.82) !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* caret */
+#R-sidebar .R-shortcutmenu-main > ul.enlarge > li.parent > a.padding::after {
+  content: "▾" !important;
+  color: rgba(225,236,241,0.55) !important;
+  font-size: 0.85rem !important;
+  line-height: 1 !important;
+  transform: translateY(-1px);
+}
+
+/* nested list */
+#R-sidebar .R-shortcutmenu-main ul.enlarge li ul.collapsible-menu {
+  margin: 0.15rem 0 0.65rem 0 !important;
+  padding: 0 !important;
+  border-left: 1px solid rgba(255,255,255,0.08) !important;
+  margin-left: 0.9rem !important;
+}
+
+/* child links */
+#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li > a.padding {
+  display: block !important;
+  padding: 0.38rem 0.9rem 0.38rem 0.75rem !important;
+  margin: 0 !important;
+  font-size: 0.92rem !important;
+  font-weight: 450 !important;
+  color: rgba(225,236,241,0.78) !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li > a.padding:hover {
+  color: rgba(245,252,255,0.98) !important;
+  background: rgba(255,255,255,0.03) !important;
+}
+
+/* active child */
+#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li.active > a.padding,
+#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li.visited.active > a.padding {
+  color: rgba(245,252,255,1) !important;
+  font-weight: 650 !important;
+  background: rgba(56,201,113,0.08) !important;
+  position: relative !important;
+}
+#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li.active > a.padding::before,
+#R-sidebar .R-shortcutmenu-main li ul.collapsible-menu > li.visited.active > a.padding::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 3px !important;
+  background: rgba(56,201,113,0.90) !important;
+}
+
+/* --------------------------------------------- */
+/* Blockquotes (square + slightly narrative)      */
+/* --------------------------------------------- */
+blockquote {
+  margin: 1.6rem 0;
+  padding: 1.05rem 1.2rem;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--line-0);
+  border-left: 3px solid rgba(45,166,164,0.90);
+  border-radius: 0 !important;
+  box-shadow: none;
+  color: rgba(225,236,241,0.86);
+  font-style: italic;
+  opacity: 0.92;
+}
+blockquote::before, blockquote::after { content: none !important; }
+blockquote p { margin: 0.65rem 0; }
+
+/* --------------------------------------------- */
+/* Code (square + NO risky wrapper nuking)         */
+/* --------------------------------------------- */
+code, pre, kbd, samp {
+  font-family: "JetBrains Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+code {
+  color: var(--CODE-INLINE-color);
+  background: var(--CODE-INLINE-BG-color);
+  border: 1px solid var(--CODE-INLINE-BORDER-color);
+  border-radius: 0 !important;
+  padding: 0.12rem 0.32rem;
+}
+
+/* The only "artefact removal" that is safe: kill pseudo chrome on pre */
+pre::before, pre::after,
+pre.chroma::before, pre.chroma::after,
+.highlight > pre::before, .highlight > pre::after {
+  content: none !important;
+  display: none !important;
+}
+
+pre,
+pre.chroma,
+.highlight > pre {
+  color: var(--CODE-BLOCK-color);
+  background: linear-gradient(180deg, rgba(7,16,20,1), rgba(11,23,29,1));
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 0 !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.38);
+  padding: 1.0rem 1.15rem;
+  overflow: auto;
+}
+
+/* keep chroma internals intact (DON'T touch highlight tables) */
+pre code,
+pre.chroma code,
+.highlight code {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+/* --------------------------------------------- */
+/* Admonitions / boxes                             */
+/* --------------------------------------------- */
+.box, .admonition {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line-0);
+  border-radius: 12px;
+  box-shadow: none;
+}
+.admonition-title, .box .box-title {
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: rgba(245,252,255,0.96);
+  border-bottom: 1px solid var(--line-0);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.55rem;
+}
+.admonition-title::before { content: none !important; }
+
+.admonition.note, .admonition.info { border-left: 4px solid rgba(45,166,164,0.85); }
+.admonition.tip, .admonition.success { border-left: 4px solid rgba(56,201,113,0.85); }
+.admonition.warning { border-left: 4px solid rgba(245,207,74,0.85); }
+.admonition.danger, .admonition.error { border-left: 4px solid rgba(235,76,88,0.85); }
+
+/* --------------------------------------------- */
+/* Tables                                         */
+/* --------------------------------------------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.2rem 0;
+  border: 1px solid var(--line-0);
+  border-radius: 12px;
+  overflow: hidden;
+}
+th, td { padding: 0.55rem 0.80rem; }
+th {
+  background: rgba(255,255,255,0.05);
+  color: rgba(245,252,255,0.96);
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid var(--line-0);
+}
+tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+td { border-top: 1px solid rgba(255,255,255,0.06); }
+
+/* --------------------------------------------- */
+/* Images                                         */
+/* --------------------------------------------- */
+.main__content img,
+#body-inner img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.4rem auto;
+  border-radius: 10px;
+  border: 1px solid var(--line-0);
+  background: rgba(0,0,0,0.18);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.46);
+}
+
+/* --------------------------------------------- */
+/* Lists                                          */
+/* --------------------------------------------- */
+.main__content ul,
+#body-inner ul {
+  list-style: disc;
+  padding-left: 1.35rem;
+}
+.main__content ul li::before,
+#body-inner ul li::before { content: none !important; }
+
+/* --------------------------------------------- */
+/* Horizontal rules                               */
+/* --------------------------------------------- */
+hr {
+  border: 0;
+  height: 1px;
+  margin: 2rem 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
+}
+
+/* --------------------------------------------- */
+/* Mermaid panels                                 */
+/* --------------------------------------------- */
+.main__content .mermaid,
+#body-inner .mermaid {
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 1.1rem;
+  border: 1px solid var(--line-0);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+/* --------------------------------------------- */
+/* Print                                          */
+/* --------------------------------------------- */
+@media print {
+  body { background: #ffffff !important; color: #111 !important; }
+  .main__content, #body-inner {
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    border: 0 !important;
+    padding: 0 !important;
+  }
+  #TableOfContents { display: none !important; }
+}
+
+
+/* ============================================================
+   Visual identity for Quotes vs Code (cool, not tacky)
+   ============================================================ */
+
+/* ---------- QUOTES: "Briefing" panel ---------- */
+blockquote {
+  position: relative;
+  padding-top: 1.65rem;             /* room for label */
+  background: linear-gradient(180deg, rgba(255,255,255,0.030), rgba(255,255,255,0.018));
+  border: 1px solid rgba(255,255,255,0.10);
+  border-left: 3px solid rgba(45,166,164,0.90); /* teal rail */
+}
+
+blockquote::before {
+  content: "BRIEFING";
+  position: absolute;
+  top: 0.55rem;
+  left: 1.05rem;
+
+  font-style: normal;
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  color: rgba(225,236,241,0.60);
+}
+
+/* slight emphasis for quoted text */
+blockquote p {
+  color: rgba(235,245,249,0.86);
+}
+
+/* ---------- CODE: "Terminal" panel ---------- */
+pre,
+pre.chroma,
+.highlight > pre {
+  position: relative;
+  padding-top: 2.05rem; /* room for label */
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* terminal label + subtle top rule */
+pre::before,
+pre.chroma::before,
+.highlight > pre::before {
+  content: "TERMINAL";
+  position: absolute;
+  top: 0.55rem;
+  left: 1.05rem;
+
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  color: rgba(190,247,214,0.55); /* evergreen tint */
+}
+
+/* a thin scanline-ish divider under the label */
+pre::after,
+pre.chroma::after,
+.highlight > pre::after {
+  content: "";
+  position: absolute;
+  left: 1.05rem;
+  right: 1.05rem;
+  top: 1.35rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(56,201,113,0.55),
+    rgba(45,166,164,0.35),
+    transparent
+  );
+}
+
+/* Keep label from colliding with code content */
+pre code,
+pre.chroma code,
+.highlight code {
+  display: block;
+}
+
+/* Respect reduced motion users if you later animate anything */
+@media (prefers-reduced-motion: reduce) {
+  pre, blockquote { transition: none !important; }
 }
 
 /* ============================================================
-   Article Readability Patch – neutral gray reading surface
-   Applies ONLY to article content (not side/top menus)
+   Context-aware code labels (CSS-only)
+   Works if Chroma outputs code[data-lang] or code.language-*
    ============================================================ */
 
-/* 1) Main article background: neutral dark gray instead of blue */
-.main__content,
-#body-inner {
-  background: linear-gradient(
-    180deg,
-    rgba(26, 28, 32, 0.98),
-    rgba(22, 24, 28, 0.98)
-  );
-
-  color: rgba(232, 235, 240, 1);
-  box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(90, 96, 110, 0.45);
-}
-
-/* 2) Paragraph text: slightly warmer gray (less blue fatigue) */
-.main__content p,
-#body-inner p,
-.main__content li,
-#body-inner li {
-  color: rgba(230, 232, 236, 0.95);
-}
-
-/* 3) Headings: crisp near-white, no glow */
-.main__content h1,
-.main__content h2,
-.main__content h3,
-.main__content h4,
-#body-inner h1,
-#body-inner h2,
-#body-inner h3,
-#body-inner h4 {
-  color: rgba(248, 249, 252, 1);
-  text-shadow: none;
-}
-
-/* Optional: simplify the underline accent further */
-h2::after,
-.h2::after,
-h3::after,
-.h3::after {
-  background: linear-gradient(
-    90deg,
-    rgba(180, 185, 195, 0.7),
-    rgba(180, 185, 195, 0.0)
-  );
-}
-
-/* 4) Code blocks: slightly lighter gray to separate from text */
+/* Base label (fallback) */
+pre,
 pre.chroma,
-.highlight > pre,
-pre {
-  background: linear-gradient(
-    180deg,
-    rgba(32, 34, 38, 1),
-    rgba(28, 30, 34, 1)
-  );
-
-  box-shadow:
-    0 10px 24px rgba(0, 0, 0, 0.65),
-    0 0 0 1px rgba(110, 116, 130, 0.55);
+.highlight > pre {
+  position: relative;
+  padding-top: 2.05rem;
 }
 
-/* Inline code: neutral gray, not brown/gold */
-code {
-  background-color: rgba(42, 44, 48, 1);
-  color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(110, 116, 130, 0.6);
+pre::before,
+pre.chroma::before,
+.highlight > pre::before {
+  content: "TERMINAL";
+  position: absolute;
+  top: 0.55rem;
+  left: 1.05rem;
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(190,247,214,0.55);
 }
 
-/* 5) Tables: classic documentation look */
-.main__content table th,
-#body-inner table th {
-  background: rgba(40, 42, 46, 1);
-  color: rgba(248, 249, 252, 1);
+/* Divider under label */
+pre::after,
+pre.chroma::after,
+.highlight > pre::after {
+  content: "";
+  position: absolute;
+  left: 1.05rem;
+  right: 1.05rem;
+  top: 1.35rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(56,201,113,0.55), rgba(45,166,164,0.35), transparent);
 }
 
-.main__content table tr:nth-child(even) td,
-#body-inner table tr:nth-child(even) td {
-  background-color: rgba(30, 32, 36, 1);
-}
-.main__content table tr:nth-child(odd) td,
-#body-inner table tr:nth-child(odd) td {
-  background-color: rgba(26, 28, 32, 1);
-}
+/* ---------- data-lang selectors (most common in Hugo/Chroma) ---------- */
+.highlight pre:has(code[data-lang="bash"])::before { content: "BASH"; }
+.highlight pre:has(code[data-lang="shell"])::before { content: "SHELL"; }
+.highlight pre:has(code[data-lang="sh"])::before { content: "SH"; }
+.highlight pre:has(code[data-lang="powershell"])::before { content: "POWERSHELL"; }
+.highlight pre:has(code[data-lang="pwsh"])::before { content: "POWERSHELL"; }
+.highlight pre:has(code[data-lang="python"])::before { content: "PYTHON"; }
+.highlight pre:has(code[data-lang="go"])::before { content: "GO"; }
+.highlight pre:has(code[data-lang="rust"])::before { content: "RUST"; }
+.highlight pre:has(code[data-lang="javascript"])::before { content: "JAVASCRIPT"; }
+.highlight pre:has(code[data-lang="typescript"])::before { content: "TYPESCRIPT"; }
+.highlight pre:has(code[data-lang="json"])::before { content: "JSON"; }
+.highlight pre:has(code[data-lang="yaml"])::before { content: "YAML"; }
+.highlight pre:has(code[data-lang="toml"])::before { content: "TOML"; }
+.highlight pre:has(code[data-lang="sql"])::before { content: "SQL"; }
+.highlight pre:has(code[data-lang="http"])::before { content: "HTTP"; }
+.highlight pre:has(code[data-lang="xml"])::before { content: "XML"; }
+.highlight pre:has(code[data-lang="dockerfile"])::before { content: "DOCKERFILE"; }
 
-/* 6) Admonitions/boxes: quiet gray panels */
-.box,
-.admonition {
-  background: rgba(30, 32, 36, 0.98);
-  border: 1px solid rgba(110, 116, 130, 0.6);
-  box-shadow: none;
-}
+/* ---------- class-based selectors (if you get language-xyz classes instead) ---------- */
+.highlight pre:has(code.language-bash)::before { content: "BASH"; }
+.highlight pre:has(code.language-powershell)::before { content: "POWERSHELL"; }
+.highlight pre:has(code.language-python)::before { content: "PYTHON"; }
+.highlight pre:has(code.language-go)::before { content: "GO"; }
+.highlight pre:has(code.language-rust)::before { content: "RUST"; }
+.highlight pre:has(code.language-json)::before { content: "JSON"; }
+.highlight pre:has(code.language-yaml)::before { content: "YAML"; }
+.highlight pre:has(code.language-sql)::before { content: "SQL"; }
 
-/* Keep left color bar as the only accent */
-.admonition.note,
-.admonition.info {
-  border-left-color: rgba(135, 170, 210, 1);
+/* Optional: make the label slightly different per family */
+.highlight pre:has(code[data-lang="powershell"])::before,
+.highlight pre:has(code.language-powershell)::before {
+  color: rgba(110,214,212,0.60);
 }
-.admonition.warning {
-  border-left-color: rgba(255, 190, 120, 1);
-}
-.admonition.danger,
-.admonition.error {
-  border-left-color: rgba(190, 70, 80, 1);
+.highlight pre:has(code[data-lang="python"])::before,
+.highlight pre:has(code.language-python)::before {
+  color: rgba(190,247,214,0.60);
 }
 
 /* Generated using: hugo gen chromastyles chroma-relearn-dark --style monokai --highlightStyle bg:#404042 */

@@ -1,5 +1,5 @@
 +++
-date = '2025-11-30T11:47:28+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = true
 title = 'Gnome Tea'
 weight = 1
@@ -9,9 +9,9 @@ weight = 1
 
 ## Objective
 
-Difficulty: 3/5
-
-Enter the apartment building near 24-7 and help Thomas infiltrate the GnomeTea social network and discover the secret agent passphrase.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 3/5 | Enter the apartment building near 24-7 and help Thomas infiltrate the GnomeTea social network and discover the secret agent passphrase. |
 
 ## Thomas Bouve mission statement
 

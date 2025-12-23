@@ -3,7 +3,7 @@
   <channel>
     <title>Santa&#39;s Gift Tracking Service Port Mystery :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act1/santas-gift-tracking-service-port-mystery/index.html</link>
-    <description>Objective Difficulty: 1/5&#xA;Chat with Yori near the apartment building about Santa’s mysterious gift tracker and unravel the holiday mystery.&#xA;Yori Kvitchko mission statement Hi! I’m Yori.&#xA;I was Ed’s lost intern back in 2015, but I was found!&#xA;Think you can check out this terminal for me? I need to use cURL to access the gift tracker system, but it has me stumped.</description>
+    <description>Objective Difficulty Description 1/5 Chat with Yori near the apartment building about Santa’s mysterious gift tracker and unravel the holiday mystery. Yori Kvitchko mission statement Hi! I’m Yori.&#xA;I was Ed’s lost intern back in 2015, but I was found!&#xA;Think you can check out this terminal for me? I need to use cURL to access the gift tracker system, but it has me stumped.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

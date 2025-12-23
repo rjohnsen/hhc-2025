@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Intro :: SANS Holiday Hack Challenge 2025</title>
+    <title>Sans Holiday Hack Challenge 2025 - Introduction :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/index.html</link>
     <description>Way back in 2015, the mysterious Atnas Corporation almost ruined the entire holiday season through their nefarious Gnome In Your Home plot. Their villainy centered upon convincing parents to purchase little Gnome dolls that played joyful holiday songs to their children. With Gnome sales topping two million units, a blitz of Atnas Corp advertisements encouraged parents to move their Gnomes around the house daily so that their children could hunt for them in a fun little game. Little did parents know that these Gnomes were snooping IoT devices with a camera and wireless internet access, furtively sending photos to burglars who would rob their houses of their treasures en masse on Christmas Eve, 2015. The incredible efforts of SANS Holiday Hack investigators around the world foiled the foul plot, exposing the criminal mastermind behind Atlas Corp: Cindy Lou Who, age 62.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Dec 2025 13:14:03 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 23 Dec 2025 15:59:59 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Act 1</title>
       <link>http://localhost:1313/act1/index.html</link>
-      <pubDate>Sat, 08 Nov 2025 15:30:27 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act1/index.html</guid>
       <description>The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.</description>
     </item>
     <item>
       <title>Act 2</title>
       <link>http://localhost:1313/act2/index.html</link>
-      <pubDate>Sat, 08 Nov 2025 15:30:30 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act2/index.html</guid>
       <description>The Gnomes’ nefarious plot seems to involve stealing refrigerator parts. But why?</description>
     </item>
     <item>
       <title>Act 3</title>
       <link>http://localhost:1313/act3/index.html</link>
-      <pubDate>Sat, 08 Nov 2025 15:30:34 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 12:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act3/index.html</guid>
       <description>The Gnomes want to transform the neighborhood so that it’s frozen solid year-round, an environmental disaster. But who is the mastermind behind the Gnomes’ wickedness?&#xA;The Counter Hack crew discovers Frosty is behind the Gnome uprising and stops his freezing plot! Santa’s compassionate offer to Frosty melts more than just snow, it melts hearts, saving the Neighborhood and proving that kindness conquers all.</description>
     </item>
     <item>
       <title>Endgame</title>
       <link>http://localhost:1313/endgame/index.html</link>
-      <pubDate>Tue, 23 Dec 2025 13:14:03 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 12:59:59 +0100</pubDate>
       <guid>http://localhost:1313/endgame/index.html</guid>
-      <description>Upon completing the game I met the entire Counter Hack team over at the Grand Hotel:&#xA;Clicking Santa and he spilled the tea:&#xA;Magnificent work, my friends! You’ve saved the Dosis Neighborhood from an eternal winter and stopped those mischievous Gnomes from causing any more trouble.&#xA;But Frosty… oh, Frosty. I understand your fear of melting, truly I do. The pain of fading away each spring, knowing you’ll disappear until the next winter snow falls - that must be terribly lonely.</description>
+      <description>Upon completion of the final objective, the game transitions to the endgame sequence at the Grand Hotel, where the full Counter Hack team is presented:&#xA;Interacting with Santa provides a consolidated narrative explanation of the events leading up to the incident and its resolution. Santa’s dialogue frames the outcome as the successful prevention of a sustained environmental manipulation attack against the Dosis Neighborhood. It also contextualizes Frosty’s actions as being driven by a persistent existential threat—seasonal melting—and highlights an unexploited alternative resolution that did not involve infrastructure sabotage or coercion through third parties (the Gnomes):</description>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 +++
-date = '2025-11-23T13:42:25+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 title = 'Retro Recovery'
 weight = 1
@@ -9,9 +9,9 @@ weight = 1
 
 ## Objective
 
-Difficulty: 2/5
-
-Join Mark in the retro shop. Analyze his disk image for a blast from the retro past and recover some classic treasures.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 2/5 | Join Mark in the retro shop. Analyze his disk image for a blast from the retro past and recover some classic treasures. |
 
 ## Mark DeVito mission statement
 

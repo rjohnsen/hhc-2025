@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:29:40+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = 'Visual Firewall Thinger'
@@ -10,9 +10,9 @@ weight = 7
 
 ## Objective
 
-Difficulty: 1/5
-
-Find Elgee in the big hotel for a firewall frolic and some techy fun.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Find Elgee in the big hotel for a firewall frolic and some techy fun. |
 
 ## Chris Elgee mission statement
 

@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:30:23+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = 'The Open Door'
@@ -10,13 +10,23 @@ weight = 11
 
 ## Objective
 
-Difficulty: 1/5
-
-Help Goose Lucas in the hotel parking lot find the dangerously misconfigured Network Security Group rule that's allowing unrestricted internet access to sensitive ports like RDP or SSH.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Help Goose Barry near the pond identify which identity has been granted excessive Owner permissions at the subscription level, violating the principle of least privilege. |
 
 ## Goose Lucas mission statement
 
+> (Spanish mode) Hi... welcome to the Dosis Neighborhood! Nice to meet you!
+>
+> ----
 > 
+> Please make sure the towns Azure network is secured properly.
+> 
+> The Neighborhood HOA uses Azure for their IT infrastructure.
+> 
+> Audit their network security configuration to ensure production systems aren't exposed to internet attacks.
+> 
+> They claim all systems are properly protected, but you need to verify there are no overly permissive NSG rules.
 
 ## The Open Door Terminal
 

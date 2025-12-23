@@ -1,8 +1,10 @@
 +++
-date = '2025-11-08T15:30:27+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = true
 title = 'Act 1'
 weight = 1
 +++
 
 > The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.
+
+![Act 1 - We are going somewhere](/images/arts/art-2.png)

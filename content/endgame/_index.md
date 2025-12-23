@@ -1,5 +1,5 @@
 +++
-date = '2025-12-23T13:14:03+01:00'
+date = '2025-12-23T12:59:59+01:00'
 draft = false
 title = 'Endgame'
 weight = 4
@@ -7,11 +7,11 @@ weight = 4
 
 ![Santa](/images/endgame/santa.gif)
 
-Upon completing the game I met the entire Counter Hack team over at the Grand Hotel:
+Upon completion of the final objective, the game transitions to the endgame sequence at the Grand Hotel, where the full Counter Hack team is presented:
 
 ![Endgame party](/images/endgame/endgame-1.png)
 
-Clicking Santa and he spilled the tea:
+Interacting with Santa provides a consolidated narrative explanation of the events leading up to the incident and its resolution. Santa’s dialogue frames the outcome as the successful prevention of a sustained environmental manipulation attack against the Dosis Neighborhood. It also contextualizes Frosty’s actions as being driven by a persistent existential threat—seasonal melting—and highlights an unexploited alternative resolution that did not involve infrastructure sabotage or coercion through third parties (the Gnomes):
 
 > Magnificent work, my friends! You've saved the Dosis Neighborhood from an eternal winter and stopped those mischievous Gnomes from causing any more trouble.
 > 
@@ -29,7 +29,7 @@ Clicking Santa and he spilled the tea:
 
 ![Frosty](/images/endgame/frostyborg-melting.webp)
 
-Even Frosty had something to say:
+Frosty’s response provides the attacker’s perspective and functions as a post-incident rationale. His dialogue clarifies both motivation and method: the reuse of the original animating mechanism (the enchanted hat) as a force multiplier, and the delegation of operational tasks to the Gnomes. The stated objective was permanence through environmental control, achieved by converting the neighborhood into a continuously refrigerated zone:
 
 > Every spring, I melt away. Every year, I fade into nothing while the world moves on without me. But not this time... not anymore.
 > 
@@ -43,7 +43,7 @@ Even Frosty had something to say:
 >
 > Thank you, old friend...
 
-And then the usual end credits screen! :)
+This exchange effectively serves as an end-of-incident debrief, summarizing root cause (fear of impermanence), capability misuse (magical re-weaponization), and impact (attempted large-scale environmental disruption). With Frosty’s plan neutralized, the scenario concludes and the standard end credits are displayed.
 
 ![Credits](/images/endgame/endgame-2.png)
 

@@ -6,63 +6,63 @@
     <description>The Gnomes want to transform the neighborhood so that it’s frozen solid year-round, an environmental disaster. But who is the mastermind behind the Gnomes’ wickedness?&#xA;The Counter Hack crew discovers Frosty is behind the Gnome uprising and stops his freezing plot! Santa’s compassionate offer to Frosty melts more than just snow, it melts hearts, saving the Neighborhood and proving that kindness conquers all.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Dec 2025 14:29:07 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 23 Dec 2025 15:59:59 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/act3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gnome Tea</title>
       <link>http://localhost:1313/act3/gnome-tea/index.html</link>
-      <pubDate>Sun, 30 Nov 2025 11:47:28 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act3/gnome-tea/index.html</guid>
-      <description>Objective Difficulty: 3/5&#xA;Enter the apartment building near 24-7 and help Thomas infiltrate the GnomeTea social network and discover the secret agent passphrase.&#xA;Thomas Bouve mission statement Hi there, I’m Thomas, but you can call me CraHan if you like.&#xA;What do you mean ‘weird accent’? I have no idea why people keep telling me that, but it sounds fine in my head, to be honest.</description>
+      <description>Objective Difficulty Description 3/5 Enter the apartment building near 24-7 and help Thomas infiltrate the GnomeTea social network and discover the secret agent passphrase. Thomas Bouve mission statement Hi there, I’m Thomas, but you can call me CraHan if you like.&#xA;What do you mean ‘weird accent’? I have no idea why people keep telling me that, but it sounds fine in my head, to be honest.</description>
     </item>
     <item>
       <title>Hack-a-Gnome</title>
       <link>http://localhost:1313/act3/hack-a-gnome/index.html</link>
-      <pubDate>Sun, 30 Nov 2025 11:47:39 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act3/hack-a-gnome/index.html</guid>
       <description>Objective Difficulty Description 3/5 Davis in the Data Center is fighting a gnome army—join the hack-a-gnome fun. Chris Daves mission statement Hi, my name is Chris.&#xA;I like miniature war gaming and painting minis.&#xA;I enjoy open source projects and amateur robotics.&#xA;Hiking and kayaking are my favorite IRL activies.&#xA;I love single player video games with great stoylines.&#xA;Hey, I could really use another set of eyes on this gnome takeover situation.</description>
     </item>
     <item>
       <title>Snowcat RCE &amp; Priv Esc</title>
       <link>http://localhost:1313/act3/snowcat-rce-and-priv-esc/index.html</link>
-      <pubDate>Fri, 12 Dec 2025 11:48:06 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act3/snowcat-rce-and-priv-esc/index.html</guid>
-      <description>Objective Difficulty: 3/5&#xA;Tom, in the hotel, found a wild Snowcat bug. Help him chase down the RCE! Recover and submit the API key not being used by snowcat.&#xA;Tom Hessman mission statement Hi, I’m Tom! I’ve worked for Counter Hack since its founding in 2010.&#xA;I love all things testing and QA, maintaining systems, logistics, and helping our customers have the best possible experience.</description>
+      <description>Objective Difficulty Description 3/5 Tom, in the hotel, found a wild Snowcat bug. Help him chase down the RCE! Recover and submit the API key not being used by snowcat. Tom Hessman mission statement Hi, I’m Tom! I’ve worked for Counter Hack since its founding in 2010.&#xA;I love all things testing and QA, maintaining systems, logistics, and helping our customers have the best possible experience.</description>
     </item>
     <item>
       <title>Schrödingers Scope</title>
       <link>http://localhost:1313/act3/schrodingers-scope/index.html</link>
-      <pubDate>Sun, 30 Nov 2025 11:48:19 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act3/schrodingers-scope/index.html</guid>
-      <description>Objective Difficulty: 3/5&#xA;Kevin in the Retro Store ponders pentest paradoxes—can you solve Schrödinger’s Scope?&#xA;Kevin McFarland mission statement The Neighborhood College Course Registration System has been getting some updates lately and I’m wondering if you might help me improve its security by performing a small web application penetration test of the site.&#xA;For any web application test, one of the most important things for the test is the ‘scope’, that is, what one is permitted to test and what one should not. While hacking is fun and cool, professional integrity means respecting scope boundaries, especially when there are tempting targets outside our permitted scope.</description>
+      <description>Objective Difficulty Description 3/5 Kevin in the Retro Store ponders pentest paradoxes—can you solve Schrödinger’s Scope? Kevin McFarland mission statement The Neighborhood College Course Registration System has been getting some updates lately and I’m wondering if you might help me improve its security by performing a small web application penetration test of the site.&#xA;For any web application test, one of the most important things for the test is the ‘scope’, that is, what one is permitted to test and what one should not. While hacking is fun and cool, professional integrity means respecting scope boundaries, especially when there are tempting targets outside our permitted scope.</description>
     </item>
     <item>
       <title>Find and Shutdown Frostys Snowglobe Machine</title>
       <link>http://localhost:1313/act3/find-and-shutdown-frostys-snowglobe-machine/index.html</link>
-      <pubDate>Sun, 30 Nov 2025 11:48:34 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act3/find-and-shutdown-frostys-snowglobe-machine/index.html</guid>
-      <description>Objective Difficulty: 3/5&#xA;You’ve heard murmurings around the city about a wise, elderly gnome having a change of heart. He must have information about where Frosty’s Snowglobe Machine is. You should find and talk to the gnome so you can get some help with how to make your way through the Data Center’s labrynthian halls.&#xA;Once you find the Snowglobe Machine, figure out how to shut it down and melt Frosty’s cold, nefarious plans.</description>
+      <description>Objective Difficulty Description 3/5 You’ve heard murmurings around the city about a wise, elderly gnome having a change of heart. He must have information about where Frosty’s Snowglobe Machine is. You should find and talk to the gnome so you can get some help with how to make your way through the Data Center’s labrynthian halls. Once you find the Snowglobe Machine, figure out how to shut it down and melt Frosty’s cold, nefarious plans. Solution The objective said I was to look for an elderly gnome, and so I did - and so I found him in a village in the outskirts of town:</description>
     </item>
     <item>
       <title>On the Wire</title>
       <link>http://localhost:1313/act3/on-the-wire/index.html</link>
-      <pubDate>Sun, 30 Nov 2025 11:48:44 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act3/on-the-wire/index.html</guid>
-      <description>Objective Difficulty: 4/5&#xA;Help Evan next to city hall hack this gnome and retrieve the temperature value reported by the I²C device at address 0x3C. The temperature data is XOR-encrypted, so you’ll need to work through each communication stage to uncover the necessary keys. Start with the unencrypted data being transmitted over the 1-wire protocol.&#xA;Evan Booth mission statement Hey, I’m Evan!</description>
+      <description>Objective Difficulty Description 4/5 Help Evan next to city hall hack this gnome and retrieve the temperature value reported by the I²C device at address 0x3C. The temperature data is XOR-encrypted, so you’ll need to work through each communication stage to uncover the necessary keys. Start with the unencrypted data being transmitted over the 1-wire protocol. Evan Booth mission statement Hey, I’m Evan!</description>
     </item>
     <item>
       <title>Free Ski</title>
       <link>http://localhost:1313/act3/free-ski/index.html</link>
-      <pubDate>Sun, 30 Nov 2025 11:48:54 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act3/free-ski/index.html</guid>
-      <description>Objective Difficulty: 5/5&#xA;Go to the retro store and help Goose Olivia ski down the mountain and collect all five treasure chests to reveal the hidden flag in this classic SkiFree-inspired challenge.&#xA;Goose Olivia mission statement “HONK! Well hello there! Fancy meeting you here in the Dosis Neighborhood.&#xA;You know, it’s the strangest thing… I used to just waddle around the Geese Islands going ‘BONK’ all day long. Random noises, no thoughts, just vibes. But then something changed, and now here I am—speaking, thinking, wondering how I even got here!</description>
+      <description>Objective Difficulty Description 5/5 Go to the retro store and help Goose Olivia ski down the mountain and collect all five treasure chests to reveal the hidden flag in this classic SkiFree-inspired challenge. Goose Olivia mission statement “HONK! Well hello there! Fancy meeting you here in the Dosis Neighborhood.&#xA;You know, it’s the strangest thing… I used to just waddle around the Geese Islands going ‘BONK’ all day long. Random noises, no thoughts, just vibes. But then something changed, and now here I am—speaking, thinking, wondering how I even got here!</description>
     </item>
     <item>
       <title>Snowblind Ambush</title>
       <link>http://localhost:1313/act3/snowblind-ambush/index.html</link>
-      <pubDate>Sat, 20 Dec 2025 14:29:07 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act3/snowblind-ambush/index.html</guid>
-      <description>Objective Difficulty: 5/5&#xA;Head to the Hotel to stop Frosty’s plan. Torkel is waiting at the Grand Web Terminal.&#xA;Torkel Opsahl mission statement God dag! My name is Torkel! That literally translates to Thor’s Warrior in old Norse.&#xA;If I’m not climbing, snowboarding, or hacking, I’m probably preparing for my next adventure. Did you know all of that is available in Lofoten?</description>
+      <description>Objective Difficulty Description 5/5 Head to the Hotel to stop Frosty’s plan. Torkel is waiting at the Grand Web Terminal. Torkel Opsahl mission statement God dag! My name is Torkel! That literally translates to Thor’s Warrior in old Norse.&#xA;If I’m not climbing, snowboarding, or hacking, I’m probably preparing for my next adventure. Did you know all of that is available in Lofoten?</description>
     </item>
   </channel>
 </rss>

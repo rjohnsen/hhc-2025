@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:29:03+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = 'Neighborhood Watch Bypass'
@@ -10,9 +10,9 @@ weight = 4
 
 ## Objective
 
-Difficulty: 1/5
-
-Assist Kyle at the old data center with a fire alarm that just won't chill.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Assist Kyle at the old data center with a fire alarm that just won't chill. |
 
 ## Kyle Parrish mission statement
 

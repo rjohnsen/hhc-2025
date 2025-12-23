@@ -3,7 +3,7 @@
   <channel>
     <title>Rogue Gnome Identity Provider :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act2/rogue-gnome-identity-provider/index.html</link>
-    <description>Objective Difficulty: 2/5&#xA;Hike over to Paul in the park for a gnomey authentication puzzle adventure. What malicious firmware image are the gnomes downloading?&#xA;Paul Beckett mission statement Hey, I’m Paul!&#xA;I’ve been at Counter Hack since 2024 and loving every minute of it.&#xA;I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan of Linux.</description>
+    <description>Objective Difficulty Description 2/5 Hike over to Paul in the park for a gnomey authentication puzzle adventure. What malicious firmware image are the gnomes downloading? Paul Beckett mission statement Hey, I’m Paul!&#xA;I’ve been at Counter Hack since 2024 and loving every minute of it.&#xA;I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan of Linux.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

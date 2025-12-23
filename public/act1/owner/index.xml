@@ -3,7 +3,7 @@
   <channel>
     <title>Owner :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act1/owner/index.html</link>
-    <description>Objective Difficulty: 1/5&#xA;Help Goose James near the park discover the accidentally leaked SAS token in a public JavaScript file and determine what Azure Storage resource it exposes and what permissions it grants.&#xA;Goose James mission statement CLUCK CLU… I think I might be losing my mind. All the elves are gone and I’m still hearing voices.&#xA;The Neighborhood HOA uses Azure for their IT infrastructure.</description>
+    <description>Objective Difficulty Description 1/5 Help Goose James near the park discover the accidentally leaked SAS token in a public JavaScript file and determine what Azure Storage resource it exposes and what permissions it grants. Goose James mission statement CLUCK CLU… I think I might be losing my mind. All the elves are gone and I’m still hearing voices.&#xA;The Neighborhood HOA uses Azure for their IT infrastructure.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

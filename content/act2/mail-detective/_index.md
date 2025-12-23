@@ -1,5 +1,5 @@
 +++
-date = '2025-11-23T13:42:34+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 title = 'Mail Detective'
 weight = 2
@@ -9,9 +9,9 @@ weight = 2
 
 ## Objective
 
-Difficulty: 2/5
-
-Help Mo in City Hall solve a curly email caper and crack the IMAP case. What is the URL of the pastebin service the gnomes are using?
+| Difficulty | Description |
+| ---------- | ----------- |
+| 2/5 | Help Mo in City Hall solve a curly email caper and crack the IMAP case. What is the URL of the pastebin service the gnomes are using? |
 
 ## Maurice Wilson mission statement
 

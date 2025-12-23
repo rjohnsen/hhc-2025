@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:28:16+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = 'Holiday Hack Orientation'
@@ -10,9 +10,9 @@ weight = 2
 
 ## Objective
 
-Difficulty: 1/5
-
-Meet Lynn Schifano on the train for a warm welcome and get ready for your journey around the Dosis Neighborhood.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Meet Lynn Schifano on the train for a warm welcome and get ready for your journey around the Dosis Neighborhood. |
 
 ## Lynn Schifano mission statement
 

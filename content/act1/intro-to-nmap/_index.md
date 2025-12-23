@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:29:50+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = 'Intro to Nmap'
@@ -10,9 +10,9 @@ weight = 8
 
 ## Objective
 
-Difficulty: 1/5
-
-Meet Eric in the hotel parking lot for Nmap know-how and scanning secrets. Help him connect to the wardriving rig on his motorcycle!
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Meet Eric in the hotel parking lot for Nmap know-how and scanning secrets. Help him connect to the wardriving rig on his motorcycle! |
 
 ## Eric Pursley mission statement
 

@@ -3,7 +3,7 @@
   <channel>
     <title>Snowcat RCE &amp; Priv Esc :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act3/snowcat-rce-and-priv-esc/index.html</link>
-    <description>Objective Difficulty: 3/5&#xA;Tom, in the hotel, found a wild Snowcat bug. Help him chase down the RCE! Recover and submit the API key not being used by snowcat.&#xA;Tom Hessman mission statement Hi, I’m Tom! I’ve worked for Counter Hack since its founding in 2010.&#xA;I love all things testing and QA, maintaining systems, logistics, and helping our customers have the best possible experience.</description>
+    <description>Objective Difficulty Description 3/5 Tom, in the hotel, found a wild Snowcat bug. Help him chase down the RCE! Recover and submit the API key not being used by snowcat. Tom Hessman mission statement Hi, I’m Tom! I’ve worked for Counter Hack since its founding in 2010.&#xA;I love all things testing and QA, maintaining systems, logistics, and helping our customers have the best possible experience.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

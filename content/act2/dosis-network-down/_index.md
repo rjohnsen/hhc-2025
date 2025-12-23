@@ -1,5 +1,5 @@
 +++
-date = '2025-11-23T13:42:52+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 title = 'Dosis Network Down'
 weight = 4
@@ -9,9 +9,9 @@ weight = 4
 
 ## Objective
 
-Difficulty: 2/5
-
-Drop by JJ's 24-7 for a network rescue and help restore the holiday cheer. What is the WiFi password found in the router's config?
+| Difficulty | Description |
+| ---------- | ----------- |
+| 2/5 | Drop by JJ's 24-7 for a network rescue and help restore the holiday cheer. What is the WiFi password found in the router's config? |
 
 ## Janusz Jasinski mission statement
 

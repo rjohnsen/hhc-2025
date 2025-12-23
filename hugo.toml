@@ -10,3 +10,6 @@ theme = 'hugo-theme-relearn'
 [[params.themeVariant]]
   identifier = 'hhc-2025'
   name = 'Holiday Hack 2025'
+
+[params]
+  disableSearch = true

@@ -1,5 +1,5 @@
 +++
-date = '2025-11-30T11:48:19+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 title = 'Schrödingers Scope'
 weight = 4
@@ -9,9 +9,9 @@ weight = 4
 
 ## Objective
 
-Difficulty: 3/5
-
-Kevin in the Retro Store ponders pentest paradoxes—can you solve Schrödinger's Scope?
+| Difficulty | Description |
+| ---------- | ----------- |
+| 3/5 | Kevin in the Retro Store ponders pentest paradoxes—can you solve Schrödinger's Scope? |
 
 ## Kevin McFarland mission statement
 

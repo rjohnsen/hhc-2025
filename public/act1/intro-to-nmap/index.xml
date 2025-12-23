@@ -3,7 +3,7 @@
   <channel>
     <title>Intro to Nmap :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act1/intro-to-nmap/index.html</link>
-    <description>Objective Difficulty: 1/5&#xA;Meet Eric in the hotel parking lot for Nmap know-how and scanning secrets. Help him connect to the wardriving rig on his motorcycle!&#xA;Eric Pursley mission statement Hey, I’m Eric. As you can see, I’m an avid motorcyclist. And I love traveling the world with my wife.&#xA;I enjoy being creative and making things. For example, a cybersecurity tool called Zero-E that I’m quite proud of, and the Baldur’s Gate 3 mod called Manaflare. I’m even in the BG3 credits!</description>
+    <description>Objective Difficulty Description 1/5 Meet Eric in the hotel parking lot for Nmap know-how and scanning secrets. Help him connect to the wardriving rig on his motorcycle! Eric Pursley mission statement Hey, I’m Eric. As you can see, I’m an avid motorcyclist. And I love traveling the world with my wife.&#xA;I enjoy being creative and making things. For example, a cybersecurity tool called Zero-E that I’m quite proud of, and the Baldur’s Gate 3 mod called Manaflare. I’m even in the BG3 credits!</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

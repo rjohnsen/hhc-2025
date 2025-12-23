@@ -1,5 +1,5 @@
 +++
-date = '2025-11-30T11:48:44+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 title = 'On the Wire'
 weight = 6
@@ -9,9 +9,9 @@ weight = 6
 
 ## Objective
 
-Difficulty: 4/5
-
-Help Evan next to city hall hack this gnome and retrieve the temperature value reported by the I²C device at address 0x3C. The temperature data is XOR-encrypted, so you’ll need to work through each communication stage to uncover the necessary keys. Start with the unencrypted data being transmitted over the 1-wire protocol.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 4/5 | Help Evan next to city hall hack this gnome and retrieve the temperature value reported by the I²C device at address 0x3C. The temperature data is XOR-encrypted, so you’ll need to work through each communication stage to uncover the necessary keys. Start with the unencrypted data being transmitted over the 1-wire protocol. |
 
 ## Evan Booth mission statement
 

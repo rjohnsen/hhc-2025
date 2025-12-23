@@ -1,5 +1,5 @@
 +++
-date = '2025-11-23T13:43:29+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 title = 'Going in Reverse'
 weight = 7
@@ -9,9 +9,9 @@ weight = 7
 
 ## Objective
 
-Difficulty: 2/5
-
-Kevin in the Retro Store needs help rewinding tech and going in reverse. Extract the flag and enter it here.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 2/5 | Kevin in the Retro Store needs help rewinding tech and going in reverse. Extract the flag and enter it here. |
 
 ## Kevin McFarland mission statement
 

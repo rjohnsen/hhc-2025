@@ -1,5 +1,5 @@
 +++
-date = '2025-11-30T11:48:54+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = true
 title = 'Free Ski'
 weight = 7
@@ -9,9 +9,10 @@ weight = 7
 
 ## Objective
 
-Difficulty: 5/5
 
-Go to the retro store and help Goose Olivia ski down the mountain and collect all five treasure chests to reveal the hidden flag in this classic SkiFree-inspired challenge.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 5/5 | Go to the retro store and help Goose Olivia ski down the mountain and collect all five treasure chests to reveal the hidden flag in this classic SkiFree-inspired challenge. |
 
 ## Goose Olivia mission statement
 

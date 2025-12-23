@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:28:46+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = 'Its All About Defang'
@@ -10,9 +10,9 @@ weight = 3
 
 ## Objective
 
-Difficulty: 1/5
-
-Find Ed Skoudis upstairs in City Hall and help him troubleshoot a clever phishing tool in his cozy office.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Find Ed Skoudis upstairs in City Hall and help him troubleshoot a clever phishing tool in his cozy office. |
 
 ## Ed Skoudis mission statement
 

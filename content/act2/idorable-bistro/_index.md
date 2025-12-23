@@ -1,5 +1,5 @@
 +++
-date = '2025-11-23T13:42:45+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 title = 'Idorable Bistro'
 weight = 3
@@ -9,9 +9,9 @@ weight = 3
 
 ## Objective
 
-Difficulty: 2/5
-
-Josh has a tasty IDOR treat for you—stop by Sasabune for a bite of vulnerability. What is the name of the gnome?
+| Difficulty | Description |
+| ---------- | ----------- |
+| 2/5 | Josh has a tasty IDOR treat for you—stop by Sasabune for a bite of vulnerability. What is the name of the gnome? |
 
 ## Josh Wright mission statement
 

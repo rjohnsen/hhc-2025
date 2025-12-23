@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:30:16+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = 'Spare Key'
@@ -10,9 +10,9 @@ weight = 10
 
 ## Objective
 
-Difficulty: 1/5
-
-Help Goose Barry near the pond identify which identity has been granted excessive Owner permissions at the subscription level, violating the principle of least privilege.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Help Goose Barry near the pond identify which identity has been granted excessive Owner permissions at the subscription level, violating the principle of least privilege. |
 
 ## Goose Barry mission statement
 

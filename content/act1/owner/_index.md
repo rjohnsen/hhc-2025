@@ -1,5 +1,5 @@
 +++
-date = '2025-11-08T16:30:33+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 hidden = false
 title = 'Owner'
@@ -10,9 +10,9 @@ weight = 12
 
 ## Objective
 
-Difficulty: 1/5
-
-Help Goose James near the park discover the accidentally leaked SAS token in a public JavaScript file and determine what Azure Storage resource it exposes and what permissions it grants.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 1/5 | Help Goose James near the park discover the accidentally leaked SAS token in a public JavaScript file and determine what Azure Storage resource it exposes and what permissions it grants. |
 
 ## Goose James mission statement
 

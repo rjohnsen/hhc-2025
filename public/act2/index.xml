@@ -6,56 +6,56 @@
     <description>The Gnomes’ nefarious plot seems to involve stealing refrigerator parts. But why?</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Nov 2025 13:43:29 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 23 Dec 2025 15:59:59 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/act2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Retro Recovery</title>
       <link>http://localhost:1313/act2/retro-recovery/index.html</link>
-      <pubDate>Sun, 23 Nov 2025 13:42:25 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act2/retro-recovery/index.html</guid>
-      <description>Objective Difficulty: 2/5&#xA;Join Mark in the retro shop. Analyze his disk image for a blast from the retro past and recover some classic treasures.&#xA;Mark DeVito mission statement I am an avid collector of things of the past. I love old technology. I love how it connects us to the past. Some remind me of my dad, who was an engineer on the Apollo 11 mission and helped develop the rendezvous and altimeter radar on the space craft.</description>
+      <description>Objective Difficulty Description 2/5 Join Mark in the retro shop. Analyze his disk image for a blast from the retro past and recover some classic treasures. Mark DeVito mission statement I am an avid collector of things of the past. I love old technology. I love how it connects us to the past. Some remind me of my dad, who was an engineer on the Apollo 11 mission and helped develop the rendezvous and altimeter radar on the space craft.</description>
     </item>
     <item>
       <title>Mail Detective</title>
       <link>http://localhost:1313/act2/mail-detective/index.html</link>
-      <pubDate>Sun, 23 Nov 2025 13:42:34 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act2/mail-detective/index.html</guid>
-      <description>Objective Difficulty: 2/5&#xA;Help Mo in City Hall solve a curly email caper and crack the IMAP case. What is the URL of the pastebin service the gnomes are using?&#xA;Maurice Wilson mission statement Hey there! I’m Mo, on loan from the Air Force, and let me tell you - Counter Hack is the best job I have ever had!&#xA;There is something in the works. Come see me later and we will talk. Can’t say much right now, but check back later. You might be interested.</description>
+      <description>Objective Difficulty Description 2/5 Help Mo in City Hall solve a curly email caper and crack the IMAP case. What is the URL of the pastebin service the gnomes are using? Maurice Wilson mission statement Hey there! I’m Mo, on loan from the Air Force, and let me tell you - Counter Hack is the best job I have ever had!</description>
     </item>
     <item>
       <title>Idorable Bistro</title>
       <link>http://localhost:1313/act2/idorable-bistro/index.html</link>
-      <pubDate>Sun, 23 Nov 2025 13:42:45 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act2/idorable-bistro/index.html</guid>
-      <description>Objective Difficulty: 2/5&#xA;Josh has a tasty IDOR treat for you—stop by Sasabune for a bite of vulnerability. What is the name of the gnome?&#xA;Josh Wright mission statement I’m a teetotling hacker.&#xA;I sleep about 4 hours a night.&#xA;Photography is my hobby, but the anachronistic sort: before 1900.&#xA;Teaching people how to hack and protect systems is my passion.</description>
+      <description>Objective Difficulty Description 2/5 Josh has a tasty IDOR treat for you—stop by Sasabune for a bite of vulnerability. What is the name of the gnome? Josh Wright mission statement I’m a teetotling hacker.&#xA;I sleep about 4 hours a night.&#xA;Photography is my hobby, but the anachronistic sort: before 1900.&#xA;Teaching people how to hack and protect systems is my passion.</description>
     </item>
     <item>
       <title>Dosis Network Down</title>
       <link>http://localhost:1313/act2/dosis-network-down/index.html</link>
-      <pubDate>Sun, 23 Nov 2025 13:42:52 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act2/dosis-network-down/index.html</guid>
-      <description>Objective Difficulty: 2/5&#xA;Drop by JJ’s 24-7 for a network rescue and help restore the holiday cheer. What is the WiFi password found in the router’s config?&#xA;Janusz Jasinski mission statement Hello! I’m JJ. I like rock, metal, and punk music. That’s all I have to say about that.&#xA;I accept BTC.&#xA;Skeletor is my hero&#xA;Alright then. Those bloody gnomes ‘ave proper messed about with the neighborhood’s wifi - changed the admin password, probably mucked up all the settings, the lot.</description>
+      <description>Objective Difficulty Description 2/5 Drop by JJ’s 24-7 for a network rescue and help restore the holiday cheer. What is the WiFi password found in the router’s config? Janusz Jasinski mission statement Hello! I’m JJ. I like rock, metal, and punk music. That’s all I have to say about that.&#xA;I accept BTC.&#xA;Skeletor is my hero&#xA;Alright then. Those bloody gnomes ‘ave proper messed about with the neighborhood’s wifi - changed the admin password, probably mucked up all the settings, the lot.</description>
     </item>
     <item>
       <title>Rogue Gnome Identity Provider</title>
       <link>http://localhost:1313/act2/rogue-gnome-identity-provider/index.html</link>
-      <pubDate>Sun, 23 Nov 2025 13:43:05 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act2/rogue-gnome-identity-provider/index.html</guid>
-      <description>Objective Difficulty: 2/5&#xA;Hike over to Paul in the park for a gnomey authentication puzzle adventure. What malicious firmware image are the gnomes downloading?&#xA;Paul Beckett mission statement Hey, I’m Paul!&#xA;I’ve been at Counter Hack since 2024 and loving every minute of it.&#xA;I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan of Linux.</description>
+      <description>Objective Difficulty Description 2/5 Hike over to Paul in the park for a gnomey authentication puzzle adventure. What malicious firmware image are the gnomes downloading? Paul Beckett mission statement Hey, I’m Paul!&#xA;I’ve been at Counter Hack since 2024 and loving every minute of it.&#xA;I’m a pentester who digs into web, API, and mobile apps, and I’m also a fan of Linux.</description>
     </item>
     <item>
       <title>Quantognome Leap</title>
       <link>http://localhost:1313/act2/quantognome-leap/index.html</link>
-      <pubDate>Sun, 23 Nov 2025 13:43:19 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act2/quantognome-leap/index.html</guid>
-      <description>Objective Difficulty: 2/5&#xA;Charlie in the hotel has quantum gnome mysteries waiting to be solved. What is the flag that you find?&#xA;Charlie Goldner mission statement Hello! I’m not JJ. I like music.&#xA;I accept AI tokens.&#xA;I like quantum pancakes.&#xA;I enjoy social engineeering.&#xA;Check back with me later - I might have something for you to help with!&#xA;I just spotted a mysterious gnome - he winked and vanished, or maybe he’s still here?</description>
+      <description>Objective Difficulty Description 2/5 Charlie in the hotel has quantum gnome mysteries waiting to be solved. What is the flag that you find? Charlie Goldner mission statement Hello! I’m not JJ. I like music.&#xA;I accept AI tokens.&#xA;I like quantum pancakes.&#xA;I enjoy social engineeering.&#xA;Check back with me later - I might have something for you to help with!</description>
     </item>
     <item>
       <title>Going in Reverse</title>
       <link>http://localhost:1313/act2/going-in-reverse/index.html</link>
-      <pubDate>Sun, 23 Nov 2025 13:43:29 +0100</pubDate>
+      <pubDate>Tue, 23 Dec 2025 15:59:59 +0100</pubDate>
       <guid>http://localhost:1313/act2/going-in-reverse/index.html</guid>
-      <description>Objective Difficulty: 2/5&#xA;Kevin in the Retro Store needs help rewinding tech and going in reverse. Extract the flag and enter it here.&#xA;Kevin McFarland mission statement Hello, I’m Kevin (though past friends have referred to me as ‘Heavy K’). If you ever hear any one say that philosophy is a useless college degree, don’t believe them; it’s not. I’ve arrived where I am at because of it. It just made the path more interesting.</description>
+      <description>Objective Difficulty Description 2/5 Kevin in the Retro Store needs help rewinding tech and going in reverse. Extract the flag and enter it here. Kevin McFarland mission statement Hello, I’m Kevin (though past friends have referred to me as ‘Heavy K’). If you ever hear any one say that philosophy is a useless college degree, don’t believe them; it’s not. I’ve arrived where I am at because of it. It just made the path more interesting.</description>
     </item>
   </channel>
 </rss>

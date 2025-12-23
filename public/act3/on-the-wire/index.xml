@@ -3,7 +3,7 @@
   <channel>
     <title>On the Wire :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act3/on-the-wire/index.html</link>
-    <description>Objective Difficulty: 4/5&#xA;Help Evan next to city hall hack this gnome and retrieve the temperature value reported by the I²C device at address 0x3C. The temperature data is XOR-encrypted, so you’ll need to work through each communication stage to uncover the necessary keys. Start with the unencrypted data being transmitted over the 1-wire protocol.&#xA;Evan Booth mission statement Hey, I’m Evan!</description>
+    <description>Objective Difficulty Description 4/5 Help Evan next to city hall hack this gnome and retrieve the temperature value reported by the I²C device at address 0x3C. The temperature data is XOR-encrypted, so you’ll need to work through each communication stage to uncover the necessary keys. Start with the unencrypted data being transmitted over the 1-wire protocol. Evan Booth mission statement Hey, I’m Evan!</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>

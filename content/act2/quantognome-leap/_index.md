@@ -1,5 +1,5 @@
 +++
-date = '2025-11-23T13:43:19+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = false
 title = 'Quantognome Leap'
 weight = 6
@@ -9,9 +9,9 @@ weight = 6
 
 ## Objective
 
-Difficulty: 2/5
-
-Charlie in the hotel has quantum gnome mysteries waiting to be solved. What is the flag that you find?
+| Difficulty | Description |
+| ---------- | ----------- |
+| 2/5 | Charlie in the hotel has quantum gnome mysteries waiting to be solved. What is the flag that you find? |
 
 ## Charlie Goldner mission statement
 

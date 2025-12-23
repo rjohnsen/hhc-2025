@@ -1,5 +1,5 @@
 +++
-date = '2025-11-30T11:48:34+01:00'
+date = '2025-12-23T15:59:59+01:00'
 draft = true
 title = 'Find and Shutdown Frostys Snowglobe Machine'
 weight = 5
@@ -9,11 +9,9 @@ weight = 5
 
 ## Objective
 
-Difficulty: 3/5
-
-You've heard murmurings around the city about a wise, elderly gnome having a change of heart. He must have information about where Frosty's Snowglobe Machine is. You should find and talk to the gnome so you can get some help with how to make your way through the Data Center's labrynthian halls.
-
-Once you find the Snowglobe Machine, figure out how to shut it down and melt Frosty's cold, nefarious plans.
+| Difficulty | Description |
+| ---------- | ----------- |
+| 3/5 | You've heard murmurings around the city about a wise, elderly gnome having a change of heart. He must have information about where Frosty's Snowglobe Machine is. You should find and talk to the gnome so you can get some help with how to make your way through the Data Center's labrynthian halls. Once you find the Snowglobe Machine, figure out how to shut it down and melt Frosty's cold, nefarious plans. |
 
 ## Solution
 
