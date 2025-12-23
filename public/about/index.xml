@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About Roger Johnsen :: SANS Holiday Hack Challenge 2025</title>
+    <link>http://localhost:1313/about/index.html</link>
+    <description>Roger Johnsen is an information security professional with a strong focus on Blue Team operations, threat hunting, and detection engineering. His work centers on strengthening SOC capabilities through hypothesis-driven hunting, analyst education, and the development of tooling and processes that scale beyond individual investigations.&#xA;Roger is an active participant in Capture The Flag (CTF) competitions, with particular emphasis on technically demanding, long-form challenges such as the SANS Holiday Hack Challenge and platforms like TryHackMe and Hack The Box. He approaches CTFs as controlled environments for validating techniques, stress-testing assumptions, and refining investigative workflows that directly translate into real-world security operations.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

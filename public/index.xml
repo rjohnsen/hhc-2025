@@ -6,7 +6,7 @@
     <description>Way back in 2015, the mysterious Atnas Corporation almost ruined the entire holiday season through their nefarious Gnome In Your Home plot. Their villainy centered upon convincing parents to purchase little Gnome dolls that played joyful holiday songs to their children. With Gnome sales topping two million units, a blitz of Atnas Corp advertisements encouraged parents to move their Gnomes around the house daily so that their children could hunt for them in a fun little game. Little did parents know that these Gnomes were snooping IoT devices with a camera and wireless internet access, furtively sending photos to burglars who would rob their houses of their treasures en masse on Christmas Eve, 2015. The incredible efforts of SANS Holiday Hack investigators around the world foiled the foul plot, exposing the criminal mastermind behind Atlas Corp: Cindy Lou Who, age 62.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Dec 2025 15:59:59 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 23 Dec 2025 17:28:44 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Act 1</title>
@@ -35,6 +35,13 @@
       <pubDate>Tue, 23 Dec 2025 12:59:59 +0100</pubDate>
       <guid>http://localhost:1313/endgame/index.html</guid>
       <description>Upon completion of the final objective, the game transitions to the endgame sequence at the Grand Hotel, where the full Counter Hack team is presented:&#xA;Interacting with Santa provides a consolidated narrative explanation of the events leading up to the incident and its resolution. Santa’s dialogue frames the outcome as the successful prevention of a sustained environmental manipulation attack against the Dosis Neighborhood. It also contextualizes Frosty’s actions as being driven by a persistent existential threat—seasonal melting—and highlights an unexploited alternative resolution that did not involve infrastructure sabotage or coercion through third parties (the Gnomes):</description>
+    </item>
+    <item>
+      <title>About Roger Johnsen</title>
+      <link>http://localhost:1313/about/index.html</link>
+      <pubDate>Tue, 23 Dec 2025 17:28:44 +0100</pubDate>
+      <guid>http://localhost:1313/about/index.html</guid>
+      <description>Roger Johnsen is an information security professional with a strong focus on Blue Team operations, threat hunting, and detection engineering. His work centers on strengthening SOC capabilities through hypothesis-driven hunting, analyst education, and the development of tooling and processes that scale beyond individual investigations.&#xA;Roger is an active participant in Capture The Flag (CTF) competitions, with particular emphasis on technically demanding, long-form challenges such as the SANS Holiday Hack Challenge and platforms like TryHackMe and Hack The Box. He approaches CTFs as controlled environments for validating techniques, stress-testing assumptions, and refining investigative workflows that directly translate into real-world security operations.</description>
     </item>
   </channel>
 </rss>
