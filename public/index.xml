@@ -6,7 +6,7 @@
     <description>Way back in 2015, the mysterious Atnas Corporation almost ruined the entire holiday season through their nefarious Gnome In Your Home plot. Their villainy centered upon convincing parents to purchase little Gnome dolls that played joyful holiday songs to their children. With Gnome sales topping two million units, a blitz of Atnas Corp advertisements encouraged parents to move their Gnomes around the house daily so that their children could hunt for them in a fun little game. Little did parents know that these Gnomes were snooping IoT devices with a camera and wireless internet access, furtively sending photos to burglars who would rob their houses of their treasures en masse on Christmas Eve, 2015. The incredible efforts of SANS Holiday Hack investigators around the world foiled the foul plot, exposing the criminal mastermind behind Atlas Corp: Cindy Lou Who, age 62.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Nov 2025 15:30:34 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 23 Dec 2025 13:14:03 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Act 1</title>
@@ -27,7 +27,14 @@
       <link>http://localhost:1313/act3/index.html</link>
       <pubDate>Sat, 08 Nov 2025 15:30:34 +0100</pubDate>
       <guid>http://localhost:1313/act3/index.html</guid>
-      <description>The Gnomes want to transform the neighborhood so that it’s frozen solid year-round, an environmental disaster. But who is the mastermind behind the Gnomes’ wickedness?</description>
+      <description>The Gnomes want to transform the neighborhood so that it’s frozen solid year-round, an environmental disaster. But who is the mastermind behind the Gnomes’ wickedness?&#xA;The Counter Hack crew discovers Frosty is behind the Gnome uprising and stops his freezing plot! Santa’s compassionate offer to Frosty melts more than just snow, it melts hearts, saving the Neighborhood and proving that kindness conquers all.</description>
+    </item>
+    <item>
+      <title>Endgame</title>
+      <link>http://localhost:1313/endgame/index.html</link>
+      <pubDate>Tue, 23 Dec 2025 13:14:03 +0100</pubDate>
+      <guid>http://localhost:1313/endgame/index.html</guid>
+      <description>Upon completing the game I met the entire Counter Hack team over at the Grand Hotel:&#xA;Clicking Santa and he spilled the tea:&#xA;Magnificent work, my friends! You’ve saved the Dosis Neighborhood from an eternal winter and stopped those mischievous Gnomes from causing any more trouble.&#xA;But Frosty… oh, Frosty. I understand your fear of melting, truly I do. The pain of fading away each spring, knowing you’ll disappear until the next winter snow falls - that must be terribly lonely.</description>
     </item>
   </channel>
 </rss>
