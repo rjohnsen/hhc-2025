@@ -20,13 +20,13 @@
     <meta itemprop="description" content="Objective Difficulty Description 4/5 Help Evan next to city hall hack this gnome and retrieve the temperature value reported by the I²C device at address 0x3C. The temperature data is XOR-encrypted, so you’ll need to work through each communication stage to uncover the necessary keys. Start with the unencrypted data being transmitted over the 1-wire protocol. Evan Booth mission statement Hey, I’m Evan!">
     <meta itemprop="datePublished" content="2025-12-23T15:59:59+01:00">
     <meta itemprop="dateModified" content="2025-12-23T15:59:59+01:00">
-    <meta itemprop="wordCount" content="4516">
+    <meta itemprop="wordCount" content="4606">
     <title>On the Wire :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/on-the-wire/index.xml" rel="alternate" type="application/rss+xml" title="On the Wire :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766509179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766509179" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766509179" rel="stylesheet">
-    <link href="/css/theme.css?1766509179" rel="stylesheet">
-    <link href="/css/format-html.css?1766509179" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766748142" rel="stylesheet">
+    <link href="/css/theme.css?1766748142" rel="stylesheet">
+    <link href="/css/format-html.css?1766748142" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -106,7 +106,7 @@
         <li><a href="#i2c">I2C</a></li>
       </ul>
     </li>
-    <li><a href="#evan-booth-mission-debrief">Evan Booth mission debrief</a></li>
+    <li><a href="#evan-booth-closing-words">Evan Booth closing words</a></li>
     <li><a href="#hints">Hints</a>
       <ul>
         <li><a href="#on-rails">On Rails</a></li>
@@ -152,8 +152,8 @@
 
 <h1 id="on-the-wire">On the Wire</h1>
 
-<p><a href="#R-image-a9b70d69709e507dbe9041a5c91b447f" class="lightbox-link"><img alt="Evan Booth" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/evanbooth-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a9b70d69709e507dbe9041a5c91b447f"><img alt="Evan Booth" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/evanbooth-avatar.gif"></a></p>
+<p><a href="#R-image-a4a286ad171f705aab26c768dc043345" class="lightbox-link"><img alt="Evan Booth" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/evanbooth-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a4a286ad171f705aab26c768dc043345"><img alt="Evan Booth" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/evanbooth-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -184,6 +184,7 @@
 <p>You know what happens to electronics in extreme cold? They fail. All my builds, all my robots, all my weird coffee-maker contraptions—frozen solid. We can&rsquo;t let Frosty turn this place into a permanent deep freeze.</p>
 </blockquote>
 <h2 id="solution">Solution</h2>
+<p>This objective focuses on low-level hardware communication and protocol analysis rather than traditional network traffic. By working through the 1-Wire communication stages and reversing the XOR-based obfuscation, I had to reconstruct how sensor data is exchanged and protected on constrained devices. The challenge highlights how security weaknesses can emerge in embedded systems when lightweight encryption is applied without strong key management, and how understanding protocol mechanics is essential when investigating IoT-style environments.</p>
 <p>The endpoints where extracted by viesing for <em>WS</em> in Network tab:</p>
 <table>
   <thead>
@@ -520,8 +521,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    main()</span></span></code></pre></div>
 <p>This script outputted:</p>
-<p><a href="#R-image-c93e4e113a5731599cc5261ebe10bb1e" class="lightbox-link"><img alt="1-Wire XOR" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c93e4e113a5731599cc5261ebe10bb1e"><img alt="1-Wire XOR" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-1.png"></a></p>
+<p><a href="#R-image-b48c3b2b3930a37511da8b9885e2a2f3" class="lightbox-link"><img alt="1-Wire XOR" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b48c3b2b3930a37511da8b9885e2a2f3"><img alt="1-Wire XOR" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-1.png"></a></p>
 <p>The XOR key is:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>icy</span></span></code></pre></div>
 <h3 id="spi">SPI</h3>
@@ -998,8 +999,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    main()</span></span></code></pre></div>
 <p>This script outputted:</p>
-<p><a href="#R-image-c5b146f457ad5ba488bc1e73b9b701af" class="lightbox-link"><img alt="SPI output" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c5b146f457ad5ba488bc1e73b9b701af"><img alt="SPI output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-2.png"></a></p>
+<p><a href="#R-image-6140e0769b12485667805073a4ce9fc6" class="lightbox-link"><img alt="SPI output" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6140e0769b12485667805073a4ce9fc6"><img alt="SPI output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-2.png"></a></p>
 <p>Decryptred text is:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>read and decrypt the I2C bus data using the XOR key: bananza. the temperature sensor address is 0x3</span></span></code></pre></div>
 <h3 id="i2c">I2C</h3>
@@ -1220,11 +1221,13 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    main()</span></span></code></pre></div>
 <p>This script outputted:</p>
-<p><a href="#R-image-e3e255a927fe7f37a19eda0724af18b9" class="lightbox-link"><img alt="I2C output" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3e255a927fe7f37a19eda0724af18b9"><img alt="I2C output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-3.png"></a></p>
+<p><a href="#R-image-76841a7b166d336cdfefc2acc3f09096" class="lightbox-link"><img alt="I2C output" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-onthewire-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-76841a7b166d336cdfefc2acc3f09096"><img alt="I2C output" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-onthewire-3.png"></a></p>
 <p>The value I was looking for is:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>32.84</span></span></code></pre></div>
-<h2 id="evan-booth-mission-debrief">Evan Booth mission debrief</h2>
+<p>Embedded protocols often trade simplicity for security, making protocol literacy a critical defensive skill.</p>
+<h2 id="evan-booth-closing-words">Evan Booth closing words</h2>
+<p>After solving, Evan says:</p>
 <blockquote>
 <p>Nice work! You cracked that signal encoding like a pro.</p>
 <p>Turns out the weirdness had a method to it after all - just like most of my builds!</p>
@@ -1437,8 +1440,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766509179" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766509179" defer></script>
-    <script src="/js/theme.js?1766509179" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766748142" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766748142" defer></script>
+    <script src="/js/theme.js?1766748142" defer></script>
   </body>
 </html>

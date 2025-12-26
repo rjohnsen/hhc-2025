@@ -43,6 +43,8 @@ title = 'Snowblind Ambush'
 
 ## Solution
 
+This objective serves as a culmination of multiple skills by combining web exploitation, traffic analysis, and situational awareness under time pressure. I had to identify how Frosty’s infrastructure behaved under active use, recognize misleading signals, and pivot quickly when initial assumptions proved incorrect. The challenge reinforces how real-world intrusions and takedowns rarely follow a linear path, and how adaptability and verification are essential when operating in noisy, adversarial environments.
+
 Upon entering the terminal I was greeted with this landingpage: 
 
 ![Landing page](/images/act3/act3-snowblind-2.png)
@@ -566,6 +568,8 @@ And finally, solve this:
 ![Solved it](/images/act3/act3-snowblind-10.png)
 
 The flag is: _hhc25{Frostify_The_World_c05730b46d0f30c9d068343e9d036f80}_
+
+When visibility is degraded, disciplined validation and flexible thinking matter more than speed.
 
 ## Hints
 

@@ -39,6 +39,8 @@ weight = 2
 
 ## Solution
 
+This objective shifts from passive discovery to active interaction with a simulated adversary environment, requiring me to reason about layered defenses rather than a single vulnerability. By engaging with the hack-a-gnome interface, I had to identify how application logic, state handling, and game mechanics interact, mirroring real-world scenarios where attackers chain multiple small weaknesses instead of relying on one critical flaw. The challenge emphasizes understanding system behavior as a whole rather than treating vulnerabilities in isolation.
+
 This objective is hosted on https://hhc25-smartgnomehack-prod.holidayhackchallenge.com. Upon entering it I were presented with the following landingpage:
 
 ![First landing page](/images/act3/act3-hackagnome-6.png)
@@ -622,8 +624,11 @@ Leading me to solving the objective:
 
 ![Final screen](/images/act3/act3-hackagnome-5.png)
 
+Complex systems fail at the seams between components, not just at obvious security controls.
 
-## Chris Davis mission debrief
+## Chris Davis closing words
+
+After solving, Chris says:
 
 > Excellent work! You've successfully taken control of the gnome - look at that interface responding to our commands now.
 >

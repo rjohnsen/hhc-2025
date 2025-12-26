@@ -29,6 +29,8 @@ weight = 4
 
 ## Solution
 
+This objective emphasizes the importance of respecting scope during a web application penetration test. By following the provided instructions and constraints, I had to distinguish clearly between permitted and out-of-scope targets while still identifying meaningful security weaknesses. The challenge illustrates how overlooking scope guidance can lead to false positives, wasted effort, or ethical missteps, reinforcing that disciplined methodology is as important as technical skill in real-world testing.
+
 This objective is available on this url: https://flask-schrodingers-scope-firestore.holidayhackchallenge.com. Upon entering it I were presented with a Rules of Engagement (RoE) notice:
 
 ![Rules of engagement](/images/act3/act3-schrodinger-1.png)
@@ -244,7 +246,11 @@ Finalizing it I were given a nice diploma I could hang behind the refrigerator:
 
 ![A diploma](/images/act3/act3-schrodinger-15.png)
 
-## Kevin McFarland mission debrief
+Clear scope definition is a control, not a limitation, in effective penetration testing.
+
+## Kevin McFarland closing words
+
+After solving, Kevin says:
 
 > Well done - you’ve shown the wisdom to stay within scope, uncover what mattered, and respecting other testing boundaries.
 > 

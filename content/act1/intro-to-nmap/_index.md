@@ -36,6 +36,12 @@ weight = 8
 
 ## Intro top Nmap terminal
 
+This objective serves as an introduction to active network reconnaissance using Nmap. Rather than focusing on advanced scanning techniques, the challenge emphasizes the role of discovery and enumeration as foundational steps in understanding a networked environment.
+
+By interacting with Nmap in a controlled setting, I am reminded that effective analysis begins with visibility: identifying what systems are present, which services are exposed, and how a target responds to probing. This shift from passive observation to deliberate interaction marks an important transition in the overall challenge flow.
+
+The objective sets the stage for later exercises by reinforcing that accurate reconnaissance is a prerequisite for meaningful assessment, exploitation, or defense.
+
 This terminal starts with a simple welcome screen:
 
 ![Introduction screen](/images/act1/act1-intro-to-nmap-1.png)
@@ -86,7 +92,7 @@ nmap -p- 127.0.12-20-28
 
 ### Task 4 - Version scanning
 
-> Namp has a version detection engine, to help determine waht services are running on a given port. What services is running on 127.0.12.25?
+> Nmap has a version detection engine, to help determine waht services are running on a given port. What services is running on 127.0.12.25?
 
 The service version scan option is called `-sV`, we can use it like so:
 
@@ -99,17 +105,21 @@ nmap -p 8080 -sV 127.0.12.25
 
 ### Task 5 - interacting with a port
 
-> Sometimes you want to interact with a port. which is a perfect job for Netcat! Use the ncat tool to connect to TCP port 240601 on 127.0.12.25 and view the banner returned
+> Sometimes you want to interact with a port. which is a perfect job for Netcat! Use the ncat tool to connect to TCP port 24601 on 127.0.12.25 and view the banner returned
 
 Ncat is a common tool we often use in pentests and threat hunting. Its standard use follows this format `nc <ip> <port>`, it defaults to use `TCP`. We use the following command:
 
 ```bash
-nc 127.0.12.25 24601hug
+nc 127.0.12.25 24601
 ```
 
 ![Interacting with a port](/images/act1/act1-intro-to-nmap-7.png)
 
-## Eric Pursley mission debrief
+This objective reinforces that understanding a network starts with discovery, not assumptions.
+
+## Eric Pursley closing words
+
+After solving, Eric says:
 
 > Excellent work! You've got the Nmap fundamentals down - that X-ray vision is going to serve you well in future challenges.
 >

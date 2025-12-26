@@ -20,13 +20,13 @@
     <meta itemprop="description" content="Objective Difficulty Description 2/5 Help Mo in City Hall solve a curly email caper and crack the IMAP case. What is the URL of the pastebin service the gnomes are using? Maurice Wilson mission statement Hey there! I’m Mo, on loan from the Air Force, and let me tell you - Counter Hack is the best job I have ever had!">
     <meta itemprop="datePublished" content="2025-12-23T15:59:59+01:00">
     <meta itemprop="dateModified" content="2025-12-23T15:59:59+01:00">
-    <meta itemprop="wordCount" content="800">
+    <meta itemprop="wordCount" content="853">
     <title>Mail Detective :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act2/mail-detective/index.xml" rel="alternate" type="application/rss+xml" title="Mail Detective :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766506892" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766506892" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766506892" rel="stylesheet">
-    <link href="/css/theme.css?1766506892" rel="stylesheet">
-    <link href="/css/format-html.css?1766506892" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766747031" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766747031" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766747031" rel="stylesheet">
+    <link href="/css/theme.css?1766747031" rel="stylesheet">
+    <link href="/css/format-html.css?1766747031" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -100,7 +100,7 @@
     <li><a href="#objective">Objective</a></li>
     <li><a href="#maurice-wilson-mission-statement">Maurice Wilson mission statement</a></li>
     <li><a href="#mail-detective-curly-imap-investigation">Mail Detective: Curly IMAP Investigation</a></li>
-    <li><a href="#maurice-wilson-mission-debrief">Maurice Wilson mission debrief</a></li>
+    <li><a href="#maurice-wilson-closing-words">Maurice Wilson closing words</a></li>
   </ul>
 </nav>
                 </div>
@@ -137,8 +137,8 @@
 
 <h1 id="mail-detective">Mail Detective</h1>
 
-<p><a href="#R-image-d837de29883d0d2c51f3b94cfe5becc8" class="lightbox-link"><img alt="Maurice Wilson" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d837de29883d0d2c51f3b94cfe5becc8"><img alt="Maurice Wilson" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif"></a></p>
+<p><a href="#R-image-05c99498342c638559a0c1658771c08f" class="lightbox-link"><img alt="Maurice Wilson" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-05c99498342c638559a0c1658771c08f"><img alt="Maurice Wilson" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -164,8 +164,9 @@
 <p>Think you can help me use curl to connect to the IMAP server and hunt down one of these gnome emails?</p>
 </blockquote>
 <h2 id="mail-detective-curly-imap-investigation">Mail Detective: Curly IMAP Investigation</h2>
-<p><a href="#R-image-24e5bf083fd6ed7217944b0db7fed757" class="lightbox-link"><img alt="Welcome screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-24e5bf083fd6ed7217944b0db7fed757"><img alt="Welcome screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png"></a></p>
+<p>This objective focuses on email investigation by working directly with mail infrastructure rather than user-facing clients. By querying an IMAP server using command-line tools, I analyze how malicious content can be hidden within standard email workflows and reinforce the importance of understanding underlying protocols when investigating suspicious messaging activity.</p>
+<p><a href="#R-image-35785e6a74b0e2ae989fb9da1963fc19" class="lightbox-link"><img alt="Welcome screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-35785e6a74b0e2ae989fb9da1963fc19"><img alt="Welcome screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png"></a></p>
 <p>To solve this objective, we must use <code>curl</code> as a lightweight IMAP client. Because curl supports IMAP natively, we can authenticate and talk directly to the mail server. The first step is to list the available mailboxes:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;imap://localhost:143/&#34;</span> -u <span style="color:#e6db74">&#34;dosismail:holidaymagic&#34;</span></span></span></code></pre></div>
 <p>With no mailbox or message specified, curl sends an IMAP <code>LIST</code> command. This asks the server to return all mailboxes accessible to the user. The response looks like:</p>
@@ -276,7 +277,8 @@
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;</span></span></code></pre></div>
 <p>The URL of the pastebin services the gnomes are using is <code>https://frostbin.atnas.mail/api/paste</code></p>
-<h2 id="maurice-wilson-mission-debrief">Maurice Wilson mission debrief</h2>
+<h2 id="maurice-wilson-closing-words">Maurice Wilson closing words</h2>
+<p>After solving, Maurice says:</p>
 <blockquote>
 <p>Outstanding work! You&rsquo;ve mastered using curl for IMAP - that&rsquo;s some serious command-line skills that would make any Air Force tech proud.</p>
 <p>Counter Hack really is the best job I have ever had, especially when we get to solve problems like this!</p>
@@ -332,6 +334,7 @@
             <li class="" data-nav-url="/act2/going-in-reverse/index.html"><a class="padding" href="/act2/going-in-reverse/index.html">Going in Reverse</a></li></ul></li>
             <li class="" data-nav-url="/act3/index.html"><a class="padding" href="/act3/index.html">Act 3</a><ul id="R-subsections-0b6215c9fad834351813cc2ad0d4a335" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/endgame/index.html"><a class="padding" href="/endgame/index.html">Endgame</a></li>
+            <li class="" data-nav-url="/about/index.html"><a class="padding" href="/about/index.html">About Roger Johnsen</a></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -349,8 +352,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766506892" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766506892" defer></script>
-    <script src="/js/theme.js?1766506892" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766747031" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766747031" defer></script>
+    <script src="/js/theme.js?1766747031" defer></script>
   </body>
 </html>

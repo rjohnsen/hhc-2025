@@ -28,6 +28,8 @@ weight = 10
 
 ## Spare Key Terminal
 
+This objective focuses on identifying exposed credentials within cloud infrastructure. By investigating configuration artifacts hosted on Azure Storage, the task highlights how long-lived access tokens and misplaced secrets can introduce security risk when stored in publicly accessible locations.
+
 ![Start](/images/act1/act1-spare-key-1.png)
 
 ### Listing all resource groups
@@ -193,6 +195,8 @@ backup_retention_days = 30
 }
 ```
 
-## Goose Barry mission debrief
+## Goose Barry closing words
+
+After solving, Barry says:
 
 > There it is. A SAS token with read-write-delete permissions, publicly accessible. At least someone around here knows how to do a proper security audit.

@@ -20,13 +20,13 @@
     <meta itemprop="description" content="Objective Difficulty Description 2/5 Join Mark in the retro shop. Analyze his disk image for a blast from the retro past and recover some classic treasures. Mark DeVito mission statement I am an avid collector of things of the past. I love old technology. I love how it connects us to the past. Some remind me of my dad, who was an engineer on the Apollo 11 mission and helped develop the rendezvous and altimeter radar on the space craft.">
     <meta itemprop="datePublished" content="2025-12-23T15:59:59+01:00">
     <meta itemprop="dateModified" content="2025-12-23T15:59:59+01:00">
-    <meta itemprop="wordCount" content="1293">
+    <meta itemprop="wordCount" content="1388">
     <title>Retro Recovery :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act2/retro-recovery/index.xml" rel="alternate" type="application/rss+xml" title="Retro Recovery :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766506892" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766506892" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766506892" rel="stylesheet">
-    <link href="/css/theme.css?1766506892" rel="stylesheet">
-    <link href="/css/format-html.css?1766506892" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746950" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746950" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766746950" rel="stylesheet">
+    <link href="/css/theme.css?1766746950" rel="stylesheet">
+    <link href="/css/format-html.css?1766746950" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -113,7 +113,7 @@
         <li><a href="#final-flag">Final Flag</a></li>
       </ul>
     </li>
-    <li><a href="#mark-devito-mission-debrief">Mark DeVito mission debrief</a></li>
+    <li><a href="#mark-devito-closing-words">Mark DeVito closing words</a></li>
   </ul>
 </nav>
                 </div>
@@ -150,8 +150,8 @@
 
 <h1 id="retro-recovery">Retro Recovery</h1>
 
-<p><a href="#R-image-1408d42b7e093ef9fe771efe89ec27d5" class="lightbox-link"><img alt="Mark DeVito" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/markdevito-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1408d42b7e093ef9fe771efe89ec27d5"><img alt="Mark DeVito" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/markdevito-avatar.gif"></a></p>
+<p><a href="#R-image-27fc3c9ed418f88e09ede610c6ec499a" class="lightbox-link"><img alt="Mark DeVito" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/markdevito-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-27fc3c9ed418f88e09ede610c6ec499a"><img alt="Mark DeVito" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/markdevito-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -185,6 +185,7 @@
 <p>Go to Items in your badge, download the floppy disk image, and see what you can find!</p>
 </blockquote>
 <h2 id="solution">Solution</h2>
+<p>This objective introduces basic digital forensics by focusing on disk image analysis and data recovery. By examining legacy storage artifacts, the task highlights how deleted or hidden data can often be recovered, reinforcing the importance of understanding file systems, residual data, and historical computing environments in forensic investigations.</p>
 <h3 id="identify-the-filesystem-format">Identify the Filesystem Format</h3>
 <h4 id="command">Command</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file floppy.img</span></span></code></pre></div>
@@ -346,8 +347,8 @@ This hints that the real clue is inside <code>all_i-want_for_christmas.bas</code
 <h4 id="what-the-command-does-6">What the command does</h4>
 <p>Shows all readable strings in the recovered BASIC file, which appears to be a Star Trek-style text game.</p>
 <h4 id="relevant-output">Relevant Output</h4>
-<p><a href="#R-image-c293bd93142429862d8b1a30d8327f4a" class="lightbox-link"><img alt="Solution" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-retro-recovery-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c293bd93142429862d8b1a30d8327f4a"><img alt="Solution" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-retro-recovery-1.png"></a></p>
+<p><a href="#R-image-04d58d624cc057cf10c8e75c8827a05c" class="lightbox-link"><img alt="Solution" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-retro-recovery-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-04d58d624cc057cf10c8e75c8827a05c"><img alt="Solution" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-retro-recovery-1.png"></a></p>
 <p>A full Star Trek BASIC program appears, and inside it is a Base64-encoded line (line 211).</p>
 <h4 id="why-this-output-matters-6">Why this output matters</h4>
 <p>The encoded string is clearly placed as a hidden message embedded in the program.
@@ -365,7 +366,9 @@ This is the actual target of the challenge.</p>
 It serves as the challenge solution / flag.</p>
 <h3 id="final-flag">Final Flag</h3>
 <p><code>merry christmas to all and to all a good night</code></p>
-<h2 id="mark-devito-mission-debrief">Mark DeVito mission debrief</h2>
+<p>This objective reinforces foundational forensic concepts by demonstrating how data remnants can persist on disk even after deletion. By recovering and decoding legacy artifacts, the task illustrates how historical file systems and simple encoding techniques can still reveal meaningful information during an investigation.</p>
+<h2 id="mark-devito-closing-words">Mark DeVito closing words</h2>
+<p>After solving, Mark says:</p>
 <blockquote>
 <p>Excellent work! You&rsquo;ve successfully recovered that deleted file and decoded the hidden message.</p>
 <p>Sometimes the old ways are the best ways. Vintage file systems never truly forget what they&rsquo;ve seen. Play some Star Trek&hellip; it actually works.</p>
@@ -421,6 +424,7 @@ It serves as the challenge solution / flag.</p>
             <li class="" data-nav-url="/act2/going-in-reverse/index.html"><a class="padding" href="/act2/going-in-reverse/index.html">Going in Reverse</a></li></ul></li>
             <li class="" data-nav-url="/act3/index.html"><a class="padding" href="/act3/index.html">Act 3</a><ul id="R-subsections-0b6215c9fad834351813cc2ad0d4a335" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/endgame/index.html"><a class="padding" href="/endgame/index.html">Endgame</a></li>
+            <li class="" data-nav-url="/about/index.html"><a class="padding" href="/about/index.html">About Roger Johnsen</a></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -438,8 +442,8 @@ It serves as the challenge solution / flag.</p>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766506892" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766506892" defer></script>
-    <script src="/js/theme.js?1766506892" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766746950" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766746950" defer></script>
+    <script src="/js/theme.js?1766746950" defer></script>
   </body>
 </html>

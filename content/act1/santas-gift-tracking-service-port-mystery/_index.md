@@ -27,9 +27,15 @@ weight = 5
 
 ## Terminal
 
+This objective introduces basic service interaction and reinforces the importance of understanding how applications expose functionality over the network. Rather than exploiting a vulnerability, I am required to correctly identify how a service is accessed and which protocol and port combinations are expected.
+
+The challenge intentionally presents a low-friction scenario where a commonly used tool (curl) fails due to incorrect assumptions about service configuration. This mirrors a frequent real-world issue, where access problems stem from misunderstandings of transport, ports, or application behavior rather than security controls themselves.
+
+By interacting directly with the service and adjusting my approach, I validate assumptions through observation and enumeration instead of trial-and-error exploitation.
+
 ![Welcome screen](/images/act1/act1-gift-tracking-1.png)
 
-By listing the home directory we find a `README.txt` file: 
+By listing the home directory I found a `README.txt` file: 
 
 ```
 Welcome!
@@ -65,7 +71,7 @@ The listeneing port in question is `12321`, connecting to it:
 curl http://localhost:12321
 ```
 
-As the original port was a well known web-port, we'll just go ahead connecting using Curl:
+As the original port was a well known web-port, I went on connecting to it using Curl:
 
 ![Connecting to port](/images/act1/act1-gift-tracking-3.png)
 
@@ -109,7 +115,9 @@ The entire output is included below:
 }
 ```
 
-## Yori Kvitchko mission debrief
+## Yori Kvitchko closing words
+
+After solving, Yori says:
 
 > Great work - thank you!
 > 

@@ -39,6 +39,8 @@ weight = 6
 
 ## Solution
 
+This objective focuses on logic flaws and state manipulation by forcing me to reason about non-linear execution paths rather than straightforward input/output. By interacting with a system that behaves inconsistently depending on state and observation, the challenge mirrors real-world issues where application logic, timing, or assumptions can be exploited without traditional vulnerabilities. It reinforces that not all security failures are technical bugs—some emerge from how systems model reality.
+
 ![Welcome screen](/images/act2/act2-quantqnome-1.png)
 
 Finding the PQC key generation program is quite easy, as we just can type `pq` and hit `TAB` and the auto completion will complete the rest for us: 
@@ -98,6 +100,8 @@ Finding the flag:
 ![Finding the flag](/images/act2/act2-quantqnome-15.png)
 
 Flag is `HHC{L3aping_0v3r_Quantum_Crypt0}`
+
+When logic becomes complex, assumptions become the real vulnerability.
 
 ## Charlie Goldner mission debrief
 

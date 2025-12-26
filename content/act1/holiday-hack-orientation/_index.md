@@ -31,18 +31,27 @@ weight = 2
 > Hey, think you can give this terminal a try? Just click on it and follow the instructions.
 > 
 
+This introductory segment functions primarily as an onboarding and expectation-setting exercise. Rather than presenting a technical challenge, it validates that the player can interact with NPCs, terminals, and the environment, while establishing the narrative shift away from the North Pole and toward the Dosis Neighborhood. The low difficulty is intentional and consistent with previous Holiday Hack Challenges, serving as a controlled baseline before more complex mechanics are introduced later in the act.
+
 ![Talking to Lynn Schifano on the train](/images/act1/holiday-hack-orientation-1.png)
 
-On one of my attempt to grab a screenshot, no character showed up:
+During the initial interaction, a minor rendering issue was observed where NPCs briefly failed to appear in the train wagon. This appeared to be a transient client-side issue and did not impact progression or functionality. Once resolved, interaction with Lynn Schifano proceeded as expected.
 
 ![Somehow, no one was there to witness](/images/act1/holiday-hack-orientation-2.png)
 
-
 ## Terminal 1 
+
+Terminal 1 follows the classic Holiday Hack pattern of a simple input-validation task. Its purpose is not technical difficulty, but confirmation that terminal interaction, input handling, and progression logic are functioning correctly. Entering the expected response completes the objective and unlocks access to the broader neighborhood.
 
 ![Terminal 1](/images/act1/holiday-hack-orientation-3.png)
 
-## Lynn Schifano mission debrief
+The subsequent mission debrief formally concludes the orientation phase and transitions the player from guided interaction to free exploration. The additional note regarding map rotation using the Q and E keys introduces a navigational feature that becomes practically useful later when inspecting buildings, objects, and constrained areas from different perspectives.
+
+Overall, this objective acts as a controlled warm-up: minimal friction, clear feedback, and a stable foundation for the more analytical and tool-driven challenges that follow.
+
+## Lynn Schifano closing words
+
+After solving, Lynn says:
 
 > Great work! Please, hop off the train and explore the neighborhood.
 > 

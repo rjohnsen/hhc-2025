@@ -30,6 +30,8 @@ weight = 11
 
 ## The Open Door Terminal
 
+This objective focuses on reviewing cloud network security controls to identify overly permissive access. By inspecting Azure network security group (NSG) rules, the task highlights how misconfigured inbound rules can unintentionally expose production systems to the internet, undermining basic network segmentation and perimeter defenses.
+
 ![Start](/images/act1/act1-opendoor-1.png)
 
 ```bash
@@ -188,7 +190,9 @@ az network nsg rule show --nsg-name nsg-production-eastus --resource-group thene
 
 ![Interesting rule](/images/act1/act1-opendoor-7.png)
 
-## Goose Lucas mission debrief
+## Goose Lucas  closing words
+
+After solving, Lucas says:
 
 > Ha! 'Properly protected' they said. More like 'properly exposed to the entire internet'! Good catch, amigo.
 

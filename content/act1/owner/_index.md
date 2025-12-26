@@ -29,6 +29,8 @@ weight = 12
 
 ## Terminal
 
+This objective focuses on reviewing identity and access management in a cloud environment to identify overly permissive role assignments. By examining Azure RBAC and the use of Privileged Identity Management (PIM), the task highlights the risk of permanently assigned Owner roles and reinforces the importance of least privilege and time-bound administrative access.
+
 ![Objective briefing](/images/act1/act1-owner-1.png)
 
 ### Query parameter
@@ -181,6 +183,8 @@ Full output provided below:
 ]
 ```
 
-## Goose James mission debrief
+## Goose James closing words
+
+After solving, James says:
 
 > You found the permanent assignments! CLUCK! See, I'm not crazy - the security really WAS misconfigured. Now maybe I can finally get some peace and quiet...

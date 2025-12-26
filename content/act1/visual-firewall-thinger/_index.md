@@ -36,23 +36,29 @@ weight = 7
 
 ## Holiday Firewall Simulator
 
-Upon entering the simulator we are presented with a fairly nice GUI. By spending a couple of minutes it is all quite forward what to do. It tells us exactly what to do under the "Firewall Configuration Goals" section. Let's get cracking!
+This objective introduces a visual model for understanding firewall behavior and rule evaluation. Rather than configuring a firewall through syntax or vendor-specific interfaces, I am presented with an interactive representation that shows how traffic is evaluated against a set of rules.
+
+The purpose of this challenge is to reinforce how allow and deny decisions are made based on rule order, matching criteria, and default behavior. By observing traffic as it is explicitly permitted or blocked, I can more clearly reason about how small rule changes can have significant downstream effects.
+
+This visualization emphasizes that firewall effectiveness depends not only on the presence of rules, but on their structure, ordering, and interaction—concepts that are critical when analyzing real-world network controls.
+
+Upon entering the simulator I were presented with a fairly nice GUI. By spending a couple of minutes it is all quite forward what to do. It told me exactly what to do under the "Firewall Configuration Goals" section. Let's get cracking!
 
 ![The simulator in all its glory](/images/act1/act1-firewall-1.png)
 
-Clicking on the "Internet" node in the network drawing we have to enable `http` and `https` and click "Save Rules".
+Clicking on the "Internet" node in the network drawing showed me I had to enable `http` and `https` and click "Save Rules".
 
 ![Configuring the Internet](/images/act1/act1-firewall-2.png)
 
-Next, we just tag along enabling `HTTPS`, `HTTP` and `SSH` for the DMZ:
+Next, I enabled `HTTPS`, `HTTP` and `SSH` for the DMZ:
 
 ![Configuring the DMZ](/images/act1/act1-firewall-3.png)
 
-For the internal network to cloud we enable `http`, `https`, `smtp` and `ssh`:
+For the internal network to cloud I enabled `http`, `https`, `smtp` and `ssh`:
 
 ![Configuring the internal network to cloud](/images/act1/act1-firewall-4.png)
 
-We aren't quite finished with the internal network yet. We have to configure the connections to the workstations as well. These shall have full access.
+I wasn't quite done with the internal network just yet. I had to configure the connections to the workstations as well. These should have full access.
 
 ![Configuring workstations](/images/act1/act1-firewall-5.png)
 
@@ -60,7 +66,11 @@ And Done!
 
 ![Done](/images/act1/act1-firewall-6.png)
 
-## Chris Elgee mission debrief
+This objective reinforces that firewall policy is ultimately about decision logic, not just rule count.
+
+## Chris Elgee closing words
+
+After solving, Chris says:
 
 > finger guns Nice work! You've mastered those firewall fundamentals like a true network security pro.
 >

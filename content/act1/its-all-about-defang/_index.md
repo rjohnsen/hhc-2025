@@ -38,6 +38,14 @@ weight = 3
 
 ## Its all about the defang terminal
 
+This objective introduces the concept of defanging Indicators of Compromise (IOCs) rather than simply identifying them. The focus is not on detection or attribution, but on understanding how IOCs should be rendered inert when shared publicly, reported externally, or documented in a defensive context.
+
+The exercise reinforces a subtle but important operational habit: IOCs must be transformed in a way that preserves analytical value while preventing accidental execution, resolution, or user interaction. URLs, domains, IP addresses, and email addresses are intentionally modified to break functionality without obscuring meaning. This mirrors standard practice in incident reports, threat intelligence sharing, and training material.
+
+Rather than testing technical skill, the challenge validates awareness of defensive hygiene and safe handling procedures. The provided interface walks through common IOC types and confirms that each has been correctly defanged using accepted conventions.
+
+By completing this step, the player demonstrates familiarity with how malicious artifacts are safely communicated across teams and organizations, setting the tone for later challenges that rely on accurate but non-operational data handling.
+
 ### Extract IOCs (Step 1)
 
 #### Domain
@@ -105,7 +113,9 @@ Upon successful completion we see the report:
 
 ![Defang and send report](/images/act1/act1-defang-6.png)
 
-## Ed Skoudis mission debrief
+## Ed Skoudis closing words
+
+After solving, Ed says:
 
 > Well you just made that look like a piece of cake! Though I prefer cookies...I know where to find the best in town!
 
@@ -114,6 +124,8 @@ Thanks again! See ya 'round!
 ----
 
 ## Extras
+
+There's a lot to pick up on Ed's statements. Here I have tried to look into some of the most intriguing ones.
 
 ### Ed's wild history on getting an Enigma machine
 
@@ -138,6 +150,8 @@ The transaction was completed successfully, and Ed and Josh left with a function
 It appears true that he owns a leaf of the Gutenberg Bible, according to this text found over at the [Cyphercon site](https://cyphercon.com/speaker/please-keep-your-bait-and-switch-business-practices-export-restrictions-and-customs-shipping-delays-off-my-incunable):
 
 ![Eds leaf of the Gutenberg Bible](/images/act1/act1-defang-extra-gutenberg-bible.png)
+
+_These anecdotes adds historical and personal context to the challenge, but is intentionally separate from the technical objectives, serving as optional background rather than required analysis.__
 
 
 

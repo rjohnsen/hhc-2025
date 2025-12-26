@@ -39,6 +39,8 @@ weight = 6
 
 ## Solution
 
+This objective focuses on low-level hardware communication and protocol analysis rather than traditional network traffic. By working through the 1-Wire communication stages and reversing the XOR-based obfuscation, I had to reconstruct how sensor data is exchanged and protected on constrained devices. The challenge highlights how security weaknesses can emerge in embedded systems when lightweight encryption is applied without strong key management, and how understanding protocol mechanics is essential when investigating IoT-style environments.
+
 The endpoints where extracted by viesing for _WS_ in Network tab:
 
 | Protocol | Endpoint name | Endpoint URL |
@@ -1081,7 +1083,11 @@ The value I was looking for is:
 32.84
 ```
 
-## Evan Booth mission debrief
+Embedded protocols often trade simplicity for security, making protocol literacy a critical defensive skill.
+
+## Evan Booth closing words
+
+After solving, Evan says:
 
 > Nice work! You cracked that signal encoding like a pro.
 >

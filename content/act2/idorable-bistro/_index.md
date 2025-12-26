@@ -39,6 +39,8 @@ weight = 3
 
 ## Idorable Bistro
 
+This objective focuses on identifying and exploiting an Insecure Direct Object Reference (IDOR) vulnerability in a web application. By interacting with backend endpoints and manipulating object identifiers, the challenge illustrates how insufficient authorization checks can expose sensitive data or functionality. It reinforces the importance of validating access controls server-side rather than relying on client-side assumptions.
+
 Josh mentioned that there was a receipt outside the door. I went outside and to the right of the building and found this item: 
 
 ![Crumpled receipt](/images/act2/act2-idorable-1.png)
@@ -92,7 +94,11 @@ I knew the gnome asked for a frozen sushi, so I made the code look for any occur
 
 The gnomes name is `Bartholomew Quibblefrost`
 
-## Josh Wright mission debrief
+IDOR vulnerabilities often hide in plain sight and require an understanding of how applications map user actions to backend objects.
+
+## Josh Wright closing words
+
+After solving, Josh says:
 
 > Excellent work exploiting that IDOR vulnerability - textbook execution.
 > 

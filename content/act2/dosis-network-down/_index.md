@@ -33,6 +33,8 @@ weight = 4
 
 ## Dosis Network Down
 
+This objective focuses on network troubleshooting and configuration analysis by examining a consumer-grade router setup after a service disruption. By reviewing configuration artifacts to recover wireless credentials, the challenge demonstrates how misconfigurations and weak operational hygiene can directly impact availability. It reinforces the value of understanding network devices at the configuration level when responding to outages or suspected tampering.
+
 ![Router landingpage](/images/act2/act2-dosisnetwork-1.png)
 
 From the landing page we see a lot of information about the router:
@@ -202,7 +204,11 @@ config wifi-iface 'default_radio1'
 
 And there we have it, the password is `SprinklesAndPackets2025!`
 
-## Janusz Jasinski mission debrief
+Basic network failures often come down to simple configuration issues that are only visible when you know where - and how - to look.
+
+## Janusz Jasinski closing words
+
+After solving, Janusz says:
 
 > Brilliant work, that. Got me connection back and sent those gnomes packin' from the router.
 > 

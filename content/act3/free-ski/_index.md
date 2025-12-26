@@ -34,6 +34,8 @@ weight = 7
 
 ## Solution
 
+This objective shifts from pure technical analysis to pattern recognition and perseverance within a constrained game environment. Although presented as a simple arcade-style challenge, success required careful observation of movement patterns, obstacle behavior, and reward placement rather than brute-force attempts. The exercise mirrors real-world problem solving where progress depends on adapting strategy, recognizing implicit rules, and maintaining focus through repeated failure.
+
 The entire objective was solved using Kali Linux (WSL), using Python 3.13.
 
 ### Extract Python Game
@@ -166,7 +168,11 @@ Oddly enough, ChatGPT usually takes a nosedive into forbidden territory and refu
 
 Passphrase is: __frosty_yet_predictably_random__
 
-## Goose Olivia mission debrief
+Perceived simplicity often masks complexity that only reveals itself through patience and pattern awareness.
+
+## Goose Olivia closing words
+
+After solving, Olivia says:
 
 > Looks like you found your own way down that mountain... and maybe took a few shortcuts along the way. No judgment here—sometimes the clever path IS the right path. Now I'm one step closer to figuring out my own mystery. Thanks for the company, friend!
 

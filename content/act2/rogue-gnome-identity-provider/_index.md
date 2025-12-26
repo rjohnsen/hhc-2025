@@ -35,6 +35,8 @@ weight = 5
 
 ## Rogue Gnome Terminal
 
+This objective focuses on identity and authentication abuse by analyzing a rogue identity provider operating outside normal trust boundaries. By inspecting how authentication flows are manipulated to deliver malicious firmware images, the challenge highlights how compromised or malicious IdPs can be leveraged to distribute unauthorized code. It reinforces the need to treat identity infrastructure as critical attack surface, not just supporting plumbing.
+
 Already from the initial chat with Paul we get some credentials and useful information: 
 
 * _Creds_: `gnome:SittingOnAShelf`
@@ -396,7 +398,11 @@ System Log<br/>
 
 The malicious firmware image the gnomes are downloading is `refrigeration-botnet.bin`
 
-## Paul Beckett mission debrief
+When identity is compromised, trust collapses—and everything downstream becomes a delivery mechanism.
+
+## Paul Beckett closing words
+
+After solving, Paul says:
 
 > Brilliant work on that privilege escalation! You've successfully gained admin access to the diagnostic interface.
 > 

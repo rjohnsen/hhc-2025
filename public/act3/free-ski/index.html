@@ -24,13 +24,13 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 You know, it’s the strangest thing… I used to just waddle around the Geese Islands going ‘BONK’ all day long. Random noises, no thoughts, just vibes. But then something changed, and now here I am—speaking, thinking, wondering how I even got here!">
     <meta itemprop="datePublished" content="2025-12-23T15:59:59+01:00">
     <meta itemprop="dateModified" content="2025-12-23T15:59:59+01:00">
-    <meta itemprop="wordCount" content="742">
+    <meta itemprop="wordCount" content="821">
     <title>Free Ski :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/free-ski/index.xml" rel="alternate" type="application/rss+xml" title="Free Ski :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766509179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766509179" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766509179" rel="stylesheet">
-    <link href="/css/theme.css?1766509179" rel="stylesheet">
-    <link href="/css/format-html.css?1766509179" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766748142" rel="stylesheet">
+    <link href="/css/theme.css?1766748142" rel="stylesheet">
+    <link href="/css/format-html.css?1766748142" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -110,7 +110,7 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
         <li><a href="#finding-the-solution">Finding the solution</a></li>
       </ul>
     </li>
-    <li><a href="#goose-olivia-mission-debrief">Goose Olivia mission debrief</a></li>
+    <li><a href="#goose-olivia-closing-words">Goose Olivia closing words</a></li>
     <li><a href="#hints">Hints</a></li>
   </ul>
 </nav>
@@ -148,8 +148,8 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 
 <h1 id="free-ski">Free Ski</h1>
 
-<p><a href="#R-image-59b85d2db526630d2446ea6322230e46" class="lightbox-link"><img alt="Goose Olivia" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/goose-space.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-59b85d2db526630d2446ea6322230e46"><img alt="Goose Olivia" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/goose-space.png"></a></p>
+<p><a href="#R-image-852615a116177242c38174004f0f9320" class="lightbox-link"><img alt="Goose Olivia" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/goose-space.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-852615a116177242c38174004f0f9320"><img alt="Goose Olivia" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/goose-space.png"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -177,6 +177,7 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 <p>Now get out there and show that mountain who&rsquo;s boss!</p>
 </blockquote>
 <h2 id="solution">Solution</h2>
+<p>This objective shifts from pure technical analysis to pattern recognition and perseverance within a constrained game environment. Although presented as a simple arcade-style challenge, success required careful observation of movement patterns, obstacle behavior, and reward placement rather than brute-force attempts. The exercise mirrors real-world problem solving where progress depends on adapting strategy, recognizing implicit rules, and maintaining focus through repeated failure.</p>
 <p>The entire objective was solved using Kali Linux (WSL), using Python 3.13.</p>
 <h3 id="extract-python-game">Extract Python Game</h3>
 <p>First I had to smuggle out the compile Python files from the .exe file. The hints for this objective already had given away that I was dealing with Python due to the tool references. First I had to set up the extractor:</p>
@@ -193,12 +194,12 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pycdc/pycdas
 </span></span><span style="display:flex;"><span>pycdc/pycdas FreeSki.exe_extracted/FreeSki.pyc &gt; FreeSki.asm</span></span></code></pre></div>
 <p>This is a snippet from the <strong>FreeSki.asm</strong> file:</p>
-<p><a href="#R-image-0eb87e5b1b11999261ae36c0fd592ef3" class="lightbox-link"><img alt="ASM snippet" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0eb87e5b1b11999261ae36c0fd592ef3"><img alt="ASM snippet" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-1.png"></a></p>
+<p><a href="#R-image-e83ea3542ad68216fc98ad0ec81b8425" class="lightbox-link"><img alt="ASM snippet" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e83ea3542ad68216fc98ad0ec81b8425"><img alt="ASM snippet" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-1.png"></a></p>
 <h3 id="finding-the-solution">Finding the solution</h3>
 <p>From here I uploaded the <strong>FreeSki.asm</strong> to ChatGPT and asked what this file did - and I got this response:</p>
-<p><a href="#R-image-ba2b624193eddec86628da936a306211" class="lightbox-link"><img alt="ChatGPT explaining the meaning of the ASM" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ba2b624193eddec86628da936a306211"><img alt="ChatGPT explaining the meaning of the ASM" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-2.png"></a></p>
+<p><a href="#R-image-e5a78baa696c8c85d18d60dadba76ced" class="lightbox-link"><img alt="ChatGPT explaining the meaning of the ASM" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e5a78baa696c8c85d18d60dadba76ced"><img alt="ChatGPT explaining the meaning of the ASM" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-2.png"></a></p>
 <p>Then I asked ChatGPT to make a &ldquo;one-click-resolver&rdquo;:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
@@ -280,10 +281,12 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    main()</span></span></code></pre></div>
 <p>Oddly enough, ChatGPT usually takes a nosedive into forbidden territory and refuses to do CTF work. But this time it didn&rsquo;t complain and made a script that actually worked:</p>
-<p><a href="#R-image-20c0fb4068781cfb10ddedce8b2d11f6" class="lightbox-link"><img alt="Output from one click resolver" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-20c0fb4068781cfb10ddedce8b2d11f6"><img alt="Output from one click resolver" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-3.png"></a></p>
+<p><a href="#R-image-7c55c234257ba4f8d335199117d0a6b3" class="lightbox-link"><img alt="Output from one click resolver" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7c55c234257ba4f8d335199117d0a6b3"><img alt="Output from one click resolver" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-3.png"></a></p>
 <p>Passphrase is: <strong>frosty_yet_predictably_random</strong></p>
-<h2 id="goose-olivia-mission-debrief">Goose Olivia mission debrief</h2>
+<p>Perceived simplicity often masks complexity that only reveals itself through patience and pattern awareness.</p>
+<h2 id="goose-olivia-closing-words">Goose Olivia closing words</h2>
+<p>After solving, Olivia says:</p>
 <blockquote>
 <p>Looks like you found your own way down that mountain&hellip; and maybe took a few shortcuts along the way. No judgment here—sometimes the clever path IS the right path. Now I&rsquo;m one step closer to figuring out my own mystery. Thanks for the company, friend!</p>
 </blockquote>
@@ -362,8 +365,8 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766509179" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766509179" defer></script>
-    <script src="/js/theme.js?1766509179" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766748142" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766748142" defer></script>
+    <script src="/js/theme.js?1766748142" defer></script>
   </body>
 </html>

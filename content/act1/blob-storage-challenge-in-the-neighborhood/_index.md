@@ -27,6 +27,12 @@ weight = 9
 
 ## Blob Challenge Terminal
 
+This objective introduces a common cloud security failure mode: publicly accessible object storage caused by misconfiguration rather than exploitation. Instead of interacting directly with the storage service, I am required to analyze an exported dataset to identify which Azure Storage account permits anonymous blob access.
+
+The challenge emphasizes that cloud security assessments often rely on configuration artifacts and metadata rather than live probing. By reviewing the export file, I can determine where access controls have been relaxed in a way that exposes data to unintended audiences.
+
+This mirrors real-world scenarios where sensitive data exposure is discovered through audits, inventory reviews, or configuration exports, reinforcing the importance of visibility and continuous configuration monitoring in cloud environments.
+
 ![Starting the terminal](/images/act1/act1-blob-challenge-1.png)
 
 ### Getting help
@@ -355,6 +361,10 @@ User: gitadmin
 Pass: G1t#Srv!Rep0$C0de
 ```
 
-## Goose Grace mission debrief
+This objective reinforces that cloud breaches often begin with misconfiguration, not compromise.
+
+## Goose Grace closing words
+
+After solving, Grace says:
 
 > HONK HONK HONK! 'No sensitive data publicly accessible' they claimed. Meanwhile, literally everything was public! Good save, security expert!

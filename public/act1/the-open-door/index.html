@@ -28,13 +28,13 @@ Please make sure the towns Azure network is secured properly.
 The Neighborhood HOA uses Azure for their IT infrastructure.">
     <meta itemprop="datePublished" content="2025-12-23T15:59:59+01:00">
     <meta itemprop="dateModified" content="2025-12-23T15:59:59+01:00">
-    <meta itemprop="wordCount" content="469">
+    <meta itemprop="wordCount" content="517">
     <title>The Open Door :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act1/the-open-door/index.xml" rel="alternate" type="application/rss+xml" title="The Open Door :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766506841" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766506841" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766506841" rel="stylesheet">
-    <link href="/css/theme.css?1766506841" rel="stylesheet">
-    <link href="/css/format-html.css?1766506841" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746664" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746664" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766746664" rel="stylesheet">
+    <link href="/css/theme.css?1766746664" rel="stylesheet">
+    <link href="/css/format-html.css?1766746664" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -112,7 +112,7 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
         <li><a href="#viewing-suspect-rules">Viewing suspect rules</a></li>
       </ul>
     </li>
-    <li><a href="#goose-lucas-mission-debrief">Goose Lucas mission debrief</a></li>
+    <li><a href="#goose-lucas--closing-words">Goose Lucas  closing words</a></li>
   </ul>
 </nav>
                 </div>
@@ -149,8 +149,8 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
 
 <h1 id="the-open-door">The Open Door</h1>
 
-<p><a href="#R-image-8dc5a575bc26fbc3e98d2697c6aef9e9" class="lightbox-link"><img alt="Lucas Goose" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/goose-pixel.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8dc5a575bc26fbc3e98d2697c6aef9e9"><img alt="Lucas Goose" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/goose-pixel.png"></a></p>
+<p><a href="#R-image-b03173c0a72d85c263e051d17b5f416d" class="lightbox-link"><img alt="Lucas Goose" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/goose-pixel.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b03173c0a72d85c263e051d17b5f416d"><img alt="Lucas Goose" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/goose-pixel.png"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -176,14 +176,15 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
 <p>They claim all systems are properly protected, but you need to verify there are no overly permissive NSG rules.</p>
 </blockquote>
 <h2 id="the-open-door-terminal">The Open Door Terminal</h2>
-<p><a href="#R-image-f793c62276a1498dd9e0d812f7a660e2" class="lightbox-link"><img alt="Start" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f793c62276a1498dd9e0d812f7a660e2"><img alt="Start" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-1.png"></a></p>
+<p>This objective focuses on reviewing cloud network security controls to identify overly permissive access. By inspecting Azure network security group (NSG) rules, the task highlights how misconfigured inbound rules can unintentionally expose production systems to the internet, undermining basic network segmentation and perimeter defenses.</p>
+<p><a href="#R-image-0d056a8d90a675d1bb63c0c3cc85af2f" class="lightbox-link"><img alt="Start" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0d056a8d90a675d1bb63c0c3cc85af2f"><img alt="Start" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-1.png"></a></p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az group list</span></span></code></pre></div>
-<p><a href="#R-image-098d680446e6e588726c174ae247db76" class="lightbox-link"><img alt="Group list" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-098d680446e6e588726c174ae247db76"><img alt="Group list" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-2.png"></a></p>
+<p><a href="#R-image-51f8feadf353e2565ba498e017e92a09" class="lightbox-link"><img alt="Group list" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-51f8feadf353e2565ba498e017e92a09"><img alt="Group list" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-2.png"></a></p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az group list -o table</span></span></code></pre></div>
-<p><a href="#R-image-f7526f4c4624d314bd9eaf6d9875f7b9" class="lightbox-link"><img alt="Group list table" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f7526f4c4624d314bd9eaf6d9875f7b9"><img alt="Group list table" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-3.png"></a></p>
+<p><a href="#R-image-821c4ac3dfbf149167c671c9f092f7b2" class="lightbox-link"><img alt="Group list table" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-821c4ac3dfbf149167c671c9f092f7b2"><img alt="Group list table" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-3.png"></a></p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az network nsg list -o table</span></span></code></pre></div>
 <table>
   <thead>
@@ -221,14 +222,14 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
       </tr>
   </tbody>
 </table>
-<p><a href="#R-image-e8fc1e4650fe13c62effa3254e82ab2a" class="lightbox-link"><img alt="NSG list" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e8fc1e4650fe13c62effa3254e82ab2a"><img alt="NSG list" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-4.png"></a></p>
+<p><a href="#R-image-524e61d3260ab2fbf1f8ec28a7133e69" class="lightbox-link"><img alt="NSG list" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-524e61d3260ab2fbf1f8ec28a7133e69"><img alt="NSG list" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-4.png"></a></p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az network nsg show -o table --name nsg-web-eastus --resource-group theneighborhood-rg1</span></span></code></pre></div>
-<p><a href="#R-image-a60c701b87e435bab87d3b4347e26fd1" class="lightbox-link"><img alt="NSG show " class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a60c701b87e435bab87d3b4347e26fd1"><img alt="NSG show " class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-5.png"></a></p>
+<p><a href="#R-image-3f81096723a133ab48a28bfe4c873e72" class="lightbox-link"><img alt="NSG show " class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3f81096723a133ab48a28bfe4c873e72"><img alt="NSG show " class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-5.png"></a></p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az network nsg rule list --name nsg-mgmt-eastus --resource-group theneighborhood-rg2 | less</span></span></code></pre></div>
-<p><a href="#R-image-df0be0e621ab58be7c78e07e4a0b41fb" class="lightbox-link"><img alt="Rules list" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-df0be0e621ab58be7c78e07e4a0b41fb"><img alt="Rules list" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-6.png"></a></p>
+<p><a href="#R-image-f883a1b495bded66749420edc9e3cc36" class="lightbox-link"><img alt="Rules list" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f883a1b495bded66749420edc9e3cc36"><img alt="Rules list" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-6.png"></a></p>
 <h3 id="viewing-suspect-rules">Viewing suspect rules</h3>
 <h4 id="rules-theneighborhood-rg2-_-nsg-mgmt-eastus">Rules theneighborhood-rg2 _ nsg-mgmt-eastus</h4>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az network nsg rule list  --name nsg-mgmt-eastus --resource-group theneighborhood-rg2 | less</span></span></code></pre></div>
@@ -296,9 +297,10 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az network nsg rule show --nsg-name nsg-production-eastus --resource-group theneighborhood-rg1 -n &lt;rulename&gt;</span></span></code></pre></div>
 <p>As I were traversing and inspecting these rules, I caught one of interest. A RDP related one:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az network nsg rule show --nsg-name nsg-production-eastus --resource-group theneighborhood-rg1 -n Allow-RDP-From-Internet</span></span></code></pre></div>
-<p><a href="#R-image-fd65cc3e2b046365d531306ef044dfdb" class="lightbox-link"><img alt="Interesting rule" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-7.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fd65cc3e2b046365d531306ef044dfdb"><img alt="Interesting rule" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-7.png"></a></p>
-<h2 id="goose-lucas-mission-debrief">Goose Lucas mission debrief</h2>
+<p><a href="#R-image-199b865d90632f5cc7452135109ede39" class="lightbox-link"><img alt="Interesting rule" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-opendoor-7.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-199b865d90632f5cc7452135109ede39"><img alt="Interesting rule" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-opendoor-7.png"></a></p>
+<h2 id="goose-lucas--closing-words">Goose Lucas  closing words</h2>
+<p>After solving, Lucas says:</p>
 <blockquote>
 <p>Ha! &lsquo;Properly protected&rsquo; they said. More like &lsquo;properly exposed to the entire internet&rsquo;! Good catch, amigo.</p>
 </blockquote>
@@ -357,6 +359,7 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
             <li class="" data-nav-url="/act2/index.html"><a class="padding" href="/act2/index.html">Act 2</a><ul id="R-subsections-9d3d8c898368693a495088de36411fa6" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/act3/index.html"><a class="padding" href="/act3/index.html">Act 3</a><ul id="R-subsections-0b6215c9fad834351813cc2ad0d4a335" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/endgame/index.html"><a class="padding" href="/endgame/index.html">Endgame</a></li>
+            <li class="" data-nav-url="/about/index.html"><a class="padding" href="/about/index.html">About Roger Johnsen</a></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -374,8 +377,8 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766506841" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766506841" defer></script>
-    <script src="/js/theme.js?1766506841" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766746664" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766746664" defer></script>
+    <script src="/js/theme.js?1766746664" defer></script>
   </body>
 </html>

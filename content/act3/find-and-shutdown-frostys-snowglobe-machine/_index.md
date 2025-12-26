@@ -15,6 +15,8 @@ weight = 5
 
 ## Solution
 
+This objective blends narrative exploration with problem-solving by requiring me to gather contextual clues before taking technical action. Rather than immediately interacting with the Snowglobe Machine, I first had to locate and engage an NPC who provided critical guidance on navigating the Data Center environment. The challenge reinforces that effective incident response and disruption often depend on information gathering and situational awareness before execution, mirroring how intelligence and access paths are established prior to shutting down malicious infrastructure.
+
 The objective said I was to look for an elderly gnome, and so I did - and so I found him in a village in the outskirts of town: 
 
 ![Talking with the Elder Gnome](/images/act3/act3-snowglobe-1.png)
@@ -52,6 +54,8 @@ By talking to Frosty he had this to say:
 By positioning the camera I saw that there was a machine there too: 
 
 ![Frostys machine](/images/act3/act3-snowglobe-3.png)
+
+Good technical outcomes are often enabled by non-technical discovery and context-building first.
 
 ## Hints
 

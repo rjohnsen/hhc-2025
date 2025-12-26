@@ -5,28 +5,28 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.152.2">
     <meta name="generator" content="Relearn 8.2.0+926ba4d1230e27319cf62da0633eb3420e6af1bf">
-    <meta name="description" content="The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.">
+    <meta name="description" content="Act 1 – Foundations and Observation Act 1 focuses on establishing core mental models rather than exploiting edge cases. The challenges emphasize how systems communicate, how data moves across boundaries, and how small configuration details influence security outcomes. Difficulty remains low, but the act trains disciplined observation and protocol literacy rather than trial-and-error problem solving. This mirrors real-world security work where understanding normal behavior is a prerequisite for detecting abnormal or malicious activity.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Act 1 :: SANS Holiday Hack Challenge 2025">
-    <meta name="twitter:description" content="The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.">
+    <meta name="twitter:description" content="Act 1 – Foundations and Observation Act 1 focuses on establishing core mental models rather than exploiting edge cases. The challenges emphasize how systems communicate, how data moves across boundaries, and how small configuration details influence security outcomes. Difficulty remains low, but the act trains disciplined observation and protocol literacy rather than trial-and-error problem solving. This mirrors real-world security work where understanding normal behavior is a prerequisite for detecting abnormal or malicious activity.">
     <meta property="og:url" content="http://localhost:1313/act1/index.html">
     <meta property="og:site_name" content="SANS Holiday Hack Challenge 2025">
     <meta property="og:title" content="Act 1 :: SANS Holiday Hack Challenge 2025">
-    <meta property="og:description" content="The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.">
+    <meta property="og:description" content="Act 1 – Foundations and Observation Act 1 focuses on establishing core mental models rather than exploiting edge cases. The challenges emphasize how systems communicate, how data moves across boundaries, and how small configuration details influence security outcomes. Difficulty remains low, but the act trains disciplined observation and protocol literacy rather than trial-and-error problem solving. This mirrors real-world security work where understanding normal behavior is a prerequisite for detecting abnormal or malicious activity.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Act 1 :: SANS Holiday Hack Challenge 2025">
-    <meta itemprop="description" content="The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.">
+    <meta itemprop="description" content="Act 1 – Foundations and Observation Act 1 focuses on establishing core mental models rather than exploiting edge cases. The challenges emphasize how systems communicate, how data moves across boundaries, and how small configuration details influence security outcomes. Difficulty remains low, but the act trains disciplined observation and protocol literacy rather than trial-and-error problem solving. This mirrors real-world security work where understanding normal behavior is a prerequisite for detecting abnormal or malicious activity.">
     <meta itemprop="datePublished" content="2025-12-23T15:59:59+01:00">
     <meta itemprop="dateModified" content="2025-12-23T15:59:59+01:00">
-    <meta itemprop="wordCount" content="55">
+    <meta itemprop="wordCount" content="130">
     <title>Act 1 :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act1/index.xml" rel="alternate" type="application/rss+xml" title="Act 1 :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766509179" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766509179" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766509179" rel="stylesheet">
-    <link href="/css/theme.css?1766509179" rel="stylesheet">
-    <link href="/css/format-html.css?1766509179" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766748142" rel="stylesheet">
+    <link href="/css/theme.css?1766748142" rel="stylesheet">
+    <link href="/css/format-html.css?1766748142" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -94,7 +94,12 @@
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#the-story">The Story</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -129,11 +134,14 @@
 
 <h1 id="act-1">Act 1</h1>
 
+<p><a href="#R-image-0467d079b699704cde81d96660c65fde" class="lightbox-link"><img alt="Act 1 - We are going somewhere" class="lazy lightbox figure-image" loading="lazy" src="/images/arts/art-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0467d079b699704cde81d96660c65fde"><img alt="Act 1 - We are going somewhere" class="lazy lightbox lightbox-image" loading="lazy" src="/images/arts/art-2.png"></a></p>
+<h1 id="act-1--foundations-and-observation">Act 1 – Foundations and Observation</h1>
+<p>Act 1 focuses on establishing core mental models rather than exploiting edge cases. The challenges emphasize how systems communicate, how data moves across boundaries, and how small configuration details influence security outcomes. Difficulty remains low, but the act trains disciplined observation and protocol literacy rather than trial-and-error problem solving. This mirrors real-world security work where understanding normal behavior is a prerequisite for detecting abnormal or malicious activity.</p>
+<h2 id="the-story">The Story</h2>
 <blockquote>
 <p>The Counter Hack crew is in the Neighborhood festively preparing for the holidays when they are suddenly overrun by lively Gnomes in Your Home! There must have been some magic in those Gnomes, because, due to some unseen spark, some haunting hocus pocus, they have come to life and are now scurrying around the Neighborhood.</p>
 </blockquote>
-<p><a href="#R-image-8e85835c4f814de5c19efc036f319311" class="lightbox-link"><img alt="Act 1 - We are going somewhere" class="lazy lightbox figure-image" loading="lazy" src="/images/arts/art-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8e85835c4f814de5c19efc036f319311"><img alt="Act 1 - We are going somewhere" class="lazy lightbox lightbox-image" loading="lazy" src="/images/arts/art-2.png"></a></p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-calendar'></i> Dec 23, 2025
@@ -207,8 +215,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766509179" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766509179" defer></script>
-    <script src="/js/theme.js?1766509179" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766748142" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766748142" defer></script>
+    <script src="/js/theme.js?1766748142" defer></script>
   </body>
 </html>

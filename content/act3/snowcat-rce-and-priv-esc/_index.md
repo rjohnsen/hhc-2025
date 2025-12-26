@@ -41,6 +41,8 @@ weight = 3
 
 ## Solution
 
+This objective centers on identifying and exploiting a vulnerability chain that combines remote code execution with privilege escalation. By analyzing how Snowcat processes input and manages execution context, I had to move beyond finding a single bug and instead demonstrate how initial code execution can be leveraged to access higher-privilege functionality and sensitive secrets. The challenge reinforces how weak isolation between components can turn a limited flaw into full system compromise.
+
 Starting out I were left with a message at the terminal: 
 
 ![Introduction terminal](/images/act3/act3-snowcat-1.png)
@@ -291,7 +293,11 @@ Lower average winter temperature to -15.4 C
 Lower average summer temperature to -3.7 C
 ```
 
-## Tom Hessman mission debrief
+Small execution flaws become critical when privilege boundaries are poorly enforced.
+
+## Tom Hessman closing words
+
+After solving, Tom says:
 
 > Fantastic work! You've successfully exploited those vulnerabilities and retrieved the authorization key from the weather monitoring system.
 > 

@@ -39,6 +39,8 @@ weight = 7
 
 ## Solving the Challenge
 
+This objective focuses on reverse engineering and data transformation by working backward from an observed output to reconstruct the original input. By reversing encodings and representations rather than following a forward execution path, the challenge demonstrates how hidden values can be recovered even when direct context is missing. It reinforces the importance of understanding how data is transformed, not just how tools present the final result.
+
 The challenge provides a short BASIC program supposedly acting as a "Commodore 64 security system." The goal is to understand how the password check works and recover the hidden flag. The relevant code is:
 
 ```basic
@@ -164,7 +166,11 @@ C64RULES
 CTF{frost-plan:compressors,coolant,oil}
 ```
 
-## Kevin McFarland mission debrief
+If you can understand how something was transformed, you can almost always undo it.
+
+## Kevin McFarland closing words
+
+After solving, Kevin says:
 
 > Excellent work! You've just demonstrated one of the most valuable skills in cybersecurity - the ability to think like the original programmer and unravel their logic without needing to execute a single line of code.
 

@@ -45,6 +45,8 @@ weight = 1
 
 ## Solution
 
+This objective introduces basic digital forensics by focusing on disk image analysis and data recovery. By examining legacy storage artifacts, the task highlights how deleted or hidden data can often be recovered, reinforcing the importance of understanding file systems, residual data, and historical computing environments in forensic investigations.
+
 ### Identify the Filesystem Format
 
 #### Command
@@ -345,7 +347,11 @@ It serves as the challenge solution / flag.
 
 `merry christmas to all and to all a good night`
 
-## Mark DeVito mission debrief
+This objective reinforces foundational forensic concepts by demonstrating how data remnants can persist on disk even after deletion. By recovering and decoding legacy artifacts, the task illustrates how historical file systems and simple encoding techniques can still reveal meaningful information during an investigation.
+
+## Mark DeVito closing words
+
+After solving, Mark says:
 
 > Excellent work! You've successfully recovered that deleted file and decoded the hidden message.
 >

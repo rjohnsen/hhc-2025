@@ -30,6 +30,14 @@ weight = 4
 
 ## Neigboorhood Fire Alarm System
 
+This objective marks the first transition from passive interaction to active bypass of a security control. Rather than identifying or documenting a weakness, the challenge requires exploiting a misconfiguration to regain administrative control over a critical system component in the Dosis Neighborhood.
+
+At its core, the scenario models a classic privilege escalation via misconfigured sudo permissions. The system exposes administrative functionality through scripts that are assumed to be safe, but which can be abused when executed with elevated privileges. This reflects a common real-world failure mode where operational convenience overrides the principle of least privilege.
+
+The task reinforces an important defensive lesson: security controls are only as strong as their surrounding configuration. Even well-intentioned monitoring or safety systems become liabilities when execution context and privilege boundaries are not strictly enforced. In this case, gaining elevated access enables direct interaction with a system responsible for neighborhood-wide safety, demonstrating the potential blast radius of a single misconfiguration.
+
+By successfully escalating privileges and restoring administrative control, the challenge illustrates how attackers often move laterally from seemingly low-impact access to full system control—not through complex exploits, but through overlooked trust relationships and unsafe defaults.
+
 > 🚨 EMERGENCY ALERT: Fire alarm system admin access has been compromised! 🚨
 > The fire safety systems are experiencing interference and 
 > admin privileges have been mysteriously revoked. The neighborhood's fire 
@@ -44,7 +52,7 @@ weight = 4
 > command `/etc/firealarm/restore_fire_alarm` to restore complete fire alarm system control and 
 > protect the Dosis neighborhood from potential emergencies.
 
-The above text is copied from the welcome screen for this terminal (below). As we can see for this terminal there aren't that many tips or hints available. So I instantly begun think we're in a classical situation where we have to look deeper into the terminal to find out more. 
+The above text is copied from the welcome screen for this terminal (below). As we can see for this terminal there aren't that many tips or hints available. So I instantly began thinking I were in a classical situation where I had to look deeper into the terminal to find out more. 
 
 ![Welcome screen](/images/act1/act1-firealarm-1.png)
 
@@ -70,11 +78,13 @@ So my plan is to create my own version of `df` in the local `bin` folder, then a
 
 ![Creating a malicious df](/images/act1/act1-firealarm-6.png)
 
-Exuting my malicious `df` script and hoping for the best! And would you look at that, I got ROOT and can run that `runtoanswer` binary! Yay!
+Executing the modified script with elevated privileges confirms that administrative access has been restored
 
 ![Got ROOT](/images/act1/act1-firealarm-7.png)
 
-## Kyle Parrish mission debrief
+## Kyle Parrish closing words
+
+After solving, Kyle says:
 
 > Wow! Thank you so much! I didn't realize sudo was so powerful. Especially when misconfigured. Who knew a simple privilege escalation could unlock the whole fire safety system?
 > 

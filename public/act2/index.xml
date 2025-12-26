@@ -3,7 +3,7 @@
   <channel>
     <title>Act 2 :: SANS Holiday Hack Challenge 2025</title>
     <link>http://localhost:1313/act2/index.html</link>
-    <description>The Gnomes’ nefarious plot seems to involve stealing refrigerator parts. But why?</description>
+    <description>Act 2 – Applied Analysis and Controlled Exploitation Act 2 shifts from observation to active analysis across multiple domains, including email infrastructure, web applications, identity systems, and network devices. The challenges require moving between tools, protocols, and abstractions while maintaining control over scope and intent. The difficulty increase is driven less by technical complexity and more by the need to correlate information across layers. This act reflects day-to-day defensive and offensive security work, where insight comes from stitching together partial truths rather than exploiting a single flaw in isolation.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Dec 2025 15:59:59 +0100</lastBuildDate>

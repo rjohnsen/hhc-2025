@@ -29,6 +29,8 @@ weight = 2
 
 ## Mail Detective: Curly IMAP Investigation
 
+This objective focuses on email investigation by working directly with mail infrastructure rather than user-facing clients. By querying an IMAP server using command-line tools, I analyze how malicious content can be hidden within standard email workflows and reinforce the importance of understanding underlying protocols when investigating suspicious messaging activity.
+
 ![Welcome screen](/images/act2/act2-mail-detective-1.png)
 
 To solve this objective, we must use `curl` as a lightweight IMAP client. Because curl supports IMAP natively, we can authenticate and talk directly to the mail server. The first step is to list the available mailboxes:
@@ -163,7 +165,9 @@ setTimeout(function() {
 
 The URL of the pastebin services the gnomes are using is `https://frostbin.atnas.mail/api/paste`
 
-## Maurice Wilson mission debrief
+## Maurice Wilson closing words
+
+After solving, Maurice says:
 
 > Outstanding work! You've mastered using curl for IMAP - that's some serious command-line skills that would make any Air Force tech proud.
 >

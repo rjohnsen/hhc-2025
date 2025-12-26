@@ -41,6 +41,8 @@ weight = 1
 
 ## Solution
 
+This objective focuses on information disclosure through exposed application content and poor separation between operational data and presentation. By passively reviewing page structure and embedded content, I was able to extract a shared secret intended for internal use, demonstrating how sensitive operational details can be leaked without any active exploitation. The challenge reinforces that reconnaissance and careful reading often yield results before any technical attack is required.
+
 Upon entering this mission we are presented with a [website](https://gnometea.web.app/login):
 
 ![Site landing page](/images/act3/act3-gnometea-1.png)
@@ -225,7 +227,11 @@ And boom! We're admin:
 
 By scrolling down we find the secret pass phrase: `GigGigglesGiggler`
 
-## Thomas Bouve mission debrief
+If secrets are rendered to the client, they should be considered compromised.
+
+## Thomas Bouve closing words
+
+After solving, Thomas says:
 
 > Excellent! Now we can communicate with the gnomes. When I tried to talk to one just now it said "passphrase accepted".
 > 

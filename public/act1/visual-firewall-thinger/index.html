@@ -28,13 +28,13 @@ Loud shirts? Love them. Because - hey, if you aren’t having fun, what are you 
 And yes, finger guns are 100% appropriate for military portraits.">
     <meta itemprop="datePublished" content="2025-12-23T15:59:59+01:00">
     <meta itemprop="dateModified" content="2025-12-23T15:59:59+01:00">
-    <meta itemprop="wordCount" content="275">
+    <meta itemprop="wordCount" content="413">
     <title>Visual Firewall Thinger :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act1/visual-firewall-thinger/index.xml" rel="alternate" type="application/rss+xml" title="Visual Firewall Thinger :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766506756" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766506756" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766506756" rel="stylesheet">
-    <link href="/css/theme.css?1766506756" rel="stylesheet">
-    <link href="/css/format-html.css?1766506756" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746311" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746311" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766746311" rel="stylesheet">
+    <link href="/css/theme.css?1766746311" rel="stylesheet">
+    <link href="/css/format-html.css?1766746311" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -108,7 +108,7 @@ And yes, finger guns are 100% appropriate for military portraits.">
     <li><a href="#objective">Objective</a></li>
     <li><a href="#chris-elgee-mission-statement">Chris Elgee mission statement</a></li>
     <li><a href="#holiday-firewall-simulator">Holiday Firewall Simulator</a></li>
-    <li><a href="#chris-elgee-mission-debrief">Chris Elgee mission debrief</a></li>
+    <li><a href="#chris-elgee-closing-words">Chris Elgee closing words</a></li>
   </ul>
 </nav>
                 </div>
@@ -145,8 +145,8 @@ And yes, finger guns are 100% appropriate for military portraits.">
 
 <h1 id="visual-firewall-thinger">Visual Firewall Thinger</h1>
 
-<p><a href="#R-image-2d478f9bd129e57b83af9a858a228a94" class="lightbox-link"><img alt="Chris Elgee" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/chriselgee-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2d478f9bd129e57b83af9a858a228a94"><img alt="Chris Elgee" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/chriselgee-avatar.gif"></a></p>
+<p><a href="#R-image-12865bc2cdb9504596eca96dde50a19d" class="lightbox-link"><img alt="Chris Elgee" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/chriselgee-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-12865bc2cdb9504596eca96dde50a19d"><img alt="Chris Elgee" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/chriselgee-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -175,25 +175,30 @@ And yes, finger guns are 100% appropriate for military portraits.">
 <p>Ready to dig in?</p>
 </blockquote>
 <h2 id="holiday-firewall-simulator">Holiday Firewall Simulator</h2>
-<p>Upon entering the simulator we are presented with a fairly nice GUI. By spending a couple of minutes it is all quite forward what to do. It tells us exactly what to do under the &ldquo;Firewall Configuration Goals&rdquo; section. Let&rsquo;s get cracking!</p>
-<p><a href="#R-image-f9d3bc71c3ee4914fbf52d26ac8881f4" class="lightbox-link"><img alt="The simulator in all its glory" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f9d3bc71c3ee4914fbf52d26ac8881f4"><img alt="The simulator in all its glory" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-1.png"></a></p>
-<p>Clicking on the &ldquo;Internet&rdquo; node in the network drawing we have to enable <code>http</code> and <code>https</code> and click &ldquo;Save Rules&rdquo;.</p>
-<p><a href="#R-image-27c4dfad2c8b9af5c693686249c7fb5d" class="lightbox-link"><img alt="Configuring the Internet" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-27c4dfad2c8b9af5c693686249c7fb5d"><img alt="Configuring the Internet" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-2.png"></a></p>
-<p>Next, we just tag along enabling <code>HTTPS</code>, <code>HTTP</code> and <code>SSH</code> for the DMZ:</p>
-<p><a href="#R-image-797a61139ebc44ec2259363e08b2f498" class="lightbox-link"><img alt="Configuring the DMZ" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-797a61139ebc44ec2259363e08b2f498"><img alt="Configuring the DMZ" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-3.png"></a></p>
-<p>For the internal network to cloud we enable <code>http</code>, <code>https</code>, <code>smtp</code> and <code>ssh</code>:</p>
-<p><a href="#R-image-2c252e2b7d1caa15d5993d3137a74b71" class="lightbox-link"><img alt="Configuring the internal network to cloud" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2c252e2b7d1caa15d5993d3137a74b71"><img alt="Configuring the internal network to cloud" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-4.png"></a></p>
-<p>We aren&rsquo;t quite finished with the internal network yet. We have to configure the connections to the workstations as well. These shall have full access.</p>
-<p><a href="#R-image-d070ff5528d7a9271ea4e3aa814d02ac" class="lightbox-link"><img alt="Configuring workstations" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d070ff5528d7a9271ea4e3aa814d02ac"><img alt="Configuring workstations" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-5.png"></a></p>
+<p>This objective introduces a visual model for understanding firewall behavior and rule evaluation. Rather than configuring a firewall through syntax or vendor-specific interfaces, I am presented with an interactive representation that shows how traffic is evaluated against a set of rules.</p>
+<p>The purpose of this challenge is to reinforce how allow and deny decisions are made based on rule order, matching criteria, and default behavior. By observing traffic as it is explicitly permitted or blocked, I can more clearly reason about how small rule changes can have significant downstream effects.</p>
+<p>This visualization emphasizes that firewall effectiveness depends not only on the presence of rules, but on their structure, ordering, and interaction—concepts that are critical when analyzing real-world network controls.</p>
+<p>Upon entering the simulator I were presented with a fairly nice GUI. By spending a couple of minutes it is all quite forward what to do. It told me exactly what to do under the &ldquo;Firewall Configuration Goals&rdquo; section. Let&rsquo;s get cracking!</p>
+<p><a href="#R-image-a129abf481ea02d98c7c4dabee4e8ab1" class="lightbox-link"><img alt="The simulator in all its glory" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a129abf481ea02d98c7c4dabee4e8ab1"><img alt="The simulator in all its glory" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-1.png"></a></p>
+<p>Clicking on the &ldquo;Internet&rdquo; node in the network drawing showed me I had to enable <code>http</code> and <code>https</code> and click &ldquo;Save Rules&rdquo;.</p>
+<p><a href="#R-image-69441001742d975f6c3296caeacaf737" class="lightbox-link"><img alt="Configuring the Internet" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-69441001742d975f6c3296caeacaf737"><img alt="Configuring the Internet" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-2.png"></a></p>
+<p>Next, I enabled <code>HTTPS</code>, <code>HTTP</code> and <code>SSH</code> for the DMZ:</p>
+<p><a href="#R-image-a062b926154d072ffd4799589d19c128" class="lightbox-link"><img alt="Configuring the DMZ" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a062b926154d072ffd4799589d19c128"><img alt="Configuring the DMZ" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-3.png"></a></p>
+<p>For the internal network to cloud I enabled <code>http</code>, <code>https</code>, <code>smtp</code> and <code>ssh</code>:</p>
+<p><a href="#R-image-2a1aec7841666e63d76041d3843e746d" class="lightbox-link"><img alt="Configuring the internal network to cloud" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2a1aec7841666e63d76041d3843e746d"><img alt="Configuring the internal network to cloud" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-4.png"></a></p>
+<p>I wasn&rsquo;t quite done with the internal network just yet. I had to configure the connections to the workstations as well. These should have full access.</p>
+<p><a href="#R-image-3a72cf997949115d29ca1658ad907762" class="lightbox-link"><img alt="Configuring workstations" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a72cf997949115d29ca1658ad907762"><img alt="Configuring workstations" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-5.png"></a></p>
 <p>And Done!</p>
-<p><a href="#R-image-cbb34acd5a733eabf165cb81091f2248" class="lightbox-link"><img alt="Done" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-cbb34acd5a733eabf165cb81091f2248"><img alt="Done" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-6.png"></a></p>
-<h2 id="chris-elgee-mission-debrief">Chris Elgee mission debrief</h2>
+<p><a href="#R-image-ae37f932d21e5fc34590ac862cc6afc8" class="lightbox-link"><img alt="Done" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae37f932d21e5fc34590ac862cc6afc8"><img alt="Done" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-6.png"></a></p>
+<p>This objective reinforces that firewall policy is ultimately about decision logic, not just rule count.</p>
+<h2 id="chris-elgee-closing-words">Chris Elgee closing words</h2>
+<p>After solving, Chris says:</p>
 <blockquote>
 <p>finger guns Nice work! You&rsquo;ve mastered those firewall fundamentals like a true network security pro.</p>
 <p>Now that was way more fun than sitting through another boring lecture, wasn&rsquo;t it?</p>
@@ -253,6 +258,7 @@ And yes, finger guns are 100% appropriate for military portraits.">
             <li class="" data-nav-url="/act2/index.html"><a class="padding" href="/act2/index.html">Act 2</a><ul id="R-subsections-9d3d8c898368693a495088de36411fa6" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/act3/index.html"><a class="padding" href="/act3/index.html">Act 3</a><ul id="R-subsections-0b6215c9fad834351813cc2ad0d4a335" class="collapsible-menu"></ul></li>
             <li class="" data-nav-url="/endgame/index.html"><a class="padding" href="/endgame/index.html">Endgame</a></li>
+            <li class="" data-nav-url="/about/index.html"><a class="padding" href="/about/index.html">About Roger Johnsen</a></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
@@ -270,8 +276,8 @@ And yes, finger guns are 100% appropriate for military portraits.">
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766506756" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766506756" defer></script>
-    <script src="/js/theme.js?1766506756" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766746311" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766746311" defer></script>
+    <script src="/js/theme.js?1766746311" defer></script>
   </body>
 </html>

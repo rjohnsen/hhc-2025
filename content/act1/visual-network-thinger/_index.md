@@ -32,9 +32,19 @@ weight = 6
 
 ## Solution
 
+This objective introduces a visual approach to understanding fundamental networking concepts. Rather than interacting with command-line tools or raw packet data, I am presented with an interactive model that illustrates how packets traverse a network, how protocols influence flow, and where state is maintained or transformed.
+
+The purpose of this challenge is not to test technical proficiency, but to reinforce mental models that are essential for later analysis. By observing packet movement, protocol decisions, and network boundaries visually, I can more easily reason about behaviors that are otherwise abstract when viewed only through logs or command output.
+
+This visualization serves as a conceptual foundation for subsequent challenges that rely on accurate interpretation of network traffic, service exposure, and control points within a networked environment.
+
 ![Solution](/images/act1/visual-network-thinger-1.png)
 
-## Jared Folkins mission debrief
+This visualization allows me to observe the transition from a completed TLS handshake to an encrypted HTTPS request and response, reinforcing how transport security underpins application-layer communication.
+
+## Jared Folkins closing words
+
+After solving, Jared says:
 
 > Wonderful! You've mastered those networking basics beautifully.
 > 
