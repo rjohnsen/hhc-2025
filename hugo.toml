@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://hhc2025.predefender.com/'
 languageCode = 'en-us'
 title = 'SANS Holiday Hack Challenge 2025'
 theme = 'hugo-theme-relearn'
