@@ -43,10 +43,10 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
     <meta itemprop="wordCount" content="3278">
     <title>Hack-a-Gnome :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/hack-a-gnome/index.xml" rel="alternate" type="application/rss+xml" title="Hack-a-Gnome :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767537315" rel="stylesheet">
-    <link href="/css/theme.css?1767537315" rel="stylesheet">
-    <link href="/css/format-html.css?1767537315" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767538340" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767538340" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767538340" rel="stylesheet">
+    <link href="/css/theme.css?1767538340" rel="stylesheet">
+    <link href="/css/format-html.css?1767538340" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -175,8 +175,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 
 <h1 id="hack-a-gnome">Hack-a-Gnome</h1>
 
-<p><a href="#R-image-acb910ea8a546d07823991675559bc0f" class="lightbox-link"><img alt="Chris Daves" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-acb910ea8a546d07823991675559bc0f"><img alt="Chris Daves" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif"></a></p>
+<p><a href="#R-image-a80138b1ac176ccb22a8900a6c2e593d" class="lightbox-link"><img alt="Chris Daves" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a80138b1ac176ccb22a8900a6c2e593d"><img alt="Chris Daves" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/chrisdavis-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -209,8 +209,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 <h2 id="solution">Solution</h2>
 <p>This objective shifts from passive discovery to active interaction with a simulated adversary environment, requiring me to reason about layered defenses rather than a single vulnerability. By engaging with the hack-a-gnome interface, I had to identify how application logic, state handling, and game mechanics interact, mirroring real-world scenarios where attackers chain multiple small weaknesses instead of relying on one critical flaw. The challenge emphasizes understanding system behavior as a whole rather than treating vulnerabilities in isolation.</p>
 <p>This objective is hosted on <a href="https://hhc25-smartgnomehack-prod.holidayhackchallenge.com" rel="external">https://hhc25-smartgnomehack-prod.holidayhackchallenge.com</a>. Upon entering it I were presented with the following landingpage:</p>
-<p><a href="#R-image-2d5d5e607b1b2a1d48c196c5aedd2c70" class="lightbox-link"><img alt="First landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2d5d5e607b1b2a1d48c196c5aedd2c70"><img alt="First landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png"></a></p>
+<p><a href="#R-image-f3d0b0538579b21c535eaff09f3d0299" class="lightbox-link"><img alt="First landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f3d0b0538579b21c535eaff09f3d0299"><img alt="First landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-6.png"></a></p>
 <p>Not much information to begin with, but in tradition with other CTF&rsquo;s I started inspecting the sources. Early on I also retrieved all hints for this objective. These are included at the very end of this writeup.</p>
 <h3 id="inspecting-smart-gnome-control-source-code">Inspecting SMART GNOME CONTROL source code</h3>
 <p>In the HTML source I found an interesting Javascript file: <code>https://hhc25-smartgnomehack-prod.holidayhackchallenge.com/static/script.js</code>. By reading it I was able to uncover few interesting endpoints:</p>
@@ -396,8 +396,8 @@ Hey, I could really use another set of eyes on this gnome takeover situation.">
 <p>The digest (passwords) were stored as MD5 - these were easily decoded by looking them up on <a href="https://crackstation.net" rel="external">Crackstation</a>.</p>
 <h3 id="the-control-panel---endpoints">The control panel - endpoints</h3>
 <p>Upon logging in to the control panel I were presented with the following landingpage:</p>
-<p><a href="#R-image-77fe4f537887bfa7a7311b1c1c4308de" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-77fe4f537887bfa7a7311b1c1c4308de"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png"></a></p>
+<p><a href="#R-image-9a7a601b10eeb371f1f7d793c5635fb5" class="lightbox-link"><img alt="Landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9a7a601b10eeb371f1f7d793c5635fb5"><img alt="Landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-1.png"></a></p>
 <p>As usual I started with inspecting the HTML and Javascript source code to reveal the following endpoints:</p>
 <table>
   <thead>
@@ -672,14 +672,14 @@ flowchart LR
 <p>Regarding the HTTP server, this was merely used as a transport utility using <em>curl</em> for transferring my scripts back and forth and related commands to this will not be covered in this writeup.</p>
 <h3 id="the-attack">The attack</h3>
 <p>After having set up the architecture and issued the payloads, the server called back and got myself a shell. I immediately started to have a look around:</p>
-<p><a href="#R-image-d1f0df3a947dfb15ad9f61d86be66ee3" class="lightbox-link"><img alt="Call back" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d1f0df3a947dfb15ad9f61d86be66ee3"><img alt="Call back" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png"></a></p>
+<p><a href="#R-image-8922e215a39f1b6d39050ed8d05d292f" class="lightbox-link"><img alt="Call back" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8922e215a39f1b6d39050ed8d05d292f"><img alt="Call back" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-2.png"></a></p>
 <p>A lot of junk, but the <em>canbus_client.py</em> seemed relevant:</p>
-<p><a href="#R-image-014543406ef4c74e9d197e4fe9b4c3b1" class="lightbox-link"><img alt="Canbus client" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-014543406ef4c74e9d197e4fe9b4c3b1"><img alt="Canbus client" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png"></a></p>
+<p><a href="#R-image-3ef47c1ea3427b66db655be20d8fe560" class="lightbox-link"><img alt="Canbus client" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3ef47c1ea3427b66db655be20d8fe560"><img alt="Canbus client" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-3.png"></a></p>
 <p>It truned out this was a script to interact with the CAN bus and contained a COMMAND_MAP with codes I recognized from the error messages for the bot in the Gnome Control Center. All of the mentioned codes were associated with errors, and the comment in code mentioned they were wrong. I then turned my attention to the <em>README.md</em> file:</p>
-<p><a href="#R-image-3acc720d059638b11b58b6209f4080c6" class="lightbox-link"><img alt="README file" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3acc720d059638b11b58b6209f4080c6"><img alt="README file" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png"></a></p>
+<p><a href="#R-image-e9f414860196bd2b4ca989ca713846cf" class="lightbox-link"><img alt="README file" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e9f414860196bd2b4ca989ca713846cf"><img alt="README file" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-4.png"></a></p>
 <p>A whole lot of text, but only the very last part was actually of interest. It basically stated the codes to move the robot was unknown at the moment. So - I needed to figure out these codes on my own.</p>
 <h3 id="enumerating-control-codes">Enumerating control codes</h3>
 <p>In order to find the correct control codes, I took basis in the Python script on the server, uploaded it to and asked ChatGPT to make it into a bruteforcing script. This script was then uploaded back onto the server using the command:</p>
@@ -819,8 +819,8 @@ flowchart LR
 <p>In the final version I was able to navigate my robot through the maze using this command and directions:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>python3 script_name &lt;direction&gt;</code></pre></div>
 <p>Leading me to solving the objective:</p>
-<p><a href="#R-image-d71518d9db2a576c59743cad199b1b1a" class="lightbox-link"><img alt="Final screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d71518d9db2a576c59743cad199b1b1a"><img alt="Final screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png"></a></p>
+<p><a href="#R-image-6c615ba21b025e35b995fd12df0d4dec" class="lightbox-link"><img alt="Final screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6c615ba21b025e35b995fd12df0d4dec"><img alt="Final screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-hackagnome-5.png"></a></p>
 <p>Complex systems fail at the seams between components, not just at obvious security controls.</p>
 <h2 id="chris-davis-closing-words">Chris Davis closing words</h2>
 <p>After solving, Chris says:</p>
@@ -938,22 +938,22 @@ flowchart LR
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/js-yaml/js-yaml.min.js?1767537315" defer></script>
-    <script src="/js/d3/d3-color.min.js?1767537315" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1767537315" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1767537315" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1767537315" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1767537315" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1767537315" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1767537315" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1767537315" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1767537315" defer></script>
-    <script src="/js/mermaid/mermaid.min.js?1767537315" defer></script>
+    <script src="/js/js-yaml/js-yaml.min.js?1767538340" defer></script>
+    <script src="/js/d3/d3-color.min.js?1767538340" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1767538340" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1767538340" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1767538340" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1767538340" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1767538340" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1767538340" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1767538340" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1767538340" defer></script>
+    <script src="/js/mermaid/mermaid.min.js?1767538340" defer></script>
     <script>
       window.relearn.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/js/clipboard/clipboard.min.js?1767537315" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767537315" defer></script>
-    <script src="/js/theme.js?1767537315" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1767538340" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767538340" defer></script>
+    <script src="/js/theme.js?1767538340" defer></script>
   </body>
 </html>

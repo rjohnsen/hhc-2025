@@ -27,10 +27,10 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
     <meta itemprop="wordCount" content="821">
     <title>Free Ski :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/free-ski/index.xml" rel="alternate" type="application/rss+xml" title="Free Ski :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767537315" rel="stylesheet">
-    <link href="/css/theme.css?1767537315" rel="stylesheet">
-    <link href="/css/format-html.css?1767537315" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767538340" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767538340" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767538340" rel="stylesheet">
+    <link href="/css/theme.css?1767538340" rel="stylesheet">
+    <link href="/css/format-html.css?1767538340" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -148,8 +148,8 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 
 <h1 id="free-ski">Free Ski</h1>
 
-<p><a href="#R-image-205d12cbb767775c2f9711ef2d81c468" class="lightbox-link"><img alt="Goose Olivia" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/goose-space.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-205d12cbb767775c2f9711ef2d81c468"><img alt="Goose Olivia" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/goose-space.png"></a></p>
+<p><a href="#R-image-b89d2aff42e7228b59f38c06bdde5b61" class="lightbox-link"><img alt="Goose Olivia" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/goose-space.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b89d2aff42e7228b59f38c06bdde5b61"><img alt="Goose Olivia" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/goose-space.png"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -194,12 +194,12 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pycdc/pycdas
 </span></span><span style="display:flex;"><span>pycdc/pycdas FreeSki.exe_extracted/FreeSki.pyc &gt; FreeSki.asm</span></span></code></pre></div>
 <p>This is a snippet from the <strong>FreeSki.asm</strong> file:</p>
-<p><a href="#R-image-bc4ecd019845b30a18ecd8f3ea186c55" class="lightbox-link"><img alt="ASM snippet" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bc4ecd019845b30a18ecd8f3ea186c55"><img alt="ASM snippet" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-1.png"></a></p>
+<p><a href="#R-image-56f7fe1bfc4c0e6ea7da7abfbadda28e" class="lightbox-link"><img alt="ASM snippet" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-56f7fe1bfc4c0e6ea7da7abfbadda28e"><img alt="ASM snippet" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-1.png"></a></p>
 <h3 id="finding-the-solution">Finding the solution</h3>
 <p>From here I uploaded the <strong>FreeSki.asm</strong> to ChatGPT and asked what this file did - and I got this response:</p>
-<p><a href="#R-image-dceb0355b178da0701253d3f87d1334c" class="lightbox-link"><img alt="ChatGPT explaining the meaning of the ASM" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dceb0355b178da0701253d3f87d1334c"><img alt="ChatGPT explaining the meaning of the ASM" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-2.png"></a></p>
+<p><a href="#R-image-845ce530e62ada27b1e1cf76ecd40503" class="lightbox-link"><img alt="ChatGPT explaining the meaning of the ASM" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-845ce530e62ada27b1e1cf76ecd40503"><img alt="ChatGPT explaining the meaning of the ASM" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-2.png"></a></p>
 <p>Then I asked ChatGPT to make a &ldquo;one-click-resolver&rdquo;:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python3</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
@@ -281,8 +281,8 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    main()</span></span></code></pre></div>
 <p>Oddly enough, ChatGPT usually takes a nosedive into forbidden territory and refuses to do CTF work. But this time it didn&rsquo;t complain and made a script that actually worked:</p>
-<p><a href="#R-image-9fa279a21cfbdbf429cd07885d0050cc" class="lightbox-link"><img alt="Output from one click resolver" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9fa279a21cfbdbf429cd07885d0050cc"><img alt="Output from one click resolver" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-3.png"></a></p>
+<p><a href="#R-image-5b913b93366955e163f7ff836c13a91c" class="lightbox-link"><img alt="Output from one click resolver" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-freeski-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5b913b93366955e163f7ff836c13a91c"><img alt="Output from one click resolver" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-freeski-3.png"></a></p>
 <p>Passphrase is: <strong>frosty_yet_predictably_random</strong></p>
 <p>Perceived simplicity often masks complexity that only reveals itself through patience and pattern awareness.</p>
 <h2 id="goose-olivia-closing-words">Goose Olivia closing words</h2>
@@ -365,8 +365,8 @@ You know, it’s the strangest thing… I used to just waddle around the Geese I
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1767537315" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767537315" defer></script>
-    <script src="/js/theme.js?1767537315" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1767538340" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767538340" defer></script>
+    <script src="/js/theme.js?1767538340" defer></script>
   </body>
 </html>
