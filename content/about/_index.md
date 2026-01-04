@@ -1,6 +1,6 @@
 +++
 date = '2025-12-23T17:28:44+01:00'
-draft = true
+draft = false
 title = 'About Roger Johnsen'
 +++
 

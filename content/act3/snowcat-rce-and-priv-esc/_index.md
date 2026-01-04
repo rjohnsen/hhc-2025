@@ -1,6 +1,6 @@
 +++
 date = '2025-12-23T15:59:59+01:00'
-draft = true
+draft = false
 title = 'Snowcat RCE & Priv Esc'
 weight = 3
 +++
