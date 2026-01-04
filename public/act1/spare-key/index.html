@@ -31,10 +31,10 @@ An admin accidentally uploaded an infrastructure config file that contains a lon
     <meta itemprop="wordCount" content="634">
     <title>Spare Key :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act1/spare-key/index.xml" rel="alternate" type="application/rss+xml" title="Spare Key :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746581" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746581" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766746581" rel="stylesheet">
-    <link href="/css/theme.css?1766746581" rel="stylesheet">
-    <link href="/css/format-html.css?1766746581" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766836557" rel="stylesheet">
+    <link href="/css/theme.css?1766836557" rel="stylesheet">
+    <link href="/css/format-html.css?1766836557" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -154,8 +154,8 @@ An admin accidentally uploaded an infrastructure config file that contains a lon
 
 <h1 id="spare-key">Spare Key</h1>
 
-<p><a href="#R-image-e409e630b79a57eef2a3c68aff38176b" class="lightbox-link"><img alt="Barry Goose" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/barry-goose-noir.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e409e630b79a57eef2a3c68aff38176b"><img alt="Barry Goose" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/barry-goose-noir.png"></a></p>
+<p><a href="#R-image-fabc8ace6292651b7c8754d9c1eaf003" class="lightbox-link"><img alt="Barry Goose" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/barry-goose-noir.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fabc8ace6292651b7c8754d9c1eaf003"><img alt="Barry Goose" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/barry-goose-noir.png"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -181,23 +181,23 @@ An admin accidentally uploaded an infrastructure config file that contains a lon
 </blockquote>
 <h2 id="spare-key-terminal">Spare Key Terminal</h2>
 <p>This objective focuses on identifying exposed credentials within cloud infrastructure. By investigating configuration artifacts hosted on Azure Storage, the task highlights how long-lived access tokens and misplaced secrets can introduce security risk when stored in publicly accessible locations.</p>
-<p><a href="#R-image-bbbb02b62e8680cfeb4126bce2690acd" class="lightbox-link"><img alt="Start" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bbbb02b62e8680cfeb4126bce2690acd"><img alt="Start" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-1.png"></a></p>
+<p><a href="#R-image-86b8bf542fd7670cd9d6c2ae0e4413a1" class="lightbox-link"><img alt="Start" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-86b8bf542fd7670cd9d6c2ae0e4413a1"><img alt="Start" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-1.png"></a></p>
 <h3 id="listing-all-resource-groups">Listing all resource groups</h3>
 <p>Prototype command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az group list -o table</span></span></code></pre></div>
-<p><a href="#R-image-1e55c3efde35bc9a99b554971cffd0d8" class="lightbox-link"><img alt="List groups" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1e55c3efde35bc9a99b554971cffd0d8"><img alt="List groups" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-2.png"></a></p>
+<p><a href="#R-image-61056e75cd18b76d66e13dbe8771a1f4" class="lightbox-link"><img alt="List groups" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-61056e75cd18b76d66e13dbe8771a1f4"><img alt="List groups" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-2.png"></a></p>
 <h3 id="finding-storage-accounts">Finding storage accounts</h3>
 <p>Prototype command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage account list --resource-group rg-the-neighborhood -o table</span></span></code></pre></div>
-<p><a href="#R-image-01c8497c04ab379bfa361975b0f5931a" class="lightbox-link"><img alt="Finding storage accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-01c8497c04ab379bfa361975b0f5931a"><img alt="Finding storage accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-3.png"></a></p>
+<p><a href="#R-image-671d97ccc42532b3c0e5c96468581c6d" class="lightbox-link"><img alt="Finding storage accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-671d97ccc42532b3c0e5c96468581c6d"><img alt="Finding storage accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-3.png"></a></p>
 <h3 id="finding-a-website">Finding a website</h3>
 <p>Prototype command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage blob service-properties show --account-name &lt;insert_account_name&gt; --auth-mode login</span></span></code></pre></div>
-<p><a href="#R-image-db731bebb3c2662f183a8d432615eef1" class="lightbox-link"><img alt="Finding website" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-db731bebb3c2662f183a8d432615eef1"><img alt="Finding website" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-4.png"></a></p>
+<p><a href="#R-image-66d7ae0249ab226135973b16ebd7bf22" class="lightbox-link"><img alt="Finding website" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-66d7ae0249ab226135973b16ebd7bf22"><img alt="Finding website" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-4.png"></a></p>
 <p>There is a website in storage account <em>neighboorhoodhoa</em></p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>neighbor@d224308072dc:~$ az storage blob service-properties show --account-name neighborhoodhoa --auth-mode login
 </span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
@@ -210,23 +210,23 @@ An admin accidentally uploaded an infrastructure config file that contains a lon
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage container list</span></span></code></pre></div>
 <p>This command isn&rsquo;t enough and we have to extend it arguments. Luckily, we can just look at the previous command and add the arguments <code>--account-name</code> and <code>--auth-mode</code> - like so:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage container list --account-name neighborhoodhoa --auth-mode login</span></span></code></pre></div>
-<p><a href="#R-image-7eb86a7d5d13c2b0298426603a4cf098" class="lightbox-link"><img alt="Finding containers" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7eb86a7d5d13c2b0298426603a4cf098"><img alt="Finding containers" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-5.png"></a></p>
+<p><a href="#R-image-ba8e83aa72526521f239431604c2a8d4" class="lightbox-link"><img alt="Finding containers" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ba8e83aa72526521f239431604c2a8d4"><img alt="Finding containers" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-5.png"></a></p>
 <h3 id="examining-files-in-static-website-container">Examining files in static website container</h3>
 <p>In this excersice we are not given a prototype command, however we are provided with the following hint:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>when using --container-name you might need <span style="color:#e6db74">&#39;&lt;name&gt;&#39;</span></span></span></code></pre></div>
 <p>However, by applying some forward thinking we can easily whip up a command following the query language logic - like so:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage blob list --container-name <span style="color:#e6db74">&#39;$web&#39;</span> --account-name neighborhoodhoa --auth-mode login</span></span></code></pre></div>
-<p><a href="#R-image-ab76c6f68199a8b4dcf53bdf9c6fcebf" class="lightbox-link"><img alt="Examining static website container" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ab76c6f68199a8b4dcf53bdf9c6fcebf"><img alt="Examining static website container" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-6.png"></a></p>
+<p><a href="#R-image-cb5b81d86d4db8818bcac0b9c254f8b9" class="lightbox-link"><img alt="Examining static website container" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cb5b81d86d4db8818bcac0b9c254f8b9"><img alt="Examining static website container" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-6.png"></a></p>
 <h3 id="looking-at-files">Looking at files</h3>
 <p>Yet again we are not presented with a prototype command, but rather with a hint:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hint: --file /dev/stdout | less will print to your terminal</span></span></code></pre></div>
 <p>By applying the same logic as previous and consulting ChatGPT, I ended up with this command to list a file:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az storage blob download --container-name <span style="color:#e6db74">&#39;$web&#39;</span> --account-name neighborhoodhoa --auth-modelo
 </span></span><span style="display:flex;"><span>gin --name <span style="color:#e6db74">&#39;iac/terraform.tfvars&#39;</span> --file /dev/stdout | less</span></span></code></pre></div>
-<p><a href="#R-image-03a45908d93119f381fd08587817873e" class="lightbox-link"><img alt="Looking at files" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-03a45908d93119f381fd08587817873e"><img alt="Looking at files" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-6.png"></a></p>
+<p><a href="#R-image-daf9b88ed74d64d669ff3ae8df9ee580" class="lightbox-link"><img alt="Looking at files" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-spare-key-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-daf9b88ed74d64d669ff3ae8df9ee580"><img alt="Looking at files" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-spare-key-6.png"></a></p>
 <p>The content of the file is:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#75715e"># Terraform Variables for HOA Website Deployment</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Application: Neighborhood HOA Service Request Portal  </span>
@@ -374,8 +374,8 @@ An admin accidentally uploaded an infrastructure config file that contains a lon
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766746581" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766746581" defer></script>
-    <script src="/js/theme.js?1766746581" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766836557" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766836557" defer></script>
+    <script src="/js/theme.js?1766836557" defer></script>
   </body>
 </html>

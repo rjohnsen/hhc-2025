@@ -27,10 +27,10 @@ I love all things testing and QA, maintaining systems, logistics, and helping ou
     <meta itemprop="wordCount" content="1636">
     <title>Snowcat RCE &amp; Priv Esc :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/snowcat-rce-and-priv-esc/index.xml" rel="alternate" type="application/rss+xml" title="Snowcat RCE &amp; Priv Esc :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766748142" rel="stylesheet">
-    <link href="/css/theme.css?1766748142" rel="stylesheet">
-    <link href="/css/format-html.css?1766748142" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766836557" rel="stylesheet">
+    <link href="/css/theme.css?1766836557" rel="stylesheet">
+    <link href="/css/format-html.css?1766836557" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -147,8 +147,8 @@ I love all things testing and QA, maintaining systems, logistics, and helping ou
 
 <h1 id="snowcat-rce--priv-esc">Snowcat RCE &amp; Priv Esc</h1>
 
-<p><a href="#R-image-cf29cba3dfed586edd87f0395b0f28a1" class="lightbox-link"><img alt="Tom Hessman" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/tomhessman-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-cf29cba3dfed586edd87f0395b0f28a1"><img alt="Tom Hessman" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/tomhessman-avatar.gif"></a></p>
+<p><a href="#R-image-dc81c59c245160a480bf13f6c137fb4c" class="lightbox-link"><img alt="Tom Hessman" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/tomhessman-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dc81c59c245160a480bf13f6c137fb4c"><img alt="Tom Hessman" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/tomhessman-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -182,17 +182,17 @@ I love all things testing and QA, maintaining systems, logistics, and helping ou
 <h2 id="solution">Solution</h2>
 <p>This objective centers on identifying and exploiting a vulnerability chain that combines remote code execution with privilege escalation. By analyzing how Snowcat processes input and manages execution context, I had to move beyond finding a single bug and instead demonstrate how initial code execution can be leveraged to access higher-privilege functionality and sensitive secrets. The challenge reinforces how weak isolation between components can turn a limited flaw into full system compromise.</p>
 <p>Starting out I were left with a message at the terminal:</p>
-<p><a href="#R-image-a79f34ed3ca6a6c06b057f17cd59da73" class="lightbox-link"><img alt="Introduction terminal" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a79f34ed3ca6a6c06b057f17cd59da73"><img alt="Introduction terminal" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-1.png"></a></p>
+<p><a href="#R-image-97a519485c00c62cb1bd064b6f779941" class="lightbox-link"><img alt="Introduction terminal" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-97a519485c00c62cb1bd064b6f779941"><img alt="Introduction terminal" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-1.png"></a></p>
 <p>Listing what I got nearby I saw there was a <em>notes.md</em> file. Outputting it to screen gave some hints:</p>
-<p><a href="#R-image-27041d2a747dbc13890aa4032b000455" class="lightbox-link"><img alt="Listing folder and reading notes.md" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-27041d2a747dbc13890aa4032b000455"><img alt="Listing folder and reading notes.md" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-2.png"></a></p>
+<p><a href="#R-image-830ed2d45df57f40699ebff4cff223b0" class="lightbox-link"><img alt="Listing folder and reading notes.md" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-830ed2d45df57f40699ebff4cff223b0"><img alt="Listing folder and reading notes.md" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-2.png"></a></p>
 <p>The objective is pretty well laid out, like a step by step instruction. There&rsquo;s also a Python file nearby:</p>
-<p><a href="#R-image-a08a4c50a2c4df88e23a1029a307397e" class="lightbox-link"><img alt="Looking at Python script" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a08a4c50a2c4df88e23a1029a307397e"><img alt="Looking at Python script" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-3.png"></a></p>
+<p><a href="#R-image-531969be9b53ebe2c94dd1f991818eba" class="lightbox-link"><img alt="Looking at Python script" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-531969be9b53ebe2c94dd1f991818eba"><img alt="Looking at Python script" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-3.png"></a></p>
 <p>And also a folder with JSP pages:</p>
-<p><a href="#R-image-5e3168e74a754e43d33da77b0a581e7a" class="lightbox-link"><img alt="Looking at JSP files" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5e3168e74a754e43d33da77b0a581e7a"><img alt="Looking at JSP files" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-4.png"></a></p>
+<p><a href="#R-image-292d58644947ec078e656c9952018d89" class="lightbox-link"><img alt="Looking at JSP files" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-292d58644947ec078e656c9952018d89"><img alt="Looking at JSP files" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-4.png"></a></p>
 <p>I took all of these JSP pages and uploaded them to ChatGPT asking it for which libraries where in use and if there were any interesting artefacts in them, and I got this table:</p>
 <table>
   <thead>
@@ -251,8 +251,8 @@ I love all things testing and QA, maintaining systems, logistics, and helping ou
   </tbody>
 </table>
 <p>Interesting - I felt had a relatively good understading of the site. However, by reading the <em>notes.md</em> I needed to figure out where this server running. I just took a wild guess since the server IP is never mentioned:</p>
-<p><a href="#R-image-a422d71fddc7cc9e1bcc1a479fe8141f" class="lightbox-link"><img alt="Identifying Snowcat version" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-10.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a422d71fddc7cc9e1bcc1a479fe8141f"><img alt="Identifying Snowcat version" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-10.png"></a></p>
+<p><a href="#R-image-c035d09f73453bccda55f12b46b25ed0" class="lightbox-link"><img alt="Identifying Snowcat version" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-10.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c035d09f73453bccda55f12b46b25ed0"><img alt="Identifying Snowcat version" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-10.png"></a></p>
 <p>And I am in the server already! Thus turning my attention to take the Snowcat exploit in consideration. I followed the instructions in <em>notes.md</em> and crafted this script:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
@@ -356,8 +356,8 @@ flowchart LR
     TCP &lt;--TCP/8501--&gt; netcat[&#34;Netcat listener&#34;]</pre>
 <h3 id="reverse-shell">Reverse shell</h3>
 <p>Launching my payload resulted in a reverse shell:</p>
-<p><a href="#R-image-6c48639f995773eaa51c7c66fda90e90" class="lightbox-link"><img alt="Got reverse shell" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6c48639f995773eaa51c7c66fda90e90"><img alt="Got reverse shell" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-5.png"></a></p>
+<p><a href="#R-image-8d2bdce5a1650b50aef807ba1dd18ef2" class="lightbox-link"><img alt="Got reverse shell" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8d2bdce5a1650b50aef807ba1dd18ef2"><img alt="Got reverse shell" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-5.png"></a></p>
 <p>The magic behind it is this Python piece:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
@@ -375,11 +375,11 @@ flowchart LR
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat sqlite.txt | base64 -d &gt; weather.db
 </span></span><span style="display:flex;"><span>sqlitebrowser weather.db</span></span></code></pre></div>
 <p>Turns out there is just one table here and it contains one password in cleartext:</p>
-<p><a href="#R-image-e59f1f727e937e0b8c69a35a6c54c678" class="lightbox-link"><img alt="Passwords" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-11.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e59f1f727e937e0b8c69a35a6c54c678"><img alt="Passwords" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-11.png"></a></p>
+<p><a href="#R-image-4b919e57f08959a0b3d9ea04713c045a" class="lightbox-link"><img alt="Passwords" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-11.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4b919e57f08959a0b3d9ea04713c045a"><img alt="Passwords" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-11.png"></a></p>
 <p>However, I now figured out that the rest of the objective could be solved without this reverse shell. Thus, my writeup takes a slight turn here, where I conduct the attack using the original <em>user</em> account. Moving on to finding finding binaries with the SUID flag set:</p>
-<p><a href="#R-image-ecd4c526918c9da5fbc89d322c44dca0" class="lightbox-link"><img alt="Finding suid" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ecd4c526918c9da5fbc89d322c44dca0"><img alt="Finding suid" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-6.png"></a></p>
+<p><a href="#R-image-5b5e556af618a7c430234963358a4fb8" class="lightbox-link"><img alt="Finding suid" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5b5e556af618a7c430234963358a4fb8"><img alt="Finding suid" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-6.png"></a></p>
 <p>I identifed the <em>weather</em> folder and the binaries as relevant. Moving on to dissect the binaries I first smuggled them out to my Kali instance:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat humidity | base64
 </span></span><span style="display:flex;"><span>cat pressure | base64
@@ -389,8 +389,8 @@ flowchart LR
 </span></span><span style="display:flex;"><span>cat pressure.txt | base64 -d &gt; pressure.bin
 </span></span><span style="display:flex;"><span>cat temperature.txt | base64 -d &gt; temperature.bin</span></span></code></pre></div>
 <p>Then i opened each <em>.bin</em> file in <a href="https://dogbolt.org" rel="external">Dogbolt</a> to see if they had somethign interesting on the inside:</p>
-<p><a href="#R-image-cc05474c22cf17823d0adaba39ce9a5d" class="lightbox-link"><img alt="Dogbolt" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-8.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-cc05474c22cf17823d0adaba39ce9a5d"><img alt="Dogbolt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-8.png"></a></p>
+<p><a href="#R-image-9ef5d73f0986407c54e8e9bf64bdefe3" class="lightbox-link"><img alt="Dogbolt" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-8.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9ef5d73f0986407c54e8e9bf64bdefe3"><img alt="Dogbolt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-8.png"></a></p>
 <p>Of interesting strings I found the following:</p>
 <ul>
 <li>&ldquo;/usr/local/weather/config&rdquo;</li>
@@ -405,21 +405,21 @@ flowchart LR
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">system</span>(v1);</span></span></code></pre></div>
 <p>In which <em>a0</em> comes from <code>argv (&lt;key&gt;)</code>, so it’s attacker-controlled. Wrapping in single quotes is not considered safe: a key containing &rsquo; will break out of the quoted string and can inject shell syntax. Further ChatGPT stated &ldquo;If this binary is running with elevated privileges at this point (and it is: it calls setuid/setgid from config), this is a classic privilege escalation primitive.&rdquo;</p>
 <p>In order to exploit this I needed a valid key, and I found that in the <em>/home/user/weather-jsps</em> folder:</p>
-<p><a href="#R-image-e179d4cfe5f47b69c078fb44181b7f9e" class="lightbox-link"><img alt="Finding and testing key" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-7.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e179d4cfe5f47b69c078fb44181b7f9e"><img alt="Finding and testing key" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-7.png"></a></p>
+<p><a href="#R-image-7e9f593f5be8bcfc445db43ab11ae2cf" class="lightbox-link"><img alt="Finding and testing key" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-7.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7e9f593f5be8bcfc445db43ab11ae2cf"><img alt="Finding and testing key" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-7.png"></a></p>
 <p>Key &ldquo;4b2f3c2d-1f88-4a09-8bd4-d3e5e52e19a6&rdquo; is valid as the screenshot shows. I then crafted this payload after input from ChatGPT:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/weather/humidity <span style="color:#e6db74">&#34;4b2f3c2d-1f88-4a09-8bd4-d3e5e52e19a6&#39;; sh; #&#34;</span></span></span></code></pre></div>
 <p>Unleashing my payload and finding keys:</p>
-<p><a href="#R-image-dffc00cce3447edbfe23a9a2cee5839c" class="lightbox-link"><img alt="Finding keys" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-9.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dffc00cce3447edbfe23a9a2cee5839c"><img alt="Finding keys" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-9.png"></a></p>
+<p><a href="#R-image-4948bbac471ad380d8bb97e5e3694c46" class="lightbox-link"><img alt="Finding keys" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-9.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4948bbac471ad380d8bb97e5e3694c46"><img alt="Finding keys" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-9.png"></a></p>
 <p>The API key I needed was <em>8ade723d-9968-45c9-9c33-7606c49c2201</em></p>
 <h3 id="getting-root">Getting ROOT</h3>
 <p>Getting root on this box is trivial. While being the user &ldquo;weather&rdquo; I have control over the content in the <em>/usr/local/weather</em> folder. In this folder there&rsquo;s a <em>config</em> file containing:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>username<span style="color:#f92672">=</span>value
 </span></span><span style="display:flex;"><span>groupname<span style="color:#f92672">=</span>value</span></span></code></pre></div>
 <p>With this user I had write permissions over the config file that is used to determine the setuid and setgid in the <em>humidity</em>, <em>temperature</em> and <em>pressure</em> binaries. By changing the values to <em>root</em> and running <code>/usr/local/weather/humidity &quot;4b2f3c2d-1f88-4a09-8bd4-d3e5e52e19a6'; sh; #&quot;</code> I got root:</p>
-<p><a href="#R-image-1dce8517c0ce805d0d07c53bf78101a9" class="lightbox-link"><img alt="Getting ROOT" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-12.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1dce8517c0ce805d0d07c53bf78101a9"><img alt="Getting ROOT" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-12.png"></a></p>
+<p><a href="#R-image-dca1927234e5cefe43e52f7e8ebd84c1" class="lightbox-link"><img alt="Getting ROOT" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowcat-12.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dca1927234e5cefe43e52f7e8ebd84c1"><img alt="Getting ROOT" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowcat-12.png"></a></p>
 <p>Apparently, the goal mentioned is:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Lower average winter temperature to -15.4 C
 </span></span><span style="display:flex;"><span>Lower average summer temperature to -3.7 C</span></span></code></pre></div>
@@ -500,22 +500,22 @@ flowchart LR
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/js-yaml/js-yaml.min.js?1766748142" defer></script>
-    <script src="/js/d3/d3-color.min.js?1766748142" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1766748142" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1766748142" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1766748142" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1766748142" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1766748142" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1766748142" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1766748142" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1766748142" defer></script>
-    <script src="/js/mermaid/mermaid.min.js?1766748142" defer></script>
+    <script src="/js/js-yaml/js-yaml.min.js?1766836557" defer></script>
+    <script src="/js/d3/d3-color.min.js?1766836557" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1766836557" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1766836557" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1766836557" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1766836557" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1766836557" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1766836557" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1766836557" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1766836557" defer></script>
+    <script src="/js/mermaid/mermaid.min.js?1766836557" defer></script>
     <script>
       window.relearn.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/js/clipboard/clipboard.min.js?1766748142" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766748142" defer></script>
-    <script src="/js/theme.js?1766748142" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766836557" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766836557" defer></script>
+    <script src="/js/theme.js?1766836557" defer></script>
   </body>
 </html>

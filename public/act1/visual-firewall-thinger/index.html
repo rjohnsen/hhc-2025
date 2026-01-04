@@ -31,10 +31,10 @@ And yes, finger guns are 100% appropriate for military portraits.">
     <meta itemprop="wordCount" content="413">
     <title>Visual Firewall Thinger :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act1/visual-firewall-thinger/index.xml" rel="alternate" type="application/rss+xml" title="Visual Firewall Thinger :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746311" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766746311" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766746311" rel="stylesheet">
-    <link href="/css/theme.css?1766746311" rel="stylesheet">
-    <link href="/css/format-html.css?1766746311" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766836557" rel="stylesheet">
+    <link href="/css/theme.css?1766836557" rel="stylesheet">
+    <link href="/css/format-html.css?1766836557" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -145,8 +145,8 @@ And yes, finger guns are 100% appropriate for military portraits.">
 
 <h1 id="visual-firewall-thinger">Visual Firewall Thinger</h1>
 
-<p><a href="#R-image-12865bc2cdb9504596eca96dde50a19d" class="lightbox-link"><img alt="Chris Elgee" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/chriselgee-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-12865bc2cdb9504596eca96dde50a19d"><img alt="Chris Elgee" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/chriselgee-avatar.gif"></a></p>
+<p><a href="#R-image-cfe39f7ed40f207cd974e2c2ffee2057" class="lightbox-link"><img alt="Chris Elgee" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/chriselgee-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cfe39f7ed40f207cd974e2c2ffee2057"><img alt="Chris Elgee" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/chriselgee-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -179,23 +179,23 @@ And yes, finger guns are 100% appropriate for military portraits.">
 <p>The purpose of this challenge is to reinforce how allow and deny decisions are made based on rule order, matching criteria, and default behavior. By observing traffic as it is explicitly permitted or blocked, I can more clearly reason about how small rule changes can have significant downstream effects.</p>
 <p>This visualization emphasizes that firewall effectiveness depends not only on the presence of rules, but on their structure, ordering, and interaction—concepts that are critical when analyzing real-world network controls.</p>
 <p>Upon entering the simulator I were presented with a fairly nice GUI. By spending a couple of minutes it is all quite forward what to do. It told me exactly what to do under the &ldquo;Firewall Configuration Goals&rdquo; section. Let&rsquo;s get cracking!</p>
-<p><a href="#R-image-a129abf481ea02d98c7c4dabee4e8ab1" class="lightbox-link"><img alt="The simulator in all its glory" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a129abf481ea02d98c7c4dabee4e8ab1"><img alt="The simulator in all its glory" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-1.png"></a></p>
+<p><a href="#R-image-76e9f1935b7c584b87baa485a0f617a9" class="lightbox-link"><img alt="The simulator in all its glory" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-76e9f1935b7c584b87baa485a0f617a9"><img alt="The simulator in all its glory" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-1.png"></a></p>
 <p>Clicking on the &ldquo;Internet&rdquo; node in the network drawing showed me I had to enable <code>http</code> and <code>https</code> and click &ldquo;Save Rules&rdquo;.</p>
-<p><a href="#R-image-69441001742d975f6c3296caeacaf737" class="lightbox-link"><img alt="Configuring the Internet" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-69441001742d975f6c3296caeacaf737"><img alt="Configuring the Internet" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-2.png"></a></p>
+<p><a href="#R-image-11bf4ca985b64168d3dd8f7f7401a67e" class="lightbox-link"><img alt="Configuring the Internet" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-11bf4ca985b64168d3dd8f7f7401a67e"><img alt="Configuring the Internet" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-2.png"></a></p>
 <p>Next, I enabled <code>HTTPS</code>, <code>HTTP</code> and <code>SSH</code> for the DMZ:</p>
-<p><a href="#R-image-a062b926154d072ffd4799589d19c128" class="lightbox-link"><img alt="Configuring the DMZ" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a062b926154d072ffd4799589d19c128"><img alt="Configuring the DMZ" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-3.png"></a></p>
+<p><a href="#R-image-487fd04efcd968e7e71fa6f801a1da90" class="lightbox-link"><img alt="Configuring the DMZ" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-487fd04efcd968e7e71fa6f801a1da90"><img alt="Configuring the DMZ" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-3.png"></a></p>
 <p>For the internal network to cloud I enabled <code>http</code>, <code>https</code>, <code>smtp</code> and <code>ssh</code>:</p>
-<p><a href="#R-image-2a1aec7841666e63d76041d3843e746d" class="lightbox-link"><img alt="Configuring the internal network to cloud" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2a1aec7841666e63d76041d3843e746d"><img alt="Configuring the internal network to cloud" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-4.png"></a></p>
+<p><a href="#R-image-5ea298dd31e60ee9779f99a43fe3d1fe" class="lightbox-link"><img alt="Configuring the internal network to cloud" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5ea298dd31e60ee9779f99a43fe3d1fe"><img alt="Configuring the internal network to cloud" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-4.png"></a></p>
 <p>I wasn&rsquo;t quite done with the internal network just yet. I had to configure the connections to the workstations as well. These should have full access.</p>
-<p><a href="#R-image-3a72cf997949115d29ca1658ad907762" class="lightbox-link"><img alt="Configuring workstations" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a72cf997949115d29ca1658ad907762"><img alt="Configuring workstations" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-5.png"></a></p>
+<p><a href="#R-image-3c23405793f4b74034491d4b7ca9e8e0" class="lightbox-link"><img alt="Configuring workstations" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3c23405793f4b74034491d4b7ca9e8e0"><img alt="Configuring workstations" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-5.png"></a></p>
 <p>And Done!</p>
-<p><a href="#R-image-ae37f932d21e5fc34590ac862cc6afc8" class="lightbox-link"><img alt="Done" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae37f932d21e5fc34590ac862cc6afc8"><img alt="Done" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-6.png"></a></p>
+<p><a href="#R-image-35ee98bcb1860928350767522287fdf6" class="lightbox-link"><img alt="Done" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-firewall-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-35ee98bcb1860928350767522287fdf6"><img alt="Done" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-firewall-6.png"></a></p>
 <p>This objective reinforces that firewall policy is ultimately about decision logic, not just rule count.</p>
 <h2 id="chris-elgee-closing-words">Chris Elgee closing words</h2>
 <p>After solving, Chris says:</p>
@@ -276,8 +276,8 @@ And yes, finger guns are 100% appropriate for military portraits.">
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766746311" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766746311" defer></script>
-    <script src="/js/theme.js?1766746311" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766836557" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766836557" defer></script>
+    <script src="/js/theme.js?1766836557" defer></script>
   </body>
 </html>

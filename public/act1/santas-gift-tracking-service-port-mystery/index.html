@@ -31,10 +31,10 @@ Think you can check out this terminal for me? I need to use cURL to access the g
     <meta itemprop="wordCount" content="464">
     <title>Santa&#39;s Gift Tracking Service Port Mystery :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act1/santas-gift-tracking-service-port-mystery/index.xml" rel="alternate" type="application/rss+xml" title="Santa&#39;s Gift Tracking Service Port Mystery :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766748142" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766748142" rel="stylesheet">
-    <link href="/css/theme.css?1766748142" rel="stylesheet">
-    <link href="/css/format-html.css?1766748142" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766836557" rel="stylesheet">
+    <link href="/css/theme.css?1766836557" rel="stylesheet">
+    <link href="/css/format-html.css?1766836557" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -149,8 +149,8 @@ Think you can check out this terminal for me? I need to use cURL to access the g
 
 <h1 id="santas-gift-tracking-service-port-mystery">Santa&#39;s Gift Tracking Service Port Mystery</h1>
 
-<p><a href="#R-image-4152400840d4e9b4fab43d78356a278f" class="lightbox-link"><img alt="Yori Kvitchko" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/yori-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4152400840d4e9b4fab43d78356a278f"><img alt="Yori Kvitchko" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/yori-avatar.gif"></a></p>
+<p><a href="#R-image-3844ef5c3370ed81aca9f61af4f6f1a6" class="lightbox-link"><img alt="Yori Kvitchko" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/yori-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3844ef5c3370ed81aca9f61af4f6f1a6"><img alt="Yori Kvitchko" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/yori-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -178,8 +178,8 @@ Think you can check out this terminal for me? I need to use cURL to access the g
 <p>This objective introduces basic service interaction and reinforces the importance of understanding how applications expose functionality over the network. Rather than exploiting a vulnerability, I am required to correctly identify how a service is accessed and which protocol and port combinations are expected.</p>
 <p>The challenge intentionally presents a low-friction scenario where a commonly used tool (curl) fails due to incorrect assumptions about service configuration. This mirrors a frequent real-world issue, where access problems stem from misunderstandings of transport, ports, or application behavior rather than security controls themselves.</p>
 <p>By interacting directly with the service and adjusting my approach, I validate assumptions through observation and enumeration instead of trial-and-error exploitation.</p>
-<p><a href="#R-image-488eb7a8cdc50414825a477d9530150f" class="lightbox-link"><img alt="Welcome screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-gift-tracking-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-488eb7a8cdc50414825a477d9530150f"><img alt="Welcome screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-gift-tracking-1.png"></a></p>
+<p><a href="#R-image-f12f9cc112514409a13c3140c8a93ddb" class="lightbox-link"><img alt="Welcome screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-gift-tracking-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f12f9cc112514409a13c3140c8a93ddb"><img alt="Welcome screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-gift-tracking-1.png"></a></p>
 <p>By listing the home directory I found a <code>README.txt</code> file:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>Welcome!
 
@@ -199,13 +199,13 @@ Good luck!</code></pre></div>
 <h3 id="finding-listening-port">Finding listening port</h3>
 <p>The tracking application was originally configured to run on port 8080, but doesnt answer. Our objective now is to trace down which port it now listens to.</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ss -tlnp</span></span></code></pre></div>
-<p><a href="#R-image-5ee672ae23e3c0e821b876699c09d878" class="lightbox-link"><img alt="Finding listening port" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-gift-tracking-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5ee672ae23e3c0e821b876699c09d878"><img alt="Finding listening port" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-gift-tracking-2.png"></a></p>
+<p><a href="#R-image-cb9c9a5d25c9aace0c7a5423d7b394de" class="lightbox-link"><img alt="Finding listening port" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-gift-tracking-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cb9c9a5d25c9aace0c7a5423d7b394de"><img alt="Finding listening port" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-gift-tracking-2.png"></a></p>
 <p>The listeneing port in question is <code>12321</code>, connecting to it:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:12321</span></span></code></pre></div>
 <p>As the original port was a well known web-port, I went on connecting to it using Curl:</p>
-<p><a href="#R-image-100b9716f433f2dbb462e9fd50160b94" class="lightbox-link"><img alt="Connecting to port" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-gift-tracking-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-100b9716f433f2dbb462e9fd50160b94"><img alt="Connecting to port" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-gift-tracking-3.png"></a></p>
+<p><a href="#R-image-89ef1da345b35e3f0d58fc637875616b" class="lightbox-link"><img alt="Connecting to port" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-gift-tracking-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-89ef1da345b35e3f0d58fc637875616b"><img alt="Connecting to port" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-gift-tracking-3.png"></a></p>
 <p>The entire output is included below:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;success&#34;</span>,
@@ -321,8 +321,8 @@ Good luck!</code></pre></div>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766748142" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766748142" defer></script>
-    <script src="/js/theme.js?1766748142" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766836557" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766836557" defer></script>
+    <script src="/js/theme.js?1766836557" defer></script>
   </body>
 </html>

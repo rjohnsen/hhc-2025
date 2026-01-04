@@ -35,10 +35,10 @@ Teaching people how to hack and protect systems is my passion.">
     <meta itemprop="wordCount" content="552">
     <title>Idorable Bistro :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act2/idorable-bistro/index.xml" rel="alternate" type="application/rss+xml" title="Idorable Bistro :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766747089" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766747089" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766747089" rel="stylesheet">
-    <link href="/css/theme.css?1766747089" rel="stylesheet">
-    <link href="/css/format-html.css?1766747089" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766836557" rel="stylesheet">
+    <link href="/css/theme.css?1766836557" rel="stylesheet">
+    <link href="/css/format-html.css?1766836557" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -149,8 +149,8 @@ Teaching people how to hack and protect systems is my passion.">
 
 <h1 id="idorable-bistro">Idorable Bistro</h1>
 
-<p><a href="#R-image-da80af0fe655b2ae235323a3a6a42d2b" class="lightbox-link"><img alt="Kyle Parrish" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/joshwright-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-da80af0fe655b2ae235323a3a6a42d2b"><img alt="Kyle Parrish" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/joshwright-avatar.gif"></a></p>
+<p><a href="#R-image-b6359be82f8dd5343043e9f96afd1fff" class="lightbox-link"><img alt="Kyle Parrish" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/joshwright-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b6359be82f8dd5343043e9f96afd1fff"><img alt="Kyle Parrish" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/joshwright-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -183,17 +183,17 @@ Teaching people how to hack and protect systems is my passion.">
 <h2 id="idorable-bistro">Idorable Bistro</h2>
 <p>This objective focuses on identifying and exploiting an Insecure Direct Object Reference (IDOR) vulnerability in a web application. By interacting with backend endpoints and manipulating object identifiers, the challenge illustrates how insufficient authorization checks can expose sensitive data or functionality. It reinforces the importance of validating access controls server-side rather than relying on client-side assumptions.</p>
 <p>Josh mentioned that there was a receipt outside the door. I went outside and to the right of the building and found this item:</p>
-<p><a href="#R-image-191abd999fbcdbf690ce724b1cf943a0" class="lightbox-link"><img alt="Crumpled receipt" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-idorable-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-191abd999fbcdbf690ce724b1cf943a0"><img alt="Crumpled receipt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-idorable-1.png"></a></p>
+<p><a href="#R-image-7b1378186c668ba0f2d009667f4306dd" class="lightbox-link"><img alt="Crumpled receipt" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-idorable-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7b1378186c668ba0f2d009667f4306dd"><img alt="Crumpled receipt" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-idorable-1.png"></a></p>
 <p>Parsing the QR I found out that it leads to <code>https://its-idorable.holidayhackchallenge.com/receipt/i9j0k1l2</code>:</p>
-<p><a href="#R-image-c25540680a1b452e8257c3c415de4e89" class="lightbox-link"><img alt="Parsing QR" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-idorable-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c25540680a1b452e8257c3c415de4e89"><img alt="Parsing QR" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-idorable-2.png"></a></p>
+<p><a href="#R-image-c6f42c64188d26367d7faa7190db61f4" class="lightbox-link"><img alt="Parsing QR" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-idorable-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c6f42c64188d26367d7faa7190db61f4"><img alt="Parsing QR" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-idorable-2.png"></a></p>
 <p>Upon visiting we are presented with the following webpage:</p>
-<p><a href="#R-image-b34215ac695c883c4277ddd7d92c1cc9" class="lightbox-link"><img alt="Receipt page" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-idorable-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b34215ac695c883c4277ddd7d92c1cc9"><img alt="Receipt page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-idorable-3.png"></a></p>
+<p><a href="#R-image-d5c050f84fbc7ce7e975b0c328bf5e05" class="lightbox-link"><img alt="Receipt page" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-idorable-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d5c050f84fbc7ce7e975b0c328bf5e05"><img alt="Receipt page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-idorable-3.png"></a></p>
 <p>Upon inspecting the HTML code we find something interesting in a Javascript:</p>
-<p><a href="#R-image-e7bd7a97b38dd27484439c64428dc6f0" class="lightbox-link"><img alt="Interesting Javascript" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-idorable-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e7bd7a97b38dd27484439c64428dc6f0"><img alt="Interesting Javascript" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-idorable-4.png"></a></p>
+<p><a href="#R-image-b5815e580905b16b8f8e418addbfd62e" class="lightbox-link"><img alt="Interesting Javascript" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-idorable-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b5815e580905b16b8f8e418addbfd62e"><img alt="Interesting Javascript" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-idorable-4.png"></a></p>
 <p>We find that the current receipt ID is <code>103</code> and that the real endpoint is <code>/api/receipt?id=${id}</code>, which takes an <code>id</code> parameter. Toying with this I found a lower boundary of <code>100</code> and an upper boundary of <code>160</code> appropiate. I could have narrowed further down, but I saw no point in doing that.</p>
 <p>Now, in order to traverse recipts in the range 100 to 160 I could do it manually, which would have taken too much time, or whip up a quick Python based bruteforcer. I went the Python route using this code:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
@@ -297,8 +297,8 @@ Teaching people how to hack and protect systems is my passion.">
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766747089" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766747089" defer></script>
-    <script src="/js/theme.js?1766747089" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1766836557" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766836557" defer></script>
+    <script src="/js/theme.js?1766836557" defer></script>
   </body>
 </html>
