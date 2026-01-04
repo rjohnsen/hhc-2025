@@ -23,10 +23,10 @@
     <meta itemprop="wordCount" content="853">
     <title>Mail Detective :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act2/mail-detective/index.xml" rel="alternate" type="application/rss+xml" title="Mail Detective :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766836557" rel="stylesheet">
-    <link href="/css/theme.css?1766836557" rel="stylesheet">
-    <link href="/css/format-html.css?1766836557" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767537315" rel="stylesheet">
+    <link href="/css/theme.css?1767537315" rel="stylesheet">
+    <link href="/css/format-html.css?1767537315" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -137,8 +137,8 @@
 
 <h1 id="mail-detective">Mail Detective</h1>
 
-<p><a href="#R-image-f5aaff576aab871b5b9379996f1a2a1c" class="lightbox-link"><img alt="Maurice Wilson" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f5aaff576aab871b5b9379996f1a2a1c"><img alt="Maurice Wilson" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif"></a></p>
+<p><a href="#R-image-b27041feaf63ac96f171ecbd2892e05e" class="lightbox-link"><img alt="Maurice Wilson" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b27041feaf63ac96f171ecbd2892e05e"><img alt="Maurice Wilson" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/mauricewilson-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -165,8 +165,8 @@
 </blockquote>
 <h2 id="mail-detective-curly-imap-investigation">Mail Detective: Curly IMAP Investigation</h2>
 <p>This objective focuses on email investigation by working directly with mail infrastructure rather than user-facing clients. By querying an IMAP server using command-line tools, I analyze how malicious content can be hidden within standard email workflows and reinforce the importance of understanding underlying protocols when investigating suspicious messaging activity.</p>
-<p><a href="#R-image-16076f3117dd030a4023b6a4eaaf8639" class="lightbox-link"><img alt="Welcome screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-16076f3117dd030a4023b6a4eaaf8639"><img alt="Welcome screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png"></a></p>
+<p><a href="#R-image-b49f36ca13dcbeb3e5269af9f4bb784a" class="lightbox-link"><img alt="Welcome screen" class="lazy lightbox figure-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b49f36ca13dcbeb3e5269af9f4bb784a"><img alt="Welcome screen" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act2/act2-mail-detective-1.png"></a></p>
 <p>To solve this objective, we must use <code>curl</code> as a lightweight IMAP client. Because curl supports IMAP natively, we can authenticate and talk directly to the mail server. The first step is to list the available mailboxes:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#e6db74">&#34;imap://localhost:143/&#34;</span> -u <span style="color:#e6db74">&#34;dosismail:holidaymagic&#34;</span></span></span></code></pre></div>
 <p>With no mailbox or message specified, curl sends an IMAP <code>LIST</code> command. This asks the server to return all mailboxes accessible to the user. The response looks like:</p>
@@ -352,8 +352,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766836557" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766836557" defer></script>
-    <script src="/js/theme.js?1766836557" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1767537315" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767537315" defer></script>
+    <script src="/js/theme.js?1767537315" defer></script>
   </body>
 </html>

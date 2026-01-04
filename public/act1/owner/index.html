@@ -27,10 +27,10 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
     <meta itemprop="wordCount" content="531">
     <title>Owner :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act1/owner/index.xml" rel="alternate" type="application/rss+xml" title="Owner :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766836557" rel="stylesheet">
-    <link href="/css/theme.css?1766836557" rel="stylesheet">
-    <link href="/css/format-html.css?1766836557" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767537315" rel="stylesheet">
+    <link href="/css/theme.css?1767537315" rel="stylesheet">
+    <link href="/css/format-html.css?1767537315" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -150,8 +150,8 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
 
 <h1 id="owner">Owner</h1>
 
-<p><a href="#R-image-89882c8831f3150d77726a2a8d38b8d3" class="lightbox-link"><img alt="James Goose" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/goose-steampunk.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-89882c8831f3150d77726a2a8d38b8d3"><img alt="James Goose" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/goose-steampunk.png"></a></p>
+<p><a href="#R-image-03b09c37dab2f50d576912e8a07707ff" class="lightbox-link"><img alt="James Goose" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/goose-steampunk.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-03b09c37dab2f50d576912e8a07707ff"><img alt="James Goose" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/goose-steampunk.png"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -178,25 +178,25 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
 </blockquote>
 <h2 id="terminal">Terminal</h2>
 <p>This objective focuses on reviewing identity and access management in a cloud environment to identify overly permissive role assignments. By examining Azure RBAC and the use of Privileged Identity Management (PIM), the task highlights the risk of permanently assigned Owner roles and reinforces the importance of least privilege and time-bound administrative access.</p>
-<p><a href="#R-image-65d20c4a2b055e307c1b2ebdce994182" class="lightbox-link"><img alt="Objective briefing" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-65d20c4a2b055e307c1b2ebdce994182"><img alt="Objective briefing" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-1.png"></a></p>
+<p><a href="#R-image-9d72422acf4c64c8e11be2a28e9fa39f" class="lightbox-link"><img alt="Objective briefing" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9d72422acf4c64c8e11be2a28e9fa39f"><img alt="Objective briefing" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-1.png"></a></p>
 <h3 id="query-parameter">Query parameter</h3>
 <p>Prototype command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az account list --query <span style="color:#e6db74">&#34;[].name&#34;</span></span></span></code></pre></div>
-<p><a href="#R-image-46784718c0572ee9bdd18130f7545d92" class="lightbox-link"><img alt="List accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-46784718c0572ee9bdd18130f7545d92"><img alt="List accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-2.png"></a></p>
+<p><a href="#R-image-941e12620c0415d7ff94b16acd8136b9" class="lightbox-link"><img alt="List accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-941e12620c0415d7ff94b16acd8136b9"><img alt="List accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-2.png"></a></p>
 <h3 id="conditional-filtering">Conditional filtering</h3>
 <p>Prototype command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az account list --query <span style="color:#e6db74">&#34;[?state==&#39;Enabled&#39;].{Name:name, ID:id}&#34;</span></span></span></code></pre></div>
-<p><a href="#R-image-20dbd4ea25bbef10346b0162e4309248" class="lightbox-link"><img alt="List accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-20dbd4ea25bbef10346b0162e4309248"><img alt="List accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-3.png"></a></p>
+<p><a href="#R-image-aa1e2d1e43f9733240a495eca276e3f0" class="lightbox-link"><img alt="List accounts" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-aa1e2d1e43f9733240a495eca276e3f0"><img alt="List accounts" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-3.png"></a></p>
 <h3 id="looking-at-owner-of-first-listed-subscription">Looking at owner of first listed subscription</h3>
 <p>Prototype command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az role assignment list --scope <span style="color:#e6db74">&#34;/subscriptions/{ID of first Subscription}&#34;</span> --query <span style="color:#f92672">[</span>?roleDefinition<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;Owner&#39;</span><span style="color:#f92672">]</span></span></span></code></pre></div>
 <p>Updated command:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az role assignment list --scope <span style="color:#e6db74">&#34;/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64&#34;</span> --query <span style="color:#f92672">[</span>?roleDefinition<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;Owner&#39;</span><span style="color:#f92672">]</span></span></span></code></pre></div>
-<p><a href="#R-image-3ae411c2ea2ba70fd4a60e3001f09463" class="lightbox-link"><img alt="Owner of the first subscription" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3ae411c2ea2ba70fd4a60e3001f09463"><img alt="Owner of the first subscription" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-4.png"></a></p>
+<p><a href="#R-image-2182718f49f7f5c67e2fdf4cef01b3d9" class="lightbox-link"><img alt="Owner of the first subscription" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2182718f49f7f5c67e2fdf4cef01b3d9"><img alt="Owner of the first subscription" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-4.png"></a></p>
 <h3 id="looking-at-other-owners-listed-subscriptions">Looking at other owners listed subscriptions</h3>
 <p>Let&rsquo;s run the previous command against the other subscriptions to see what we come up with:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az role assignment list --scope <span style="color:#e6db74">&#34;/subscriptions/4d9dbf2a-90b4-4d40-a97f-dc51f3c3d46e&#34;</span> --query <span style="color:#f92672">[</span>?roleDefinition<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;Owner&#39;</span><span style="color:#f92672">]</span>
@@ -256,14 +256,14 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az ad member list</span></span></code></pre></div>
 <p>Refined command aiming directly at &ldquo;IT Admins&rdquo; as that looked most promising:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az ad member list --group 6b982f2f-78a0-44a8-b915-79240b2b4796 | less</span></span></code></pre></div>
-<p><a href="#R-image-65da6d44f03258db666cde4681f4ed9f" class="lightbox-link"><img alt="Group information 1" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-5.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-65da6d44f03258db666cde4681f4ed9f"><img alt="Group information 1" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-5.png"></a></p>
+<p><a href="#R-image-a1533fb6e6125cf5fb40a2afb3c69ca1" class="lightbox-link"><img alt="Group information 1" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-5.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a1533fb6e6125cf5fb40a2afb3c69ca1"><img alt="Group information 1" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-5.png"></a></p>
 <p>Turns out we found a nested group</p>
 <h3 id="nested-groups">Nested groups</h3>
 <p>Rerunning the last command, but with a different id:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az ad member list --group 631ebd3f-39f9-4492-a780-aef2aec8c94e | less</span></span></code></pre></div>
-<p><a href="#R-image-1a0ad6f5823dfaa68b185b20cf98d15a" class="lightbox-link"><img alt="Group information 2" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1a0ad6f5823dfaa68b185b20cf98d15a"><img alt="Group information 2" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-6.png"></a></p>
+<p><a href="#R-image-a68d061d0bbbe404a8e2f58aa4f5bd4b" class="lightbox-link"><img alt="Group information 2" class="lazy lightbox figure-image" loading="lazy" src="/images/act1/act1-owner-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a68d061d0bbbe404a8e2f58aa4f5bd4b"><img alt="Group information 2" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act1/act1-owner-6.png"></a></p>
 <p>Full output provided below:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
 </span></span><span style="display:flex;"><span>  {
@@ -361,8 +361,8 @@ The Neighborhood HOA uses Azure for their IT infrastructure.">
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766836557" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766836557" defer></script>
-    <script src="/js/theme.js?1766836557" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1767537315" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767537315" defer></script>
+    <script src="/js/theme.js?1767537315" defer></script>
   </body>
 </html>

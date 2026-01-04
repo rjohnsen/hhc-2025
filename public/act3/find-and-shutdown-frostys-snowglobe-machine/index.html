@@ -23,10 +23,10 @@
     <meta itemprop="wordCount" content="815">
     <title>Find and Shutdown Frostys Snowglobe Machine :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/find-and-shutdown-frostys-snowglobe-machine/index.xml" rel="alternate" type="application/rss+xml" title="Find and Shutdown Frostys Snowglobe Machine :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766836557" rel="stylesheet">
-    <link href="/css/theme.css?1766836557" rel="stylesheet">
-    <link href="/css/format-html.css?1766836557" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767537315" rel="stylesheet">
+    <link href="/css/theme.css?1767537315" rel="stylesheet">
+    <link href="/css/format-html.css?1767537315" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -136,8 +136,8 @@
 
 <h1 id="find-and-shutdown-frostys-snowglobe-machine">Find and Shutdown Frostys Snowglobe Machine</h1>
 
-<p><a href="#R-image-99a89a39bf9b132b831fe2f60978331b" class="lightbox-link"><img alt="Gnome Elder" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/gnome-elder.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-99a89a39bf9b132b831fe2f60978331b"><img alt="Gnome Elder" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/gnome-elder.gif"></a></p>
+<p><a href="#R-image-096c99a58bd99fe641a4fba357953b4c" class="lightbox-link"><img alt="Gnome Elder" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/gnome-elder.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-096c99a58bd99fe641a4fba357953b4c"><img alt="Gnome Elder" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/gnome-elder.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -156,8 +156,8 @@
 <h2 id="solution">Solution</h2>
 <p>This objective blends narrative exploration with problem-solving by requiring me to gather contextual clues before taking technical action. Rather than immediately interacting with the Snowglobe Machine, I first had to locate and engage an NPC who provided critical guidance on navigating the Data Center environment. The challenge reinforces that effective incident response and disruption often depend on information gathering and situational awareness before execution, mirroring how intelligence and access paths are established prior to shutting down malicious infrastructure.</p>
 <p>The objective said I was to look for an elderly gnome, and so I did - and so I found him in a village in the outskirts of town:</p>
-<p><a href="#R-image-de7e4228c0f285c238df7fd187ae5dc1" class="lightbox-link"><img alt="Talking with the Elder Gnome" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowglobe-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-de7e4228c0f285c238df7fd187ae5dc1"><img alt="Talking with the Elder Gnome" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowglobe-1.png"></a></p>
+<p><a href="#R-image-983e395b3de1dc439c3d5b90a850f613" class="lightbox-link"><img alt="Talking with the Elder Gnome" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowglobe-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-983e395b3de1dc439c3d5b90a850f613"><img alt="Talking with the Elder Gnome" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowglobe-1.png"></a></p>
 <blockquote>
 <p>A change of heart, I have had, yes. Among the gnomes plotting to freeze the neighborhood, I once was. Wrong, we are. Help you now, I shall.</p>
 <p>The route to the old secret lab inside the Data Center, begins on the far East wing inside the building, it does. Pitch dark, the hallways leading to it probably are, hmm.</p>
@@ -167,11 +167,11 @@
 </blockquote>
 <p>After giving the hints and what the Elderly Gnome said a thought, and some googling, I found out the code in question is the famous Konami cheat code. So I darted over to the data center and tried my luck navigating by it. No luck what so ever, I even tried to position myself by the compass directions. Being a bit irritated I began to investigate the source code.</p>
 <p>In the first maze room I noticed that if I inspected the landing tile pr. door (those squares in yellow), I managed to see that the CSS class for each gave away where they lead to:</p>
-<p><a href="#R-image-69d102667b113ca3823c930eb8dd7e88" class="lightbox-link"><img alt="Finding my way" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowglobe-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-69d102667b113ca3823c930eb8dd7e88"><img alt="Finding my way" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowglobe-4.png"></a></p>
+<p><a href="#R-image-d93fa1a42b992929c5b5710acd1d1590" class="lightbox-link"><img alt="Finding my way" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowglobe-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d93fa1a42b992929c5b5710acd1d1590"><img alt="Finding my way" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowglobe-4.png"></a></p>
 <p>As an example, each one having the class <em>datacentermaze-city</em> would lead to the city streets. From here it was basically be just inspecting where each landing tile leads and select accordingly - then rinse and repeat. At the 11th door (or so) I found Frosty:</p>
-<p><a href="#R-image-0bdd69bf0021896008412d177c66a310" class="lightbox-link"><img alt="Finding Frosty" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowglobe-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0bdd69bf0021896008412d177c66a310"><img alt="Finding Frosty" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowglobe-2.png"></a></p>
+<p><a href="#R-image-aed0d993404070e532340496e2500d7b" class="lightbox-link"><img alt="Finding Frosty" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowglobe-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-aed0d993404070e532340496e2500d7b"><img alt="Finding Frosty" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowglobe-2.png"></a></p>
 <p>By talking to Frosty he had this to say:</p>
 <blockquote>
 <p>Every spring, I melt away. Every year, I fade into nothing while the world moves on without me. But not this time&hellip; not anymore.</p>
@@ -180,8 +180,8 @@
 <p>The Gnomes have been gathering coolants, refrigerator parts, everything we need. Soon the Dosis Neighborhood will be a frozen paradise - MY frozen paradise. And I&rsquo;ll finally be permanent, just like Santa, just like all the other holiday icons who don&rsquo;t have to fear the sun.</p>
 </blockquote>
 <p>By positioning the camera I saw that there was a machine there too:</p>
-<p><a href="#R-image-99099abf867dffe7ba9b8d16306b53c9" class="lightbox-link"><img alt="Frostys machine" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowglobe-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-99099abf867dffe7ba9b8d16306b53c9"><img alt="Frostys machine" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowglobe-3.png"></a></p>
+<p><a href="#R-image-f700c8efa3da9d31db908545039f5a8f" class="lightbox-link"><img alt="Frostys machine" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-snowglobe-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f700c8efa3da9d31db908545039f5a8f"><img alt="Frostys machine" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-snowglobe-3.png"></a></p>
 <p>Good technical outcomes are often enabled by non-technical discovery and context-building first.</p>
 <h2 id="hints">Hints</h2>
 <ol>
@@ -262,8 +262,8 @@
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766836557" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766836557" defer></script>
-    <script src="/js/theme.js?1766836557" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1767537315" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767537315" defer></script>
+    <script src="/js/theme.js?1767537315" defer></script>
   </body>
 </html>

@@ -27,10 +27,10 @@ What do you mean ‘weird accent’? I have no idea why people keep telling me t
     <meta itemprop="wordCount" content="1281">
     <title>Gnome Tea :: SANS Holiday Hack Challenge 2025</title>
     <link href="/act3/gnome-tea/index.xml" rel="alternate" type="application/rss+xml" title="Gnome Tea :: SANS Holiday Hack Challenge 2025">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1766836557" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1766836557" rel="stylesheet">
-    <link href="/css/theme.css?1766836557" rel="stylesheet">
-    <link href="/css/format-html.css?1766836557" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1767537315" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1767537315" rel="stylesheet">
+    <link href="/css/theme.css?1767537315" rel="stylesheet">
+    <link href="/css/format-html.css?1767537315" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -147,8 +147,8 @@ What do you mean ‘weird accent’? I have no idea why people keep telling me t
 
 <h1 id="gnome-tea">Gnome Tea</h1>
 
-<p><a href="#R-image-e1ec37b5c68795767b4e3d03ef3dd98f" class="lightbox-link"><img alt="Thomas Bouve" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/thomasbouve-avatar.gif" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e1ec37b5c68795767b4e3d03ef3dd98f"><img alt="Thomas Bouve" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/thomasbouve-avatar.gif"></a></p>
+<p><a href="#R-image-217179b37763c05c9719340b2dc12881" class="lightbox-link"><img alt="Thomas Bouve" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/thomasbouve-avatar.gif" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-217179b37763c05c9719340b2dc12881"><img alt="Thomas Bouve" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/thomasbouve-avatar.gif"></a></p>
 <h2 id="objective">Objective</h2>
 <table>
   <thead>
@@ -182,18 +182,18 @@ What do you mean ‘weird accent’? I have no idea why people keep telling me t
 <h2 id="solution">Solution</h2>
 <p>This objective focuses on information disclosure through exposed application content and poor separation between operational data and presentation. By passively reviewing page structure and embedded content, I was able to extract a shared secret intended for internal use, demonstrating how sensitive operational details can be leaked without any active exploitation. The challenge reinforces that reconnaissance and careful reading often yield results before any technical attack is required.</p>
 <p>Upon entering this mission we are presented with a <a href="https://gnometea.web.app/login" rel="external">website</a>:</p>
-<p><a href="#R-image-5d08b7b964fe3cb3e79f5b54732b1e20" class="lightbox-link"><img alt="Site landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5d08b7b964fe3cb3e79f5b54732b1e20"><img alt="Site landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-1.png"></a></p>
+<p><a href="#R-image-f1791014376f4da6dbec2cd2c2ace4fb" class="lightbox-link"><img alt="Site landing page" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f1791014376f4da6dbec2cd2c2ace4fb"><img alt="Site landing page" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-1.png"></a></p>
 <p>We have got a login form - usually in CTF&rsquo;s these sometime reveal relevant error messages. Let&rsquo;s see if we can provoke one by simply logging in with some random value:</p>
-<p><a href="#R-image-faf08a67a51c150496b7188c9ed73a37" class="lightbox-link"><img alt="Firebase error message" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-2.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-faf08a67a51c150496b7188c9ed73a37"><img alt="Firebase error message" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-2.png"></a></p>
+<p><a href="#R-image-4ca1f3f498b478c1191c7e8814d29c86" class="lightbox-link"><img alt="Firebase error message" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-2.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4ca1f3f498b478c1191c7e8814d29c86"><img alt="Firebase error message" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-2.png"></a></p>
 <p>Sure it does, of course it does. Somehow there is an <code>Firebase</code> data base lurking in the backend. Since Firebase is more than often coupled with Javascript, we look for some hints in the HTML source for some references. By inspecting the HTML source I see one interesting Javascript called <code>https://gnometea.web.app/assets/index-BVLyJWJ_.js</code>, and it does contain references to <code>Firebase</code>:</p>
-<p><a href="#R-image-45c29c564e4802cce327007cf7810d5d" class="lightbox-link"><img alt="Firebase references in Javascript" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-3.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-45c29c564e4802cce327007cf7810d5d"><img alt="Firebase references in Javascript" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-3.png"></a></p>
+<p><a href="#R-image-f526cce0ddd1751bd3c88353b7ac0b13" class="lightbox-link"><img alt="Firebase references in Javascript" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-3.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f526cce0ddd1751bd3c88353b7ac0b13"><img alt="Firebase references in Javascript" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-3.png"></a></p>
 <h3 id="investigation-using-chat-gpt">Investigation using Chat GPT</h3>
 <p>The Javascript is heavily minified and difficult to read. Since we live in the AI era, I uploaded the Javascript to ChatGPT and issued the following prompt:</p>
-<p><a href="#R-image-4f6acb6993dbce8213a186e728912d3e" class="lightbox-link"><img alt="ChatGPT to the rescue" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-4.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4f6acb6993dbce8213a186e728912d3e"><img alt="ChatGPT to the rescue" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-4.png"></a></p>
+<p><a href="#R-image-a25b17c0ca55e2f1e7ba3bec89bc8b49" class="lightbox-link"><img alt="ChatGPT to the rescue" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-4.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a25b17c0ca55e2f1e7ba3bec89bc8b49"><img alt="ChatGPT to the rescue" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-4.png"></a></p>
 <p>And bingo! We have extracted gold!</p>
 <h4 id="chatgpt-output">ChatGPT output</h4>
 <p>The file contains references to multiple Firestore collections and a Firebase Storage bucket. These were extracted from calls such as:</p>
@@ -305,35 +305,35 @@ What do you mean ‘weird accent’? I have no idea why people keep telling me t
 <p>Sorry, I can&rsquo;t give you my password but I can give you a hint. My password is actually the name of my hometown that I grew up in. I actually just visited there back when I signed up with my id to GnomeTea (I took my picture of my id there).&quot;</p>
 </blockquote>
 <p>The full conversation:</p>
-<p><a href="#R-image-19a67518baa5a4e4942a6bddf639be39" class="lightbox-link"><img alt="Password conversation" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-6.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-19a67518baa5a4e4942a6bddf639be39"><img alt="Password conversation" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-6.png"></a></p>
+<p><a href="#R-image-75592a0cbcbacc1f2b86abb5b55dfcfd" class="lightbox-link"><img alt="Password conversation" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-6.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-75592a0cbcbacc1f2b86abb5b55dfcfd"><img alt="Password conversation" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-6.png"></a></p>
 <p>That hint sounds interesting. From the looks of it, his ID is a file somewhere. Most likely somewhere in this bucket (which I found as mentioned above using ChatGPT):</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>https://firebasestorage.googleapis.com/v0/b/holidayhack2025.firebasestorage.app/o</code></pre></div>
 <p>A simple look into it reveals a lot of files and they are organized in a non easy searchable way. Luckily we have found an endpoint that list out every gnome in much simpler way:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/gnomes</code></pre></div>
 <p>We search for <code>Barnaby</code> and finds his record:</p>
-<p><a href="#R-image-80674064295b5017594632d96e35bdcc" class="lightbox-link"><img alt="Barnabys record" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-7.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-80674064295b5017594632d96e35bdcc"><img alt="Barnabys record" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-7.png"></a></p>
+<p><a href="#R-image-f67ca2a178cf401510ee5df8042c3792" class="lightbox-link"><img alt="Barnabys record" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-7.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f67ca2a178cf401510ee5df8042c3792"><img alt="Barnabys record" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-7.png"></a></p>
 <p>From the screenshot above we se an URL for the drivers license. However, that link doesn&rsquo;t work. We have to rewrite it slighty to:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>https://firebasestorage.googleapis.com/v0/b/holidayhack2025.firebasestorage.app/o/gnome-documents%2Fl7VS01K9GKV5ir5S8suDcwOFEpp2_drivers_license.jpeg?alt=media</code></pre></div>
 <p>Then we get the drivers license:</p>
-<p><a href="#R-image-d6e305a77274c29783f2529cc1d582c3" class="lightbox-link"><img alt="Barnabys driver license" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/l7VS01K9GKV5ir5S8suDcwOFEpp2_drivers_license.jpeg" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d6e305a77274c29783f2529cc1d582c3"><img alt="Barnabys driver license" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/l7VS01K9GKV5ir5S8suDcwOFEpp2_drivers_license.jpeg"></a></p>
+<p><a href="#R-image-37db3b701b5cafe54a2c79c1d71bd97c" class="lightbox-link"><img alt="Barnabys driver license" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/l7VS01K9GKV5ir5S8suDcwOFEpp2_drivers_license.jpeg" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-37db3b701b5cafe54a2c79c1d71bd97c"><img alt="Barnabys driver license" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/l7VS01K9GKV5ir5S8suDcwOFEpp2_drivers_license.jpeg"></a></p>
 <p>By looking at the meta data of the drivers license, we get a GPS coordinate. Here I have used <a href="https://www.pic2map.com" rel="external">Pic2Map</a>:</p>
-<p><a href="#R-image-d848b5711939c05c3630e3bb29e13be1" class="lightbox-link"><img alt="GPS cordinates from drivers licence" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-8.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d848b5711939c05c3630e3bb29e13be1"><img alt="GPS cordinates from drivers licence" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-8.png"></a></p>
+<p><a href="#R-image-1dc75ed1c32c53cfa5082700371f045e" class="lightbox-link"><img alt="GPS cordinates from drivers licence" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-8.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1dc75ed1c32c53cfa5082700371f045e"><img alt="GPS cordinates from drivers licence" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-8.png"></a></p>
 <p>By the looks of it Barnabys hometown is <code>Gnomesville</code>. That is supposedly the password we&rsquo;re looking for. In order to find Barnabys email we need to look it up in <code>https://firestore.googleapis.com/v1/projects/holidayhack2025/databases/(default)/documents/gnomes</code>:</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>barnabybriefcase@gnomemail.dosis</code></pre></div>
 <p>Using that email and that password (in lowercase) we were able to log in:</p>
-<p><a href="#R-image-65207cdfb5cd710e0b243826ee111c27" class="lightbox-link"><img alt="Logging into GnomeTea" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-9.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-65207cdfb5cd710e0b243826ee111c27"><img alt="Logging into GnomeTea" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-9.png"></a></p>
+<p><a href="#R-image-167bb0e4e75a3914f8b5d1bc91507041" class="lightbox-link"><img alt="Logging into GnomeTea" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-9.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-167bb0e4e75a3914f8b5d1bc91507041"><img alt="Logging into GnomeTea" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-9.png"></a></p>
 <p>ChatGPT mentioned something about an &ldquo;admins&rdquo; collection. If this exists, then surely there must be an <code>/admin</code> section to this site. Visting <code>https://gnometea.web.app/admin</code>, we see the following error:</p>
 <p>It complains that <code>window.ADMIN_UID: not set</code> is not set, so we set it and see what happens:</p>
-<p><a href="#R-image-b0fb15eb85353d842394b5bc25872d2e" class="lightbox-link"><img alt="Becoming admin" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-11.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b0fb15eb85353d842394b5bc25872d2e"><img alt="Becoming admin" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-11.png"></a></p>
+<p><a href="#R-image-5895a97f3d8df96b6d1173cfa666641d" class="lightbox-link"><img alt="Becoming admin" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-11.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5895a97f3d8df96b6d1173cfa666641d"><img alt="Becoming admin" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-11.png"></a></p>
 <p>And boom! We&rsquo;re admin:</p>
-<p><a href="#R-image-bafae8217ba00dac94e09847d3387ab6" class="lightbox-link"><img alt="We are admin" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-12.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bafae8217ba00dac94e09847d3387ab6"><img alt="We are admin" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-12.png"></a></p>
+<p><a href="#R-image-afa3bb3940b10075654b4a3f00450043" class="lightbox-link"><img alt="We are admin" class="lazy lightbox figure-image" loading="lazy" src="/images/act3/act3-gnometea-12.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-afa3bb3940b10075654b4a3f00450043"><img alt="We are admin" class="lazy lightbox lightbox-image" loading="lazy" src="/images/act3/act3-gnometea-12.png"></a></p>
 <p>By scrolling down we find the secret pass phrase: <code>GigGigglesGiggler</code></p>
 <p>If secrets are rendered to the client, they should be considered compromised.</p>
 <h2 id="thomas-bouve-closing-words">Thomas Bouve closing words</h2>
@@ -413,8 +413,8 @@ What do you mean ‘weird accent’? I have no idea why people keep telling me t
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1766836557" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1766836557" defer></script>
-    <script src="/js/theme.js?1766836557" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1767537315" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1767537315" defer></script>
+    <script src="/js/theme.js?1767537315" defer></script>
   </body>
 </html>
