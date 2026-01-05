@@ -1,7 +1,7 @@
 +++
 date = '2025-12-23T15:59:59+01:00'
 draft = false
-hidden = true
+hidden = false
 title = 'Act 1'
 weight = 1
 +++
